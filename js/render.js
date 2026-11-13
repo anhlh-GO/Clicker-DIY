@@ -263,8 +263,24 @@ const drawSR = (c, alpha) => {
 };
 E.drawSRWith = drawSR;
 
+// repeating pattern of a sprite region (cached per source image + rect)
+const _pats = new Map();
+const tilePattern = (src) => {
+  const key = src[0]; let m = _pats.get(key); if (!m) { m = new Map(); _pats.set(key, m); }
+  const k2 = src[1] + ',' + src[2] + ',' + src[3] + ',' + src[4];
+  let p = m.get(k2);
+  if (!p) {
+    let img = src[0];
+    if (src[1] || src[2] || src[3] !== img.width || src[4] !== img.height) {
+      const cv2 = document.createElement('canvas'); cv2.width = Math.max(1, Math.round(src[3])); cv2.height = Math.max(1, Math.round(src[4]));
+      cv2.getContext('2d').drawImage(img, src[1], src[2], src[3], src[4], 0, 0, cv2.width, cv2.height); img = cv2;
+    }
+    p = ctx.createPattern(img, 'repeat'); m.set(k2, p);
+  }
+  return p;
+};
 // UI Image
-const drawImg = (c, g, alpha) => {
+const drawImg =(c, g, alpha) => {
   const R = g.rect; if (!R) return;
   const a = c.color[3] * alpha; if (a <= 0.003) return;
   let x = -R.w * R.pvx, y = -R.h * R.pvy, w = R.w, h = R.h;
@@ -279,6 +295,22 @@ const drawImg = (c, g, alpha) => {
     ctx.fillStyle = colorStr(c.color, 1); ctx.fillRect(x, y, w, h); ctx.globalAlpha = 1; return;
   }
   const src = srcOf(s, c.color); if (!src) { ctx.globalAlpha = 1; return; }
+  const hasB = s[8][0] || s[8][1] || s[8][2] || s[8][3];
+  if (c.it === 2 && !hasB) { // Tiled: repeat the sprite at its native size (px * 100/ppu / multiplier), from the rect's bottom-left
+    const tw = s[3] * (100 / s[7]) / (c.ppm || 1), th = s[4] * (100 / s[7]) / (c.ppm || 1);
+    const pat = tilePattern(src);
+    if (pat && tw > 0 && th > 0) {
+      ctx.save(); ctx.beginPath(); ctx.rect(x, y, w, h); ctx.clip();
+      ctx.transform(1, 0, 0, -1, 0, 0); // y-down, origin at pivot
+      ctx.translate(x, -y); // rect bottom-left
+      ctx.scale(tw / src[3], th / src[4]);
+      ctx.translate(0, -src[4]); // first tile sits on the bottom edge
+      ctx.fillStyle = pat;
+      ctx.fillRect(-1, -Math.ceil(h / th) * src[4] - 1, Math.ceil(w / tw + 1) * src[3] + 2, (Math.ceil(h / th) + 1) * src[4] + 2);
+      ctx.restore();
+    }
+    ctx.globalAlpha = 1; return;
+  }
   if (c.pa && c.it !== 1) { const ar = s[3] / s[4]; if (w / h > ar) { const nw = h * ar; x += (w - nw) * R.pvx; w = nw; } else { const nh = w / ar; y += (h - nh) * R.pvy; h = nh; } }
   const hasBorder = s[8][0] || s[8][1] || s[8][2] || s[8][3];
   if ((c.it === 1 || c.it === 2) && hasBorder) {
