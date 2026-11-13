@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
 }
 
+def vc = Integer.parseInt(System.getenv('VERSION_CODE') ?: '1')
+
 android {
     namespace 'com.anhlhgo.clickerdiy'
     compileSdk 34
@@ -10,8 +12,8 @@ android {
         applicationId 'com.anhlhgo.clickerdiy'
         minSdk 24
         targetSdk 34
-        versionCode (System.getenv('VERSION_CODE') ?: '1') as int
-        versionName '0.6.' + (System.getenv('VERSION_CODE') ?: '1')
+        versionCode vc
+        versionName "0.6.${vc}"
     }
 
     buildTypes {
@@ -24,10 +26,6 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
-    }
-    androidResources {
-        // keep webp/mp3/json assets uncompressed-friendly and include dot files
-        ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~'
     }
 }
 
