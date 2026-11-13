@@ -1,0 +1,106 @@
+{
+ "sharedassets0.assets:14501": {
+  "name": "bear",
+  "atlas": [
+   "bear.atlas"
+  ],
+  "scale": 0.007000000216066837,
+  "mix": 0.20000000298023224
+ },
+ "sharedassets0.assets:14503": {
+  "name": "cat",
+  "atlas": [
+   "cat.atlas"
+  ],
+  "scale": 0.007000000216066837,
+  "mix": 0.20000000298023224
+ },
+ "sharedassets0.assets:14505": {
+  "name": "blue_penguin",
+  "atlas": [
+   "blue_penguin.atlas"
+  ],
+  "scale": 0.007000000216066837,
+  "mix": 0.20000000298023224
+ },
+ "sharedassets0.assets:14507": {
+  "name": "Jelly_Character",
+  "atlas": [
+   "Jelly_Character.atlas"
+  ],
+  "scale": 0.009999999776482582,
+  "mix": 0.20000000298023224
+ },
+ "sharedassets0.assets:14509": {
+  "name": "peguin_loading",
+  "atlas": [
+   "peguin_loading.atlas"
+  ],
+  "scale": 0.014999999664723873,
+  "mix": 0.20000000298023224
+ },
+ "sharedassets0.assets:14511": {
+  "name": "hamster_shipber",
+  "atlas": [
+   "hamster_shipber.atlas"
+  ],
+  "scale": 0.009999999776482582,
+  "mix": 0.20000000298023224
+ },
+ "sharedassets1.assets:855": {
+  "name": "Jelly_luckywheel",
+  "atlas": [
+   "Jelly_luckywheel.atlas"
+  ],
+  "scale": 0.009999999776482582,
+  "mix": 0.20000000298023224
+ },
+ "sharedassets1.assets:857": {
+  "name": "Jelly_mistery_box",
+  "atlas": [
+   "Jelly_mistery_box.atlas"
+  ],
+  "scale": 0.009999999776482582,
+  "mix": 0.20000000298023224
+ },
+ "sharedassets1.assets:859": {
+  "name": "Lucky_Spin",
+  "atlas": [
+   "Lucky_Spin.atlas"
+  ],
+  "scale": 0.009999999776482582,
+  "mix": 0.20000000298023224
+ },
+ "sharedassets3.assets:109": {
+  "name": "blind_bag",
+  "atlas": [
+   "blind_bag.atlas"
+  ],
+  "scale": 0.009999999776482582,
+  "mix": 0.20000000298023224
+ },
+ "sharedassets3.assets:111": {
+  "name": "penguin_blind_bag",
+  "atlas": [
+   "penguin_blind_bag.atlas"
+  ],
+  "scale": 0.00800000037997961,
+  "mix": 0.20000000298023224
+ },
+ "sharedassets4.assets:48": {
+  "name": "Scoop_Penguin",
+  "atlas": [
+   "Scoop_Penguin.atlas"
+  ],
+  "scale": 0.009999999776482582,
+  "mix": 0.20000000298023224
+ },
+ "sharedassets6.assets:168": {
+  "name": "Scoop_Blind_Bag",
+  "atlas": [
+   "Scoop_Blind_Bag.atlas"
+  ],
+  "scale": 0.00800000037997961,
+  "mix": 0.20000000298023224
+ }
+}

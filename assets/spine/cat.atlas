@@ -1,0 +1,16 @@
+cat_cat.webp
+size:631,282
+filter:Linear,Linear
+cast_head
+bounds:2,2,336,278
+cat eye
+bounds:340,8,156,30
+cat_body
+bounds:340,40,240,177
+rotate:90
+cat_mouth_close
+bounds:498,7,60,31
+cat_mouth_open
+bounds:560,94,60,42
+cat_tail
+bounds:519,138,110,142

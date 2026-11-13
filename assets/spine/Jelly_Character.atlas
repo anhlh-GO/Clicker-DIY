@@ -1,0 +1,1271 @@
+Jelly_Character_Jelly_Character.webp
+size:4096,4077
+filter:Linear,Linear
+Clicker_01/Eye_L
+bounds:1357,3566,119,104
+Clicker_02/Eye_L
+bounds:1357,3566,119,104
+Clicker_01/Eye_R
+bounds:2030,3554,129,107
+Clicker_02/Eye_R
+bounds:2030,3554,129,107
+Clicker_01/Leg L
+bounds:1082,3773,89,174
+rotate:90
+Clicker_01/Leg R
+bounds:1258,3773,89,174
+rotate:90
+Clicker_01/arm_L
+bounds:230,2965,225,176
+Clicker_01/arm_R
+bounds:457,2956,225,176
+Clicker_01/blush
+bounds:2897,3985,315,50
+Clicker_02/blush
+bounds:2897,3985,315,50
+Clicker_01/body
+bounds:1896,2652,245,242
+Clicker_01/ear_L
+bounds:3852,3825,82,100
+rotate:90
+Clicker_01/hair_back
+bounds:565,257,591,543
+Clicker_01/hair_bang
+bounds:1745,66,674,580
+Clicker_01/mouth
+bounds:3214,3983,78,52
+Clicker_02/mouth
+bounds:3214,3983,78,52
+Clicker_01/nose
+bounds:2,4054,37,21
+Clicker_02/nose
+bounds:2,4054,37,21
+Clicker_01/shoulder_L
+bounds:2771,3538,117,109
+Clicker_01/shoulder_R
+bounds:3154,3530,117,109
+Clicker_02/Head
+bounds:1623,1660,440,377
+Clicker_02/arm_L1
+bounds:2167,3081,206,174
+Clicker_02/arm_R1
+bounds:2375,3077,206,174
+Clicker_02/body
+bounds:2513,3253,154,194
+rotate:90
+Clicker_02/hair_back
+bounds:3009,1087,516,455
+Clicker_02/hair_bang
+bounds:2421,2,674,580
+Clicker_02/hair_tail_L
+bounds:404,3143,167,241
+rotate:90
+Clicker_02/hair_tail_R
+bounds:647,3134,167,241
+rotate:90
+Clicker_02/leg_L
+bounds:3153,3381,140,234
+rotate:90
+Clicker_02/leg_R
+bounds:2,3329,142,221
+rotate:90
+Clicker_02/shoulder_L1
+bounds:1538,3669,95,104
+rotate:90
+Clicker_02/shoulder_R1
+bounds:1644,3669,95,104
+rotate:90
+Fire1
+bounds:3824,4034,82,41
+Fire2
+bounds:1626,2039,458,315
+Fire3
+bounds:3598,1937,496,319
+Fire4
+bounds:2,2166,465,295
+Fire5
+bounds:3261,2830,462,199
+Fire6
+bounds:3415,3031,421,171
+Fire7
+bounds:3541,2550,360,264
+Lily/Body
+bounds:1013,2428,321,277
+Lily/Eating_Mouth_3
+bounds:784,3868,82,70
+Mira/Eating_Mouth_3
+bounds:784,3868,82,70
+Rumi/Eating_Mouth_3
+bounds:784,3868,82,70
+Zoey/Eating_Mouth_3
+bounds:784,3868,82,70
+skin_default/Eating_Mouth_3
+bounds:784,3868,82,70
+skin_default2/Eating_Mouth_3
+bounds:784,3868,82,70
+skin_haloween1/Eating_Mouth_3
+bounds:784,3868,82,70
+Lily/Eye Ahh
+bounds:1232,3935,313,57
+Lily/Eye Brown Hungry
+bounds:761,3996,216,47
+Lily/Eye Brown L
+bounds:184,4047,75,28
+Lily/Eye Brown R
+bounds:261,4047,75,28
+Lily/Eye Hungry
+bounds:1547,3932,321,58
+Lily/Eye Sour L
+bounds:2305,3926,85,61
+Lily/Eye Sour L 2
+bounds:833,3777,92,89
+Lily/Eye Sour_R 2
+bounds:833,3777,92,89
+Lily/Eye Sour_R
+bounds:2392,3926,85,61
+Lily/Eye Spicy L
+bounds:3030,3747,109,91
+Lily/Eye Spicy R
+bounds:3141,3746,109,91
+Lily/Eye_Yummy_L
+bounds:3320,3917,64,70
+rotate:90
+Mira/Eye_Yummy_L
+bounds:3320,3917,64,70
+rotate:90
+Rumi/Eye_Yummy_L
+bounds:3320,3917,64,70
+rotate:90
+Lily/Eye_Yummy_R
+bounds:3878,3909,68,74
+rotate:90
+Mira/Eye_Yummy_R
+bounds:3878,3909,68,74
+rotate:90
+Rumi/Eye_Yummy_R
+bounds:3878,3909,68,74
+rotate:90
+Lily/Eyebrown Spicy L
+bounds:338,4047,75,28
+Lily/Eyebrown Spicy R
+bounds:415,4047,74,28
+Lily/Flashes L
+bounds:2375,3656,121,98
+Lily/Flashes R
+bounds:2,3595,138,102
+Lily/Hair
+bounds:2,886,627,462
+Lily/Hair2
+bounds:3294,3983,52,125
+rotate:90
+Lily/Hand Down L
+bounds:2583,3071,209,174
+Lily/Hand Down R
+bounds:2794,3056,203,174
+Lily/Hand Up L
+bounds:241,3792,85,150
+rotate:90
+Mira/Hand Up L
+bounds:241,3792,85,150
+rotate:90
+Lily/Hand Up R
+bounds:521,3589,103,147
+rotate:90
+Lily/Highligth L
+bounds:325,4000,45,50
+rotate:90
+Lily/Highligth R
+bounds:325,4000,45,50
+rotate:90
+Mira/Highligth L
+bounds:325,4000,45,50
+rotate:90
+Mira/Highligth R
+bounds:325,4000,45,50
+rotate:90
+Rumi/Highligth L
+bounds:325,4000,45,50
+rotate:90
+Rumi/Highligth R
+bounds:325,4000,45,50
+rotate:90
+Zoey/Highligth L
+bounds:325,4000,45,50
+rotate:90
+Zoey/Highligth R
+bounds:325,4000,45,50
+rotate:90
+Lily/Iris L
+bounds:3392,3917,64,70
+rotate:90
+Mira/Iris L
+bounds:3392,3917,64,70
+rotate:90
+Rumi/Iris L
+bounds:3392,3917,64,70
+rotate:90
+Lily/Iris R
+bounds:3954,3906,68,74
+rotate:90
+Mira/Iris R
+bounds:3954,3906,68,74
+rotate:90
+Rumi/Iris R
+bounds:3954,3906,68,74
+rotate:90
+Lily/Iris Spicy L
+bounds:3480,4036,39,39
+Lily/Iris Spicy R
+bounds:3480,4036,39,39
+Lily/Leg L
+bounds:2447,3756,90,184
+rotate:90
+Lily/Leg R
+bounds:2633,3754,90,182
+rotate:90
+Lily/Mouth
+bounds:3773,3980,78,52
+Mira/Mouth
+bounds:3773,3980,78,52
+Rumi/Mouth
+bounds:3773,3980,78,52
+Zoey/Mouth
+bounds:3773,3980,78,52
+skin_default/Mouth
+bounds:3773,3980,78,52
+skin_default2/Mouth
+bounds:3773,3980,78,52
+skin_haloween1/Mouth
+bounds:3773,3980,78,52
+Lily/Mouth 3
+bounds:1870,3929,93,59
+Mira/Mouth 3
+bounds:1870,3929,93,59
+Rumi/Mouth 3
+bounds:1870,3929,93,59
+Zoey/Mouth 3
+bounds:1870,3929,93,59
+skin_default/Mouth 3
+bounds:1870,3929,93,59
+skin_default2/Mouth 3
+bounds:1870,3929,93,59
+skin_haloween1/Mouth 3
+bounds:1870,3929,93,59
+Lily/Mouth Ahh
+bounds:1812,3853,114,74
+Mira/Mouth Ahh
+bounds:1812,3853,114,74
+Rumi/Mouth Ahh
+bounds:1812,3853,114,74
+Zoey/Mouth Ahh
+bounds:1812,3853,114,74
+skin_default/Mouth Ahh
+bounds:1812,3853,114,74
+skin_default2/Mouth Ahh
+bounds:1812,3853,114,74
+skin_haloween1/Mouth Ahh
+bounds:1812,3853,114,74
+Lily/Mouth Eat
+bounds:161,4001,100,44
+Mira/Mouth Eat
+bounds:161,4001,100,44
+Rumi/Mouth Eat
+bounds:161,4001,100,44
+Zoey/Mouth Eat
+bounds:161,4001,100,44
+skin_default/Mouth Eat
+bounds:161,4001,100,44
+skin_default2/Mouth Eat
+bounds:161,4001,100,44
+skin_haloween1/Mouth Eat
+bounds:161,4001,100,44
+Lily/Mouth Happy
+bounds:2844,3842,103,78
+Mira/Mouth Happy
+bounds:2844,3842,103,78
+Rumi/Mouth Happy
+bounds:2844,3842,103,78
+Zoey/Mouth Happy
+bounds:2844,3842,103,78
+skin_default/Mouth Happy
+bounds:2844,3842,103,78
+skin_default2/Mouth Happy
+bounds:2844,3842,103,78
+skin_haloween1/Mouth Happy
+bounds:2844,3842,103,78
+Lily/Mouth Hungry
+bounds:3754,3912,122,66
+Mira/Mouth Hungry
+bounds:3754,3912,122,66
+Rumi/Mouth Hungry
+bounds:3754,3912,122,66
+Zoey/Mouth Hungry
+bounds:3754,3912,122,66
+skin_default/Mouth Hungry
+bounds:3754,3912,122,66
+skin_default2/Mouth Hungry
+bounds:3754,3912,122,66
+skin_haloween1/Mouth Hungry
+bounds:3754,3912,122,66
+Lily/Mouth Oh
+bounds:263,4001,44,60
+rotate:90
+Mira/Mouth Oh
+bounds:263,4001,44,60
+rotate:90
+Rumi/Mouth Oh
+bounds:263,4001,44,60
+rotate:90
+Zoey/Mouth Oh
+bounds:263,4001,44,60
+rotate:90
+skin_default/Mouth Oh
+bounds:263,4001,44,60
+rotate:90
+skin_default2/Mouth Oh
+bounds:263,4001,44,60
+rotate:90
+skin_haloween1/Mouth Oh
+bounds:263,4001,44,60
+rotate:90
+Lily/Mouth Sour 1
+bounds:3990,3976,75,54
+Mira/Mouth Sour 1
+bounds:3990,3976,75,54
+Rumi/Mouth Sour 1
+bounds:3990,3976,75,54
+Zoey/Mouth Sour 1
+bounds:3990,3976,75,54
+skin_default/Mouth Sour 1
+bounds:3990,3976,75,54
+skin_default2/Mouth Sour 1
+bounds:3990,3976,75,54
+skin_haloween1/Mouth Sour 1
+bounds:3990,3976,75,54
+Lily/Mouth Sour 2
+bounds:3263,3836,101,79
+Mira/Mouth Sour 2
+bounds:3263,3836,101,79
+Rumi/Mouth Sour 2
+bounds:3263,3836,101,79
+Lily/Mouth Spicy 1
+bounds:1103,3864,84,72
+Mira/Mouth Spicy 1
+bounds:1103,3864,84,72
+Rumi/Mouth Spicy 1
+bounds:1103,3864,84,72
+Zoey/Mouth Spicy 1
+bounds:1103,3864,84,72
+skin_default/Mouth Spicy 1
+bounds:1103,3864,84,72
+skin_default2/Mouth Spicy 1
+bounds:1103,3864,84,72
+skin_haloween1/Mouth Spicy 1
+bounds:1103,3864,84,72
+Lily/Mouth Spicy 2
+bounds:1904,3663,96,96
+Mira/Mouth Spicy 2
+bounds:1904,3663,96,96
+Rumi/Mouth Spicy 2
+bounds:1904,3663,96,96
+Zoey/Mouth Spicy 2
+bounds:1904,3663,96,96
+skin_default/Mouth Spicy 2
+bounds:1904,3663,96,96
+skin_default2/Mouth Spicy 2
+bounds:1904,3663,96,96
+skin_haloween1/Mouth Spicy 2
+bounds:1904,3663,96,96
+Lily/Mouth_eating
+bounds:868,3868,82,70
+Mira/Mouth_eating
+bounds:868,3868,82,70
+Rumi/Mouth_eating
+bounds:868,3868,82,70
+Zoey/Mouth_eating
+bounds:868,3868,82,70
+skin_default/Mouth_eating
+bounds:868,3868,82,70
+skin_default2/Mouth_eating
+bounds:868,3868,82,70
+skin_haloween1/Mouth_eating
+bounds:868,3868,82,70
+Lily/Shoulder L
+bounds:3696,3735,92,101
+rotate:90
+Lily/Shoulder R
+bounds:3799,3731,92,102
+rotate:90
+Lily/Sigh Hot
+bounds:2,3951,127,54
+Mira/Sigh Hot
+bounds:2,3951,127,54
+Rumi/Sigh Hot
+bounds:2,3951,127,54
+Zoey/Sigh Hot
+bounds:2,3951,127,54
+skin_default/Sigh Hot
+bounds:2,3951,127,54
+skin_haloween1/Sigh Hot
+bounds:2,3951,127,54
+Lily/blush
+bounds:436,3945,318,52
+Mira/blush
+bounds:436,3945,318,52
+Rumi/blush
+bounds:436,3945,318,52
+Zoey/blush
+bounds:436,3945,318,52
+skin_default/blush
+bounds:436,3945,318,52
+skin_default2/blush
+bounds:436,3945,318,52
+skin_haloween1/blush
+bounds:436,3945,318,52
+Lily/eye Heart L
+bounds:3903,3728,106,92
+Lily/eye Heart R
+bounds:3903,3728,106,92
+Mira/eye Heart L
+bounds:3903,3728,106,92
+Mira/eye Heart R
+bounds:3903,3728,106,92
+Rumi/eye Heart L
+bounds:3903,3728,106,92
+Rumi/eye Heart R
+bounds:3903,3728,106,92
+Zoey/eye Heart L
+bounds:3903,3728,106,92
+Zoey/eye Heart R
+bounds:3903,3728,106,92
+skin_default/eye Heart L
+bounds:3903,3728,106,92
+skin_default/eye Heart R
+bounds:3903,3728,106,92
+skin_haloween1/eye Heart L
+bounds:3903,3728,106,92
+skin_haloween1/eye Heart R
+bounds:3903,3728,106,92
+Lily/mouth_drink
+bounds:491,4047,28,33
+rotate:90
+Mira/mouth_drink
+bounds:491,4047,28,33
+rotate:90
+Rumi/mouth_drink
+bounds:491,4047,28,33
+rotate:90
+Zoey/mouth_drink
+bounds:491,4047,28,33
+rotate:90
+skin_default/mouth_drink
+bounds:491,4047,28,33
+rotate:90
+skin_default2/mouth_drink
+bounds:491,4047,28,33
+rotate:90
+skin_haloween1/mouth_drink
+bounds:491,4047,28,33
+rotate:90
+Lily/nose
+bounds:41,4054,37,21
+Mira/nose
+bounds:41,4054,37,21
+Rumi/nose
+bounds:41,4054,37,21
+Zoey/nose
+bounds:41,4054,37,21
+skin_default/nose
+bounds:41,4054,37,21
+skin_haloween1/nose
+bounds:41,4054,37,21
+Lily/saliva
+bounds:526,4047,28,43
+rotate:90
+Lily/sweat
+bounds:1759,3271,358,149
+Mira/sweat
+bounds:1759,3271,358,149
+Rumi/sweat
+bounds:1759,3271,358,149
+Zoey/sweat
+bounds:1759,3271,358,149
+skin_default/sweat
+bounds:1759,3271,358,149
+skin_haloween1/sweat
+bounds:1759,3271,358,149
+Mira/Back Hair
+bounds:3424,489,532,573
+rotate:90
+Mira/Body
+bounds:2143,2648,246,273
+rotate:90
+Mira/Eye Ahh
+bounds:78,3879,313,66
+Mira/Eye Brown Hungry
+bounds:1474,4043,270,32
+Mira/Eye Brown L
+bounds:571,4047,75,28
+Mira/Eye Brown R
+bounds:648,4047,75,28
+Mira/Eye Hungry
+bounds:756,3940,305,54
+Mira/Eye Sour L
+bounds:2479,3926,85,61
+Mira/Eye Sour L 2
+bounds:1434,3768,92,89
+Mira/Eye Sour_R 2
+bounds:1434,3768,92,89
+Mira/Eye Sour_R
+bounds:2566,3925,85,61
+Mira/Eye Spicy L
+bounds:371,3695,111,93
+Mira/Eye Spicy R
+bounds:484,3694,111,93
+Mira/Eyebrown Spicy L
+bounds:770,4045,76,30
+Mira/Eyebrown Spicy R
+bounds:848,4045,76,30
+Mira/Flashes L
+bounds:3026,3644,128,100
+Mira/Flashes R
+bounds:2490,3546,132,108
+Mira/Hand Down L
+bounds:1094,2936,195,181
+Mira/Hand Down R
+bounds:3696,3204,211,162
+Mira/Hand Up R
+bounds:999,3573,103,147
+rotate:90
+Mira/Iris Spicy L
+bounds:3521,4036,39,39
+Mira/Iris Spicy R
+bounds:3521,4036,39,39
+Rumi/Iris Spicy L
+bounds:3521,4036,39,39
+Rumi/Iris Spicy R
+bounds:3521,4036,39,39
+Mira/Leg L
+bounds:1622,3766,89,180
+rotate:90
+Mira/Leg R
+bounds:1804,3762,89,180
+rotate:90
+Mira/Shoulder L
+bounds:2,3699,92,102
+rotate:90
+Mira/Shoulder L Decor
+bounds:1151,3938,79,56
+Mira/Shoulder R
+bounds:106,3699,92,102
+rotate:90
+Mira/earring_L
+bounds:80,4052,23,50
+rotate:90
+Mira/earring_R
+bounds:132,4052,23,50
+rotate:90
+Mira/saliva
+bounds:725,4047,28,43
+rotate:90
+Rumi/saliva
+bounds:725,4047,28,43
+rotate:90
+Zoey/saliva
+bounds:725,4047,28,43
+rotate:90
+skin_default/saliva
+bounds:725,4047,28,43
+rotate:90
+skin_haloween1/saliva
+bounds:725,4047,28,43
+rotate:90
+RED EAR
+bounds:3928,3979,53,60
+rotate:90
+RED FACE
+bounds:2,1820,440,344
+Rumi/Body
+bounds:731,2441,280,275
+Rumi/Eye Ahh
+bounds:393,3877,313,66
+Rumi/Eye Brown Hungry
+bounds:1027,4044,241,31
+Rumi/Eye Brown L
+bounds:1270,4044,49,31
+Rumi/Eye Brown R
+bounds:1321,4044,49,31
+Rumi/Eye Hungry
+bounds:131,3947,303,51
+Rumi/Eye Sour L
+bounds:2653,3925,85,61
+Rumi/Eye Sour L 2
+bounds:1528,3768,92,89
+Rumi/Eye Sour_R 2
+bounds:1528,3768,92,89
+Rumi/Eye Sour_R
+bounds:2740,3925,85,61
+Rumi/Eye Spicy L
+bounds:701,3685,111,93
+Rumi/Eye Spicy R
+bounds:814,3682,111,93
+Rumi/Eyebrown Spicy L
+bounds:926,4045,49,30
+Rumi/Eyebrown Spicy R
+bounds:977,4045,48,30
+Rumi/Flashes L
+bounds:2901,3648,123,100
+Rumi/Flashes R
+bounds:2890,3538,131,108
+Rumi/Hair
+bounds:2065,1645,503,373
+Rumi/Hand Down L
+bounds:3108,3220,191,159
+Rumi/Hand Down R
+bounds:3301,3212,191,159
+Rumi/Hand Up L
+bounds:1257,3677,94,161
+rotate:90
+Rumi/Hand Up R
+bounds:210,3698,92,159
+rotate:90
+Rumi/Leg L
+bounds:1986,3761,89,180
+rotate:90
+Rumi/Leg R
+bounds:2265,3758,89,180
+rotate:90
+Rumi/Shoulder L
+bounds:2167,3659,97,102
+rotate:90
+Rumi/Shoulder R
+bounds:2271,3659,97,102
+rotate:90
+Rumi/Shoulder R Decor
+bounds:3245,3919,73,62
+Rumi/earring_L
+bounds:377,4000,45,62
+rotate:90
+Rumi/earring_R
+bounds:3138,4037,38,79
+rotate:90
+Zoey/Body
+bounds:779,2718,258,228
+Zoey/Custom
+bounds:3107,1544,638,391
+Zoey/Eye Ahh
+bounds:3421,3983,350,50
+Zoey/Eye Brown Hungry
+bounds:3219,4037,259,38
+Zoey/Eye Brown L
+bounds:2124,4041,69,34
+Zoey/Eye Brown R
+bounds:3005,4038,72,37
+Zoey/Eye Hungry
+bounds:441,3999,318,46
+Zoey/Eye Sour L
+bounds:2897,3922,85,61
+Zoey/Eye Sour L 2
+bounds:3954,3822,82,86
+rotate:90
+Zoey/Eye Sour_R 2
+bounds:3954,3822,82,86
+rotate:90
+Zoey/Eye Sour_R
+bounds:2984,3922,85,61
+Zoey/Eye Spicy L
+bounds:3252,3743,109,91
+Zoey/Eye Spicy R
+bounds:3363,3743,109,91
+Zoey/Eye_Yummy_L
+bounds:3464,3917,64,70
+rotate:90
+Zoey/Eye_Yummy_R
+bounds:2,3881,68,74
+rotate:90
+Zoey/Iris R
+bounds:2,3881,68,74
+rotate:90
+Zoey/Eyebrown Spicy L
+bounds:3908,4034,65,41
+Zoey/Eyebrown Spicy R
+bounds:3975,4034,65,41
+Zoey/Flashes L
+bounds:3448,3639,129,101
+Zoey/Flashes R
+bounds:142,3594,145,102
+Zoey/Hair
+bounds:2,1356,517,402
+Zoey/Hand Down L
+bounds:2999,3044,206,174
+Zoey/Hand Down R
+bounds:3207,3036,206,174
+Zoey/Hand Up L
+bounds:1659,3857,73,151
+rotate:90
+Zoey/Hand Up R
+bounds:2691,3846,76,151
+rotate:90
+Zoey/Iris L
+bounds:3536,3917,64,70
+rotate:90
+Zoey/Iris Spicy L
+bounds:2195,4040,35,35
+Zoey/Iris Spicy R
+bounds:2232,4040,35,35
+Zoey/Leg L
+bounds:2768,3403,133,236
+rotate:90
+Zoey/Leg R
+bounds:519,3312,142,240
+rotate:90
+Zoey/Mouth Sour 2
+bounds:1063,3939,86,55
+skin_default/Mouth Sour 2
+bounds:1063,3939,86,55
+skin_haloween1/Mouth Sour 2
+bounds:1063,3939,86,55
+Zoey/Shoulder L
+bounds:597,3694,93,102
+rotate:90
+Zoey/Shoulder R
+bounds:927,3682,93,102
+rotate:90
+Zoey/earring_L
+bounds:2,4011,41,56
+rotate:90
+Zoey/earring_R
+bounds:3079,4038,37,57
+rotate:90
+Zoey/glass
+bounds:2,3473,254,119
+bling
+bounds:3725,2816,199,248
+rotate:90
+cold_sign
+bounds:1610,3992,49,272
+rotate:90
+heart
+bounds:258,3469,143,120
+noel_1/Body
+bounds:2418,2627,274,259
+noel_1/Hand Down L
+bounds:890,3129,167,217
+rotate:90
+noel_1/Hand Down R
+bounds:1109,3119,167,217
+rotate:90
+noel_1/Hand Up L
+bounds:1929,3422,130,203
+rotate:90
+noel_1/Hand Up R
+bounds:2134,3420,130,203
+rotate:90
+noel_1/Hat
+bounds:2315,1145,692,428
+noel_1/Leg L
+bounds:2119,3267,151,179
+rotate:90
+noel_1/Leg R
+bounds:3909,3193,173,180
+rotate:90
+noel_1/Shoulder L
+bounds:3454,3517,120,123
+rotate:90
+noel_1/Shoulder R
+bounds:709,3456,120,123
+rotate:90
+noel_2/Body
+bounds:3182,1938,414,318
+noel_2/Hand Down L
+bounds:3023,2846,188,236
+rotate:90
+noel_2/Hand Down R
+bounds:2785,2855,187,236
+rotate:90
+noel_2/Hand Up L
+bounds:3579,3511,117,213
+rotate:90
+noel_2/Hand Up R
+bounds:1031,3445,125,211
+rotate:90
+noel_2/Hat
+bounds:2194,648,619,495
+noel_2/Leg L
+bounds:1148,3572,103,207
+rotate:90
+noel_2/Leg R
+bounds:1478,3564,103,207
+rotate:90
+noel_2/Shoulder L
+bounds:3961,3624,102,118
+rotate:90
+noel_2/Shoulder R
+bounds:289,3591,102,118
+rotate:90
+noel_2/Tail Hair L
+bounds:3389,3373,142,153
+rotate:90
+noel_2/Tail Hair R
+bounds:1607,3279,150,148
+skin_1/Body
+bounds:2666,2303,309,295
+skin_1/Collar
+bounds:2625,3409,133,141
+rotate:90
+skin_1/Hair
+bounds:1656,2356,503,290
+skin_1/Hand Down L
+bounds:2,3165,200,162
+skin_1/Hand Down R
+bounds:2901,3232,205,156
+skin_1/Hand Up L
+bounds:927,3777,88,153
+rotate:90
+skin_1/Hand Up R
+bounds:1750,3665,95,152
+rotate:90
+skin_1/Hat
+bounds:2815,584,607,501
+skin_1/Hat 2
+bounds:3544,3368,423,136
+skin_1/Leg L
+bounds:3714,3829,81,136
+rotate:90
+skin_1/Leg R
+bounds:569,3789,86,130
+rotate:90
+skin_1/Tail Hair L
+bounds:3006,3390,142,145
+rotate:90
+skin_1/Tail Hair R
+bounds:761,3303,145,148
+rotate:90
+skin_2/Body
+bounds:1336,2394,318,282
+skin_2/Hair
+bounds:2161,2335,503,290
+skin_2/Hand Down L
+bounds:2709,3247,190,154
+skin_2/Hand Down R
+bounds:1211,3288,190,147
+skin_2/Hand Up L
+bounds:2340,3547,107,148
+rotate:90
+skin_2/Hand Up R
+bounds:2624,3544,107,145
+rotate:90
+skin_2/Hat
+bounds:631,802,736,477
+skin_2/Leg L
+bounds:2949,3842,78,133
+rotate:90
+skin_2/Leg R
+bounds:701,3780,86,130
+rotate:90
+skin_2/Tail Hair L
+bounds:225,3325,142,145
+rotate:90
+skin_2/Tail Hair R
+bounds:911,3298,145,148
+rotate:90
+skin_default/Body
+bounds:488,2732,289,219
+skin_default/Custom
+bounds:1158,158,585,568
+skin_default/Eye Ahh
+bounds:1189,3864,317,69
+skin_haloween1/Eye Ahh
+bounds:1189,3864,317,69
+skin_default/Eye Brown Hungry
+bounds:1884,4042,238,33
+skin_haloween1/Eye Brown Hungry
+bounds:1884,4042,238,33
+skin_default/Eye Brown L
+bounds:1372,4044,49,31
+skin_haloween1/Eye Brown L
+bounds:1372,4044,49,31
+skin_default/Eye Brown R
+bounds:1423,4044,49,31
+skin_haloween1/Eye Brown R
+bounds:1423,4044,49,31
+skin_default/Eye Hungry
+bounds:2584,3988,311,49
+skin_haloween1/Eye Hungry
+bounds:2584,3988,311,49
+skin_default/Eye Sour L
+bounds:3071,3922,85,61
+skin_haloween1/Eye Sour L
+bounds:3071,3922,85,61
+skin_default/Eye Sour L 2
+bounds:2,3795,82,86
+rotate:90
+skin_default/Eye Sour_R 2
+bounds:2,3795,82,86
+rotate:90
+skin_haloween1/Eye Sour L 2
+bounds:2,3795,82,86
+rotate:90
+skin_haloween1/Eye Sour_R 2
+bounds:2,3795,82,86
+rotate:90
+skin_default/Eye Sour_R
+bounds:3158,3920,85,61
+skin_haloween1/Eye Sour_R
+bounds:3158,3920,85,61
+skin_default/Eye Spicy L
+bounds:1031,3678,111,93
+skin_haloween1/Eye Spicy L
+bounds:1031,3678,111,93
+skin_default/Eye Spicy R
+bounds:1144,3678,111,93
+skin_haloween1/Eye Spicy R
+bounds:1144,3678,111,93
+skin_default/Eye_Yummy_L
+bounds:2827,3924,62,68
+rotate:90
+skin_haloween1/Eye_Yummy_L
+bounds:2827,3924,62,68
+rotate:90
+skin_default/Eye_Yummy_R
+bounds:3680,3915,66,72
+rotate:90
+skin_haloween1/Eye_Yummy_R
+bounds:3680,3915,66,72
+rotate:90
+skin_default/Eyebrown Spicy L
+bounds:4042,4032,49,43
+skin_haloween1/Eyebrown Spicy L
+bounds:4042,4032,49,43
+skin_default/Eyebrown Spicy R
+bounds:60,4007,49,43
+skin_haloween1/Eyebrown Spicy R
+bounds:60,4007,49,43
+skin_default/Hair
+bounds:2977,2290,503,290
+skin_default/Hand Down L
+bounds:204,3159,198,163
+skin_default/Hand Down R
+bounds:3494,3205,200,161
+skin_default/Hand Up L
+bounds:90,3793,84,149
+rotate:90
+skin_default/Hand Up R
+bounds:3156,3641,100,145
+rotate:90
+skin_default/Highligth L
+bounds:111,4007,43,48
+rotate:90
+skin_default/Highligth R
+bounds:111,4007,43,48
+rotate:90
+skin_haloween1/Highligth L
+bounds:111,4007,43,48
+rotate:90
+skin_haloween1/Highligth R
+bounds:111,4007,43,48
+rotate:90
+skin_default/Iris L
+bounds:3608,3917,64,70
+rotate:90
+skin_haloween1/Iris L
+bounds:3608,3917,64,70
+rotate:90
+skin_default/Iris R
+bounds:708,3870,68,74
+rotate:90
+skin_haloween1/Iris R
+bounds:708,3870,68,74
+rotate:90
+skin_default/Iris Spicy L
+bounds:2269,4040,35,35
+skin_haloween1/Iris Spicy L
+bounds:2269,4040,35,35
+skin_default/Iris Spicy R
+bounds:2306,4040,35,35
+skin_haloween1/Iris Spicy R
+bounds:2306,4040,35,35
+skin_default/Leg L
+bounds:1403,3286,147,202
+rotate:90
+skin_default/Leg R
+bounds:2300,3257,152,211
+rotate:90
+skin_default/Shoulder L
+bounds:2168,3759,90,95
+rotate:90
+skin_default/Shoulder R
+bounds:2817,3750,90,91
+rotate:90
+skin_default/Tail Hair L
+bounds:372,3324,142,145
+rotate:90
+skin_haloween1/Tail Hair L
+bounds:372,3324,142,145
+rotate:90
+skin_default/Tail Hair R
+bounds:1061,3298,145,148
+rotate:90
+skin_haloween1/Tail Hair R
+bounds:1061,3298,145,148
+rotate:90
+skin_default2/Body
+bounds:452,2463,277,267
+skin_default2/Custom
+bounds:521,1350,530,408
+skin_default2/Flashes L
+bounds:1687,3558,119,105
+skin_default/Flashes L
+bounds:1687,3558,119,105
+skin_haloween1/Flashes L
+bounds:1687,3558,119,105
+skin_default2/Flashes R
+bounds:3023,3534,129,108
+skin_default/Flashes R
+bounds:3023,3534,129,108
+skin_haloween1/Flashes R
+bounds:3023,3534,129,108
+skin_default2/Hair
+bounds:2453,2888,330,181
+skin_default2/Hair Back
+bounds:2570,1575,535,395
+skin_default2/Hand Down L
+bounds:3838,3017,230,174
+skin_default2/Hand Down R
+bounds:2,2983,226,174
+skin_default2/Hand Up L
+bounds:1508,3859,71,149
+rotate:90
+skin_default2/Hand Up R
+bounds:1928,3853,74,149
+rotate:90
+skin_default2/Leg L
+bounds:3366,3836,79,174
+rotate:90
+skin_default2/Leg R
+bounds:393,3790,85,174
+rotate:90
+skin_default2/Shoulder L
+bounds:3579,3636,110,102
+skin_default2/Shoulder R
+bounds:409,3590,110,102
+skin_default2/ahoge
+bounds:2079,3852,75,98
+rotate:90
+skin_default2/bangs_hair_L
+bounds:1446,2678,233,448
+rotate:90
+skin_default2/bangs_hair_R
+bounds:3087,2582,246,452
+rotate:90
+skin_default2/hairL
+bounds:834,3450,121,195
+rotate:90
+skin_default2/hair_R
+bounds:1244,3437,127,192
+rotate:90
+skin_default2/hair_clip_L
+bounds:3084,3840,88,78
+skin_default2/hair_clip_R
+bounds:3174,3839,87,78
+skin_default_2/Body
+bounds:2,2759,204,230
+rotate:90
+skin_default_2/Custom
+bounds:1585,1220,728,423
+skin_default_2/Eye Ahh
+bounds:1884,3990,348,48
+skin_default_2/Eye Brown Hungry
+bounds:2487,4039,257,36
+skin_default_2/Eye Brown L
+bounds:1746,4043,67,32
+skin_default_2/Eye Brown R
+bounds:2343,4040,70,35
+skin_default_2/Eye Hungry
+bounds:1299,3994,309,47
+skin_default_2/Eye Sour L
+bounds:1965,3929,83,59
+skin_default_2/Eye Sour L 2
+bounds:3542,3835,80,84
+rotate:90
+skin_default_2/Eye Sour_R 2
+bounds:3542,3835,80,84
+rotate:90
+skin_default_2/Eye Sour_R
+bounds:2050,3929,83,59
+skin_default_2/Eye Spicy L
+bounds:3474,3742,109,91
+skin_default_2/Eye Spicy R
+bounds:3585,3740,109,91
+skin_default_2/Eyebrown Spicy L
+bounds:3562,4035,64,40
+skin_default_2/Eyebrown Spicy R
+bounds:3628,4035,63,40
+skin_default_2/Flashes L
+bounds:2498,3656,127,98
+skin_default_2/Flashes R
+bounds:2627,3653,143,99
+skin_default_2/Hair
+bounds:1737,2913,382,177
+skin_default_2/Hand Down L
+bounds:1542,3105,204,172
+skin_default_2/Hand Down R
+bounds:1748,3097,204,172
+skin_default_2/Hand Up L
+bounds:952,3867,70,149
+rotate:90
+skin_default_2/Leg L
+bounds:1438,3435,127,242
+rotate:90
+skin_default_2/Leg R
+bounds:1682,3429,127,245
+rotate:90
+skin_default_2/Mouth Sour 1
+bounds:3853,3980,73,52
+skin_default_2/ahoge
+bounds:2179,3851,75,98
+rotate:90
+skin_default_2/bangs_hair_L2
+bounds:1039,2707,219,405
+rotate:90
+skin_default_2/bangs_hair_R2
+bounds:2694,2600,244,391
+rotate:90
+skin_default_2/glass
+bounds:3794,3506,267,116
+skin_default_3/Body
+bounds:1269,2045,347,355
+rotate:90
+skin_default_3/Custom
+bounds:1053,1281,530,408
+skin_default_3/Eye Ahh
+bounds:2234,3989,348,48
+skin_default_3/Eye Brown Hungry
+bounds:2746,4039,257,36
+skin_default_3/Eye Brown L
+bounds:1815,4043,67,32
+skin_default_3/Eye Brown R
+bounds:2415,4040,70,35
+skin_default_3/Eye Hungry
+bounds:979,3996,318,46
+skin_default_3/Eye Sour L
+bounds:2135,3929,83,59
+skin_default_3/Eye Sour L 2
+bounds:3628,3833,80,84
+rotate:90
+skin_default_3/Eye Sour_R 2
+bounds:3628,3833,80,84
+rotate:90
+skin_default_3/Eye Sour_R
+bounds:2220,3928,83,59
+skin_default_3/Eyebrown Spicy L
+bounds:3693,4035,64,40
+skin_default_3/Eyebrown Spicy R
+bounds:3759,4035,63,40
+skin_default_3/Flashes L
+bounds:2772,3649,127,99
+skin_default_3/Flashes R
+bounds:3303,3641,143,100
+skin_default_3/Hair
+bounds:2121,2896,330,179
+skin_default_3/Hand Down L
+bounds:1291,2928,221,183
+skin_default_3/Hand Down R
+bounds:1514,2920,221,183
+skin_default_3/Hand Up L
+bounds:2002,3663,96,163
+rotate:90
+skin_default_3/Hand Up R
+bounds:3799,3625,101,160
+rotate:90
+skin_default_3/Hat_B
+bounds:2,349,561,535
+skin_default_3/Leg L
+bounds:2161,3552,105,177
+rotate:90
+skin_default_3/Leg R
+bounds:3273,3523,114,179
+rotate:90
+skin_default_3/ahoge
+bounds:2279,3849,75,98
+rotate:90
+skin_default_3/bangs_hair_L2
+bounds:2,2483,264,448
+rotate:90
+skin_default_3/bangs_hair_R2
+bounds:469,2129,310,453
+rotate:90
+skin_default_3/glass
+bounds:2628,1972,552,316
+skin_haloween1/Body
+bounds:234,2749,205,252
+rotate:90
+skin_haloween1/Custom
+bounds:1093,1691,528,352
+skin_haloween1/Hair
+bounds:3482,2258,503,290
+skin_haloween1/Hand Down L
+bounds:1328,3113,212,171
+skin_haloween1/Hand Down R
+bounds:1954,3092,211,173
+skin_haloween1/Hand Up L
+bounds:2379,3849,75,154
+rotate:90
+skin_haloween1/Hand Up R
+bounds:2535,3848,75,154
+rotate:90
+skin_haloween1/Hat
+bounds:2086,2020,540,313
+skin_haloween1/Leg L
+bounds:778,3578,102,219
+rotate:90
+skin_haloween1/Leg R
+bounds:1808,3558,103,220
+rotate:90
+skin_haloween1/Shoulder L
+bounds:3691,3630,106,103
+skin_haloween1/Shoulder R
+bounds:670,3580,106,103
+thanksgiving/Body
+bounds:924,2106,343,320
+thanksgiving/Custom
+bounds:3527,1023,560,519
+thanksgiving/Hand Down L
+bounds:684,2953,179,203
+rotate:90
+thanksgiving/Hand Down R
+bounds:889,2948,179,203
+rotate:90
+thanksgiving/Hand Up L
+bounds:403,3468,119,151
+rotate:90
+thanksgiving/Hand Up R
+bounds:556,3459,119,151
+rotate:90
+thanksgiving/Leg L
+bounds:2910,3750,90,118
+rotate:90
+thanksgiving/Leg R
+bounds:1420,3672,94,116
+rotate:90
+thanksgiving/Shoulder L
+bounds:2339,3415,141,130
+thanksgiving/Shoulder R
+bounds:2482,3411,141,131
+thanksgiving/tail
+bounds:444,1760,647,344
+tray
+bounds:1369,728,823,490
+
+Jelly_Character_Jelly_Character_2.webp
+size:3121,1892
+filter:Linear,Linear
+Lily/Back Hair
+bounds:2,2,878,827
+Mira/Hair
+bounds:882,196,645,633
+Rumi/Custom
+bounds:1529,234,595,637
+rotate:90
+table
+bounds:2,831,3117,1059

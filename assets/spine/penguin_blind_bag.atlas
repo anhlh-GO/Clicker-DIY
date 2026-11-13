@@ -1,0 +1,30 @@
+penguin_blind_bag_penguin_blind_bag.webp
+size:1666,531
+filter:Linear,Linear
+Ellipse 1 copy
+bounds:1491,258,71,71
+body_scan
+bounds:2,2,527,659
+rotate:90
+body_thank you
+bounds:663,12,517,633
+rotate:90
+eye_blink
+bounds:1624,36,222,28
+rotate:90
+eye_open
+bounds:1298,5,222,52
+hand
+bounds:1499,118,123,138
+hand_L
+bounds:1491,331,198,167
+rotate:90
+hand_R
+bounds:1298,59,199,190
+mouth_closde
+bounds:1564,260,100,69
+mouth_open
+bounds:1522,18,98,91
+rotate:90
+scan_machine
+bounds:1298,251,191,278

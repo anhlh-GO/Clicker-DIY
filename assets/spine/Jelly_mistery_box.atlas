@@ -1,0 +1,15 @@
+Jelly_mistery_box_Jelly_mistery_box.webp
+size:1179,1179
+filter:Linear,Linear
+gift
+bounds:2,119,578,488
+rotate:90
+gift_on
+bounds:798,599,578,379
+rotate:90
+gift_open_box_glow
+bounds:2,699,794,478
+glow
+bounds:2,73,44,44
+lid
+bounds:492,175,605,422
