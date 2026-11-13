@@ -341,7 +341,7 @@ class StoreScreen extends E.ScreenBase {
   onShow() {
     this.confirm.enableState(false);
     this.animButtons(true, 0.35);
-    if (!user().IsDoneTutorialBlindBag) { const c = G.goOf(this.ref('_closeButton')); if (c) c.setActive(false); }
+    { const c = G.goOf(this.ref('_closeButton')); if (c) c.setActive(true); } // always offer Home
   }
   setCounter(n) { const t = E.txtOf(this.ref('_itemCountText')); if (t) t.text = n + '/5'; }
   setPrice(p) { const t = E.txtOf(this.ref('_priceText')); if (t) t.text = String(p); }
@@ -361,7 +361,7 @@ S['Blindbag.TutorialBlindBag'] = TutorialBlindBag;
 class BackHomePopup extends E.PopupBase {
   panel() { return G.goOf(this.ref('_tfPanel')); }
   onInit() {
-    G.onClick(this.ref('_btnConfirm'), () => { G.click(); this.hide(); G.goto('Home'); });
+    G.onClick(this.ref('_btnConfirm'), () => { G.click(); this.hide(); if (G.session) G.session._quitToHome = true; G.goto('Home'); });
     G.onClick(this.ref('_btnCancel'), () => { G.click(); this.hide(); });
     G.onClick(this.ref('_btnCancel2'), () => { G.click(); this.hide(); });
   }

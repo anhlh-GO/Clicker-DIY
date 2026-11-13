@@ -196,7 +196,7 @@ class BlindbagCollectionController extends E.Behaviour {
       this.plate.go.setActive(false);
       G.goOf(this.ref('_openBagObject')).setActive(false);
       G.goOf(this.ref('_collectionObject')).setActive(true);
-      const hb = G.goOf(this.ref('_homeButtonObject')); if (hb) hb.setActive(false);
+      const hb = G.goOf(this.ref('_homeButtonObject')); if (hb) hb.setActive(true);
       this.drag.initalizeBlindbag(this.cacheDataItems);
       this.rayOn = true;
       if (this.drag.itemLeft === 0) { this.rayOn = false; this.onCollectionComplete(); }
@@ -356,7 +356,7 @@ class BlindbagGameScreen extends E.ScreenBase {
     const ch = this.ref('_commentHandler'); if (ch) ch.IsEnableToSpawnComment = true;
     const em = this.ref('_fxEmoji'); if (em) E.psPlay(em);
     const lp = this.ref('_livestreamPanel'); if (lp && lp.onShowPanel) lp.onShowPanel();
-    if (!user().IsDoneTutorialBlindBag) { const c = G.goOf(this.ref('_closeButton')); if (c) c.setActive(false); }
+    { const c = G.goOf(this.ref('_closeButton')); if (c) c.setActive(true); } // always offer Home
   }
   onHide() { const ch = this.ref('_commentHandler'); if (ch) ch.IsEnableToSpawnComment = false; const lp = this.ref('_livestreamPanel'); if (lp && lp.onHidePanel) lp.onHidePanel(); }
   showContentUnbox() { const g = G.goOf(this.ref('_contentUnbox')); if (g) g.setActive(true); }

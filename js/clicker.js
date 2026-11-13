@@ -765,7 +765,7 @@ class IngameClickerScreen extends E.ScreenBase {
     this.color = this.ref('_popupSelectColor'); if (this.color && this.color.init) this.color.init();
   }
   onShow() {
-    vis(this.ref('_btnHome'), !user().IsFirstGame);
+    vis(this.ref('_btnHome'), true);
     const p = this.panels._selectBaseKeycapPanel; if (p) p.showPanel();
     this.showBtnNext(false);
   }
@@ -1150,7 +1150,7 @@ class ScreenClickerLivestream extends E.ScreenBase {
     G.onClick(this.ref('_btnHome'), () => { G.click(); if (E.ui) E.ui.showPopup('Clicker.BackHomePopup'); });
     this.procBG = this.go.find('ProcessBG');
   }
-  onShow() { vis(this.ref('_btnHome'), !user().IsFirstGame); this.startLive(); }
+  onShow() { vis(this.ref('_btnHome'), true); this.startLive(); }
   startLive() {
     G.click(); vib(30);
     const fx = this.ref('_emojiFx'); if (fx) E.psPlay(fx);

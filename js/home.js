@@ -49,7 +49,7 @@ E.onSceneLoaded = (level) => {
   if (prevOSL) try { prevOSL(level); } catch (e) { console.error(e); }
   const s = sess();
   if (level === 'level1') {
-    if (!s.BackFromGameMode && s.autoBackMode !== false) { const m = { level2: 1, level4: 2, level6: 3 }[prevLevel]; if (m) s.BackFromGameMode = m; }
+    if (s._quitToHome) { s._quitToHome = false; s.BackFromGameMode = 0; } else if (!s.BackFromGameMode && s.autoBackMode !== false) { const m = { level2: 1, level4: 2, level6: 3 }[prevLevel]; if (m) s.BackFromGameMode = m; }
     s.CanShowSpecial = true;
     if (s.CharacterContainer) { E.killOwner(mvKey(s.CharacterContainer)); s.CharacterContainer.y = -1.5; }
     ensureMaster();

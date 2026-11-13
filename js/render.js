@@ -234,9 +234,12 @@ const nineSlice = (src, s, x, y, w, h, bs, fillCenter = true) => {
   for (let i = 0; i < 3; i++) for (let j = 0; j < 3; j++) {
     if (i === 1 && j === 1 && !fillCenter) continue;
     const dw = xs[i + 1] - xs[i], dh = ys[j + 1] - ys[j];
-    const tsw = sxs[i + 1] - sxs[i], tsh = sys[j] - sys[j + 1];
-    if (dw <= 0.01 || dh <= 0.01 || tsw <= 0 || tsh <= 0) continue;
-    blit(img, sxs[i], sys[j + 1], tsw, tsh, xs[i], ys[j], dw + 0.4, dh + 0.4);
+    let tsx = sxs[i], tsw = sxs[i + 1] - sxs[i], tsy = sys[j + 1], tsh = sys[j] - sys[j + 1];
+    if (dw <= 0.01 || dh <= 0.01) continue;
+    // borders that cover the whole sprite leave a 0-px centre: stretch a 1-px strip at the seam (as Unity does)
+    if (tsw < 1) { tsx = Math.min(Math.max(sx, tsx - 0.5), sx + sw - 1); tsw = 1; }
+    if (tsh < 1) { tsy = Math.min(Math.max(sy, tsy - 0.5), sy + sh - 1); tsh = 1; }
+    blit(img, tsx, tsy, tsw, tsh, xs[i], ys[j], dw + 0.4, dh + 0.4);
   }
 };
 E.nineSlice = nineSlice;
