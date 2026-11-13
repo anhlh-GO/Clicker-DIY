@@ -29,10 +29,18 @@ jobs:
           W=android/app/src/main/assets/www
           rm -rf "$W" && mkdir -p "$W"
           cp -r index.html icon.png js data assets vendor "$W/"
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: 'platforms;android-34 build-tools;34.0.0 platform-tools'
       - name: Build APK
         env:
           VERSION_CODE: ${{ github.run_number }}
-        run: gradle -p android assembleRelease --no-daemon
+        run: |
+          set -o pipefail
+          if ! gradle -p android assembleRelease --no-daemon --stacktrace 2>&1 | tee build.log; then
+            grep -E "error|Error|FAILURE|What went wrong|Could not|>" build.log | tail -25 | while IFS= read -r l; do echo "::error::$l"; done
+            exit 1
+          fi
       - name: Rename
         run: cp android/app/build/outputs/apk/release/app-release.apk Clicker-DIY.apk && ls -la Clicker-DIY.apk
       - uses: actions/upload-artifact@v4
