@@ -1385,13 +1385,10 @@ const drawSRTo = (ctx, base, c) => {
 };
 const drawSpineTo = (ctx, base, c) => {
   if (!c.ready || !window.spine || !c.skeleton) return;
-  if (!viewSpine) viewSpine = new spine.SkeletonRenderer(ctx);
-  viewSpine.ctx = ctx; viewSpine.triangleRendering = !!(c.data_ && c.data_._mesh);
   const sc = (c.meta && c.meta.scale) || 0.01;
   const m = M.mul(M.mul(base, c.go.worldMatrix()), [sc * (c.fx ? -1 : 1), 0, 0, sc * (c.fy ? -1 : 1), 0, 0]);
-  ctx.setTransform(m[0], m[1], m[2], m[3], m[4], m[5]);
-  c.skeleton.color.a = c.color ? c.color[3] : 1;
-  ctx.save(); viewSpine.draw(c.skeleton); ctx.restore(); ctx.globalAlpha = 1;
+  E.spineTick(c);
+  E.spineBlit(ctx, m, c, c.color ? c.color[3] : 1);
 };
 const renderWorldView = (canvas, roots, cx, cy, halfH) => {
   const ctx = canvas.getContext('2d'); const W = canvas.width, Hh = canvas.height;

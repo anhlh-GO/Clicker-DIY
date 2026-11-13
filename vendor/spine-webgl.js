@@ -23,7 +23,7 @@ var spine = (() => {
     return value;
   };
 
-  // spine-canvas/src/index.ts
+  // spine-webgl/src/index.ts
   var src_exports = {};
   __export(src_exports, {
     AlphaTimeline: () => AlphaTimeline,
@@ -42,9 +42,11 @@ var spine = (() => {
     BoneData: () => BoneData,
     BoundingBoxAttachment: () => BoundingBoxAttachment,
     CURRENT: () => CURRENT,
-    CanvasTexture: () => CanvasTexture,
+    CameraController: () => CameraController,
     ClippingAttachment: () => ClippingAttachment,
     Color: () => Color,
+    Color2Attribute: () => Color2Attribute,
+    ColorAttribute: () => ColorAttribute,
     ConstraintData: () => ConstraintData,
     CurveTimeline: () => CurveTimeline,
     CurveTimeline1: () => CurveTimeline1,
@@ -60,6 +62,7 @@ var spine = (() => {
     EventType: () => EventType,
     FIRST: () => FIRST,
     FakeTexture: () => FakeTexture,
+    GLTexture: () => GLTexture,
     HOLD_FIRST: () => HOLD_FIRST,
     HOLD_MIX: () => HOLD_MIX,
     HOLD_SUBSEQUENT: () => HOLD_SUBSEQUENT,
@@ -68,12 +71,34 @@ var spine = (() => {
     IkConstraintTimeline: () => IkConstraintTimeline,
     Inherit: () => Inherit,
     InheritTimeline: () => InheritTimeline,
+    Input: () => Input,
     IntSet: () => IntSet,
     Interpolation: () => Interpolation,
+    LoadingScreen: () => LoadingScreen,
+    M00: () => M00,
+    M01: () => M01,
+    M02: () => M02,
+    M03: () => M03,
+    M10: () => M10,
+    M11: () => M11,
+    M12: () => M12,
+    M13: () => M13,
+    M20: () => M20,
+    M21: () => M21,
+    M22: () => M22,
+    M23: () => M23,
+    M30: () => M30,
+    M31: () => M31,
+    M32: () => M32,
+    M33: () => M33,
+    ManagedWebGLRenderingContext: () => ManagedWebGLRenderingContext,
     MathUtils: () => MathUtils,
+    Matrix4: () => Matrix42,
+    Mesh: () => Mesh,
     MeshAttachment: () => MeshAttachment,
     MixBlend: () => MixBlend,
     MixDirection: () => MixDirection,
+    OrthoCamera: () => OrthoCamera,
     PathAttachment: () => PathAttachment,
     PathConstraint: () => PathConstraint,
     PathConstraintData: () => PathConstraintData,
@@ -91,7 +116,10 @@ var spine = (() => {
     PhysicsConstraintTimeline: () => PhysicsConstraintTimeline,
     PhysicsConstraintWindTimeline: () => PhysicsConstraintWindTimeline,
     PointAttachment: () => PointAttachment,
+    PolygonBatcher: () => PolygonBatcher,
     Pool: () => Pool,
+    Position2Attribute: () => Position2Attribute,
+    Position3Attribute: () => Position3Attribute,
     PositionMode: () => PositionMode,
     Pow: () => Pow,
     PowOut: () => PowOut,
@@ -100,6 +128,7 @@ var spine = (() => {
     RGBATimeline: () => RGBATimeline,
     RGBTimeline: () => RGBTimeline,
     RegionAttachment: () => RegionAttachment,
+    ResizeMode: () => ResizeMode,
     RotateMode: () => RotateMode,
     RotateTimeline: () => RotateTimeline,
     SETUP: () => SETUP,
@@ -107,7 +136,11 @@ var spine = (() => {
     ScaleTimeline: () => ScaleTimeline,
     ScaleXTimeline: () => ScaleXTimeline,
     ScaleYTimeline: () => ScaleYTimeline,
+    SceneRenderer: () => SceneRenderer,
     SequenceTimeline: () => SequenceTimeline,
+    Shader: () => Shader,
+    ShapeRenderer: () => ShapeRenderer,
+    ShapeType: () => ShapeType,
     ShearTimeline: () => ShearTimeline,
     ShearXTimeline: () => ShearXTimeline,
     ShearYTimeline: () => ShearYTimeline,
@@ -116,6 +149,7 @@ var spine = (() => {
     SkeletonBounds: () => SkeletonBounds,
     SkeletonClipping: () => SkeletonClipping,
     SkeletonData: () => SkeletonData,
+    SkeletonDebugRenderer: () => SkeletonDebugRenderer,
     SkeletonJson: () => SkeletonJson,
     SkeletonRenderer: () => SkeletonRenderer,
     Skin: () => Skin,
@@ -123,7 +157,9 @@ var spine = (() => {
     Slot: () => Slot,
     SlotData: () => SlotData,
     SpacingMode: () => SpacingMode,
+    SpineCanvas: () => SpineCanvas,
     StringSet: () => StringSet,
+    TexCoordAttribute: () => TexCoordAttribute,
     Texture: () => Texture,
     TextureAtlas: () => TextureAtlas,
     TextureAtlasPage: () => TextureAtlasPage,
@@ -133,6 +169,7 @@ var spine = (() => {
     TextureWrap: () => TextureWrap,
     TimeKeeper: () => TimeKeeper,
     Timeline: () => Timeline,
+    Touch: () => Touch,
     TrackEntry: () => TrackEntry,
     TransformConstraint: () => TransformConstraint,
     TransformConstraintData: () => TransformConstraintData,
@@ -143,7 +180,10 @@ var spine = (() => {
     Triangulator: () => Triangulator,
     Utils: () => Utils,
     Vector2: () => Vector2,
+    Vector3: () => Vector3,
     VertexAttachment: () => VertexAttachment,
+    VertexAttribute: () => VertexAttribute,
+    VertexAttributeType: () => VertexAttributeType,
     WindowedMean: () => WindowedMean
   });
 
@@ -571,7 +611,7 @@ var spine = (() => {
      *           `stride` / 2.
      * @param offset The `worldVertices` index to begin writing values.
      * @param stride The number of `worldVertices` entries between the value pairs written. */
-    computeWorldVertices(slot, start, count, worldVertices2, offset, stride) {
+    computeWorldVertices(slot, start, count, worldVertices, offset, stride) {
       count = offset + (count >> 1) * stride;
       let skeleton = slot.bone.skeleton;
       let deformArray = slot.deform;
@@ -586,8 +626,8 @@ var spine = (() => {
         let a = bone.a, b = bone.b, c = bone.c, d = bone.d;
         for (let v2 = start, w = offset; w < count; v2 += 2, w += stride) {
           let vx = vertices[v2], vy = vertices[v2 + 1];
-          worldVertices2[w] = vx * a + vy * b + x;
-          worldVertices2[w + 1] = vx * c + vy * d + y;
+          worldVertices[w] = vx * a + vy * b + x;
+          worldVertices[w + 1] = vx * c + vy * d + y;
         }
         return;
       }
@@ -609,8 +649,8 @@ var spine = (() => {
             wx += (vx * bone.a + vy * bone.b + bone.worldX) * weight;
             wy += (vx * bone.c + vy * bone.d + bone.worldY) * weight;
           }
-          worldVertices2[w] = wx;
-          worldVertices2[w + 1] = wy;
+          worldVertices[w] = wx;
+          worldVertices[w + 1] = wy;
         }
       } else {
         let deform = deformArray;
@@ -624,8 +664,8 @@ var spine = (() => {
             wx += (vx * bone.a + vy * bone.b + bone.worldX) * weight;
             wy += (vx * bone.c + vy * bone.d + bone.worldY) * weight;
           }
-          worldVertices2[w] = wx;
-          worldVertices2[w + 1] = wy;
+          worldVertices[w] = wx;
+          worldVertices[w + 1] = wy;
         }
       }
     }
@@ -4695,15 +4735,15 @@ var spine = (() => {
       return this._image;
     }
   };
-  var TextureFilter = /* @__PURE__ */ ((TextureFilter3) => {
-    TextureFilter3[TextureFilter3["Nearest"] = 9728] = "Nearest";
-    TextureFilter3[TextureFilter3["Linear"] = 9729] = "Linear";
-    TextureFilter3[TextureFilter3["MipMap"] = 9987] = "MipMap";
-    TextureFilter3[TextureFilter3["MipMapNearestNearest"] = 9984] = "MipMapNearestNearest";
-    TextureFilter3[TextureFilter3["MipMapLinearNearest"] = 9985] = "MipMapLinearNearest";
-    TextureFilter3[TextureFilter3["MipMapNearestLinear"] = 9986] = "MipMapNearestLinear";
-    TextureFilter3[TextureFilter3["MipMapLinearLinear"] = 9987] = "MipMapLinearLinear";
-    return TextureFilter3;
+  var TextureFilter = /* @__PURE__ */ ((TextureFilter2) => {
+    TextureFilter2[TextureFilter2["Nearest"] = 9728] = "Nearest";
+    TextureFilter2[TextureFilter2["Linear"] = 9729] = "Linear";
+    TextureFilter2[TextureFilter2["MipMap"] = 9987] = "MipMap";
+    TextureFilter2[TextureFilter2["MipMapNearestNearest"] = 9984] = "MipMapNearestNearest";
+    TextureFilter2[TextureFilter2["MipMapLinearNearest"] = 9985] = "MipMapLinearNearest";
+    TextureFilter2[TextureFilter2["MipMapNearestLinear"] = 9986] = "MipMapNearestLinear";
+    TextureFilter2[TextureFilter2["MipMapLinearLinear"] = 9987] = "MipMapLinearLinear";
+    return TextureFilter2;
   })(TextureFilter || {});
   var TextureWrap = /* @__PURE__ */ ((TextureWrap3) => {
     TextureWrap3[TextureWrap3["MirroredRepeat"] = 33648] = "MirroredRepeat";
@@ -5103,10 +5143,10 @@ var spine = (() => {
       copy.height = this.height;
       return copy;
     }
-    computeWorldVertices(slot, start, count, worldVertices2, offset, stride) {
+    computeWorldVertices(slot, start, count, worldVertices, offset, stride) {
       if (this.sequence != null)
         this.sequence.apply(slot, this);
-      super.computeWorldVertices(slot, start, count, worldVertices2, offset, stride);
+      super.computeWorldVertices(slot, start, count, worldVertices, offset, stride);
     }
     /** Returns a new mesh with the {@link #parentMesh} set to this mesh's parent mesh, if any, else to this mesh. **/
     newLinkedMesh() {
@@ -5284,7 +5324,7 @@ var spine = (() => {
      * @param worldVertices The output world vertices. Must have a length >= <code>offset</code> + 8.
      * @param offset The <code>worldVertices</code> index to begin writing values.
      * @param stride The number of <code>worldVertices</code> entries between the value pairs written. */
-    computeWorldVertices(slot, worldVertices2, offset, stride) {
+    computeWorldVertices(slot, worldVertices, offset, stride) {
       if (this.sequence != null)
         this.sequence.apply(slot, this);
       let bone = slot.bone;
@@ -5294,23 +5334,23 @@ var spine = (() => {
       let offsetX = 0, offsetY = 0;
       offsetX = vertexOffset[0];
       offsetY = vertexOffset[1];
-      worldVertices2[offset] = offsetX * a + offsetY * b + x;
-      worldVertices2[offset + 1] = offsetX * c + offsetY * d + y;
+      worldVertices[offset] = offsetX * a + offsetY * b + x;
+      worldVertices[offset + 1] = offsetX * c + offsetY * d + y;
       offset += stride;
       offsetX = vertexOffset[2];
       offsetY = vertexOffset[3];
-      worldVertices2[offset] = offsetX * a + offsetY * b + x;
-      worldVertices2[offset + 1] = offsetX * c + offsetY * d + y;
+      worldVertices[offset] = offsetX * a + offsetY * b + x;
+      worldVertices[offset + 1] = offsetX * c + offsetY * d + y;
       offset += stride;
       offsetX = vertexOffset[4];
       offsetY = vertexOffset[5];
-      worldVertices2[offset] = offsetX * a + offsetY * b + x;
-      worldVertices2[offset + 1] = offsetX * c + offsetY * d + y;
+      worldVertices[offset] = offsetX * a + offsetY * b + x;
+      worldVertices[offset + 1] = offsetX * c + offsetY * d + y;
       offset += stride;
       offsetX = vertexOffset[6];
       offsetY = vertexOffset[7];
-      worldVertices2[offset] = offsetX * a + offsetY * b + x;
-      worldVertices2[offset + 1] = offsetX * c + offsetY * d + y;
+      worldVertices[offset] = offsetX * a + offsetY * b + x;
+      worldVertices[offset + 1] = offsetX * c + offsetY * d + y;
     }
     copy() {
       let copy = new _RegionAttachment(this.name, this.path);
@@ -11675,257 +11715,2729 @@ var spine = (() => {
     }
   })();
 
-  // spine-canvas/src/CanvasTexture.ts
-  var CanvasTexture = class extends Texture {
-    constructor(image) {
-      super(image);
+  // spine-webgl/src/WebGL.ts
+  var ManagedWebGLRenderingContext = class {
+    canvas;
+    gl;
+    restorables = new Array();
+    constructor(canvasOrContext, contextConfig = { alpha: "true" }) {
+      if (!(canvasOrContext instanceof WebGLRenderingContext || typeof WebGL2RenderingContext !== "undefined" && canvasOrContext instanceof WebGL2RenderingContext)) {
+        let canvas = canvasOrContext;
+        this.gl = canvas.getContext("webgl2", contextConfig) || canvas.getContext("webgl", contextConfig);
+        this.canvas = canvas;
+        canvas.addEventListener("webglcontextlost", (e) => {
+          let event = e;
+          if (e)
+            e.preventDefault();
+        });
+        canvas.addEventListener("webglcontextrestored", (e) => {
+          for (let i = 0, n = this.restorables.length; i < n; i++)
+            this.restorables[i].restore();
+        });
+      } else {
+        this.gl = canvasOrContext;
+        this.canvas = this.gl.canvas;
+      }
     }
-    setFilters(minFilter, magFilter) {
+    addRestorable(restorable) {
+      this.restorables.push(restorable);
     }
-    setWraps(uWrap, vWrap) {
-    }
-    dispose() {
+    removeRestorable(restorable) {
+      let index = this.restorables.indexOf(restorable);
+      if (index > -1)
+        this.restorables.splice(index, 1);
     }
   };
 
-  // spine-canvas/src/AssetManager.ts
+  // spine-webgl/src/GLTexture.ts
+  var _GLTexture = class extends Texture {
+    context;
+    texture = null;
+    boundUnit = 0;
+    useMipMaps = false;
+    constructor(context, image, useMipMaps = false) {
+      super(image);
+      this.context = context instanceof ManagedWebGLRenderingContext ? context : new ManagedWebGLRenderingContext(context);
+      this.useMipMaps = useMipMaps;
+      this.restore();
+      this.context.addRestorable(this);
+    }
+    setFilters(minFilter, magFilter) {
+      let gl = this.context.gl;
+      this.bind();
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, minFilter);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, _GLTexture.validateMagFilter(magFilter));
+      this.useMipMaps = _GLTexture.usesMipMaps(minFilter);
+      if (this.useMipMaps)
+        gl.generateMipmap(gl.TEXTURE_2D);
+    }
+    static validateMagFilter(magFilter) {
+      switch (magFilter) {
+        case 9987 /* MipMapLinearLinear */:
+        case 9985 /* MipMapLinearNearest */:
+        case 9986 /* MipMapNearestLinear */:
+        case 9984 /* MipMapNearestNearest */:
+          return 9729 /* Linear */;
+        default:
+          return magFilter;
+      }
+    }
+    static usesMipMaps(filter) {
+      switch (filter) {
+        case 9987 /* MipMapLinearLinear */:
+        case 9985 /* MipMapLinearNearest */:
+        case 9986 /* MipMapNearestLinear */:
+        case 9984 /* MipMapNearestNearest */:
+          return true;
+        default:
+          return false;
+      }
+    }
+    setWraps(uWrap, vWrap) {
+      let gl = this.context.gl;
+      this.bind();
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, uWrap);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, vWrap);
+    }
+    update(useMipMaps) {
+      let gl = this.context.gl;
+      if (!this.texture)
+        this.texture = this.context.gl.createTexture();
+      this.bind();
+      if (_GLTexture.DISABLE_UNPACK_PREMULTIPLIED_ALPHA_WEBGL)
+        gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, this._image);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, useMipMaps ? gl.LINEAR_MIPMAP_LINEAR : gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+      if (useMipMaps)
+        gl.generateMipmap(gl.TEXTURE_2D);
+    }
+    restore() {
+      this.texture = null;
+      this.update(this.useMipMaps);
+    }
+    bind(unit = 0) {
+      let gl = this.context.gl;
+      this.boundUnit = unit;
+      gl.activeTexture(gl.TEXTURE0 + unit);
+      gl.bindTexture(gl.TEXTURE_2D, this.texture);
+    }
+    unbind() {
+      let gl = this.context.gl;
+      gl.activeTexture(gl.TEXTURE0 + this.boundUnit);
+      gl.bindTexture(gl.TEXTURE_2D, null);
+    }
+    dispose() {
+      this.context.removeRestorable(this);
+      let gl = this.context.gl;
+      gl.deleteTexture(this.texture);
+    }
+  };
+  var GLTexture = _GLTexture;
+  __publicField(GLTexture, "DISABLE_UNPACK_PREMULTIPLIED_ALPHA_WEBGL", false);
+
+  // spine-webgl/src/AssetManager.ts
   var AssetManager = class extends AssetManagerBase {
-    constructor(pathPrefix = "", downloader = new Downloader()) {
+    constructor(context, pathPrefix = "", downloader = new Downloader()) {
       super((image) => {
-        return new CanvasTexture(image);
+        return new GLTexture(context, image);
       }, pathPrefix, downloader);
     }
   };
 
-  // spine-canvas/src/SkeletonRenderer.ts
-  var worldVertices = Utils.newFloatArray(8);
-  var _SkeletonRenderer = class {
-    ctx;
-    triangleRendering = false;
-    debugRendering = false;
-    vertices = Utils.newFloatArray(8 * 1024);
-    tempColor = new Color();
-    constructor(context) {
-      this.ctx = context;
+  // spine-webgl/src/Vector3.ts
+  var Vector3 = class {
+    x = 0;
+    y = 0;
+    z = 0;
+    constructor(x = 0, y = 0, z = 0) {
+      this.x = x;
+      this.y = y;
+      this.z = z;
     }
-    draw(skeleton) {
-      if (this.triangleRendering)
-        this.drawTriangles(skeleton);
-      else
-        this.drawImages(skeleton);
+    setFrom(v) {
+      this.x = v.x;
+      this.y = v.y;
+      this.z = v.z;
+      return this;
     }
-    drawImages(skeleton) {
-      let ctx = this.ctx;
-      let color = this.tempColor;
-      let skeletonColor = skeleton.color;
-      let drawOrder = skeleton.drawOrder;
-      if (this.debugRendering)
-        ctx.strokeStyle = "green";
-      for (let i = 0, n = drawOrder.length; i < n; i++) {
-        let slot = drawOrder[i];
-        let bone = slot.bone;
-        if (!bone.active)
-          continue;
-        let attachment = slot.getAttachment();
-        if (!(attachment instanceof RegionAttachment))
-          continue;
-        attachment.computeWorldVertices(slot, worldVertices, 0, 2);
-        let region = attachment.region;
-        let image = region.texture.getImage();
-        let slotColor = slot.color;
-        let regionColor = attachment.color;
-        color.set(
-          skeletonColor.r * slotColor.r * regionColor.r,
-          skeletonColor.g * slotColor.g * regionColor.g,
-          skeletonColor.b * slotColor.b * regionColor.b,
-          skeletonColor.a * slotColor.a * regionColor.a
-        );
-        ctx.save();
-        ctx.transform(bone.a, bone.c, bone.b, bone.d, bone.worldX, bone.worldY);
-        ctx.translate(attachment.offset[0], attachment.offset[1]);
-        ctx.rotate(attachment.rotation * Math.PI / 180);
-        let atlasScale = attachment.width / region.originalWidth;
-        ctx.scale(atlasScale * attachment.scaleX, atlasScale * attachment.scaleY);
-        let w = region.width, h = region.height;
-        ctx.translate(w / 2, h / 2);
-        if (attachment.region.degrees == 90) {
-          let t = w;
-          w = h;
-          h = t;
-          ctx.rotate(-Math.PI / 2);
+    set(x, y, z) {
+      this.x = x;
+      this.y = y;
+      this.z = z;
+      return this;
+    }
+    add(v) {
+      this.x += v.x;
+      this.y += v.y;
+      this.z += v.z;
+      return this;
+    }
+    sub(v) {
+      this.x -= v.x;
+      this.y -= v.y;
+      this.z -= v.z;
+      return this;
+    }
+    scale(s) {
+      this.x *= s;
+      this.y *= s;
+      this.z *= s;
+      return this;
+    }
+    normalize() {
+      let len = this.length();
+      if (len == 0)
+        return this;
+      len = 1 / len;
+      this.x *= len;
+      this.y *= len;
+      this.z *= len;
+      return this;
+    }
+    cross(v) {
+      return this.set(this.y * v.z - this.z * v.y, this.z * v.x - this.x * v.z, this.x * v.y - this.y * v.x);
+    }
+    multiply(matrix) {
+      let l_mat = matrix.values;
+      return this.set(
+        this.x * l_mat[M00] + this.y * l_mat[M01] + this.z * l_mat[M02] + l_mat[M03],
+        this.x * l_mat[M10] + this.y * l_mat[M11] + this.z * l_mat[M12] + l_mat[M13],
+        this.x * l_mat[M20] + this.y * l_mat[M21] + this.z * l_mat[M22] + l_mat[M23]
+      );
+    }
+    project(matrix) {
+      let l_mat = matrix.values;
+      let l_w = 1 / (this.x * l_mat[M30] + this.y * l_mat[M31] + this.z * l_mat[M32] + l_mat[M33]);
+      return this.set(
+        (this.x * l_mat[M00] + this.y * l_mat[M01] + this.z * l_mat[M02] + l_mat[M03]) * l_w,
+        (this.x * l_mat[M10] + this.y * l_mat[M11] + this.z * l_mat[M12] + l_mat[M13]) * l_w,
+        (this.x * l_mat[M20] + this.y * l_mat[M21] + this.z * l_mat[M22] + l_mat[M23]) * l_w
+      );
+    }
+    dot(v) {
+      return this.x * v.x + this.y * v.y + this.z * v.z;
+    }
+    length() {
+      return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
+    }
+    distance(v) {
+      let a = v.x - this.x;
+      let b = v.y - this.y;
+      let c = v.z - this.z;
+      return Math.sqrt(a * a + b * b + c * c);
+    }
+  };
+
+  // spine-webgl/src/Matrix4.ts
+  var M00 = 0;
+  var M01 = 4;
+  var M02 = 8;
+  var M03 = 12;
+  var M10 = 1;
+  var M11 = 5;
+  var M12 = 9;
+  var M13 = 13;
+  var M20 = 2;
+  var M21 = 6;
+  var M22 = 10;
+  var M23 = 14;
+  var M30 = 3;
+  var M31 = 7;
+  var M32 = 11;
+  var M33 = 15;
+  var _Matrix4 = class {
+    temp = new Float32Array(16);
+    values = new Float32Array(16);
+    constructor() {
+      let v = this.values;
+      v[M00] = 1;
+      v[M11] = 1;
+      v[M22] = 1;
+      v[M33] = 1;
+    }
+    set(values) {
+      this.values.set(values);
+      return this;
+    }
+    transpose() {
+      let t = this.temp;
+      let v = this.values;
+      t[M00] = v[M00];
+      t[M01] = v[M10];
+      t[M02] = v[M20];
+      t[M03] = v[M30];
+      t[M10] = v[M01];
+      t[M11] = v[M11];
+      t[M12] = v[M21];
+      t[M13] = v[M31];
+      t[M20] = v[M02];
+      t[M21] = v[M12];
+      t[M22] = v[M22];
+      t[M23] = v[M32];
+      t[M30] = v[M03];
+      t[M31] = v[M13];
+      t[M32] = v[M23];
+      t[M33] = v[M33];
+      return this.set(t);
+    }
+    identity() {
+      let v = this.values;
+      v[M00] = 1;
+      v[M01] = 0;
+      v[M02] = 0;
+      v[M03] = 0;
+      v[M10] = 0;
+      v[M11] = 1;
+      v[M12] = 0;
+      v[M13] = 0;
+      v[M20] = 0;
+      v[M21] = 0;
+      v[M22] = 1;
+      v[M23] = 0;
+      v[M30] = 0;
+      v[M31] = 0;
+      v[M32] = 0;
+      v[M33] = 1;
+      return this;
+    }
+    invert() {
+      let v = this.values;
+      let t = this.temp;
+      let l_det = v[M30] * v[M21] * v[M12] * v[M03] - v[M20] * v[M31] * v[M12] * v[M03] - v[M30] * v[M11] * v[M22] * v[M03] + v[M10] * v[M31] * v[M22] * v[M03] + v[M20] * v[M11] * v[M32] * v[M03] - v[M10] * v[M21] * v[M32] * v[M03] - v[M30] * v[M21] * v[M02] * v[M13] + v[M20] * v[M31] * v[M02] * v[M13] + v[M30] * v[M01] * v[M22] * v[M13] - v[M00] * v[M31] * v[M22] * v[M13] - v[M20] * v[M01] * v[M32] * v[M13] + v[M00] * v[M21] * v[M32] * v[M13] + v[M30] * v[M11] * v[M02] * v[M23] - v[M10] * v[M31] * v[M02] * v[M23] - v[M30] * v[M01] * v[M12] * v[M23] + v[M00] * v[M31] * v[M12] * v[M23] + v[M10] * v[M01] * v[M32] * v[M23] - v[M00] * v[M11] * v[M32] * v[M23] - v[M20] * v[M11] * v[M02] * v[M33] + v[M10] * v[M21] * v[M02] * v[M33] + v[M20] * v[M01] * v[M12] * v[M33] - v[M00] * v[M21] * v[M12] * v[M33] - v[M10] * v[M01] * v[M22] * v[M33] + v[M00] * v[M11] * v[M22] * v[M33];
+      if (l_det == 0)
+        throw new Error("non-invertible matrix");
+      let inv_det = 1 / l_det;
+      t[M00] = v[M12] * v[M23] * v[M31] - v[M13] * v[M22] * v[M31] + v[M13] * v[M21] * v[M32] - v[M11] * v[M23] * v[M32] - v[M12] * v[M21] * v[M33] + v[M11] * v[M22] * v[M33];
+      t[M01] = v[M03] * v[M22] * v[M31] - v[M02] * v[M23] * v[M31] - v[M03] * v[M21] * v[M32] + v[M01] * v[M23] * v[M32] + v[M02] * v[M21] * v[M33] - v[M01] * v[M22] * v[M33];
+      t[M02] = v[M02] * v[M13] * v[M31] - v[M03] * v[M12] * v[M31] + v[M03] * v[M11] * v[M32] - v[M01] * v[M13] * v[M32] - v[M02] * v[M11] * v[M33] + v[M01] * v[M12] * v[M33];
+      t[M03] = v[M03] * v[M12] * v[M21] - v[M02] * v[M13] * v[M21] - v[M03] * v[M11] * v[M22] + v[M01] * v[M13] * v[M22] + v[M02] * v[M11] * v[M23] - v[M01] * v[M12] * v[M23];
+      t[M10] = v[M13] * v[M22] * v[M30] - v[M12] * v[M23] * v[M30] - v[M13] * v[M20] * v[M32] + v[M10] * v[M23] * v[M32] + v[M12] * v[M20] * v[M33] - v[M10] * v[M22] * v[M33];
+      t[M11] = v[M02] * v[M23] * v[M30] - v[M03] * v[M22] * v[M30] + v[M03] * v[M20] * v[M32] - v[M00] * v[M23] * v[M32] - v[M02] * v[M20] * v[M33] + v[M00] * v[M22] * v[M33];
+      t[M12] = v[M03] * v[M12] * v[M30] - v[M02] * v[M13] * v[M30] - v[M03] * v[M10] * v[M32] + v[M00] * v[M13] * v[M32] + v[M02] * v[M10] * v[M33] - v[M00] * v[M12] * v[M33];
+      t[M13] = v[M02] * v[M13] * v[M20] - v[M03] * v[M12] * v[M20] + v[M03] * v[M10] * v[M22] - v[M00] * v[M13] * v[M22] - v[M02] * v[M10] * v[M23] + v[M00] * v[M12] * v[M23];
+      t[M20] = v[M11] * v[M23] * v[M30] - v[M13] * v[M21] * v[M30] + v[M13] * v[M20] * v[M31] - v[M10] * v[M23] * v[M31] - v[M11] * v[M20] * v[M33] + v[M10] * v[M21] * v[M33];
+      t[M21] = v[M03] * v[M21] * v[M30] - v[M01] * v[M23] * v[M30] - v[M03] * v[M20] * v[M31] + v[M00] * v[M23] * v[M31] + v[M01] * v[M20] * v[M33] - v[M00] * v[M21] * v[M33];
+      t[M22] = v[M01] * v[M13] * v[M30] - v[M03] * v[M11] * v[M30] + v[M03] * v[M10] * v[M31] - v[M00] * v[M13] * v[M31] - v[M01] * v[M10] * v[M33] + v[M00] * v[M11] * v[M33];
+      t[M23] = v[M03] * v[M11] * v[M20] - v[M01] * v[M13] * v[M20] - v[M03] * v[M10] * v[M21] + v[M00] * v[M13] * v[M21] + v[M01] * v[M10] * v[M23] - v[M00] * v[M11] * v[M23];
+      t[M30] = v[M12] * v[M21] * v[M30] - v[M11] * v[M22] * v[M30] - v[M12] * v[M20] * v[M31] + v[M10] * v[M22] * v[M31] + v[M11] * v[M20] * v[M32] - v[M10] * v[M21] * v[M32];
+      t[M31] = v[M01] * v[M22] * v[M30] - v[M02] * v[M21] * v[M30] + v[M02] * v[M20] * v[M31] - v[M00] * v[M22] * v[M31] - v[M01] * v[M20] * v[M32] + v[M00] * v[M21] * v[M32];
+      t[M32] = v[M02] * v[M11] * v[M30] - v[M01] * v[M12] * v[M30] - v[M02] * v[M10] * v[M31] + v[M00] * v[M12] * v[M31] + v[M01] * v[M10] * v[M32] - v[M00] * v[M11] * v[M32];
+      t[M33] = v[M01] * v[M12] * v[M20] - v[M02] * v[M11] * v[M20] + v[M02] * v[M10] * v[M21] - v[M00] * v[M12] * v[M21] - v[M01] * v[M10] * v[M22] + v[M00] * v[M11] * v[M22];
+      v[M00] = t[M00] * inv_det;
+      v[M01] = t[M01] * inv_det;
+      v[M02] = t[M02] * inv_det;
+      v[M03] = t[M03] * inv_det;
+      v[M10] = t[M10] * inv_det;
+      v[M11] = t[M11] * inv_det;
+      v[M12] = t[M12] * inv_det;
+      v[M13] = t[M13] * inv_det;
+      v[M20] = t[M20] * inv_det;
+      v[M21] = t[M21] * inv_det;
+      v[M22] = t[M22] * inv_det;
+      v[M23] = t[M23] * inv_det;
+      v[M30] = t[M30] * inv_det;
+      v[M31] = t[M31] * inv_det;
+      v[M32] = t[M32] * inv_det;
+      v[M33] = t[M33] * inv_det;
+      return this;
+    }
+    determinant() {
+      let v = this.values;
+      return v[M30] * v[M21] * v[M12] * v[M03] - v[M20] * v[M31] * v[M12] * v[M03] - v[M30] * v[M11] * v[M22] * v[M03] + v[M10] * v[M31] * v[M22] * v[M03] + v[M20] * v[M11] * v[M32] * v[M03] - v[M10] * v[M21] * v[M32] * v[M03] - v[M30] * v[M21] * v[M02] * v[M13] + v[M20] * v[M31] * v[M02] * v[M13] + v[M30] * v[M01] * v[M22] * v[M13] - v[M00] * v[M31] * v[M22] * v[M13] - v[M20] * v[M01] * v[M32] * v[M13] + v[M00] * v[M21] * v[M32] * v[M13] + v[M30] * v[M11] * v[M02] * v[M23] - v[M10] * v[M31] * v[M02] * v[M23] - v[M30] * v[M01] * v[M12] * v[M23] + v[M00] * v[M31] * v[M12] * v[M23] + v[M10] * v[M01] * v[M32] * v[M23] - v[M00] * v[M11] * v[M32] * v[M23] - v[M20] * v[M11] * v[M02] * v[M33] + v[M10] * v[M21] * v[M02] * v[M33] + v[M20] * v[M01] * v[M12] * v[M33] - v[M00] * v[M21] * v[M12] * v[M33] - v[M10] * v[M01] * v[M22] * v[M33] + v[M00] * v[M11] * v[M22] * v[M33];
+    }
+    translate(x, y, z) {
+      let v = this.values;
+      v[M03] += x;
+      v[M13] += y;
+      v[M23] += z;
+      return this;
+    }
+    copy() {
+      return new _Matrix4().set(this.values);
+    }
+    projection(near, far, fovy, aspectRatio) {
+      this.identity();
+      let l_fd = 1 / Math.tan(fovy * (Math.PI / 180) / 2);
+      let l_a1 = (far + near) / (near - far);
+      let l_a2 = 2 * far * near / (near - far);
+      let v = this.values;
+      v[M00] = l_fd / aspectRatio;
+      v[M10] = 0;
+      v[M20] = 0;
+      v[M30] = 0;
+      v[M01] = 0;
+      v[M11] = l_fd;
+      v[M21] = 0;
+      v[M31] = 0;
+      v[M02] = 0;
+      v[M12] = 0;
+      v[M22] = l_a1;
+      v[M32] = -1;
+      v[M03] = 0;
+      v[M13] = 0;
+      v[M23] = l_a2;
+      v[M33] = 0;
+      return this;
+    }
+    ortho2d(x, y, width, height) {
+      return this.ortho(x, x + width, y, y + height, 0, 1);
+    }
+    ortho(left, right, bottom, top, near, far) {
+      this.identity();
+      let x_orth = 2 / (right - left);
+      let y_orth = 2 / (top - bottom);
+      let z_orth = -2 / (far - near);
+      let tx = -(right + left) / (right - left);
+      let ty = -(top + bottom) / (top - bottom);
+      let tz = -(far + near) / (far - near);
+      let v = this.values;
+      v[M00] = x_orth;
+      v[M10] = 0;
+      v[M20] = 0;
+      v[M30] = 0;
+      v[M01] = 0;
+      v[M11] = y_orth;
+      v[M21] = 0;
+      v[M31] = 0;
+      v[M02] = 0;
+      v[M12] = 0;
+      v[M22] = z_orth;
+      v[M32] = 0;
+      v[M03] = tx;
+      v[M13] = ty;
+      v[M23] = tz;
+      v[M33] = 1;
+      return this;
+    }
+    multiply(matrix) {
+      let t = this.temp;
+      let v = this.values;
+      let m = matrix.values;
+      t[M00] = v[M00] * m[M00] + v[M01] * m[M10] + v[M02] * m[M20] + v[M03] * m[M30];
+      t[M01] = v[M00] * m[M01] + v[M01] * m[M11] + v[M02] * m[M21] + v[M03] * m[M31];
+      t[M02] = v[M00] * m[M02] + v[M01] * m[M12] + v[M02] * m[M22] + v[M03] * m[M32];
+      t[M03] = v[M00] * m[M03] + v[M01] * m[M13] + v[M02] * m[M23] + v[M03] * m[M33];
+      t[M10] = v[M10] * m[M00] + v[M11] * m[M10] + v[M12] * m[M20] + v[M13] * m[M30];
+      t[M11] = v[M10] * m[M01] + v[M11] * m[M11] + v[M12] * m[M21] + v[M13] * m[M31];
+      t[M12] = v[M10] * m[M02] + v[M11] * m[M12] + v[M12] * m[M22] + v[M13] * m[M32];
+      t[M13] = v[M10] * m[M03] + v[M11] * m[M13] + v[M12] * m[M23] + v[M13] * m[M33];
+      t[M20] = v[M20] * m[M00] + v[M21] * m[M10] + v[M22] * m[M20] + v[M23] * m[M30];
+      t[M21] = v[M20] * m[M01] + v[M21] * m[M11] + v[M22] * m[M21] + v[M23] * m[M31];
+      t[M22] = v[M20] * m[M02] + v[M21] * m[M12] + v[M22] * m[M22] + v[M23] * m[M32];
+      t[M23] = v[M20] * m[M03] + v[M21] * m[M13] + v[M22] * m[M23] + v[M23] * m[M33];
+      t[M30] = v[M30] * m[M00] + v[M31] * m[M10] + v[M32] * m[M20] + v[M33] * m[M30];
+      t[M31] = v[M30] * m[M01] + v[M31] * m[M11] + v[M32] * m[M21] + v[M33] * m[M31];
+      t[M32] = v[M30] * m[M02] + v[M31] * m[M12] + v[M32] * m[M22] + v[M33] * m[M32];
+      t[M33] = v[M30] * m[M03] + v[M31] * m[M13] + v[M32] * m[M23] + v[M33] * m[M33];
+      return this.set(this.temp);
+    }
+    multiplyLeft(matrix) {
+      let t = this.temp;
+      let v = this.values;
+      let m = matrix.values;
+      t[M00] = m[M00] * v[M00] + m[M01] * v[M10] + m[M02] * v[M20] + m[M03] * v[M30];
+      t[M01] = m[M00] * v[M01] + m[M01] * v[M11] + m[M02] * v[M21] + m[M03] * v[M31];
+      t[M02] = m[M00] * v[M02] + m[M01] * v[M12] + m[M02] * v[M22] + m[M03] * v[M32];
+      t[M03] = m[M00] * v[M03] + m[M01] * v[M13] + m[M02] * v[M23] + m[M03] * v[M33];
+      t[M10] = m[M10] * v[M00] + m[M11] * v[M10] + m[M12] * v[M20] + m[M13] * v[M30];
+      t[M11] = m[M10] * v[M01] + m[M11] * v[M11] + m[M12] * v[M21] + m[M13] * v[M31];
+      t[M12] = m[M10] * v[M02] + m[M11] * v[M12] + m[M12] * v[M22] + m[M13] * v[M32];
+      t[M13] = m[M10] * v[M03] + m[M11] * v[M13] + m[M12] * v[M23] + m[M13] * v[M33];
+      t[M20] = m[M20] * v[M00] + m[M21] * v[M10] + m[M22] * v[M20] + m[M23] * v[M30];
+      t[M21] = m[M20] * v[M01] + m[M21] * v[M11] + m[M22] * v[M21] + m[M23] * v[M31];
+      t[M22] = m[M20] * v[M02] + m[M21] * v[M12] + m[M22] * v[M22] + m[M23] * v[M32];
+      t[M23] = m[M20] * v[M03] + m[M21] * v[M13] + m[M22] * v[M23] + m[M23] * v[M33];
+      t[M30] = m[M30] * v[M00] + m[M31] * v[M10] + m[M32] * v[M20] + m[M33] * v[M30];
+      t[M31] = m[M30] * v[M01] + m[M31] * v[M11] + m[M32] * v[M21] + m[M33] * v[M31];
+      t[M32] = m[M30] * v[M02] + m[M31] * v[M12] + m[M32] * v[M22] + m[M33] * v[M32];
+      t[M33] = m[M30] * v[M03] + m[M31] * v[M13] + m[M32] * v[M23] + m[M33] * v[M33];
+      return this.set(this.temp);
+    }
+    lookAt(position, direction, up) {
+      let xAxis = _Matrix4.xAxis, yAxis = _Matrix4.yAxis, zAxis = _Matrix4.zAxis;
+      zAxis.setFrom(direction).normalize();
+      xAxis.setFrom(direction).normalize();
+      xAxis.cross(up).normalize();
+      yAxis.setFrom(xAxis).cross(zAxis).normalize();
+      this.identity();
+      let val = this.values;
+      val[M00] = xAxis.x;
+      val[M01] = xAxis.y;
+      val[M02] = xAxis.z;
+      val[M10] = yAxis.x;
+      val[M11] = yAxis.y;
+      val[M12] = yAxis.z;
+      val[M20] = -zAxis.x;
+      val[M21] = -zAxis.y;
+      val[M22] = -zAxis.z;
+      _Matrix4.tmpMatrix.identity();
+      _Matrix4.tmpMatrix.values[M03] = -position.x;
+      _Matrix4.tmpMatrix.values[M13] = -position.y;
+      _Matrix4.tmpMatrix.values[M23] = -position.z;
+      this.multiply(_Matrix4.tmpMatrix);
+      return this;
+    }
+  };
+  var Matrix42 = _Matrix4;
+  __publicField(Matrix42, "xAxis", new Vector3());
+  __publicField(Matrix42, "yAxis", new Vector3());
+  __publicField(Matrix42, "zAxis", new Vector3());
+  __publicField(Matrix42, "tmpMatrix", new _Matrix4());
+
+  // spine-webgl/src/Camera.ts
+  var OrthoCamera = class {
+    position = new Vector3(0, 0, 0);
+    direction = new Vector3(0, 0, -1);
+    up = new Vector3(0, 1, 0);
+    near = 0;
+    far = 100;
+    zoom = 1;
+    viewportWidth = 0;
+    viewportHeight = 0;
+    projectionView = new Matrix42();
+    inverseProjectionView = new Matrix42();
+    projection = new Matrix42();
+    view = new Matrix42();
+    constructor(viewportWidth, viewportHeight) {
+      this.viewportWidth = viewportWidth;
+      this.viewportHeight = viewportHeight;
+      this.update();
+    }
+    update() {
+      let projection = this.projection;
+      let view = this.view;
+      let projectionView = this.projectionView;
+      let inverseProjectionView = this.inverseProjectionView;
+      let zoom = this.zoom, viewportWidth = this.viewportWidth, viewportHeight = this.viewportHeight;
+      projection.ortho(
+        zoom * (-viewportWidth / 2),
+        zoom * (viewportWidth / 2),
+        zoom * (-viewportHeight / 2),
+        zoom * (viewportHeight / 2),
+        this.near,
+        this.far
+      );
+      view.lookAt(this.position, this.direction, this.up);
+      projectionView.set(projection.values);
+      projectionView.multiply(view);
+      inverseProjectionView.set(projectionView.values).invert();
+    }
+    screenToWorld(screenCoords, screenWidth, screenHeight) {
+      let x = screenCoords.x, y = screenHeight - screenCoords.y - 1;
+      screenCoords.x = 2 * x / screenWidth - 1;
+      screenCoords.y = 2 * y / screenHeight - 1;
+      screenCoords.z = 2 * screenCoords.z - 1;
+      screenCoords.project(this.inverseProjectionView);
+      return screenCoords;
+    }
+    worldToScreen(worldCoords, screenWidth, screenHeight) {
+      worldCoords.project(this.projectionView);
+      worldCoords.x = screenWidth * (worldCoords.x + 1) / 2;
+      worldCoords.y = screenHeight * (worldCoords.y + 1) / 2;
+      worldCoords.z = (worldCoords.z + 1) / 2;
+      return worldCoords;
+    }
+    setViewport(viewportWidth, viewportHeight) {
+      this.viewportWidth = viewportWidth;
+      this.viewportHeight = viewportHeight;
+    }
+  };
+
+  // spine-webgl/src/Input.ts
+  var Input = class {
+    element;
+    mouseX = 0;
+    mouseY = 0;
+    buttonDown = false;
+    touch0 = null;
+    touch1 = null;
+    initialPinchDistance = 0;
+    listeners = new Array();
+    eventListeners = [];
+    constructor(element) {
+      this.element = element;
+      this.setupCallbacks(element);
+    }
+    setupCallbacks(element) {
+      let mouseDown = (ev) => {
+        if (ev instanceof MouseEvent) {
+          let rect = element.getBoundingClientRect();
+          this.mouseX = ev.clientX - rect.left;
+          ;
+          this.mouseY = ev.clientY - rect.top;
+          this.buttonDown = true;
+          this.listeners.map((listener) => {
+            if (listener.down)
+              listener.down(this.mouseX, this.mouseY);
+          });
+          document.addEventListener("mousemove", mouseMove);
+          document.addEventListener("mouseup", mouseUp);
         }
-        ctx.scale(1, -1);
-        ctx.translate(-w / 2, -h / 2);
-        ctx.globalAlpha = color.a;
-        ctx.drawImage(image, image.width * region.u, image.height * region.v, w, h, 0, 0, w, h);
-        if (this.debugRendering)
-          ctx.strokeRect(0, 0, w, h);
-        ctx.restore();
+      };
+      let mouseMove = (ev) => {
+        if (ev instanceof MouseEvent) {
+          let rect = element.getBoundingClientRect();
+          this.mouseX = ev.clientX - rect.left;
+          ;
+          this.mouseY = ev.clientY - rect.top;
+          this.listeners.map((listener) => {
+            if (this.buttonDown) {
+              if (listener.dragged)
+                listener.dragged(this.mouseX, this.mouseY);
+            } else {
+              if (listener.moved)
+                listener.moved(this.mouseX, this.mouseY);
+            }
+          });
+        }
+      };
+      let mouseUp = (ev) => {
+        if (ev instanceof MouseEvent) {
+          let rect = element.getBoundingClientRect();
+          this.mouseX = ev.clientX - rect.left;
+          ;
+          this.mouseY = ev.clientY - rect.top;
+          this.buttonDown = false;
+          this.listeners.map((listener) => {
+            if (listener.up)
+              listener.up(this.mouseX, this.mouseY);
+          });
+          document.removeEventListener("mousemove", mouseMove);
+          document.removeEventListener("mouseup", mouseUp);
+        }
+      };
+      let mouseWheel = (e) => {
+        e.preventDefault();
+        let deltaY = e.deltaY;
+        if (e.deltaMode == WheelEvent.DOM_DELTA_LINE)
+          deltaY *= 8;
+        if (e.deltaMode == WheelEvent.DOM_DELTA_PAGE)
+          deltaY *= 24;
+        this.listeners.map((listener) => {
+          if (listener.wheel)
+            listener.wheel(e.deltaY);
+        });
+      };
+      element.addEventListener("mousedown", mouseDown, true);
+      element.addEventListener("mousemove", mouseMove, true);
+      element.addEventListener("mouseup", mouseUp, true);
+      element.addEventListener("wheel", mouseWheel, true);
+      element.addEventListener("touchstart", (ev) => {
+        if (!this.touch0 || !this.touch1) {
+          var touches = ev.changedTouches;
+          let nativeTouch = touches.item(0);
+          if (!nativeTouch)
+            return;
+          let rect = element.getBoundingClientRect();
+          let x = nativeTouch.clientX - rect.left;
+          let y = nativeTouch.clientY - rect.top;
+          let touch = new Touch(nativeTouch.identifier, x, y);
+          this.mouseX = x;
+          this.mouseY = y;
+          this.buttonDown = true;
+          if (!this.touch0) {
+            this.touch0 = touch;
+            this.listeners.map((listener) => {
+              if (listener.down)
+                listener.down(touch.x, touch.y);
+            });
+          } else if (!this.touch1) {
+            this.touch1 = touch;
+            let dx = this.touch1.x - this.touch0.x;
+            let dy = this.touch1.x - this.touch0.x;
+            this.initialPinchDistance = Math.sqrt(dx * dx + dy * dy);
+            this.listeners.map((listener) => {
+              if (listener.zoom)
+                listener.zoom(this.initialPinchDistance, this.initialPinchDistance);
+            });
+          }
+        }
+        ev.preventDefault();
+      }, false);
+      element.addEventListener("touchmove", (ev) => {
+        if (this.touch0) {
+          var touches = ev.changedTouches;
+          let rect = element.getBoundingClientRect();
+          for (var i = 0; i < touches.length; i++) {
+            var nativeTouch = touches[i];
+            let x = nativeTouch.clientX - rect.left;
+            let y = nativeTouch.clientY - rect.top;
+            if (this.touch0.identifier === nativeTouch.identifier) {
+              this.touch0.x = this.mouseX = x;
+              this.touch0.y = this.mouseY = y;
+              this.listeners.map((listener) => {
+                if (listener.dragged)
+                  listener.dragged(x, y);
+              });
+            }
+            if (this.touch1 && this.touch1.identifier === nativeTouch.identifier) {
+              this.touch1.x = this.mouseX = x;
+              this.touch1.y = this.mouseY = y;
+            }
+          }
+          if (this.touch0 && this.touch1) {
+            let dx = this.touch1.x - this.touch0.x;
+            let dy = this.touch1.x - this.touch0.x;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            this.listeners.map((listener) => {
+              if (listener.zoom)
+                listener.zoom(this.initialPinchDistance, distance);
+            });
+          }
+        }
+        ev.preventDefault();
+      }, false);
+      let touchEnd = (ev) => {
+        if (this.touch0) {
+          var touches = ev.changedTouches;
+          let rect = element.getBoundingClientRect();
+          for (var i = 0; i < touches.length; i++) {
+            var nativeTouch = touches[i];
+            let x = nativeTouch.clientX - rect.left;
+            let y = nativeTouch.clientY - rect.top;
+            if (this.touch0.identifier === nativeTouch.identifier) {
+              this.touch0 = null;
+              this.mouseX = x;
+              this.mouseY = y;
+              this.listeners.map((listener) => {
+                if (listener.up)
+                  listener.up(x, y);
+              });
+              if (!this.touch1) {
+                this.buttonDown = false;
+                break;
+              } else {
+                this.touch0 = this.touch1;
+                this.touch1 = null;
+                this.mouseX = this.touch0.x;
+                this.mouseX = this.touch0.x;
+                this.buttonDown = true;
+                this.listeners.map((listener) => {
+                  if (listener.down)
+                    listener.down(this.touch0.x, this.touch0.y);
+                });
+              }
+            }
+            if (this.touch1 && this.touch1.identifier) {
+              this.touch1 = null;
+            }
+          }
+        }
+        ev.preventDefault();
+      };
+      element.addEventListener("touchend", touchEnd, false);
+      element.addEventListener("touchcancel", touchEnd);
+    }
+    addListener(listener) {
+      this.listeners.push(listener);
+    }
+    removeListener(listener) {
+      let idx = this.listeners.indexOf(listener);
+      if (idx > -1) {
+        this.listeners.splice(idx, 1);
       }
     }
-    drawTriangles(skeleton) {
-      let ctx = this.ctx;
-      let color = this.tempColor;
-      let skeletonColor = skeleton.color;
-      let drawOrder = skeleton.drawOrder;
-      let blendMode = null;
-      let vertices = this.vertices;
-      let triangles = null;
-      for (let i = 0, n = drawOrder.length; i < n; i++) {
-        let slot = drawOrder[i];
-        let attachment = slot.getAttachment();
-        let texture;
-        let region;
-        if (attachment instanceof RegionAttachment) {
-          let regionAttachment = attachment;
-          vertices = this.computeRegionVertices(slot, regionAttachment, false);
-          triangles = _SkeletonRenderer.QUAD_TRIANGLES;
-          texture = regionAttachment.region.texture.getImage();
-        } else if (attachment instanceof MeshAttachment) {
+  };
+  var Touch = class {
+    constructor(identifier, x, y) {
+      this.identifier = identifier;
+      this.x = x;
+      this.y = y;
+    }
+  };
+
+  // spine-webgl/src/CameraController.ts
+  var CameraController = class {
+    constructor(canvas, camera) {
+      this.canvas = canvas;
+      this.camera = camera;
+      let cameraX = 0, cameraY = 0, cameraZoom = 0;
+      let mouseX = 0, mouseY = 0;
+      let lastX = 0, lastY = 0;
+      let initialZoom = 0;
+      new Input(canvas).addListener({
+        down: (x, y) => {
+          cameraX = camera.position.x;
+          cameraY = camera.position.y;
+          mouseX = lastX = x;
+          mouseY = lastY = y;
+          initialZoom = camera.zoom;
+        },
+        dragged: (x, y) => {
+          let deltaX = x - mouseX;
+          let deltaY = y - mouseY;
+          let originWorld = camera.screenToWorld(new Vector3(0, 0), canvas.clientWidth, canvas.clientHeight);
+          let deltaWorld = camera.screenToWorld(new Vector3(deltaX, deltaY), canvas.clientWidth, canvas.clientHeight).sub(originWorld);
+          camera.position.set(cameraX - deltaWorld.x, cameraY - deltaWorld.y, 0);
+          camera.update();
+          lastX = x;
+          lastY = y;
+        },
+        wheel: (delta) => {
+          let zoomAmount = delta / 200 * camera.zoom;
+          let newZoom = camera.zoom + zoomAmount;
+          if (newZoom > 0) {
+            let x = 0, y = 0;
+            if (delta < 0) {
+              x = lastX;
+              y = lastY;
+            } else {
+              let viewCenter = new Vector3(canvas.clientWidth / 2 + 15, canvas.clientHeight / 2);
+              let mouseToCenterX = lastX - viewCenter.x;
+              let mouseToCenterY = canvas.clientHeight - 1 - lastY - viewCenter.y;
+              x = viewCenter.x - mouseToCenterX;
+              y = canvas.clientHeight - 1 - viewCenter.y + mouseToCenterY;
+            }
+            let oldDistance = camera.screenToWorld(new Vector3(x, y), canvas.clientWidth, canvas.clientHeight);
+            camera.zoom = newZoom;
+            camera.update();
+            let newDistance = camera.screenToWorld(new Vector3(x, y), canvas.clientWidth, canvas.clientHeight);
+            camera.position.add(oldDistance.sub(newDistance));
+            camera.update();
+          }
+        },
+        zoom: (initialDistance, distance) => {
+          let newZoom = initialDistance / distance;
+          camera.zoom = initialZoom * newZoom;
+        },
+        up: (x, y) => {
+          lastX = x;
+          lastY = y;
+        },
+        moved: (x, y) => {
+          lastX = x;
+          lastY = y;
+        }
+      });
+    }
+  };
+
+  // spine-webgl/src/Shader.ts
+  var _Shader = class {
+    constructor(context, vertexShader, fragmentShader) {
+      this.vertexShader = vertexShader;
+      this.fragmentShader = fragmentShader;
+      this.vsSource = vertexShader;
+      this.fsSource = fragmentShader;
+      this.context = context instanceof ManagedWebGLRenderingContext ? context : new ManagedWebGLRenderingContext(context);
+      this.context.addRestorable(this);
+      this.compile();
+    }
+    context;
+    vs = null;
+    vsSource;
+    fs = null;
+    fsSource;
+    program = null;
+    tmp2x2 = new Float32Array(2 * 2);
+    tmp3x3 = new Float32Array(3 * 3);
+    tmp4x4 = new Float32Array(4 * 4);
+    getProgram() {
+      return this.program;
+    }
+    getVertexShader() {
+      return this.vertexShader;
+    }
+    getFragmentShader() {
+      return this.fragmentShader;
+    }
+    getVertexShaderSource() {
+      return this.vsSource;
+    }
+    getFragmentSource() {
+      return this.fsSource;
+    }
+    compile() {
+      let gl = this.context.gl;
+      try {
+        this.vs = this.compileShader(gl.VERTEX_SHADER, this.vertexShader);
+        if (!this.vs)
+          throw new Error("Couldn't compile vertex shader.");
+        this.fs = this.compileShader(gl.FRAGMENT_SHADER, this.fragmentShader);
+        if (!this.fs)
+          throw new Error("Couldn#t compile fragment shader.");
+        this.program = this.compileProgram(this.vs, this.fs);
+      } catch (e) {
+        this.dispose();
+        throw e;
+      }
+    }
+    compileShader(type, source) {
+      let gl = this.context.gl;
+      let shader = gl.createShader(type);
+      if (!shader)
+        throw new Error("Couldn't create shader.");
+      gl.shaderSource(shader, source);
+      gl.compileShader(shader);
+      if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        let error = "Couldn't compile shader: " + gl.getShaderInfoLog(shader);
+        gl.deleteShader(shader);
+        if (!gl.isContextLost())
+          throw new Error(error);
+      }
+      return shader;
+    }
+    compileProgram(vs, fs) {
+      let gl = this.context.gl;
+      let program = gl.createProgram();
+      if (!program)
+        throw new Error("Couldn't compile program.");
+      gl.attachShader(program, vs);
+      gl.attachShader(program, fs);
+      gl.linkProgram(program);
+      if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+        let error = "Couldn't compile shader program: " + gl.getProgramInfoLog(program);
+        gl.deleteProgram(program);
+        if (!gl.isContextLost())
+          throw new Error(error);
+      }
+      return program;
+    }
+    restore() {
+      this.compile();
+    }
+    bind() {
+      this.context.gl.useProgram(this.program);
+    }
+    unbind() {
+      this.context.gl.useProgram(null);
+    }
+    setUniformi(uniform, value) {
+      this.context.gl.uniform1i(this.getUniformLocation(uniform), value);
+    }
+    setUniformf(uniform, value) {
+      this.context.gl.uniform1f(this.getUniformLocation(uniform), value);
+    }
+    setUniform2f(uniform, value, value2) {
+      this.context.gl.uniform2f(this.getUniformLocation(uniform), value, value2);
+    }
+    setUniform3f(uniform, value, value2, value3) {
+      this.context.gl.uniform3f(this.getUniformLocation(uniform), value, value2, value3);
+    }
+    setUniform4f(uniform, value, value2, value3, value4) {
+      this.context.gl.uniform4f(this.getUniformLocation(uniform), value, value2, value3, value4);
+    }
+    setUniform2x2f(uniform, value) {
+      let gl = this.context.gl;
+      this.tmp2x2.set(value);
+      gl.uniformMatrix2fv(this.getUniformLocation(uniform), false, this.tmp2x2);
+    }
+    setUniform3x3f(uniform, value) {
+      let gl = this.context.gl;
+      this.tmp3x3.set(value);
+      gl.uniformMatrix3fv(this.getUniformLocation(uniform), false, this.tmp3x3);
+    }
+    setUniform4x4f(uniform, value) {
+      let gl = this.context.gl;
+      this.tmp4x4.set(value);
+      gl.uniformMatrix4fv(this.getUniformLocation(uniform), false, this.tmp4x4);
+    }
+    getUniformLocation(uniform) {
+      let gl = this.context.gl;
+      if (!this.program)
+        throw new Error("Shader not compiled.");
+      let location = gl.getUniformLocation(this.program, uniform);
+      if (!location && !gl.isContextLost())
+        throw new Error(`Couldn't find location for uniform ${uniform}`);
+      return location;
+    }
+    getAttributeLocation(attribute) {
+      let gl = this.context.gl;
+      if (!this.program)
+        throw new Error("Shader not compiled.");
+      let location = gl.getAttribLocation(this.program, attribute);
+      if (location == -1 && !gl.isContextLost())
+        throw new Error(`Couldn't find location for attribute ${attribute}`);
+      return location;
+    }
+    dispose() {
+      this.context.removeRestorable(this);
+      let gl = this.context.gl;
+      if (this.vs) {
+        gl.deleteShader(this.vs);
+        this.vs = null;
+      }
+      if (this.fs) {
+        gl.deleteShader(this.fs);
+        this.fs = null;
+      }
+      if (this.program) {
+        gl.deleteProgram(this.program);
+        this.program = null;
+      }
+    }
+    static newColoredTextured(context) {
+      let vs = `
+attribute vec4 ${_Shader.POSITION};
+attribute vec4 ${_Shader.COLOR};
+attribute vec2 ${_Shader.TEXCOORDS};
+uniform mat4 ${_Shader.MVP_MATRIX};
+varying vec4 v_color;
+varying vec2 v_texCoords;
+
+void main () {
+	v_color = ${_Shader.COLOR};
+	v_texCoords = ${_Shader.TEXCOORDS};
+	gl_Position = ${_Shader.MVP_MATRIX} * ${_Shader.POSITION};
+}
+`;
+      let fs = `
+#ifdef GL_ES
+	#define LOWP lowp
+	precision mediump float;
+#else
+	#define LOWP
+#endif
+varying LOWP vec4 v_color;
+varying vec2 v_texCoords;
+uniform sampler2D u_texture;
+
+void main () {
+	gl_FragColor = v_color * texture2D(u_texture, v_texCoords);
+}
+`;
+      return new _Shader(context, vs, fs);
+    }
+    static newTwoColoredTextured(context) {
+      let vs = `
+attribute vec4 ${_Shader.POSITION};
+attribute vec4 ${_Shader.COLOR};
+attribute vec4 ${_Shader.COLOR2};
+attribute vec2 ${_Shader.TEXCOORDS};
+uniform mat4 ${_Shader.MVP_MATRIX};
+varying vec4 v_light;
+varying vec4 v_dark;
+varying vec2 v_texCoords;
+
+void main () {
+	v_light = ${_Shader.COLOR};
+	v_dark = ${_Shader.COLOR2};
+	v_texCoords = ${_Shader.TEXCOORDS};
+	gl_Position = ${_Shader.MVP_MATRIX} * ${_Shader.POSITION};
+}
+`;
+      let fs = `
+#ifdef GL_ES
+	#define LOWP lowp
+	precision mediump float;
+#else
+	#define LOWP
+#endif
+varying LOWP vec4 v_light;
+varying LOWP vec4 v_dark;
+varying vec2 v_texCoords;
+uniform sampler2D u_texture;
+
+void main () {
+	vec4 texColor = texture2D(u_texture, v_texCoords);
+	gl_FragColor.a = texColor.a * v_light.a;
+	gl_FragColor.rgb = ((texColor.a - 1.0) * v_dark.a + 1.0 - texColor.rgb) * v_dark.rgb + texColor.rgb * v_light.rgb;
+}
+`;
+      return new _Shader(context, vs, fs);
+    }
+    static newColored(context) {
+      let vs = `
+attribute vec4 ${_Shader.POSITION};
+attribute vec4 ${_Shader.COLOR};
+uniform mat4 ${_Shader.MVP_MATRIX};
+varying vec4 v_color;
+
+void main () {
+	v_color = ${_Shader.COLOR};
+	gl_Position = ${_Shader.MVP_MATRIX} * ${_Shader.POSITION};
+}
+`;
+      let fs = `
+#ifdef GL_ES
+	#define LOWP lowp
+	precision mediump float;
+#else
+	#define LOWP
+#endif
+varying LOWP vec4 v_color;
+
+void main () {
+	gl_FragColor = v_color;
+}
+`;
+      return new _Shader(context, vs, fs);
+    }
+  };
+  var Shader = _Shader;
+  __publicField(Shader, "MVP_MATRIX", "u_projTrans");
+  __publicField(Shader, "POSITION", "a_position");
+  __publicField(Shader, "COLOR", "a_color");
+  __publicField(Shader, "COLOR2", "a_color2");
+  __publicField(Shader, "TEXCOORDS", "a_texCoords");
+  __publicField(Shader, "SAMPLER", "u_texture");
+
+  // spine-webgl/src/Mesh.ts
+  var Mesh = class {
+    constructor(context, attributes, maxVertices, maxIndices) {
+      this.attributes = attributes;
+      this.context = context instanceof ManagedWebGLRenderingContext ? context : new ManagedWebGLRenderingContext(context);
+      this.elementsPerVertex = 0;
+      for (let i = 0; i < attributes.length; i++) {
+        this.elementsPerVertex += attributes[i].numElements;
+      }
+      this.vertices = new Float32Array(maxVertices * this.elementsPerVertex);
+      this.indices = new Uint16Array(maxIndices);
+      this.context.addRestorable(this);
+    }
+    context;
+    vertices;
+    verticesBuffer = null;
+    verticesLength = 0;
+    dirtyVertices = false;
+    indices;
+    indicesBuffer = null;
+    indicesLength = 0;
+    dirtyIndices = false;
+    elementsPerVertex = 0;
+    getAttributes() {
+      return this.attributes;
+    }
+    maxVertices() {
+      return this.vertices.length / this.elementsPerVertex;
+    }
+    numVertices() {
+      return this.verticesLength / this.elementsPerVertex;
+    }
+    setVerticesLength(length) {
+      this.dirtyVertices = true;
+      this.verticesLength = length;
+    }
+    getVertices() {
+      return this.vertices;
+    }
+    maxIndices() {
+      return this.indices.length;
+    }
+    numIndices() {
+      return this.indicesLength;
+    }
+    setIndicesLength(length) {
+      this.dirtyIndices = true;
+      this.indicesLength = length;
+    }
+    getIndices() {
+      return this.indices;
+    }
+    getVertexSizeInFloats() {
+      let size = 0;
+      for (var i = 0; i < this.attributes.length; i++) {
+        let attribute = this.attributes[i];
+        size += attribute.numElements;
+      }
+      return size;
+    }
+    setVertices(vertices) {
+      this.dirtyVertices = true;
+      if (vertices.length > this.vertices.length)
+        throw Error("Mesh can't store more than " + this.maxVertices() + " vertices");
+      this.vertices.set(vertices, 0);
+      this.verticesLength = vertices.length;
+    }
+    setIndices(indices) {
+      this.dirtyIndices = true;
+      if (indices.length > this.indices.length)
+        throw Error("Mesh can't store more than " + this.maxIndices() + " indices");
+      this.indices.set(indices, 0);
+      this.indicesLength = indices.length;
+    }
+    draw(shader, primitiveType) {
+      this.drawWithOffset(shader, primitiveType, 0, this.indicesLength > 0 ? this.indicesLength : this.verticesLength / this.elementsPerVertex);
+    }
+    drawWithOffset(shader, primitiveType, offset, count) {
+      let gl = this.context.gl;
+      if (this.dirtyVertices || this.dirtyIndices)
+        this.update();
+      this.bind(shader);
+      if (this.indicesLength > 0) {
+        gl.drawElements(primitiveType, count, gl.UNSIGNED_SHORT, offset * 2);
+      } else {
+        gl.drawArrays(primitiveType, offset, count);
+      }
+      this.unbind(shader);
+    }
+    bind(shader) {
+      let gl = this.context.gl;
+      gl.bindBuffer(gl.ARRAY_BUFFER, this.verticesBuffer);
+      let offset = 0;
+      for (let i = 0; i < this.attributes.length; i++) {
+        let attrib = this.attributes[i];
+        let location = shader.getAttributeLocation(attrib.name);
+        gl.enableVertexAttribArray(location);
+        gl.vertexAttribPointer(location, attrib.numElements, gl.FLOAT, false, this.elementsPerVertex * 4, offset * 4);
+        offset += attrib.numElements;
+      }
+      if (this.indicesLength > 0)
+        gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.indicesBuffer);
+    }
+    unbind(shader) {
+      let gl = this.context.gl;
+      for (let i = 0; i < this.attributes.length; i++) {
+        let attrib = this.attributes[i];
+        let location = shader.getAttributeLocation(attrib.name);
+        gl.disableVertexAttribArray(location);
+      }
+      gl.bindBuffer(gl.ARRAY_BUFFER, null);
+      if (this.indicesLength > 0)
+        gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, null);
+    }
+    update() {
+      let gl = this.context.gl;
+      if (this.dirtyVertices) {
+        if (!this.verticesBuffer) {
+          this.verticesBuffer = gl.createBuffer();
+        }
+        gl.bindBuffer(gl.ARRAY_BUFFER, this.verticesBuffer);
+        gl.bufferData(gl.ARRAY_BUFFER, this.vertices.subarray(0, this.verticesLength), gl.DYNAMIC_DRAW);
+        this.dirtyVertices = false;
+      }
+      if (this.dirtyIndices) {
+        if (!this.indicesBuffer) {
+          this.indicesBuffer = gl.createBuffer();
+        }
+        gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.indicesBuffer);
+        gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, this.indices.subarray(0, this.indicesLength), gl.DYNAMIC_DRAW);
+        this.dirtyIndices = false;
+      }
+    }
+    restore() {
+      this.verticesBuffer = null;
+      this.indicesBuffer = null;
+      this.update();
+    }
+    dispose() {
+      this.context.removeRestorable(this);
+      let gl = this.context.gl;
+      gl.deleteBuffer(this.verticesBuffer);
+      gl.deleteBuffer(this.indicesBuffer);
+    }
+  };
+  var VertexAttribute = class {
+    constructor(name, type, numElements) {
+      this.name = name;
+      this.type = type;
+      this.numElements = numElements;
+    }
+  };
+  var Position2Attribute = class extends VertexAttribute {
+    constructor() {
+      super(Shader.POSITION, VertexAttributeType.Float, 2);
+    }
+  };
+  var Position3Attribute = class extends VertexAttribute {
+    constructor() {
+      super(Shader.POSITION, VertexAttributeType.Float, 3);
+    }
+  };
+  var TexCoordAttribute = class extends VertexAttribute {
+    constructor(unit = 0) {
+      super(Shader.TEXCOORDS + (unit == 0 ? "" : unit), VertexAttributeType.Float, 2);
+    }
+  };
+  var ColorAttribute = class extends VertexAttribute {
+    constructor() {
+      super(Shader.COLOR, VertexAttributeType.Float, 4);
+    }
+  };
+  var Color2Attribute = class extends VertexAttribute {
+    constructor() {
+      super(Shader.COLOR2, VertexAttributeType.Float, 4);
+    }
+  };
+  var VertexAttributeType = /* @__PURE__ */ ((VertexAttributeType2) => {
+    VertexAttributeType2[VertexAttributeType2["Float"] = 0] = "Float";
+    return VertexAttributeType2;
+  })(VertexAttributeType || {});
+
+  // spine-webgl/src/PolygonBatcher.ts
+  var GL_ONE = 1;
+  var GL_ONE_MINUS_SRC_COLOR = 769;
+  var GL_SRC_ALPHA = 770;
+  var GL_ONE_MINUS_SRC_ALPHA = 771;
+  var GL_DST_COLOR = 774;
+  var _PolygonBatcher = class {
+    context;
+    drawCalls = 0;
+    isDrawing = false;
+    mesh;
+    shader = null;
+    lastTexture = null;
+    verticesLength = 0;
+    indicesLength = 0;
+    srcColorBlend;
+    srcAlphaBlend;
+    dstBlend;
+    cullWasEnabled = false;
+    constructor(context, twoColorTint = true, maxVertices = 10920) {
+      if (maxVertices > 10920)
+        throw new Error("Can't have more than 10920 triangles per batch: " + maxVertices);
+      this.context = context instanceof ManagedWebGLRenderingContext ? context : new ManagedWebGLRenderingContext(context);
+      let attributes = twoColorTint ? [new Position2Attribute(), new ColorAttribute(), new TexCoordAttribute(), new Color2Attribute()] : [new Position2Attribute(), new ColorAttribute(), new TexCoordAttribute()];
+      this.mesh = new Mesh(context, attributes, maxVertices, maxVertices * 3);
+      let gl = this.context.gl;
+      this.srcColorBlend = gl.SRC_ALPHA;
+      this.srcAlphaBlend = gl.ONE;
+      this.dstBlend = gl.ONE_MINUS_SRC_ALPHA;
+    }
+    begin(shader) {
+      if (this.isDrawing)
+        throw new Error("PolygonBatch is already drawing. Call PolygonBatch.end() before calling PolygonBatch.begin()");
+      this.drawCalls = 0;
+      this.shader = shader;
+      this.lastTexture = null;
+      this.isDrawing = true;
+      let gl = this.context.gl;
+      gl.enable(gl.BLEND);
+      gl.blendFuncSeparate(this.srcColorBlend, this.dstBlend, this.srcAlphaBlend, this.dstBlend);
+      if (_PolygonBatcher.disableCulling) {
+        this.cullWasEnabled = gl.isEnabled(gl.CULL_FACE);
+        if (this.cullWasEnabled)
+          gl.disable(gl.CULL_FACE);
+      }
+    }
+    setBlendMode(blendMode, premultipliedAlpha) {
+      const blendModeGL = _PolygonBatcher.blendModesGL[blendMode];
+      const srcColorBlend = premultipliedAlpha ? blendModeGL.srcRgbPma : blendModeGL.srcRgb;
+      const srcAlphaBlend = blendModeGL.srcAlpha;
+      const dstBlend = blendModeGL.dstRgb;
+      if (this.srcColorBlend == srcColorBlend && this.srcAlphaBlend == srcAlphaBlend && this.dstBlend == dstBlend)
+        return;
+      this.srcColorBlend = srcColorBlend;
+      this.srcAlphaBlend = srcAlphaBlend;
+      this.dstBlend = dstBlend;
+      if (this.isDrawing) {
+        this.flush();
+      }
+      let gl = this.context.gl;
+      gl.blendFuncSeparate(srcColorBlend, dstBlend, srcAlphaBlend, dstBlend);
+    }
+    draw(texture, vertices, indices) {
+      if (texture != this.lastTexture) {
+        this.flush();
+        this.lastTexture = texture;
+      } else if (this.verticesLength + vertices.length > this.mesh.getVertices().length || this.indicesLength + indices.length > this.mesh.getIndices().length) {
+        this.flush();
+      }
+      let indexStart = this.mesh.numVertices();
+      this.mesh.getVertices().set(vertices, this.verticesLength);
+      this.verticesLength += vertices.length;
+      this.mesh.setVerticesLength(this.verticesLength);
+      let indicesArray = this.mesh.getIndices();
+      for (let i = this.indicesLength, j = 0; j < indices.length; i++, j++)
+        indicesArray[i] = indices[j] + indexStart;
+      this.indicesLength += indices.length;
+      this.mesh.setIndicesLength(this.indicesLength);
+    }
+    flush() {
+      if (this.verticesLength == 0)
+        return;
+      if (!this.lastTexture)
+        throw new Error("No texture set.");
+      if (!this.shader)
+        throw new Error("No shader set.");
+      this.lastTexture.bind();
+      this.mesh.draw(this.shader, this.context.gl.TRIANGLES);
+      this.verticesLength = 0;
+      this.indicesLength = 0;
+      this.mesh.setVerticesLength(0);
+      this.mesh.setIndicesLength(0);
+      this.drawCalls++;
+      _PolygonBatcher.globalDrawCalls++;
+    }
+    end() {
+      if (!this.isDrawing)
+        throw new Error("PolygonBatch is not drawing. Call PolygonBatch.begin() before calling PolygonBatch.end()");
+      if (this.verticesLength > 0 || this.indicesLength > 0)
+        this.flush();
+      this.shader = null;
+      this.lastTexture = null;
+      this.isDrawing = false;
+      let gl = this.context.gl;
+      gl.disable(gl.BLEND);
+      if (_PolygonBatcher.disableCulling) {
+        if (this.cullWasEnabled)
+          gl.enable(gl.CULL_FACE);
+      }
+    }
+    getDrawCalls() {
+      return this.drawCalls;
+    }
+    static getAndResetGlobalDrawCalls() {
+      let result = _PolygonBatcher.globalDrawCalls;
+      _PolygonBatcher.globalDrawCalls = 0;
+      return result;
+    }
+    dispose() {
+      this.mesh.dispose();
+    }
+  };
+  var PolygonBatcher = _PolygonBatcher;
+  __publicField(PolygonBatcher, "disableCulling", false);
+  __publicField(PolygonBatcher, "globalDrawCalls", 0);
+  __publicField(PolygonBatcher, "blendModesGL", [
+    { srcRgb: GL_SRC_ALPHA, srcRgbPma: GL_ONE, dstRgb: GL_ONE_MINUS_SRC_ALPHA, srcAlpha: GL_ONE },
+    { srcRgb: GL_SRC_ALPHA, srcRgbPma: GL_ONE, dstRgb: GL_ONE, srcAlpha: GL_ONE },
+    { srcRgb: GL_DST_COLOR, srcRgbPma: GL_DST_COLOR, dstRgb: GL_ONE_MINUS_SRC_ALPHA, srcAlpha: GL_ONE },
+    { srcRgb: GL_ONE, srcRgbPma: GL_ONE, dstRgb: GL_ONE_MINUS_SRC_COLOR, srcAlpha: GL_ONE }
+  ]);
+
+  // spine-webgl/src/ShapeRenderer.ts
+  var ShapeRenderer = class {
+    context;
+    isDrawing = false;
+    mesh;
+    shapeType = ShapeType.Filled;
+    color = new Color(1, 1, 1, 1);
+    shader = null;
+    vertexIndex = 0;
+    tmp = new Vector2();
+    srcColorBlend;
+    srcAlphaBlend;
+    dstBlend;
+    constructor(context, maxVertices = 10920) {
+      if (maxVertices > 10920)
+        throw new Error("Can't have more than 10920 triangles per batch: " + maxVertices);
+      this.context = context instanceof ManagedWebGLRenderingContext ? context : new ManagedWebGLRenderingContext(context);
+      this.mesh = new Mesh(context, [new Position2Attribute(), new ColorAttribute()], maxVertices, 0);
+      let gl = this.context.gl;
+      this.srcColorBlend = gl.SRC_ALPHA;
+      this.srcAlphaBlend = gl.ONE;
+      this.dstBlend = gl.ONE_MINUS_SRC_ALPHA;
+    }
+    begin(shader) {
+      if (this.isDrawing)
+        throw new Error("ShapeRenderer.begin() has already been called");
+      this.shader = shader;
+      this.vertexIndex = 0;
+      this.isDrawing = true;
+      let gl = this.context.gl;
+      gl.enable(gl.BLEND);
+      gl.blendFuncSeparate(this.srcColorBlend, this.dstBlend, this.srcAlphaBlend, this.dstBlend);
+    }
+    setBlendMode(srcColorBlend, srcAlphaBlend, dstBlend) {
+      this.srcColorBlend = srcColorBlend;
+      this.srcAlphaBlend = srcAlphaBlend;
+      this.dstBlend = dstBlend;
+      if (this.isDrawing) {
+        this.flush();
+        let gl = this.context.gl;
+        gl.blendFuncSeparate(srcColorBlend, dstBlend, srcAlphaBlend, dstBlend);
+      }
+    }
+    setColor(color) {
+      this.color.setFromColor(color);
+    }
+    setColorWith(r, g, b, a) {
+      this.color.set(r, g, b, a);
+    }
+    point(x, y, color) {
+      this.check(ShapeType.Point, 1);
+      if (!color)
+        color = this.color;
+      this.vertex(x, y, color);
+    }
+    line(x, y, x2, y2, color) {
+      this.check(ShapeType.Line, 2);
+      let vertices = this.mesh.getVertices();
+      let idx = this.vertexIndex;
+      if (!color)
+        color = this.color;
+      this.vertex(x, y, color);
+      this.vertex(x2, y2, color);
+    }
+    triangle(filled, x, y, x2, y2, x3, y3, color, color2, color3) {
+      this.check(filled ? ShapeType.Filled : ShapeType.Line, 3);
+      let vertices = this.mesh.getVertices();
+      let idx = this.vertexIndex;
+      if (!color)
+        color = this.color;
+      if (!color2)
+        color2 = this.color;
+      if (!color3)
+        color3 = this.color;
+      if (filled) {
+        this.vertex(x, y, color);
+        this.vertex(x2, y2, color2);
+        this.vertex(x3, y3, color3);
+      } else {
+        this.vertex(x, y, color);
+        this.vertex(x2, y2, color2);
+        this.vertex(x2, y2, color);
+        this.vertex(x3, y3, color2);
+        this.vertex(x3, y3, color);
+        this.vertex(x, y, color2);
+      }
+    }
+    quad(filled, x, y, x2, y2, x3, y3, x4, y4, color, color2, color3, color4) {
+      this.check(filled ? ShapeType.Filled : ShapeType.Line, 3);
+      let vertices = this.mesh.getVertices();
+      let idx = this.vertexIndex;
+      if (!color)
+        color = this.color;
+      if (!color2)
+        color2 = this.color;
+      if (!color3)
+        color3 = this.color;
+      if (!color4)
+        color4 = this.color;
+      if (filled) {
+        this.vertex(x, y, color);
+        this.vertex(x2, y2, color2);
+        this.vertex(x3, y3, color3);
+        this.vertex(x3, y3, color3);
+        this.vertex(x4, y4, color4);
+        this.vertex(x, y, color);
+      } else {
+        this.vertex(x, y, color);
+        this.vertex(x2, y2, color2);
+        this.vertex(x2, y2, color2);
+        this.vertex(x3, y3, color3);
+        this.vertex(x3, y3, color3);
+        this.vertex(x4, y4, color4);
+        this.vertex(x4, y4, color4);
+        this.vertex(x, y, color);
+      }
+    }
+    rect(filled, x, y, width, height, color) {
+      this.quad(filled, x, y, x + width, y, x + width, y + height, x, y + height, color, color, color, color);
+    }
+    rectLine(filled, x1, y1, x2, y2, width, color) {
+      this.check(filled ? ShapeType.Filled : ShapeType.Line, 8);
+      if (!color)
+        color = this.color;
+      let t = this.tmp.set(y2 - y1, x1 - x2);
+      t.normalize();
+      width *= 0.5;
+      let tx = t.x * width;
+      let ty = t.y * width;
+      if (!filled) {
+        this.vertex(x1 + tx, y1 + ty, color);
+        this.vertex(x1 - tx, y1 - ty, color);
+        this.vertex(x2 + tx, y2 + ty, color);
+        this.vertex(x2 - tx, y2 - ty, color);
+        this.vertex(x2 + tx, y2 + ty, color);
+        this.vertex(x1 + tx, y1 + ty, color);
+        this.vertex(x2 - tx, y2 - ty, color);
+        this.vertex(x1 - tx, y1 - ty, color);
+      } else {
+        this.vertex(x1 + tx, y1 + ty, color);
+        this.vertex(x1 - tx, y1 - ty, color);
+        this.vertex(x2 + tx, y2 + ty, color);
+        this.vertex(x2 - tx, y2 - ty, color);
+        this.vertex(x2 + tx, y2 + ty, color);
+        this.vertex(x1 - tx, y1 - ty, color);
+      }
+    }
+    x(x, y, size) {
+      this.line(x - size, y - size, x + size, y + size);
+      this.line(x - size, y + size, x + size, y - size);
+    }
+    polygon(polygonVertices, offset, count, color) {
+      if (count < 3)
+        throw new Error("Polygon must contain at least 3 vertices");
+      this.check(ShapeType.Line, count * 2);
+      if (!color)
+        color = this.color;
+      let vertices = this.mesh.getVertices();
+      let idx = this.vertexIndex;
+      offset <<= 1;
+      count <<= 1;
+      let firstX = polygonVertices[offset];
+      let firstY = polygonVertices[offset + 1];
+      let last = offset + count;
+      for (let i = offset, n = offset + count - 2; i < n; i += 2) {
+        let x1 = polygonVertices[i];
+        let y1 = polygonVertices[i + 1];
+        let x2 = 0;
+        let y2 = 0;
+        if (i + 2 >= last) {
+          x2 = firstX;
+          y2 = firstY;
+        } else {
+          x2 = polygonVertices[i + 2];
+          y2 = polygonVertices[i + 3];
+        }
+        this.vertex(x1, y1, color);
+        this.vertex(x2, y2, color);
+      }
+    }
+    circle(filled, x, y, radius, color, segments = 0) {
+      if (segments == 0)
+        segments = Math.max(1, 6 * MathUtils.cbrt(radius) | 0);
+      if (segments <= 0)
+        throw new Error("segments must be > 0.");
+      if (!color)
+        color = this.color;
+      let angle = 2 * MathUtils.PI / segments;
+      let cos = Math.cos(angle);
+      let sin = Math.sin(angle);
+      let cx = radius, cy = 0;
+      if (!filled) {
+        this.check(ShapeType.Line, segments * 2 + 2);
+        for (let i = 0; i < segments; i++) {
+          this.vertex(x + cx, y + cy, color);
+          let temp2 = cx;
+          cx = cos * cx - sin * cy;
+          cy = sin * temp2 + cos * cy;
+          this.vertex(x + cx, y + cy, color);
+        }
+        this.vertex(x + cx, y + cy, color);
+      } else {
+        this.check(ShapeType.Filled, segments * 3 + 3);
+        segments--;
+        for (let i = 0; i < segments; i++) {
+          this.vertex(x, y, color);
+          this.vertex(x + cx, y + cy, color);
+          let temp2 = cx;
+          cx = cos * cx - sin * cy;
+          cy = sin * temp2 + cos * cy;
+          this.vertex(x + cx, y + cy, color);
+        }
+        this.vertex(x, y, color);
+        this.vertex(x + cx, y + cy, color);
+      }
+      let temp = cx;
+      cx = radius;
+      cy = 0;
+      this.vertex(x + cx, y + cy, color);
+    }
+    curve(x1, y1, cx1, cy1, cx2, cy2, x2, y2, segments, color) {
+      this.check(ShapeType.Line, segments * 2 + 2);
+      if (!color)
+        color = this.color;
+      let subdiv_step = 1 / segments;
+      let subdiv_step2 = subdiv_step * subdiv_step;
+      let subdiv_step3 = subdiv_step * subdiv_step * subdiv_step;
+      let pre1 = 3 * subdiv_step;
+      let pre2 = 3 * subdiv_step2;
+      let pre4 = 6 * subdiv_step2;
+      let pre5 = 6 * subdiv_step3;
+      let tmp1x = x1 - cx1 * 2 + cx2;
+      let tmp1y = y1 - cy1 * 2 + cy2;
+      let tmp2x = (cx1 - cx2) * 3 - x1 + x2;
+      let tmp2y = (cy1 - cy2) * 3 - y1 + y2;
+      let fx = x1;
+      let fy = y1;
+      let dfx = (cx1 - x1) * pre1 + tmp1x * pre2 + tmp2x * subdiv_step3;
+      let dfy = (cy1 - y1) * pre1 + tmp1y * pre2 + tmp2y * subdiv_step3;
+      let ddfx = tmp1x * pre4 + tmp2x * pre5;
+      let ddfy = tmp1y * pre4 + tmp2y * pre5;
+      let dddfx = tmp2x * pre5;
+      let dddfy = tmp2y * pre5;
+      while (segments-- > 0) {
+        this.vertex(fx, fy, color);
+        fx += dfx;
+        fy += dfy;
+        dfx += ddfx;
+        dfy += ddfy;
+        ddfx += dddfx;
+        ddfy += dddfy;
+        this.vertex(fx, fy, color);
+      }
+      this.vertex(fx, fy, color);
+      this.vertex(x2, y2, color);
+    }
+    vertex(x, y, color) {
+      let idx = this.vertexIndex;
+      let vertices = this.mesh.getVertices();
+      vertices[idx++] = x;
+      vertices[idx++] = y;
+      vertices[idx++] = color.r;
+      vertices[idx++] = color.g;
+      vertices[idx++] = color.b;
+      vertices[idx++] = color.a;
+      this.vertexIndex = idx;
+    }
+    end() {
+      if (!this.isDrawing)
+        throw new Error("ShapeRenderer.begin() has not been called");
+      this.flush();
+      let gl = this.context.gl;
+      gl.disable(gl.BLEND);
+      this.isDrawing = false;
+    }
+    flush() {
+      if (this.vertexIndex == 0)
+        return;
+      if (!this.shader)
+        throw new Error("No shader set.");
+      this.mesh.setVerticesLength(this.vertexIndex);
+      this.mesh.draw(this.shader, this.shapeType);
+      this.vertexIndex = 0;
+    }
+    check(shapeType, numVertices) {
+      if (!this.isDrawing)
+        throw new Error("ShapeRenderer.begin() has not been called");
+      if (this.shapeType == shapeType) {
+        if (this.mesh.maxVertices() - this.mesh.numVertices() < numVertices)
+          this.flush();
+        else
+          return;
+      } else {
+        this.flush();
+        this.shapeType = shapeType;
+      }
+    }
+    dispose() {
+      this.mesh.dispose();
+    }
+  };
+  var ShapeType = /* @__PURE__ */ ((ShapeType2) => {
+    ShapeType2[ShapeType2["Point"] = 0] = "Point";
+    ShapeType2[ShapeType2["Line"] = 1] = "Line";
+    ShapeType2[ShapeType2["Filled"] = 4] = "Filled";
+    return ShapeType2;
+  })(ShapeType || {});
+
+  // spine-webgl/src/SkeletonDebugRenderer.ts
+  var _SkeletonDebugRenderer = class {
+    boneLineColor = new Color(1, 0, 0, 1);
+    boneOriginColor = new Color(0, 1, 0, 1);
+    attachmentLineColor = new Color(0, 0, 1, 0.5);
+    triangleLineColor = new Color(1, 0.64, 0, 0.5);
+    pathColor = new Color().setFromString("FF7F00");
+    clipColor = new Color(0.8, 0, 0, 2);
+    aabbColor = new Color(0, 1, 0, 0.5);
+    drawBones = true;
+    drawRegionAttachments = true;
+    drawBoundingBoxes = true;
+    drawMeshHull = true;
+    drawMeshTriangles = true;
+    drawPaths = true;
+    drawSkeletonXY = false;
+    drawClipping = true;
+    premultipliedAlpha = false;
+    scale = 1;
+    boneWidth = 2;
+    context;
+    bounds = new SkeletonBounds();
+    temp = new Array();
+    vertices = Utils.newFloatArray(2 * 1024);
+    constructor(context) {
+      this.context = context instanceof ManagedWebGLRenderingContext ? context : new ManagedWebGLRenderingContext(context);
+    }
+    draw(shapes, skeleton, ignoredBones) {
+      let skeletonX = skeleton.x;
+      let skeletonY = skeleton.y;
+      let gl = this.context.gl;
+      let srcFunc = this.premultipliedAlpha ? gl.ONE : gl.SRC_ALPHA;
+      shapes.setBlendMode(srcFunc, gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+      let bones = skeleton.bones;
+      if (this.drawBones) {
+        shapes.setColor(this.boneLineColor);
+        for (let i = 0, n = bones.length; i < n; i++) {
+          let bone = bones[i];
+          if (ignoredBones && ignoredBones.indexOf(bone.data.name) > -1)
+            continue;
+          if (!bone.parent)
+            continue;
+          let x = bone.data.length * bone.a + bone.worldX;
+          let y = bone.data.length * bone.c + bone.worldY;
+          shapes.rectLine(true, bone.worldX, bone.worldY, x, y, this.boneWidth * this.scale);
+        }
+        if (this.drawSkeletonXY)
+          shapes.x(skeletonX, skeletonY, 4 * this.scale);
+      }
+      if (this.drawRegionAttachments) {
+        shapes.setColor(this.attachmentLineColor);
+        let slots = skeleton.slots;
+        for (let i = 0, n = slots.length; i < n; i++) {
+          let slot = slots[i];
+          let attachment = slot.getAttachment();
+          if (attachment instanceof RegionAttachment) {
+            let regionAttachment = attachment;
+            let vertices = this.vertices;
+            regionAttachment.computeWorldVertices(slot, vertices, 0, 2);
+            shapes.line(vertices[0], vertices[1], vertices[2], vertices[3]);
+            shapes.line(vertices[2], vertices[3], vertices[4], vertices[5]);
+            shapes.line(vertices[4], vertices[5], vertices[6], vertices[7]);
+            shapes.line(vertices[6], vertices[7], vertices[0], vertices[1]);
+          }
+        }
+      }
+      if (this.drawMeshHull || this.drawMeshTriangles) {
+        let slots = skeleton.slots;
+        for (let i = 0, n = slots.length; i < n; i++) {
+          let slot = slots[i];
+          if (!slot.bone.active)
+            continue;
+          let attachment = slot.getAttachment();
+          if (!(attachment instanceof MeshAttachment))
+            continue;
           let mesh = attachment;
-          vertices = this.computeMeshVertices(slot, mesh, false);
-          triangles = mesh.triangles;
-          texture = mesh.region.texture.getImage();
-        } else
-          continue;
-        if (texture) {
-          if (slot.data.blendMode != blendMode)
-            blendMode = slot.data.blendMode;
-          let slotColor = slot.color;
-          let attachmentColor = attachment.color;
-          color.set(
-            skeletonColor.r * slotColor.r * attachmentColor.r,
-            skeletonColor.g * slotColor.g * attachmentColor.g,
-            skeletonColor.b * slotColor.b * attachmentColor.b,
-            skeletonColor.a * slotColor.a * attachmentColor.a
-          );
-          ctx.globalAlpha = color.a;
-          for (var j = 0; j < triangles.length; j += 3) {
-            let t1 = triangles[j] * 8, t2 = triangles[j + 1] * 8, t3 = triangles[j + 2] * 8;
-            let x0 = vertices[t1], y0 = vertices[t1 + 1], u0 = vertices[t1 + 6], v0 = vertices[t1 + 7];
-            let x1 = vertices[t2], y1 = vertices[t2 + 1], u1 = vertices[t2 + 6], v1 = vertices[t2 + 7];
-            let x2 = vertices[t3], y2 = vertices[t3 + 1], u2 = vertices[t3 + 6], v2 = vertices[t3 + 7];
-            this.drawTriangle(texture, x0, y0, u0, v0, x1, y1, u1, v1, x2, y2, u2, v2);
-            if (this.debugRendering) {
-              ctx.strokeStyle = "green";
-              ctx.beginPath();
-              ctx.moveTo(x0, y0);
-              ctx.lineTo(x1, y1);
-              ctx.lineTo(x2, y2);
-              ctx.lineTo(x0, y0);
-              ctx.stroke();
+          let vertices = this.vertices;
+          mesh.computeWorldVertices(slot, 0, mesh.worldVerticesLength, vertices, 0, 2);
+          let triangles = mesh.triangles;
+          let hullLength = mesh.hullLength;
+          if (this.drawMeshTriangles) {
+            shapes.setColor(this.triangleLineColor);
+            for (let ii = 0, nn = triangles.length; ii < nn; ii += 3) {
+              let v1 = triangles[ii] * 2, v2 = triangles[ii + 1] * 2, v3 = triangles[ii + 2] * 2;
+              shapes.triangle(
+                false,
+                vertices[v1],
+                vertices[v1 + 1],
+                //
+                vertices[v2],
+                vertices[v2 + 1],
+                //
+                vertices[v3],
+                vertices[v3 + 1]
+                //
+              );
+            }
+          }
+          if (this.drawMeshHull && hullLength > 0) {
+            shapes.setColor(this.attachmentLineColor);
+            hullLength = (hullLength >> 1) * 2;
+            let lastX = vertices[hullLength - 2], lastY = vertices[hullLength - 1];
+            for (let ii = 0, nn = hullLength; ii < nn; ii += 2) {
+              let x = vertices[ii], y = vertices[ii + 1];
+              shapes.line(x, y, lastX, lastY);
+              lastX = x;
+              lastY = y;
             }
           }
         }
       }
-      this.ctx.globalAlpha = 1;
-    }
-    // Adapted from http://extremelysatisfactorytotalitarianism.com/blog/?p=2120
-    // Apache 2 licensed
-    drawTriangle(img, x0, y0, u0, v0, x1, y1, u1, v1, x2, y2, u2, v2) {
-      let ctx = this.ctx;
-      u0 *= img.width;
-      v0 *= img.height;
-      u1 *= img.width;
-      v1 *= img.height;
-      u2 *= img.width;
-      v2 *= img.height;
-      ctx.beginPath();
-      ctx.moveTo(x0, y0);
-      ctx.lineTo(x1, y1);
-      ctx.lineTo(x2, y2);
-      ctx.closePath();
-      x1 -= x0;
-      y1 -= y0;
-      x2 -= x0;
-      y2 -= y0;
-      u1 -= u0;
-      v1 -= v0;
-      u2 -= u0;
-      v2 -= v0;
-      var det = 1 / (u1 * v2 - u2 * v1), a = (v2 * x1 - v1 * x2) * det, b = (v2 * y1 - v1 * y2) * det, c = (u1 * x2 - u2 * x1) * det, d = (u1 * y2 - u2 * y1) * det, e = x0 - a * u0 - c * v0, f = y0 - b * u0 - d * v0;
-      ctx.save();
-      ctx.transform(a, b, c, d, e, f);
-      ctx.clip();
-      ctx.drawImage(img, 0, 0);
-      ctx.restore();
-    }
-    computeRegionVertices(slot, region, pma) {
-      let skeletonColor = slot.bone.skeleton.color;
-      let slotColor = slot.color;
-      let regionColor = region.color;
-      let alpha = skeletonColor.a * slotColor.a * regionColor.a;
-      let multiplier = pma ? alpha : 1;
-      let color = this.tempColor;
-      color.set(
-        skeletonColor.r * slotColor.r * regionColor.r * multiplier,
-        skeletonColor.g * slotColor.g * regionColor.g * multiplier,
-        skeletonColor.b * slotColor.b * regionColor.b * multiplier,
-        alpha
-      );
-      region.computeWorldVertices(slot, this.vertices, 0, _SkeletonRenderer.VERTEX_SIZE);
-      let vertices = this.vertices;
-      let uvs = region.uvs;
-      vertices[RegionAttachment.C1R] = color.r;
-      vertices[RegionAttachment.C1G] = color.g;
-      vertices[RegionAttachment.C1B] = color.b;
-      vertices[RegionAttachment.C1A] = color.a;
-      vertices[RegionAttachment.U1] = uvs[0];
-      vertices[RegionAttachment.V1] = uvs[1];
-      vertices[RegionAttachment.C2R] = color.r;
-      vertices[RegionAttachment.C2G] = color.g;
-      vertices[RegionAttachment.C2B] = color.b;
-      vertices[RegionAttachment.C2A] = color.a;
-      vertices[RegionAttachment.U2] = uvs[2];
-      vertices[RegionAttachment.V2] = uvs[3];
-      vertices[RegionAttachment.C3R] = color.r;
-      vertices[RegionAttachment.C3G] = color.g;
-      vertices[RegionAttachment.C3B] = color.b;
-      vertices[RegionAttachment.C3A] = color.a;
-      vertices[RegionAttachment.U3] = uvs[4];
-      vertices[RegionAttachment.V3] = uvs[5];
-      vertices[RegionAttachment.C4R] = color.r;
-      vertices[RegionAttachment.C4G] = color.g;
-      vertices[RegionAttachment.C4B] = color.b;
-      vertices[RegionAttachment.C4A] = color.a;
-      vertices[RegionAttachment.U4] = uvs[6];
-      vertices[RegionAttachment.V4] = uvs[7];
-      return vertices;
-    }
-    computeMeshVertices(slot, mesh, pma) {
-      let skeletonColor = slot.bone.skeleton.color;
-      let slotColor = slot.color;
-      let regionColor = mesh.color;
-      let alpha = skeletonColor.a * slotColor.a * regionColor.a;
-      let multiplier = pma ? alpha : 1;
-      let color = this.tempColor;
-      color.set(
-        skeletonColor.r * slotColor.r * regionColor.r * multiplier,
-        skeletonColor.g * slotColor.g * regionColor.g * multiplier,
-        skeletonColor.b * slotColor.b * regionColor.b * multiplier,
-        alpha
-      );
-      let vertexCount = mesh.worldVerticesLength / 2;
-      let vertices = this.vertices;
-      if (vertices.length < mesh.worldVerticesLength)
-        this.vertices = vertices = Utils.newFloatArray(mesh.worldVerticesLength);
-      mesh.computeWorldVertices(slot, 0, mesh.worldVerticesLength, vertices, 0, _SkeletonRenderer.VERTEX_SIZE);
-      let uvs = mesh.uvs;
-      for (let i = 0, u = 0, v = 2; i < vertexCount; i++) {
-        vertices[v++] = color.r;
-        vertices[v++] = color.g;
-        vertices[v++] = color.b;
-        vertices[v++] = color.a;
-        vertices[v++] = uvs[u++];
-        vertices[v++] = uvs[u++];
-        v += 2;
+      if (this.drawBoundingBoxes) {
+        let bounds = this.bounds;
+        bounds.update(skeleton, true);
+        shapes.setColor(this.aabbColor);
+        shapes.rect(false, bounds.minX, bounds.minY, bounds.getWidth(), bounds.getHeight());
+        let polygons = bounds.polygons;
+        let boxes = bounds.boundingBoxes;
+        for (let i = 0, n = polygons.length; i < n; i++) {
+          let polygon = polygons[i];
+          shapes.setColor(boxes[i].color);
+          shapes.polygon(polygon, 0, polygon.length);
+        }
       }
-      return vertices;
+      if (this.drawPaths) {
+        let slots = skeleton.slots;
+        for (let i = 0, n = slots.length; i < n; i++) {
+          let slot = slots[i];
+          if (!slot.bone.active)
+            continue;
+          let attachment = slot.getAttachment();
+          if (!(attachment instanceof PathAttachment))
+            continue;
+          let path = attachment;
+          let nn = path.worldVerticesLength;
+          let world = this.temp = Utils.setArraySize(this.temp, nn, 0);
+          path.computeWorldVertices(slot, 0, nn, world, 0, 2);
+          let color = this.pathColor;
+          let x1 = world[2], y1 = world[3], x2 = 0, y2 = 0;
+          if (path.closed) {
+            shapes.setColor(color);
+            let cx1 = world[0], cy1 = world[1], cx2 = world[nn - 2], cy2 = world[nn - 1];
+            x2 = world[nn - 4];
+            y2 = world[nn - 3];
+            shapes.curve(x1, y1, cx1, cy1, cx2, cy2, x2, y2, 32);
+            shapes.setColor(_SkeletonDebugRenderer.LIGHT_GRAY);
+            shapes.line(x1, y1, cx1, cy1);
+            shapes.line(x2, y2, cx2, cy2);
+          }
+          nn -= 4;
+          for (let ii = 4; ii < nn; ii += 6) {
+            let cx1 = world[ii], cy1 = world[ii + 1], cx2 = world[ii + 2], cy2 = world[ii + 3];
+            x2 = world[ii + 4];
+            y2 = world[ii + 5];
+            shapes.setColor(color);
+            shapes.curve(x1, y1, cx1, cy1, cx2, cy2, x2, y2, 32);
+            shapes.setColor(_SkeletonDebugRenderer.LIGHT_GRAY);
+            shapes.line(x1, y1, cx1, cy1);
+            shapes.line(x2, y2, cx2, cy2);
+            x1 = x2;
+            y1 = y2;
+          }
+        }
+      }
+      if (this.drawBones) {
+        shapes.setColor(this.boneOriginColor);
+        for (let i = 0, n = bones.length; i < n; i++) {
+          let bone = bones[i];
+          if (ignoredBones && ignoredBones.indexOf(bone.data.name) > -1)
+            continue;
+          shapes.circle(true, bone.worldX, bone.worldY, 3 * this.scale, this.boneOriginColor, 8);
+        }
+      }
+      if (this.drawClipping) {
+        let slots = skeleton.slots;
+        shapes.setColor(this.clipColor);
+        for (let i = 0, n = slots.length; i < n; i++) {
+          let slot = slots[i];
+          if (!slot.bone.active)
+            continue;
+          let attachment = slot.getAttachment();
+          if (!(attachment instanceof ClippingAttachment))
+            continue;
+          let clip = attachment;
+          let nn = clip.worldVerticesLength;
+          let world = this.temp = Utils.setArraySize(this.temp, nn, 0);
+          clip.computeWorldVertices(slot, 0, nn, world, 0, 2);
+          for (let i2 = 0, n2 = world.length; i2 < n2; i2 += 2) {
+            let x = world[i2];
+            let y = world[i2 + 1];
+            let x2 = world[(i2 + 2) % world.length];
+            let y2 = world[(i2 + 3) % world.length];
+            shapes.line(x, y, x2, y2);
+          }
+        }
+      }
+    }
+    dispose() {
+    }
+  };
+  var SkeletonDebugRenderer = _SkeletonDebugRenderer;
+  __publicField(SkeletonDebugRenderer, "LIGHT_GRAY", new Color(192 / 255, 192 / 255, 192 / 255, 1));
+  __publicField(SkeletonDebugRenderer, "GREEN", new Color(0, 1, 0, 1));
+
+  // spine-webgl/src/SkeletonRenderer.ts
+  var Renderable = class {
+    constructor(vertices, numVertices, numFloats) {
+      this.vertices = vertices;
+      this.numVertices = numVertices;
+      this.numFloats = numFloats;
+    }
+  };
+  var _SkeletonRenderer = class {
+    premultipliedAlpha = false;
+    tempColor = new Color();
+    tempColor2 = new Color();
+    vertices;
+    vertexSize = 2 + 2 + 4;
+    twoColorTint = false;
+    renderable = new Renderable([], 0, 0);
+    clipper = new SkeletonClipping();
+    temp = new Vector2();
+    temp2 = new Vector2();
+    temp3 = new Color();
+    temp4 = new Color();
+    constructor(context, twoColorTint = true) {
+      this.twoColorTint = twoColorTint;
+      if (twoColorTint)
+        this.vertexSize += 4;
+      this.vertices = Utils.newFloatArray(this.vertexSize * 1024);
+    }
+    draw(batcher, skeleton, slotRangeStart = -1, slotRangeEnd = -1, transformer = null) {
+      let clipper = this.clipper;
+      let premultipliedAlpha = this.premultipliedAlpha;
+      let twoColorTint = this.twoColorTint;
+      let blendMode = null;
+      let renderable = this.renderable;
+      let uvs;
+      let triangles;
+      let drawOrder = skeleton.drawOrder;
+      let attachmentColor;
+      let skeletonColor = skeleton.color;
+      let vertexSize = twoColorTint ? 12 : 8;
+      let inRange = false;
+      if (slotRangeStart == -1)
+        inRange = true;
+      for (let i = 0, n = drawOrder.length; i < n; i++) {
+        let clippedVertexSize = clipper.isClipping() ? 2 : vertexSize;
+        let slot = drawOrder[i];
+        if (!slot.bone.active) {
+          clipper.clipEndWithSlot(slot);
+          continue;
+        }
+        if (slotRangeStart >= 0 && slotRangeStart == slot.data.index) {
+          inRange = true;
+        }
+        if (!inRange) {
+          clipper.clipEndWithSlot(slot);
+          continue;
+        }
+        if (slotRangeEnd >= 0 && slotRangeEnd == slot.data.index) {
+          inRange = false;
+        }
+        let attachment = slot.getAttachment();
+        let texture;
+        if (attachment instanceof RegionAttachment) {
+          let region = attachment;
+          renderable.vertices = this.vertices;
+          renderable.numVertices = 4;
+          renderable.numFloats = clippedVertexSize << 2;
+          region.computeWorldVertices(slot, renderable.vertices, 0, clippedVertexSize);
+          triangles = _SkeletonRenderer.QUAD_TRIANGLES;
+          uvs = region.uvs;
+          texture = region.region.texture;
+          attachmentColor = region.color;
+        } else if (attachment instanceof MeshAttachment) {
+          let mesh = attachment;
+          renderable.vertices = this.vertices;
+          renderable.numVertices = mesh.worldVerticesLength >> 1;
+          renderable.numFloats = renderable.numVertices * clippedVertexSize;
+          if (renderable.numFloats > renderable.vertices.length) {
+            renderable.vertices = this.vertices = Utils.newFloatArray(renderable.numFloats);
+          }
+          mesh.computeWorldVertices(slot, 0, mesh.worldVerticesLength, renderable.vertices, 0, clippedVertexSize);
+          triangles = mesh.triangles;
+          texture = mesh.region.texture;
+          uvs = mesh.uvs;
+          attachmentColor = mesh.color;
+        } else if (attachment instanceof ClippingAttachment) {
+          let clip = attachment;
+          clipper.clipStart(slot, clip);
+          continue;
+        } else {
+          clipper.clipEndWithSlot(slot);
+          continue;
+        }
+        if (texture) {
+          let slotColor = slot.color;
+          let finalColor = this.tempColor;
+          finalColor.r = skeletonColor.r * slotColor.r * attachmentColor.r;
+          finalColor.g = skeletonColor.g * slotColor.g * attachmentColor.g;
+          finalColor.b = skeletonColor.b * slotColor.b * attachmentColor.b;
+          finalColor.a = skeletonColor.a * slotColor.a * attachmentColor.a;
+          if (premultipliedAlpha) {
+            finalColor.r *= finalColor.a;
+            finalColor.g *= finalColor.a;
+            finalColor.b *= finalColor.a;
+          }
+          let darkColor = this.tempColor2;
+          if (!slot.darkColor)
+            darkColor.set(0, 0, 0, 1);
+          else {
+            if (premultipliedAlpha) {
+              darkColor.r = slot.darkColor.r * finalColor.a;
+              darkColor.g = slot.darkColor.g * finalColor.a;
+              darkColor.b = slot.darkColor.b * finalColor.a;
+            } else {
+              darkColor.setFromColor(slot.darkColor);
+            }
+            darkColor.a = premultipliedAlpha ? 1 : 0;
+          }
+          let slotBlendMode = slot.data.blendMode;
+          if (slotBlendMode != blendMode) {
+            blendMode = slotBlendMode;
+            batcher.setBlendMode(blendMode, premultipliedAlpha);
+          }
+          if (clipper.isClipping()) {
+            clipper.clipTriangles(renderable.vertices, renderable.numFloats, triangles, triangles.length, uvs, finalColor, darkColor, twoColorTint);
+            let clippedVertices = new Float32Array(clipper.clippedVertices);
+            let clippedTriangles = clipper.clippedTriangles;
+            if (transformer)
+              transformer(clippedVertices, clippedVertices.length, vertexSize);
+            batcher.draw(texture, clippedVertices, clippedTriangles);
+          } else {
+            let verts = renderable.vertices;
+            if (!twoColorTint) {
+              for (let v = 2, u = 0, n2 = renderable.numFloats; v < n2; v += vertexSize, u += 2) {
+                verts[v] = finalColor.r;
+                verts[v + 1] = finalColor.g;
+                verts[v + 2] = finalColor.b;
+                verts[v + 3] = finalColor.a;
+                verts[v + 4] = uvs[u];
+                verts[v + 5] = uvs[u + 1];
+              }
+            } else {
+              for (let v = 2, u = 0, n2 = renderable.numFloats; v < n2; v += vertexSize, u += 2) {
+                verts[v] = finalColor.r;
+                verts[v + 1] = finalColor.g;
+                verts[v + 2] = finalColor.b;
+                verts[v + 3] = finalColor.a;
+                verts[v + 4] = uvs[u];
+                verts[v + 5] = uvs[u + 1];
+                verts[v + 6] = darkColor.r;
+                verts[v + 7] = darkColor.g;
+                verts[v + 8] = darkColor.b;
+                verts[v + 9] = darkColor.a;
+              }
+            }
+            let view = renderable.vertices.subarray(0, renderable.numFloats);
+            if (transformer)
+              transformer(renderable.vertices, renderable.numFloats, vertexSize);
+            batcher.draw(texture, view, triangles);
+          }
+        }
+        clipper.clipEndWithSlot(slot);
+      }
+      clipper.clipEnd();
+    }
+    /** Returns the {@link SkeletonClipping} used by this renderer for use with e.g. {@link Skeleton.getBounds} **/
+    getSkeletonClipping() {
+      return this.clipper;
     }
   };
   var SkeletonRenderer = _SkeletonRenderer;
   __publicField(SkeletonRenderer, "QUAD_TRIANGLES", [0, 1, 2, 2, 3, 0]);
-  __publicField(SkeletonRenderer, "VERTEX_SIZE", 2 + 2 + 4);
+
+  // spine-webgl/src/SceneRenderer.ts
+  var quad = [
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0
+  ];
+  var QUAD_TRIANGLES = [0, 1, 2, 2, 3, 0];
+  var WHITE = new Color(1, 1, 1, 1);
+  var SceneRenderer = class {
+    context;
+    canvas;
+    camera;
+    batcher;
+    twoColorTint = false;
+    batcherShader;
+    shapes;
+    shapesShader;
+    activeRenderer = null;
+    skeletonRenderer;
+    skeletonDebugRenderer;
+    constructor(canvas, context, twoColorTint = true) {
+      this.canvas = canvas;
+      this.context = context instanceof ManagedWebGLRenderingContext ? context : new ManagedWebGLRenderingContext(context);
+      this.twoColorTint = twoColorTint;
+      this.camera = new OrthoCamera(canvas.width, canvas.height);
+      this.batcherShader = twoColorTint ? Shader.newTwoColoredTextured(this.context) : Shader.newColoredTextured(this.context);
+      this.batcher = new PolygonBatcher(this.context, twoColorTint);
+      this.shapesShader = Shader.newColored(this.context);
+      this.shapes = new ShapeRenderer(this.context);
+      this.skeletonRenderer = new SkeletonRenderer(this.context, twoColorTint);
+      this.skeletonDebugRenderer = new SkeletonDebugRenderer(this.context);
+    }
+    dispose() {
+      this.batcher.dispose();
+      this.batcherShader.dispose();
+      this.shapes.dispose();
+      this.shapesShader.dispose();
+      this.skeletonDebugRenderer.dispose();
+    }
+    begin() {
+      this.camera.update();
+      this.enableRenderer(this.batcher);
+    }
+    drawSkeleton(skeleton, premultipliedAlpha = false, slotRangeStart = -1, slotRangeEnd = -1, transform = null) {
+      this.enableRenderer(this.batcher);
+      this.skeletonRenderer.premultipliedAlpha = premultipliedAlpha;
+      this.skeletonRenderer.draw(this.batcher, skeleton, slotRangeStart, slotRangeEnd, transform);
+    }
+    drawSkeletonDebug(skeleton, premultipliedAlpha = false, ignoredBones) {
+      this.enableRenderer(this.shapes);
+      this.skeletonDebugRenderer.premultipliedAlpha = premultipliedAlpha;
+      this.skeletonDebugRenderer.draw(this.shapes, skeleton, ignoredBones);
+    }
+    drawTexture(texture, x, y, width, height, color) {
+      this.enableRenderer(this.batcher);
+      if (!color)
+        color = WHITE;
+      var i = 0;
+      quad[i++] = x;
+      quad[i++] = y;
+      quad[i++] = color.r;
+      quad[i++] = color.g;
+      quad[i++] = color.b;
+      quad[i++] = color.a;
+      quad[i++] = 0;
+      quad[i++] = 1;
+      if (this.twoColorTint) {
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+      }
+      quad[i++] = x + width;
+      quad[i++] = y;
+      quad[i++] = color.r;
+      quad[i++] = color.g;
+      quad[i++] = color.b;
+      quad[i++] = color.a;
+      quad[i++] = 1;
+      quad[i++] = 1;
+      if (this.twoColorTint) {
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+      }
+      quad[i++] = x + width;
+      quad[i++] = y + height;
+      quad[i++] = color.r;
+      quad[i++] = color.g;
+      quad[i++] = color.b;
+      quad[i++] = color.a;
+      quad[i++] = 1;
+      quad[i++] = 0;
+      if (this.twoColorTint) {
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+      }
+      quad[i++] = x;
+      quad[i++] = y + height;
+      quad[i++] = color.r;
+      quad[i++] = color.g;
+      quad[i++] = color.b;
+      quad[i++] = color.a;
+      quad[i++] = 0;
+      quad[i++] = 0;
+      if (this.twoColorTint) {
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i] = 0;
+      }
+      this.batcher.draw(texture, quad, QUAD_TRIANGLES);
+    }
+    drawTextureUV(texture, x, y, width, height, u, v, u2, v2, color) {
+      this.enableRenderer(this.batcher);
+      if (!color)
+        color = WHITE;
+      var i = 0;
+      quad[i++] = x;
+      quad[i++] = y;
+      quad[i++] = color.r;
+      quad[i++] = color.g;
+      quad[i++] = color.b;
+      quad[i++] = color.a;
+      quad[i++] = u;
+      quad[i++] = v;
+      if (this.twoColorTint) {
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+      }
+      quad[i++] = x + width;
+      quad[i++] = y;
+      quad[i++] = color.r;
+      quad[i++] = color.g;
+      quad[i++] = color.b;
+      quad[i++] = color.a;
+      quad[i++] = u2;
+      quad[i++] = v;
+      if (this.twoColorTint) {
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+      }
+      quad[i++] = x + width;
+      quad[i++] = y + height;
+      quad[i++] = color.r;
+      quad[i++] = color.g;
+      quad[i++] = color.b;
+      quad[i++] = color.a;
+      quad[i++] = u2;
+      quad[i++] = v2;
+      if (this.twoColorTint) {
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+      }
+      quad[i++] = x;
+      quad[i++] = y + height;
+      quad[i++] = color.r;
+      quad[i++] = color.g;
+      quad[i++] = color.b;
+      quad[i++] = color.a;
+      quad[i++] = u;
+      quad[i++] = v2;
+      if (this.twoColorTint) {
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i] = 0;
+      }
+      this.batcher.draw(texture, quad, QUAD_TRIANGLES);
+    }
+    drawTextureRotated(texture, x, y, width, height, pivotX, pivotY, angle, color) {
+      this.enableRenderer(this.batcher);
+      if (!color)
+        color = WHITE;
+      let worldOriginX = x + pivotX;
+      let worldOriginY = y + pivotY;
+      let fx = -pivotX;
+      let fy = -pivotY;
+      let fx2 = width - pivotX;
+      let fy2 = height - pivotY;
+      let p1x = fx;
+      let p1y = fy;
+      let p2x = fx;
+      let p2y = fy2;
+      let p3x = fx2;
+      let p3y = fy2;
+      let p4x = fx2;
+      let p4y = fy;
+      let x1 = 0;
+      let y1 = 0;
+      let x2 = 0;
+      let y2 = 0;
+      let x3 = 0;
+      let y3 = 0;
+      let x4 = 0;
+      let y4 = 0;
+      if (angle != 0) {
+        let cos = MathUtils.cosDeg(angle);
+        let sin = MathUtils.sinDeg(angle);
+        x1 = cos * p1x - sin * p1y;
+        y1 = sin * p1x + cos * p1y;
+        x4 = cos * p2x - sin * p2y;
+        y4 = sin * p2x + cos * p2y;
+        x3 = cos * p3x - sin * p3y;
+        y3 = sin * p3x + cos * p3y;
+        x2 = x3 + (x1 - x4);
+        y2 = y3 + (y1 - y4);
+      } else {
+        x1 = p1x;
+        y1 = p1y;
+        x4 = p2x;
+        y4 = p2y;
+        x3 = p3x;
+        y3 = p3y;
+        x2 = p4x;
+        y2 = p4y;
+      }
+      x1 += worldOriginX;
+      y1 += worldOriginY;
+      x2 += worldOriginX;
+      y2 += worldOriginY;
+      x3 += worldOriginX;
+      y3 += worldOriginY;
+      x4 += worldOriginX;
+      y4 += worldOriginY;
+      var i = 0;
+      quad[i++] = x1;
+      quad[i++] = y1;
+      quad[i++] = color.r;
+      quad[i++] = color.g;
+      quad[i++] = color.b;
+      quad[i++] = color.a;
+      quad[i++] = 0;
+      quad[i++] = 1;
+      if (this.twoColorTint) {
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+      }
+      quad[i++] = x2;
+      quad[i++] = y2;
+      quad[i++] = color.r;
+      quad[i++] = color.g;
+      quad[i++] = color.b;
+      quad[i++] = color.a;
+      quad[i++] = 1;
+      quad[i++] = 1;
+      if (this.twoColorTint) {
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+      }
+      quad[i++] = x3;
+      quad[i++] = y3;
+      quad[i++] = color.r;
+      quad[i++] = color.g;
+      quad[i++] = color.b;
+      quad[i++] = color.a;
+      quad[i++] = 1;
+      quad[i++] = 0;
+      if (this.twoColorTint) {
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+      }
+      quad[i++] = x4;
+      quad[i++] = y4;
+      quad[i++] = color.r;
+      quad[i++] = color.g;
+      quad[i++] = color.b;
+      quad[i++] = color.a;
+      quad[i++] = 0;
+      quad[i++] = 0;
+      if (this.twoColorTint) {
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i] = 0;
+      }
+      this.batcher.draw(texture, quad, QUAD_TRIANGLES);
+    }
+    drawRegion(region, x, y, width, height, color) {
+      this.enableRenderer(this.batcher);
+      if (!color)
+        color = WHITE;
+      var i = 0;
+      quad[i++] = x;
+      quad[i++] = y;
+      quad[i++] = color.r;
+      quad[i++] = color.g;
+      quad[i++] = color.b;
+      quad[i++] = color.a;
+      quad[i++] = region.u;
+      quad[i++] = region.v2;
+      if (this.twoColorTint) {
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+      }
+      quad[i++] = x + width;
+      quad[i++] = y;
+      quad[i++] = color.r;
+      quad[i++] = color.g;
+      quad[i++] = color.b;
+      quad[i++] = color.a;
+      quad[i++] = region.u2;
+      quad[i++] = region.v2;
+      if (this.twoColorTint) {
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+      }
+      quad[i++] = x + width;
+      quad[i++] = y + height;
+      quad[i++] = color.r;
+      quad[i++] = color.g;
+      quad[i++] = color.b;
+      quad[i++] = color.a;
+      quad[i++] = region.u2;
+      quad[i++] = region.v;
+      if (this.twoColorTint) {
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+      }
+      quad[i++] = x;
+      quad[i++] = y + height;
+      quad[i++] = color.r;
+      quad[i++] = color.g;
+      quad[i++] = color.b;
+      quad[i++] = color.a;
+      quad[i++] = region.u;
+      quad[i++] = region.v;
+      if (this.twoColorTint) {
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i++] = 0;
+        quad[i] = 0;
+      }
+      this.batcher.draw(region.page.texture, quad, QUAD_TRIANGLES);
+    }
+    line(x, y, x2, y2, color, color2) {
+      this.enableRenderer(this.shapes);
+      this.shapes.line(x, y, x2, y2, color);
+    }
+    triangle(filled, x, y, x2, y2, x3, y3, color, color2, color3) {
+      this.enableRenderer(this.shapes);
+      this.shapes.triangle(filled, x, y, x2, y2, x3, y3, color, color2, color3);
+    }
+    quad(filled, x, y, x2, y2, x3, y3, x4, y4, color, color2, color3, color4) {
+      this.enableRenderer(this.shapes);
+      this.shapes.quad(filled, x, y, x2, y2, x3, y3, x4, y4, color, color2, color3, color4);
+    }
+    rect(filled, x, y, width, height, color) {
+      this.enableRenderer(this.shapes);
+      this.shapes.rect(filled, x, y, width, height, color);
+    }
+    rectLine(filled, x1, y1, x2, y2, width, color) {
+      this.enableRenderer(this.shapes);
+      this.shapes.rectLine(filled, x1, y1, x2, y2, width, color);
+    }
+    polygon(polygonVertices, offset, count, color) {
+      this.enableRenderer(this.shapes);
+      this.shapes.polygon(polygonVertices, offset, count, color);
+    }
+    circle(filled, x, y, radius, color, segments = 0) {
+      this.enableRenderer(this.shapes);
+      this.shapes.circle(filled, x, y, radius, color, segments);
+    }
+    curve(x1, y1, cx1, cy1, cx2, cy2, x2, y2, segments, color) {
+      this.enableRenderer(this.shapes);
+      this.shapes.curve(x1, y1, cx1, cy1, cx2, cy2, x2, y2, segments, color);
+    }
+    end() {
+      if (this.activeRenderer === this.batcher)
+        this.batcher.end();
+      else if (this.activeRenderer === this.shapes)
+        this.shapes.end();
+      this.activeRenderer = null;
+    }
+    resize(resizeMode) {
+      let canvas = this.canvas;
+      var dpr = window.devicePixelRatio || 1;
+      var w = Math.round(canvas.clientWidth * dpr);
+      var h = Math.round(canvas.clientHeight * dpr);
+      if (canvas.width != w || canvas.height != h) {
+        canvas.width = w;
+        canvas.height = h;
+      }
+      this.context.gl.viewport(0, 0, canvas.width, canvas.height);
+      if (resizeMode === ResizeMode.Expand)
+        this.camera.setViewport(w, h);
+      else if (resizeMode === ResizeMode.Fit) {
+        let sourceWidth = canvas.width, sourceHeight = canvas.height;
+        let targetWidth = this.camera.viewportWidth, targetHeight = this.camera.viewportHeight;
+        let targetRatio = targetHeight / targetWidth;
+        let sourceRatio = sourceHeight / sourceWidth;
+        let scale = targetRatio < sourceRatio ? targetWidth / sourceWidth : targetHeight / sourceHeight;
+        this.camera.setViewport(sourceWidth * scale, sourceHeight * scale);
+      }
+      this.camera.update();
+    }
+    enableRenderer(renderer) {
+      if (this.activeRenderer === renderer)
+        return;
+      this.end();
+      if (renderer instanceof PolygonBatcher) {
+        this.batcherShader.bind();
+        this.batcherShader.setUniform4x4f(Shader.MVP_MATRIX, this.camera.projectionView.values);
+        this.batcherShader.setUniformi("u_texture", 0);
+        this.batcher.begin(this.batcherShader);
+        this.activeRenderer = this.batcher;
+      } else if (renderer instanceof ShapeRenderer) {
+        this.shapesShader.bind();
+        this.shapesShader.setUniform4x4f(Shader.MVP_MATRIX, this.camera.projectionView.values);
+        this.shapes.begin(this.shapesShader);
+        this.activeRenderer = this.shapes;
+      } else
+        this.activeRenderer = this.skeletonDebugRenderer;
+    }
+  };
+  var ResizeMode = /* @__PURE__ */ ((ResizeMode2) => {
+    ResizeMode2[ResizeMode2["Stretch"] = 0] = "Stretch";
+    ResizeMode2[ResizeMode2["Expand"] = 1] = "Expand";
+    ResizeMode2[ResizeMode2["Fit"] = 2] = "Fit";
+    return ResizeMode2;
+  })(ResizeMode || {});
+
+  // spine-webgl/src/LoadingScreen.ts
+  var spinnerImage;
+  var logoImage;
+  var loaded = 0;
+  var FADE_IN = 1;
+  var FADE_OUT = 1;
+  var logoWidth = 165;
+  var logoHeight = 108;
+  var spinnerSize = 163;
+  var LoadingScreen = class {
+    renderer;
+    logo = null;
+    spinner = null;
+    angle = 0;
+    fadeOut = 0;
+    fadeIn = 0;
+    timeKeeper = new TimeKeeper();
+    backgroundColor = new Color(0.135, 0.135, 0.135, 1);
+    tempColor = new Color();
+    constructor(renderer) {
+      this.renderer = renderer;
+      this.timeKeeper.maxDelta = 9;
+      if (!logoImage) {
+        let isSafari = navigator.userAgent.indexOf("Safari") > -1;
+        let onload = () => loaded++;
+        logoImage = new Image();
+        logoImage.src = SPINE_LOGO_DATA;
+        if (!isSafari)
+          logoImage.crossOrigin = "anonymous";
+        logoImage.onload = onload;
+        spinnerImage = new Image();
+        spinnerImage.src = SPINNER_DATA;
+        if (!isSafari)
+          spinnerImage.crossOrigin = "anonymous";
+        spinnerImage.onload = onload;
+      }
+    }
+    dispose() {
+      this.logo?.dispose();
+      this.spinner?.dispose();
+    }
+    draw(complete = false) {
+      if (loaded < 2 || complete && this.fadeOut > FADE_OUT)
+        return;
+      this.timeKeeper.update();
+      let a = Math.abs(Math.sin(this.timeKeeper.totalTime + 0.25));
+      this.angle -= this.timeKeeper.delta * 200 * (1 + 1.5 * Math.pow(a, 5));
+      let tempColor = this.tempColor;
+      let renderer = this.renderer;
+      let canvas = renderer.canvas;
+      let gl = renderer.context.gl;
+      renderer.resize(1 /* Expand */);
+      renderer.camera.position.set(canvas.width / 2, canvas.height / 2, 0);
+      renderer.batcher.setBlendMode(0 /* Normal */, true);
+      if (complete) {
+        this.fadeOut += this.timeKeeper.delta * (this.timeKeeper.totalTime < 1 ? 2 : 1);
+        if (this.fadeOut > FADE_OUT)
+          return;
+        tempColor.setFromColor(this.backgroundColor);
+        a = 1 - this.fadeOut / FADE_OUT;
+        a = 1 - (a - 1) * (a - 1);
+        tempColor.a *= a;
+        if (tempColor.a > 0) {
+          renderer.camera.zoom = 1;
+          renderer.begin();
+          renderer.quad(
+            true,
+            0,
+            0,
+            canvas.width,
+            0,
+            canvas.width,
+            canvas.height,
+            0,
+            canvas.height,
+            tempColor,
+            tempColor,
+            tempColor,
+            tempColor
+          );
+          renderer.end();
+        }
+      } else {
+        this.fadeIn += this.timeKeeper.delta;
+        if (this.backgroundColor.a > 0) {
+          gl.clearColor(this.backgroundColor.r, this.backgroundColor.g, this.backgroundColor.b, this.backgroundColor.a);
+          gl.clear(gl.COLOR_BUFFER_BIT);
+        }
+        a = 1;
+      }
+      a *= Math.min(this.fadeIn / FADE_IN, 1);
+      tempColor.set(a, a, a, a);
+      if (!this.logo) {
+        this.logo = new GLTexture(renderer.context, logoImage);
+        this.spinner = new GLTexture(renderer.context, spinnerImage);
+      }
+      renderer.camera.zoom = Math.max(1, spinnerSize / canvas.height);
+      renderer.begin();
+      renderer.drawTexture(this.logo, (canvas.width - logoWidth) / 2, (canvas.height - logoHeight) / 2, logoWidth, logoHeight, tempColor);
+      if (this.spinner)
+        renderer.drawTextureRotated(this.spinner, (canvas.width - spinnerSize) / 2, (canvas.height - spinnerSize) / 2, spinnerSize, spinnerSize, spinnerSize / 2, spinnerSize / 2, this.angle, tempColor);
+      renderer.end();
+    }
+  };
+  var SPINNER_DATA = "data:image/png;base64,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";
+  var SPINE_LOGO_DATA = "data:image/png;base64,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";
+
+  // spine-webgl/src/SpineCanvas.ts
+  var SpineCanvas = class {
+    /** Constructs a new spine canvas, rendering to the provided HTML canvas. */
+    constructor(canvas, config) {
+      this.config = config;
+      if (!config.pathPrefix)
+        config.pathPrefix = "";
+      if (!config.app)
+        config.app = {
+          loadAssets: () => {
+          },
+          initialize: () => {
+          },
+          update: () => {
+          },
+          render: () => {
+          },
+          error: () => {
+          },
+          dispose: () => {
+          }
+        };
+      if (!config.webglConfig)
+        config.webglConfig = { alpha: true };
+      this.htmlCanvas = canvas;
+      this.context = new ManagedWebGLRenderingContext(canvas, config.webglConfig);
+      this.renderer = new SceneRenderer(canvas, this.context);
+      this.gl = this.context.gl;
+      this.assetManager = new AssetManager(this.context, config.pathPrefix);
+      this.input = new Input(canvas);
+      if (config.app.loadAssets)
+        config.app.loadAssets(this);
+      let loop = () => {
+        if (this.disposed)
+          return;
+        requestAnimationFrame(loop);
+        this.time.update();
+        if (config.app.update)
+          config.app.update(this, this.time.delta);
+        if (config.app.render)
+          config.app.render(this);
+      };
+      let waitForAssets = () => {
+        if (this.disposed)
+          return;
+        if (this.assetManager.isLoadingComplete()) {
+          if (this.assetManager.hasErrors()) {
+            if (config.app.error)
+              config.app.error(this, this.assetManager.getErrors());
+          } else {
+            if (config.app.initialize)
+              config.app.initialize(this);
+            loop();
+          }
+          return;
+        }
+        requestAnimationFrame(waitForAssets);
+      };
+      requestAnimationFrame(waitForAssets);
+    }
+    context;
+    /** Tracks the current time, delta, and other time related statistics. */
+    time = new TimeKeeper();
+    /** The HTML canvas to render to. */
+    htmlCanvas;
+    /** The WebGL rendering context. */
+    gl;
+    /** The scene renderer for easy drawing of skeletons, shapes, and images. */
+    renderer;
+    /** The asset manager to load assets with. */
+    assetManager;
+    /** The input processor used to listen to mouse, touch, and keyboard events. */
+    input;
+    disposed = false;
+    /** Clears the canvas with the given color. The color values are given in the range [0,1]. */
+    clear(r, g, b, a) {
+      this.gl.clearColor(r, g, b, a);
+      this.gl.clear(this.gl.COLOR_BUFFER_BIT);
+    }
+    /** Disposes the app, so the update() and render() functions are no longer called. Calls the dispose() callback.*/
+    dispose() {
+      if (this.config.app.dispose)
+        this.config.app.dispose(this);
+      this.disposed = true;
+    }
+  };
   return __toCommonJS(src_exports);
 })();
-//# sourceMappingURL=spine-canvas.js.map
+//# sourceMappingURL=spine-webgl.js.map

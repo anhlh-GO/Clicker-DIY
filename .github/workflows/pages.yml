@@ -26,11 +26,12 @@ jobs:
       - name: Prepare site
         run: |
           mkdir _site
-          cp -r index.html icon.png js data assets vendor _site/
+          cp -r index.html icon.png manifest.webmanifest icons js data assets vendor _site/
           # cache-bust scripts so players get the new build right away
           V=${GITHUB_SHA::8}
           sed -i -E "s#(src=\"(js|vendor)/[^\"]+\.js)\"#\1?v=$V\"#g" _site/index.html
-          grep -o 'src="[^"]*"' _site/index.html
+          sed -i "s#window.BUILD=\"dev\"#window.BUILD=\"$V\"#" _site/index.html
+          grep -o 'src="[^"]*"' _site/index.html; grep -o 'BUILD="[^"]*"' _site/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <title>Clicker DIY: ASMR Charm Master</title>
 <link rel="icon" href="icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Clicker DIY">
+<meta name="theme-color" content="#1b1530">
 <link href="assets/fonts/fonts.css" rel="stylesheet">
 <style>
 html,body{margin:0;height:100%;background:#1b1530;overflow:hidden;touch-action:none;-webkit-user-select:none;user-select:none}
@@ -16,7 +23,8 @@ canvas{display:block;touch-action:none}
 <body>
 <div id="boot">Loading…</div>
 <canvas id="c"></canvas>
-<script src="vendor/spine-canvas.js"></script>
+<script>window.BUILD="dev";</script>
+<script src="vendor/spine-webgl.js"></script>
 <script src="js/engine.js"></script>
 <script src="js/render.js"></script>
 <script src="js/input.js"></script>

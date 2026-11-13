@@ -273,6 +273,9 @@ const drawImg = (c, g, alpha) => {
   const s = c.sp ? E.sprite(c.sp) : null;
   if (!s) {
     if (c.sp && !s) { ctx.globalAlpha = 1; return; }
+    // the original project renders in linear colour space: a dark overlay blended there looks much lighter than
+    // the same alpha blended in sRGB. effective sRGB alpha for black-ish overlays = 1 - (1-a)^(1/2.2)
+    if (a < 1 && Math.max(c.color[0], c.color[1], c.color[2]) < 0.35) ctx.globalAlpha = 1 - Math.pow(1 - a, 1 / 2.2);
     ctx.fillStyle = colorStr(c.color, 1); ctx.fillRect(x, y, w, h); ctx.globalAlpha = 1; return;
   }
   const src = srcOf(s, c.color); if (!src) { ctx.globalAlpha = 1; return; }
@@ -617,7 +620,8 @@ E.spineLoad = (name) => {
     const imgs = {};
     await Promise.all(pages.map((pg) => new Promise((res) => { const im = new Image(); im.onload = () => { imgs[pg] = im; res(); }; im.onerror = res; im.src = 'assets/spine/' + pg; })));
     const atlas = new spine.TextureAtlas(atlasText);
-    for (const page of atlas.pages) page.setTexture(new spine.CanvasTexture(imgs[page.name]));
+    glInit();
+    for (const page of atlas.pages) page.setTexture(new spine.GLTexture(GLS.ctx, imgs[page.name], false));
     const sj = new spine.SkeletonJson(new spine.AtlasAttachmentLoader(atlas));
     sj.scale = 1;
     const data = sj.readSkeletonData(json);
@@ -664,34 +668,102 @@ E.spinePlay = (c, anim, loop, track = 0, onDone) => {
   if (c.ready) return f(); c.queue.push(f);
 };
 E.spineAdd = (c, anim, loop, delay = 0, track = 0) => { const f = () => { if (c.data_.findAnimation(anim)) c.state.addAnimation(track, anim, !!loop, delay); }; if (c.ready) f(); else c.queue.push(f); };
-E.spineSkin = (c, skin) => { const f = () => { try { c.skeleton.setSkinByName(skin); c.skeleton.setSlotsToSetupPose(); } catch (e) {} }; if (c.ready) f(); else c.queue.push(f); };
+E.spineSkin = (c, skin) => { const f = () => { try { c.skeleton.setSkinByName(skin); c.skeleton.setSlotsToSetupPose(); c._dirty = true; } catch (e) {} }; if (c.ready) f(); else c.queue.push(f); };
 E.spineAnims = (c) => (c.data_ ? c.data_.animations.map((a) => a.name) : []);
 E.spineUpdate = (dt) => {
   // updated lazily during draw
   E._spineDt = dt;
 };
-let spineRenderer = null;
+// Spine is drawn with WebGL (spine-webgl) into one shared offscreen canvas, then blitted into the 2D canvas.
+// (spine-canvas' triangle renderer clips every mesh triangle and was ~10 ms/frame for the character alone.)
+const GLS = (E.spineGL = { cv: null, ctx: null, r: null, W: 0, H: 0, off: new spine.Vector2(), size: new spine.Vector2(), tmp: [] });
+const glInit = () => {
+  if (GLS.r) return GLS;
+  GLS.cv = document.createElement('canvas'); GLS.cv.width = GLS.W = 512; GLS.cv.height = GLS.H = 512;
+  GLS.ctx = new spine.ManagedWebGLRenderingContext(GLS.cv, { alpha: true, premultipliedAlpha: true, preserveDrawingBuffer: true, antialias: false });
+  GLS.r = new spine.SceneRenderer(GLS.cv, GLS.ctx, false);
+  return GLS;
+};
+const glSize = (w, h) => {
+  // grow-only, power-of-two-ish to avoid frequent reallocations
+  let W = GLS.W, H = GLS.H;
+  while (W < w) W *= 2; while (H < h) H *= 2;
+  if (W !== GLS.W || H !== GLS.H) { GLS.cv.width = GLS.W = Math.min(W, 4096); GLS.cv.height = GLS.H = Math.min(H, 4096); }
+};
+E.spineTick = (c) => {
+  if (c._lastFrame === E.frame) return;
+  c._lastFrame = E.frame;
+  c.state.update((E._spineDt || 0) * c.timeScale);
+  c.state.apply(c.skeleton);
+  c.skeleton.updateWorldTransform(spine.Physics ? spine.Physics.update : undefined);
+};
+// draw skeleton of spine component c with full device-space matrix dm (skeleton units -> device px, y up) into ctx2d
+E.spineBlit = (ctx2d, dm, c, alpha) => {
+  if (!c.ready || !c.skeleton) return;
+  glInit();
+  const sk = c.skeleton;
+  sk.x = 0; sk.y = 0; sk.scaleY = 1; sk.scaleX = 1;
+  sk.color.a = 1;
+  sk.getBounds(GLS.off, GLS.size, GLS.tmp);
+  let bx = GLS.off.x, by = GLS.off.y, bw = GLS.size.x, bh = GLS.size.y;
+  if (!isFinite(bx) || bw <= 0 || bh <= 0) return;
+  const pad = 2; // skeleton units
+  bx -= pad; by -= pad; bw += pad * 2; bh += pad * 2;
+  let k = Math.max(Math.hypot(dm[0], dm[1]), Math.hypot(dm[2], dm[3])); // device px per skeleton unit
+  const maxPx = 2048;
+  if (bw * k > maxPx) k = maxPx / bw; if (bh * k > maxPx) k = maxPx / bh;
+  const pw = Math.max(1, Math.ceil(bw * k)), ph = Math.max(1, Math.ceil(bh * k));
+  glSize(pw, ph);
+  const gl = GLS.ctx.gl;
+  gl.viewport(0, 0, pw, ph);
+  gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
+  const cam = GLS.r.camera;
+  cam.viewportWidth = pw / k; cam.viewportHeight = ph / k; cam.zoom = 1;
+  cam.position.set(bx + (pw / k) / 2, by + (ph / k) / 2, 0);
+  GLS.r.begin();
+  GLS.r.drawSkeleton(sk, false);
+  GLS.r.end();
+  // blit: GL canvas region (0, H-ph, pw, ph) shows skeleton rect [bx, bx+pw/k] x [by, by+ph/k] (top row = max y)
+  let src = GLS.cv, sx = 0, sy = GLS.H - ph;
+  if (c._wantCache) { // keep a bitmap of a skeleton that is not animating
+    const cc = c._cache || (c._cache = { cv: document.createElement('canvas') });
+    cc.cv.width = pw; cc.cv.height = ph;
+    cc.cv.getContext('2d').drawImage(GLS.cv, 0, GLS.H - ph, pw, ph, 0, 0, pw, ph);
+    cc.k = k; cc.bx = bx; cc.by = by; cc.pw = pw; cc.ph = ph; cc.skin = sk.skin ? sk.skin.name : ''; cc.ok = true;
+    src = cc.cv; sx = 0; sy = 0;
+  }
+  ctx2d.save();
+  ctx2d.setTransform(dm[0], dm[1], dm[2], dm[3], dm[4], dm[5]);
+  ctx2d.transform(1, 0, 0, -1, 0, 0);
+  ctx2d.globalAlpha = alpha;
+  ctx2d.drawImage(src, sx, sy, pw, ph, bx, -(by + ph / k), pw / k, ph / k);
+  ctx2d.restore();
+};
+const spineStatic = (c) => { const t = c.state.tracks; for (let i = 0; i < t.length; i++) if (t[i]) return false; return true; };
+const drawCached = (ctx2d, dm, c, alpha) => {
+  const cc = c._cache; if (!cc || !cc.ok) return false;
+  const k = Math.max(Math.hypot(dm[0], dm[1]), Math.hypot(dm[2], dm[3]));
+  if (Math.abs(k - cc.k) / cc.k > 0.15 || (c.skeleton.skin ? c.skeleton.skin.name : '') !== cc.skin) return false;
+  ctx2d.save();
+  ctx2d.setTransform(dm[0], dm[1], dm[2], dm[3], dm[4], dm[5]);
+  ctx2d.transform(1, 0, 0, -1, 0, 0);
+  ctx2d.globalAlpha = alpha;
+  ctx2d.drawImage(cc.cv, 0, 0, cc.pw, cc.ph, cc.bx, -(cc.by + cc.ph / cc.k), cc.pw / cc.k, cc.ph / cc.k);
+  ctx2d.restore();
+  return true;
+};
+E.spineInvalidate = (c) => { if (c && c._cache) c._cache.ok = false; };
 E.drawSpine = (c, alpha) => {
   if (!c.ready) return;
-  if (!spineRenderer) { spineRenderer = new spine.SkeletonRenderer(ctx); }
-  spineRenderer.ctx = ctx;
-  spineRenderer.triangleRendering = !!c.data_._mesh;
-  if (c._lastFrame !== E.frame) {
-    c._lastFrame = E.frame;
-    c.state.update((E._spineDt || 0) * c.timeScale);
-    c.state.apply(c.skeleton);
-    c.skeleton.updateWorldTransform(spine.Physics ? spine.Physics.update : undefined);
-  }
-  const g = c.go;
-  let m = g.wm;
+  if (!(c._cache && c._cache.ok && !c._dirty && spineStatic(c))) E.spineTick(c);
   const sc = c.ui ? 100 * (c.meta.scale || 0.01) : (c.meta.scale || 0.01);
-  m = M.mul(m, [sc * (c.fx ? -1 : 1), 0, 0, sc * (c.fy ? -1 : 1), 0, 0]);
-  setT(m);
-  c.skeleton.color.a = (c.color ? c.color[3] : 1) * alpha;
-  c.skeleton.x = 0; c.skeleton.y = 0; c.skeleton.scaleY = 1;
-  ctx.save();
-  spineRenderer.draw(c.skeleton);
-  ctx.restore();
-  ctx.globalAlpha = 1;
+  const m = M.mul(base, M.mul(c.go.wm, [sc * (c.fx ? -1 : 1), 0, 0, sc * (c.fy ? -1 : 1), 0, 0]));
+  const a = (c.color ? c.color[3] : 1) * alpha;
+  if (a <= 0.003) return;
+  const st = spineStatic(c);
+  if (st && !c._dirty && drawCached(ctx, m, c, a)) return;
+  c._wantCache = st; c._dirty = false;
+  E.spineBlit(ctx, m, c, a);
+  c._wantCache = false;
 };
 })();

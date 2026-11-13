@@ -101,6 +101,6 @@ def read_mb(obj,cls):
     raw=obj.get_raw_data()
     r=R(raw)
     go=r.u('iq'); en=r.u('B'); r.al(); sc=r.u('iq'); name=r.str()
-    d={'_name':name,'_go':go[1]}
+    d={'_name':name,'_go':go[1],'m_Enabled':en[0]}
     for n,ft in ser_fields(cls): d[n]=readval(r,ft)
     return d, r.p, len(raw)

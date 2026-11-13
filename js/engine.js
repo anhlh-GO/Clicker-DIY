@@ -8,7 +8,7 @@ E.scripts = {};
 E.DEG = Math.PI / 180;
 
 // ------------------------------------------------------------------ assets
-E.fetchJSON = (u) => fetch(u).then((r) => { if (!r.ok) throw new Error(u); return r.json(); });
+E.fetchJSON = (u) => fetch(u + (window.BUILD && window.BUILD !== 'dev' ? (u.includes('?') ? '&' : '?') + 'v=' + window.BUILD : '')).then((r) => { if (!r.ok) throw new Error(u); return r.json(); });
 E.loadFile = async (fn) => {
   if (!E.D.files[fn]) E.D.files[fn] = await E.fetchJSON('data/' + fn + '.json');
   return E.D.files[fn];
