@@ -23,6 +23,22 @@ canvas{display:block;touch-action:none}
 <body>
 <div id="boot">Loading…</div>
 <canvas id="c"></canvas>
+<div id="a2hs" style="display:none;position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:9;background:rgba(27,21,48,.94);color:#fff;border-radius:16px;padding:12px 40px 12px 14px;font:700 14px/1.35 'Baloo Bhai 2',sans-serif;box-shadow:0 4px 20px rgba(0,0,0,.4)">
+<span id="a2hs-t"></span><button id="a2hs-x" aria-label="Close" style="position:absolute;top:6px;right:8px;background:none;border:0;color:#fff;font-size:22px;line-height:1">&times;</button></div>
+<script>
+(function(){
+  var ios=/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  var standalone=window.navigator.standalone===true||matchMedia('(display-mode: standalone)').matches;
+  try{ if(!ios||standalone||localStorage.getItem('a2hs-hide')) return; }catch(e){ if(!ios||standalone) return; }
+  var vi=(navigator.language||'').toLowerCase().indexOf('vi')===0;
+  document.getElementById('a2hs-t').innerHTML=vi
+    ? 'Chơi toàn màn hình như app: bấm <b>Chia sẻ</b> &rarr; <b>Thêm vào MH chính</b> (bật <b>Mở dưới dạng ứng dụng web</b> nếu có). Nếu đã thêm icon trước đây, hãy xoá icon cũ rồi thêm lại.'
+    : 'Play full-screen like an app: tap <b>Share</b> &rarr; <b>Add to Home Screen</b> (turn on <b>Open as Web App</b> if shown). If you added the icon before, delete it and add it again.';
+  var b=document.getElementById('a2hs'); b.style.display='block';
+  document.getElementById('a2hs-x').onclick=function(){ b.style.display='none'; try{localStorage.setItem('a2hs-hide','1');}catch(e){} };
+  setTimeout(function(){ b.style.display='none'; }, 15000);
+})();
+</script>
 <script>window.BUILD="dev";</script>
 <script src="vendor/spine-webgl.js"></script>
 <script src="js/engine.js"></script>

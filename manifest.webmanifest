@@ -1,10 +1,10 @@
 {
   "name": "Clicker DIY: ASMR Charm Master",
   "short_name": "Clicker DIY",
+  "id": "/Clicker-DIY/",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "display_override": ["fullscreen", "standalone"],
   "orientation": "portrait",
   "background_color": "#1b1530",
   "theme_color": "#1b1530",
