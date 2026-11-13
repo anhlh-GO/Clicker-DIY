@@ -1,0 +1,304 @@
+BlindbagController (0.00,0.00) Blindbag.BlindbagGameController Blindbag.InputHandler
+  Scaler (0.00,0.00) 
+    -Door (0.00,0.00) SortingGroup Blindbag.Door
+      left-door (0.00,0.00) SR(transition_door 1 o0)
+        transition_door_hand (-0.40,0.00) SR(transition_door_hand o1)
+        transition_open (-0.38,0.65) SR(transition_open o2) DG.Tweening.DOTweenAnimation
+      right-door (0.00,0.00) SR(transition_door o0)
+        transition_door_hand (1) (0.44,0.00) SR(transition_door_hand o1)
+      Roof (0.00,8.00) SR(transition_roof_repeat-x o5)
+    Basket (0.00,-6.30) Blindbag.Basket BoxCollider2D
+      basket (0.00,0.00) Jelly.ItemAnimator
+        basket-back (0.00,0.00) SR(cart_back o7)
+        basket-front (0.01,-0.41) SR(cart_front o13)
+        points (0.00,0.00) 
+          point (-1.45,0.72) SortingGroup
+          point (-0.67,0.51) SortingGroup
+          point (0.09,0.22) SortingGroup
+          point (1.13,0.61) SortingGroup
+          point (1.76,0.24) SortingGroup
+    StoreAndTable (0.00,0.00) 
+      Store (0.00,0.00) 
+        Scaler (0.00,0.00) AxisDrag2D BoxCollider2D
+          BG (37.66,0.00) SR(BG_supermarket_scale o-1)
+            BG_supermarket_element1 (-55.49,7.35) SR(BG_supermarket_element1 o0)
+            BG_supermarket_element1 (1) (-51.77,7.35) SR(BG_supermarket_element1 o0)
+            BG_supermarket_element1 (2) (-21.27,7.35) SR(BG_supermarket_element1 o0)
+            BG_supermarket_element1 (3) (-17.55,7.35) SR(BG_supermarket_element1 o0)
+            BG_supermarket_element1 (4) (-36.78,7.35) SR(BG_supermarket_element2 o0)
+          Items (0.70,1.61) 
+            item base id 0 (-1.92,1.77) BoxCollider2D Blindbag.ItemBase
+              scaler (0.38,-0.19) SortingGroup
+                Spine GameObject (blind_bag) (0.08,-1.87) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (1) (-1.20,-1.84) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (2) (0.52,-1.58) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (3) (-1.08,-1.30) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (4) (-1.30,-0.96) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (5) (0.58,-1.04) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+              Canvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BG (0.00,0.00) CanvasRenderer Img(box_price)
+                Coin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                PriceText (0.00,0.00) CanvasRenderer Txt('500')
+            item base id 1 (-1.92,-0.81) BoxCollider2D Blindbag.ItemBase
+              scaler (0.38,-0.19) SortingGroup
+                Spine GameObject (blind_bag) (0.08,-1.87) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (1) (-1.20,-1.84) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (2) (0.52,-1.58) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (3) (-1.08,-1.30) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (4) (-1.30,-0.96) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (5) (0.58,-1.04) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+              Canvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BG (0.00,0.00) CanvasRenderer Img(box_price)
+                Coin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                PriceText (0.00,0.00) CanvasRenderer Txt('500')
+            item base id 2 (-1.92,-3.37) BoxCollider2D Blindbag.ItemBase
+              scaler (0.38,-0.19) SortingGroup
+                Spine GameObject (blind_bag) (0.08,-1.87) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (1) (-1.20,-1.84) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (2) (0.52,-1.58) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (3) (-1.08,-1.30) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (4) (-1.30,-0.96) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (5) (0.58,-1.04) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+              Canvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BG (0.00,0.00) CanvasRenderer Img(box_price)
+                Coin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                PriceText (0.00,0.00) CanvasRenderer Txt('500')
+            item base id 3 (0.90,1.77) BoxCollider2D Blindbag.ItemBase
+              scaler (0.38,-0.19) SortingGroup
+                Spine GameObject (blind_bag) (0.08,-1.87) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (1) (-1.20,-1.84) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (2) (0.52,-1.58) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (3) (-1.08,-1.30) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (4) (-1.30,-0.96) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (5) (0.58,-1.04) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+              Canvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BG (0.00,0.00) CanvasRenderer Img(box_price)
+                Coin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                PriceText (0.00,0.00) CanvasRenderer Txt('500')
+            item base id 4 (0.90,-0.81) BoxCollider2D Blindbag.ItemBase
+              scaler (0.38,-0.19) SortingGroup
+                Spine GameObject (blind_bag) (0.08,-1.87) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (1) (-1.20,-1.84) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (2) (0.52,-1.58) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (3) (-1.08,-1.30) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (4) (-1.30,-0.96) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (5) (0.58,-1.04) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+              Canvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BG (0.00,0.00) CanvasRenderer Img(box_price)
+                Coin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                PriceText (0.00,0.00) CanvasRenderer Txt('500')
+            item base id 5 (0.90,-3.37) BoxCollider2D Blindbag.ItemBase
+              scaler (0.38,-0.19) SortingGroup
+                Spine GameObject (blind_bag) (0.08,-1.87) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (1) (-1.20,-1.84) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (2) (0.52,-1.58) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (3) (-1.08,-1.30) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (4) (-1.30,-0.96) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (5) (0.58,-1.04) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+              Canvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BG (0.00,0.00) CanvasRenderer Img(box_price)
+                Coin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                PriceText (0.00,0.00) CanvasRenderer Txt('500')
+            item base id 6 (3.69,1.77) BoxCollider2D Blindbag.ItemBase
+              scaler (0.38,-0.19) SortingGroup
+                Spine GameObject (blind_bag) (0.08,-1.87) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (1) (-1.20,-1.84) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (2) (0.52,-1.58) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (3) (-1.08,-1.30) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (4) (-1.30,-0.96) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (5) (0.58,-1.04) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+              Canvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BG (0.00,0.00) CanvasRenderer Img(box_price)
+                Coin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                PriceText (0.00,0.00) CanvasRenderer Txt('500')
+            item base id 7 (3.69,-0.81) BoxCollider2D Blindbag.ItemBase
+              scaler (0.38,-0.19) SortingGroup
+                Spine GameObject (blind_bag) (0.08,-1.87) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (1) (-1.20,-1.84) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (2) (0.52,-1.58) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (3) (-1.08,-1.30) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (4) (-1.30,-0.96) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (5) (0.58,-1.04) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+              Canvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BG (0.00,0.00) CanvasRenderer Img(box_price)
+                Coin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                PriceText (0.00,0.00) CanvasRenderer Txt('500')
+            item base id 8 (3.69,-3.37) BoxCollider2D Blindbag.ItemBase
+              scaler (0.38,-0.19) SortingGroup
+                Spine GameObject (blind_bag) (0.08,-1.87) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (1) (-1.20,-1.84) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (2) (0.52,-1.58) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (3) (-1.08,-1.30) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (4) (-1.30,-0.96) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (5) (0.58,-1.04) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+              Canvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BG (0.00,0.00) CanvasRenderer Img(box_price)
+                Coin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                PriceText (0.00,0.00) CanvasRenderer Txt('500')
+            item base id 9 (6.47,1.77) BoxCollider2D Blindbag.ItemBase
+              scaler (0.38,-0.19) SortingGroup
+                Spine GameObject (blind_bag) (0.08,-1.87) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (1) (-1.20,-1.84) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (2) (0.52,-1.58) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (3) (-1.08,-1.30) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (4) (-1.30,-0.96) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (5) (0.58,-1.04) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+              Canvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BG (0.00,0.00) CanvasRenderer Img(box_price)
+                Coin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                PriceText (0.00,0.00) CanvasRenderer Txt('500')
+            item base id 10 (6.47,-0.81) BoxCollider2D Blindbag.ItemBase
+              scaler (0.38,-0.19) SortingGroup
+                Spine GameObject (blind_bag) (0.08,-1.87) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (1) (-1.20,-1.84) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (2) (0.52,-1.58) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (3) (-1.08,-1.30) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (4) (-1.30,-0.96) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (5) (0.58,-1.04) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+              Canvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BG (0.00,0.00) CanvasRenderer Img(box_price)
+                Coin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                PriceText (0.00,0.00) CanvasRenderer Txt('500')
+            item base id 11 (6.47,-3.37) BoxCollider2D Blindbag.ItemBase
+              scaler (0.38,-0.19) SortingGroup
+                Spine GameObject (blind_bag) (0.08,-1.87) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (1) (-1.20,-1.84) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (2) (0.52,-1.58) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (3) (-1.08,-1.30) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (4) (-1.30,-0.96) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+                Spine GameObject (blind_bag) (5) (0.58,-1.04) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+              Canvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BG (0.00,0.00) CanvasRenderer Img(box_price)
+                Coin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                PriceText (0.00,0.00) CanvasRenderer Txt('500')
+            -TutorialTouchBag (-1.59,-1.17) SR(handtap o15) DG.Tweening.DOTweenAnimation
+          Store (0.70,1.61) 
+            shelf-bakery (2.38,-0.84) SR(shelf o0) Supermarket.Shelf
+              shelf_front_pink (0.05,1.92) SR(shelf_front_pink o2)
+              shelf_front_blue (0.05,-3.23) SR(shelf_front_blue o2)
+              shelf_front_purple (0.05,-0.65) SR(shelf_front_purple o2)
+      Table (0.00,0.00) 
+        table_slicing (24.17,-5.15) SR(table_slicing o3)
+        table_slicing_tile (37.19,-5.15) SR(table_slicing_tile o3)
+        Spine GameObject (penguin_blind_bag) (27.84,0.26) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+        -turorial scan (29.61,1.52) SR(scan_area o4)
+        shoping_bag (30.00,-1.00) SR(shoping_bag o4)
+        -TutorialScanItem (29.84,-2.88) SR(handtap o15) DG.Tweening.DOTweenAnimation
+      ScanMachine (30.00,-1.20) Blindbag.ScanMachine
+        pay-machine (1) (3.16,6.82) SR(monitor o1)
+        Canvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+          Bill (0.00,0.00) 
+            TxtBill (0.00,0.00) CanvasRenderer Txt('CHECKOUT') LocalizeText
+            Scroll View (0.00,0.00) CanvasRenderer Img(Background) ScrollRect
+              Viewport (0.00,0.00) CanvasRenderer Img(UIMask) Mask
+                Content (0.00,0.00) VerticalLayoutGroup
+              -Scrollbar Horizontal (0.00,0.00) CanvasRenderer Img(Background) Scrollbar
+                Sliding Area (0.00,0.00) 
+                  Handle (0.00,0.00) CanvasRenderer Img(UISprite)
+              -Scrollbar Vertical (0.00,0.00) CanvasRenderer Img(Background) Scrollbar
+                Sliding Area (0.00,0.00) 
+                  Handle (0.00,0.00) CanvasRenderer Img(UISprite)
+            TotalLine (0.00,0.00) CanvasRenderer Img(None)
+              Price (0.00,0.00) CanvasRenderer Txt('0')
+              Icon (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+              Text (TMP) (0.00,0.00) CanvasRenderer Txt('Total') LocalizeText
+          -Intro (0.00,0.00) 
+            Text (TMP) (0.00,0.00) CanvasRenderer Txt('Scan the barcode') LocalizeText DG.Tweening.DOTweenAnimation
+          -Thanks (0.00,0.00) CanvasRenderer Img(None)
+            Heart (0.00,0.00) CanvasRenderer Img(Heart Thank You 1)
+        scanPos (-0.26,2.98) 
+          scan-line (0.00,0.00) SR(Line o3)
+        BottomLeft (-3.51,-2.06) 
+        TopRight (3.10,0.02) 
+        Container (0.00,-4.26) SortingGroup
+  Tutorial (0.00,0.00) Blindbag.TutorialBlindBag
+UIManager (0.00,0.00) Canvas CanvasScaler GraphicRaycaster UIManager
+  StoreScreen (0.00,0.00) CanvasGroup Blindbag.StoreScreen
+    SafeArea (0.00,0.00) 
+      CloseButton (0.00,0.00) CanvasRenderer Img(button_home) Button
+      -BuyButton (0.00,0.00) CanvasRenderer Img(button_done) Button Blindbag.MarketButton
+      BottomPanel (0.00,0.00) 
+        ItemCounter (0.00,0.00) CanvasRenderer Img(frame_buy)
+          Icon (0.00,0.00) CanvasRenderer Img(icon_cart)
+          CounterText (0.00,0.00) CanvasRenderer Txt('0/5')
+        TotalPrice (0.00,0.00) CanvasRenderer Img(frame_total)
+          Icon (0.00,0.00) CanvasRenderer Img(ic_coin_price)
+          TotalLabel (0.00,0.00) CanvasRenderer Txt('Total') LocalizeText
+          PriceText (0.00,0.00) CanvasRenderer Txt('0')
+        ConfirmButton (0.00,0.00) CanvasRenderer Img(button_v) Button Blindbag.MarketButton
+      Money (0.00,0.00) CanvasRenderer Img(box_coin) CanvasGroup MoneyManager JobGame.CollectingCoin
+        MoneyIconImage (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+        MoneyText (0.00,0.00) CanvasRenderer Txt('3000')
+        MoneyItem (0.00,0.00) CanvasRenderer Txt('9999') CanvasGroup Home.MoneyItem
+          MoneyText (2) (0.00,0.00) CanvasRenderer Txt('+')
+          Image (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+        SpawnPos (0.00,0.00) 
+      CartFullNoti (0.00,0.00) CanvasRenderer Img(frame_total) CanvasGroup Blindbag.NotiCanvas
+        Text (TMP) (0.00,0.00) CanvasRenderer Txt('Cart is full !!!') LocalizeText
+    BlockScreen (0.00,0.00) CanvasRenderer Img(None)
+  DoorScreen (0.00,0.00) CanvasGroup Blindbag.DoorScreen
+    OpenDoorButton (0.00,0.00) CanvasRenderer Img(None) Button
+      -Image (0.00,0.00) CanvasRenderer Img(text_tap2open)
+      TxtTitle (0.00,0.00) CanvasRenderer Txt('Tap to open') LocalizeText DG.Tweening.DOTweenAnimation
+  CompletedPopup (0.00,0.00) CanvasGroup Blindbag.CompletedPopup
+    BG (0.00,0.00) CanvasRenderer Img(BG)
+    Panel (0.00,0.00) 
+      Body (0.00,0.00) 
+        ImagePanel (0.00,0.00) CanvasRenderer Img(frame_picture_scoop)
+          Mask (0.00,0.00) CanvasRenderer Img(mask)
+            RawImage (0.00,0.00) CanvasRenderer RawImage
+        -Image (0.00,0.00) CanvasRenderer Img(None)
+        Title (0.00,0.00) CanvasRenderer Txt('Reward!') LocalizeText
+        Income (0.00,0.00) HorizontalLayoutGroup
+          TxtTItle (0.00,0.00) CanvasRenderer Txt('Income :') LocalizeText ContentSizeFitter
+          TxtMoney (0.00,0.00) CanvasRenderer Txt('1500\n') LocalizeText ContentSizeFitter
+            MoneyIcon (0.00,0.00) CanvasRenderer Img(money)
+        Tips (0.00,0.00) HorizontalLayoutGroup
+          TxtTItle (0.00,0.00) CanvasRenderer Txt('Tip from customer :') LocalizeText ContentSizeFitter
+          TxtMoney (0.00,0.00) CanvasRenderer Txt('1500') LocalizeText ContentSizeFitter
+            MoneyIcon (0.00,0.00) CanvasRenderer Img(money)
+        -Image (0.00,0.00) CanvasRenderer Img(icon_money)
+      AdButton (0.00,0.00) CanvasRenderer Img(button_green) Button DG.Tweening.DOTweenAnimation
+        AdsImage (0.00,0.00) CanvasRenderer Img(icon_ad)
+        MoneyAdText (0.00,0.00) CanvasRenderer Txt('x2 Tips') LocalizeText
+      RewardButton (0.00,0.00) CanvasRenderer Img(button_normal) Button
+        -MoneyImage (1) (0.00,0.00) CanvasRenderer Img(icon_money)
+        MoneyAdText (1) (0.00,0.00) CanvasRenderer Txt('No, thanks') LocalizeText
+        -MoneyFx (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleImage
+  BackHomePopup (0.00,0.00) CanvasGroup Clicker.BackHomePopup
+    BG (0.00,0.00) CanvasRenderer Img(None)
+    BtnClose (0.00,0.00) CanvasRenderer Img(UISprite) Button
+    Panel (0.00,0.00) CanvasRenderer Img(board_popup)
+      Title (0.00,0.00) CanvasRenderer Txt('Quit game') LocalizeText
+      Message (0.00,0.00) CanvasRenderer Txt('Progress will be lost') LocalizeText
+      BtnConfirm (0.00,0.00) CanvasRenderer Img(button_green) Button
+        TxtConfirm (0.00,0.00) CanvasRenderer Txt('Confirm') LocalizeText
+      BtnCancel (0.00,0.00) CanvasRenderer Img(button_coin) Button
+        TxtCancel (0.00,0.00) CanvasRenderer Txt('Tap to close') LocalizeText
+      Icon (0.00,0.00) CanvasRenderer Img(quit)
+      BtnClose (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+  NotEnoughMoneyPopup (0.00,0.00) CanvasRenderer Img(None) CanvasGroup NotEnoughMoneyPopup
+    BtnClose-Hidden (0.00,0.00) CanvasRenderer Img(UISprite) Button
+    Panel (0.00,0.00) CanvasRenderer Img(board_popup)
+      TxtTitle (0.00,0.00) CanvasRenderer Txt('Not enough coin') LocalizeText
+      Image (0.00,0.00) CanvasRenderer Img(mascot_coin)
+      PurchaseButton (0.00,0.00) CanvasRenderer Img(button_green) Button DG.Tweening.DOTweenAnimation
+        CoinText (0.00,0.00) CanvasRenderer Txt('+1000')
+        Icon (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+        Icon (0.00,0.00) CanvasRenderer Img(ic_ads)
+      CloseButton (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+  PopupNoInternet (0.00,0.00) NoInternetPopup CanvasGroup
+    Container (0.00,0.00) CanvasRenderer Img(None)
+      Panel (0.00,0.00) CanvasRenderer Img(board_popup)
+        Image (0.00,0.00) CanvasRenderer Img(no_internet)
+        TxtTitle (0.00,0.00) CanvasRenderer Txt('OOPS!!!') LocalizeText
+        Text (TMP) (0.00,0.00) CanvasRenderer Txt("Some action aren't available o") LocalizeText
+        OkayButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('Okay') LocalizeText
+  -BtnHide (0.00,0.00) CanvasRenderer Img(None) Button
+GameHandle (0.00,0.00) 
+  Main Camera (0.00,0.00) Camera AudioListener UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  -LiveCamera (0.00,0.00) Camera UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  CameraUi (0.00,0.00) Camera UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  EventSystem (0.00,0.00) UnityEngine.EventSystems.EventSystem UnityEngine.InputSystem.UI.InputSystemUIInputModule
+  -BGComplete (0.00,0.00) SR(None o3)

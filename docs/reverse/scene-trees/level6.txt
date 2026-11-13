@@ -1,0 +1,402 @@
+-GiveBoxToCharacter (0.00,0.00) ScoopGame.GiveBoxToCharacter
+  BG Delivery (0.00,0.00) SR(BG_complete o1)
+  Spine GameObject (Jelly_Character) (0.00,0.94) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation Character.MotionStateMachine SpineAnimationHandler
+    GameObject (0.00,0.00) 
+    Pointer (-0.11,3.63) 
+  DropTopRight (5.00,10.00) 
+  DropBottomLeft (-5.00,-1.00) 
+  DropRightPos (-3.60,3.54) 
+  BackPos (0.00,-7.80) 
+  Gift (0.00,-9.00) SR(icon_box_1 o3) ScoopGame.GiftDraggable
+  hand_L (-3.60,-12.10) SR(peguin_hand_L o2)
+  hand_R (3.60,-12.10) SR(peguin_hand_R o2)
+  Tutorial (0.00,0.00) 
+    HandStart (2.68,-5.76) 
+    hand (1) (0.00,-9.00) SR(hand_tap o6)
+      Gift (1) (0.00,0.00) SR(icon_box_1 o4)
+Bowl (0.00,0.00) ScoopGame.BowlController
+  -shadow (0.00,-1.40) SR(Shadow1 o2)
+  bowl_1_behind (0.00,1.38) SR(cup_peugin o2)
+  bowl_1_front (0.15,0.15) SR(cup_peugin_front o6)
+  Collider (0.00,2.11) PolygonCollider2D BoxCollider2D BoxCollider2D PolygonCollider2D
+  Stars (0.00,-0.93) 
+  Spoon (0.67,4.96) ScoopGame.Spoon Rigidbody2D
+    Visual (-0.06,-0.11) SR(scoop_7 o3)
+    VisualFront (-2.00,-0.13) SR(scoop_7_front o5)
+    Collider (0.00,0.00) CircleCollider2D CircleCollider2D CircleCollider2D BoxCollider2D
+    ScoopedStar (-0.87,0.44) 
+      -Visual (-1.31,-0.17) SR(charm_star o4)
+      -Visual (-0.83,-0.55) SR(charm_star o4)
+      -Visual (-0.61,-0.32) SR(charm_star o4)
+      -Visual (-0.26,0.16) SR(charm_star o4)
+      -Visual (-1.27,0.62) SR(charm_star o4)
+      -Visual (-0.70,0.47) SR(charm_star o4)
+      -Visual (-0.49,-0.04) SR(charm_star o4)
+      -Visual (-1.22,0.31) SR(charm_star o4)
+  TopLeftSpawnStar (-2.15,6.19) 
+  BottomRightSpawnStar (2.63,3.15) 
+  TopRightDragSpoon (3.18,8.00) 
+  BottomLeftDragSpoon (-1.21,3.14) 
+  Center (0.80,5.50) 
+  Tutorial (0.00,2.11) 
+    icon_infinity (0.00,7.09) SR(infinity o5)
+    hand (2.07,7.09) SR(hand_tap o6)
+    TutorialPos (0.00,11.99) 
+      GameObject (2.07,-4.90) 
+      GameObject (1) (1.60,-4.14) 
+      GameObject (2) (0.77,-4.16) 
+      GameObject (3) (-0.01,-4.89) 
+      GameObject (4) (-0.54,-5.48) 
+      GameObject (5) (-1.26,-5.81) 
+      GameObject (6) (-1.95,-5.36) 
+      GameObject (7) (-2.00,-4.61) 
+      GameObject (8) (-1.42,-4.11) 
+      GameObject (9) (-0.56,-4.30) 
+      GameObject (10) (-0.06,-4.84) 
+      GameObject (11) (0.42,-5.42) 
+      GameObject (12) (1.06,-5.82) 
+      GameObject (13) (1.64,-5.60) 
+      GameObject (14) (1.86,-4.99) 
+  carpet (0.00,-1.27) SR(carpet o0)
+-BlindBoxTray (0.00,0.00) ScoopGame.BlindBoxPlate BoxCollider2D
+  Plate(Hidden at low pos) (0.00,-20.00) 
+    tray_F (0.03,-0.00) 
+  Black_BG (0.00,0.00) SR(Square o0) SortingGroup
+    Glow_Fx (0.00,2.00) 
+      fx_glow_purple (0.29,0.00) SR(fx_glow_purple o1) DG.Tweening.DOTweenAnimation
+        fx_rotation (-0.24,0.00) SR(fx_rotation o2) DG.Tweening.DOTweenAnimation
+  PlateHoldResult (0.00,5.00) 
+    tray_topview (0.00,0.00) SR(tray_topview o2)
+    TopRight (3.01,1.44) 
+    BottomLeft (-3.00,-0.92) 
+  BoxHolder (0.00,-20.00) 
+    BlindBox (2.75,-26.12) ScoopGame.BlindBox SortingGroup BoxCollider2D
+      charm (0.00,0.00) SR(clicker_16 o3)
+        lucky (0.00,0.14) SR(charm_star o3)
+      Spine GameObject (Scoop_Blind_Bag) (0.00,-2.13) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+    TopRight (3.27,1.69) 
+    BottomLeft (-3.57,-1.43) 
+  UnboxZone (0.00,0.00) 
+    TopRight (4.07,0.50) 
+    BottomLeft (-4.15,-5.00) 
+BG (0.00,-0.00) SR(BG_luckyscoop o-1)
+-PutCharmToBox (0.00,0.00) ScoopGame.PutCharmToBox
+  BoxHolder (0.00,0.00) 
+    Box (0.00,5.00) SR(box_defaut o2) SortingGroup
+      LimitTopRight (2.33,2.60) 
+      LimitBottomLeft (-2.37,-2.46) 
+      card_1 (0.00,-1.47) SR(card_1 o4)
+      Lid (0.00,0.83) SR(box_defaut_lid o7)
+      LidTop (0.00,9.00) 
+      front (0.00,-1.86) SR(box_defaut_front o5)
+      BaseCollider (0.00,0.00) PolygonCollider2D
+  LidClosePos (0.00,5.83) 
+  LidOpenPos (0.00,14.00) 
+  Tray-Plate (0.00,-5.50) SR(tray_topview o2)
+  SpawnTopRight (3.10,-4.18) 
+  SpawnBottomLeft (-3.07,-6.40) 
+  CharmHolder (0.00,0.00) 
+    -CharmDrag (0.00,0.00) SortingGroup ScoopGame.CharmDrag BoxCollider2D
+      Visual (0.00,0.00) SR(bracelet_1_normal o3)
+  ComplimentHolder (0.00,0.00) 
+    BottomLeft (-3.75,6.20) 
+    TopRight (3.77,11.00) 
+-PreviewBag (0.00,0.00) 
+  blind_bag_defaut (-3.15,1.00) SR(blind_bag_defaut o3)
+  blind_bag_defaut (1) (0.31,0.70) SR(blind_bag_defaut o3)
+  blind_bag_defaut (2) (3.28,1.00) SR(blind_bag_defaut o3)
+-BG After Scoop (0.00,0.00) SR(BG_Ingame_tile o1)
+BG_black (0.00,0.00) SR(Square o0) SortingGroup
+  FxHolder (0.00,2.00) 
+    fx_glow_blue (0.00,0.00) SR(fx_glow_yellow o2) DG.Tweening.DOTweenAnimation
+      fx_rotation (0.00,0.00) SR(fx_rotation o1) DG.Tweening.DOTweenAnimation
+ScoopGameController (0.00,0.00) ScoopGame.ScoopGameController ScoopGame.SpoonDragController
+UIManager (0.00,0.00) Canvas CanvasScaler GraphicRaycaster UIManager
+  [Sceen] (0.00,0.00) 
+    ScreenInGame (0.00,0.00) CanvasGroup ScoopGame.ScreenInGame
+      ContentScoop (0.00,0.00) 
+        ScoopStatus (0.00,0.00) CanvasRenderer Img(box_slot_scoop)
+          Image (0.00,0.00) CanvasRenderer Img(ic_scoop)
+          txtScoopTime (0.00,0.00) CanvasRenderer Txt('0/1')
+        btnAddScoop (0.00,0.00) CanvasRenderer Img(button_green) Button DG.Tweening.DOTweenAnimation
+          Image (0.00,0.00) CanvasRenderer Img(ic_ads)
+          txtAddScoop (0.00,0.00) CanvasRenderer Txt('+1 Scoop') LocalizeText
+        BtnDecor (0.00,0.00) CanvasRenderer Img(box_change_tool) Button
+          Image (0.00,0.00) CanvasRenderer Img(ic_change_tool)
+        -Process (0.00,0.00) CanvasRenderer Img(progress_bound)
+          Process (0.00,0.00) CanvasRenderer Img(progress_fill)
+        -Panel Decor New (0.00,0.00) Clicker.DecorKeycapPanel
+          BtnNextPos (0.00,0.00) 
+          ShowPos (0.00,0.00) 
+          HidePos (0.00,0.00) 
+          Panel (0.00,0.00) 
+            BG (0.00,0.00) CanvasRenderer Img(tab)
+            BtnOnTopDecor (0.00,0.00) CanvasRenderer Img(UISprite) Button Clicker.CategoryButton
+              Image (0.00,0.00) CanvasRenderer Img(tab_off)
+              Selected (0.00,0.00) 
+                Selected (0.00,0.00) CanvasRenderer Img(tab_top)
+                Selected (0.00,0.00) CanvasRenderer Img(tab_on)
+              Icon (0.00,0.00) CanvasRenderer Img(ic_charm)
+            BtnReplaceDecor (0.00,0.00) CanvasRenderer Img(UISprite) Button Clicker.CategoryButton
+              Image (0.00,0.00) CanvasRenderer Img(tab_off)
+              -Selected (0.00,0.00) 
+                Selected (0.00,0.00) CanvasRenderer Img(tab_top)
+                Selected (0.00,0.00) CanvasRenderer Img(tab_on)
+              Icon (0.00,0.00) CanvasRenderer Img(ic_keycap_S)
+            BtnReplaceDecor (0.00,0.00) CanvasRenderer Img(UISprite) Button Clicker.CategoryButton
+              Image (0.00,0.00) CanvasRenderer Img(tab_off)
+              -Selected (0.00,0.00) 
+                Selected (0.00,0.00) CanvasRenderer Img(tab_top)
+                Selected (0.00,0.00) CanvasRenderer Img(tab_on)
+              Icon (0.00,0.00) CanvasRenderer Img(ic_keycap_S)
+            -BtnPaintDecor (0.00,0.00) CanvasRenderer Img(UISprite) Button Clicker.CategoryButton
+              Image (0.00,0.00) CanvasRenderer Img(tab_off)
+              -Selected (0.00,0.00) 
+                Selected (0.00,0.00) CanvasRenderer Img(tab_top)
+                Selected (0.00,0.00) CanvasRenderer Img(tab_on)
+              Icon (0.00,0.00) CanvasRenderer Img(ic_draw)
+            Scroll View (0.00,0.00) CanvasRenderer Img(Background) ScrollRect
+              Viewport (0.00,0.00) CanvasRenderer Img(UIMask) Mask
+                Content (0.00,0.00) GridLayoutGroup ContentSizeFitter
+                  -KeycapUIItem (0.00,0.00) CanvasRenderer Clicker.DecorKeycapUIItem Img(box_item) Button
+                    NotSelected (0.00,0.00) 
+                    Selected (0.00,0.00) CanvasRenderer Img(box_item_selected)
+                    Icon (0.00,0.00) CanvasRenderer Img(_0027_charm_gummy_1)
+                    Check (0.00,0.00) CanvasRenderer Img(check)
+                    -AdLock (0.00,0.00) CanvasRenderer Img(button_ads)
+                      IconAds (0.00,0.00) CanvasRenderer Img(ic_ads)
+                      TextCountAd (0.00,0.00) CanvasRenderer Txt('0/1')
+                    -CoinLock (0.00,0.00) CanvasRenderer Img(button_coin)
+                      IconCoin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                      TextCountAd (0.00,0.00) CanvasRenderer Txt('100\n')
+                    -OtherLock (0.00,0.00) CanvasRenderer Img(ic_lock)
+              -Scrollbar Horizontal (0.00,0.00) CanvasRenderer Img(Background) Scrollbar
+                Sliding Area (0.00,0.00) 
+                  Handle (0.00,0.00) CanvasRenderer Img(UISprite)
+              Scrollbar Vertical (0.00,0.00) CanvasRenderer Img(sroll_bound) Scrollbar
+                Sliding Area (0.00,0.00) 
+                  Handle (0.00,0.00) CanvasRenderer Img(sroll_bar)
+        Panel Decor (0.00,0.00) CanvasGroup ScoopGame.ScoopPanel
+          btnClose (0.00,0.00) CanvasRenderer Img(None) Button
+          Panel (0.00,0.00) 
+            BG (0.00,0.00) CanvasRenderer Img(tab)
+            CategoryPanel (0.00,0.00) CanvasRenderer Img(None) ScrollRect ScoopGame.CategoryPanel
+              Viewport (0.00,0.00) 
+                Content (0.00,0.00) HorizontalLayoutGroup ContentSizeFitter
+            OptionPanel (0.00,0.00) CanvasRenderer Img(Background) ScrollRect ScoopGame.OptionPanel
+              Viewport (0.00,0.00) CanvasRenderer Img(UIMask) Mask
+                Content (0.00,0.00) GridLayoutGroup ContentSizeFitter
+              -Scrollbar Horizontal (0.00,0.00) CanvasRenderer Img(Background) Scrollbar
+                Sliding Area (0.00,0.00) 
+                  Handle (0.00,0.00) CanvasRenderer Img(UISprite)
+              Scrollbar Vertical (0.00,0.00) CanvasRenderer Img(sroll_bound) Scrollbar
+                Sliding Area (0.00,0.00) 
+                  Handle (0.00,0.00) CanvasRenderer Img(sroll_bar)
+            CloseButton (0.00,0.00) CanvasRenderer Img(button_v) Button
+        PreviewListStar (0.00,0.00) CanvasRenderer Img(None) PreviewListStar CanvasGroup
+        Content (0.00,0.00) 
+          Image (0.00,0.00) CanvasRenderer Img(fx_glow_purple) DG.Tweening.DOTweenAnimation
+            Image (0.00,0.00) CanvasRenderer Img(fx_rotation) DG.Tweening.DOTweenAnimation
+          Message (0.00,0.00) CanvasRenderer Txt("You've got 5 charms") LocalizeText
+        RectHolder1 (0.00,0.00) HorizontalLayoutGroup
+          -Rect (0.00,0.00) 
+          -Rect (0.00,0.00) 
+          -Rect (0.00,0.00) 
+          -Rect (0.00,0.00) 
+          -Rect (0.00,0.00) 
+          -Rect (0.00,0.00) 
+        RectHolder2 (0.00,0.00) HorizontalLayoutGroup
+          -Rect (0.00,0.00) 
+          -Rect (0.00,0.00) 
+          -Rect (0.00,0.00) 
+          -Rect (0.00,0.00) 
+          -Rect (0.00,0.00) 
+          -Rect (0.00,0.00) 
+        Images (0.00,0.00) 
+          -Image (0.00,0.00) CanvasRenderer Img(star_green)
+          -Image (0.00,0.00) CanvasRenderer Img(star_green)
+          -Image (0.00,0.00) CanvasRenderer Img(star_green)
+          -Image (0.00,0.00) CanvasRenderer Img(star_green)
+          -Image (0.00,0.00) CanvasRenderer Img(star_green)
+          -Image (0.00,0.00) CanvasRenderer Img(star_green)
+          -Image (0.00,0.00) CanvasRenderer Img(star_green)
+          -Image (0.00,0.00) CanvasRenderer Img(star_green)
+          -Image (0.00,0.00) CanvasRenderer Img(star_green)
+          -Image (0.00,0.00) CanvasRenderer Img(star_green)
+          -Image (0.00,0.00) CanvasRenderer Img(star_green)
+          -Image (0.00,0.00) CanvasRenderer Img(star_green)
+      -ContentBlindBox (0.00,0.00) ScoopGame.CharmFlyToBasket
+        BasketBehind (0.00,0.00) CanvasRenderer Img(basket)
+        Basket (0.00,0.00) CanvasRenderer Img(basket)
+          TopRight (0.00,0.00) 
+          BottomLeft (0.00,0.00) 
+          Image (0.00,0.00) CanvasRenderer Img(basket_F)
+        Content (0.00,0.00) 
+          Message (0.00,0.00) CanvasRenderer Txt('Get one more!') LocalizeText
+        CharmHolder (0.00,0.00) 
+          -CharmImage (0.00,0.00) CanvasRenderer Img(bracelet_11)
+        -Star (0.00,0.00) CanvasRenderer Img(charm_star) DG.Tweening.DOTweenAnimation
+      -ContentSelectBox (0.00,0.00) ScoopGame.SelectBox
+        BoxHolder (0.00,0.00) 
+          -BoxUIItem (0.00,0.00) ScoopGame.BoxUIItem
+            Image (0.00,0.00) CanvasRenderer Img(icon_box_1)
+        BtnLeft (0.00,0.00) CanvasRenderer Img(arrow_left) Button
+        BtnRight (0.00,0.00) CanvasRenderer Img(arrow_right) Button
+        BtnNext (0.00,0.00) CanvasRenderer Img(button_v) Button DG.Tweening.DOTweenAnimation
+        -BtnAdsUnlock (0.00,0.00) CanvasRenderer Img(button_ads) Button DG.Tweening.DOTweenAnimation
+          Image (0.00,0.00) CanvasRenderer Img(ic_ads)
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('0/1') LocalizeText
+        -BtnCoinUnlock (0.00,0.00) CanvasRenderer Img(button_coin) Button DG.Tweening.DOTweenAnimation
+          Image (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+          TxtPrice (0.00,0.00) CanvasRenderer Txt('1000')
+        PreviewPosition (0.00,0.00) 
+          1 (0.00,0.00) 
+          2 (0.00,0.00) 
+          3 (0.00,0.00) 
+          4 (0.00,0.00) 
+          5 (0.00,0.00) 
+        -TxtBoxName (0.00,0.00) CanvasRenderer Txt('Square Box')
+      -ContentSort (0.00,0.00) ScoopGame.SelectCard
+        CanvasGroup (0.00,0.00) CanvasGroup
+          CardHolder (0.00,0.00) 
+            -CardUIItem (0.00,0.00) ScoopGame.CardUIItem
+              Image (0.00,0.00) CanvasRenderer Img(card_1)
+          BtnLeft (0.00,0.00) CanvasRenderer Img(arrow_left) Button
+          BtnRight (0.00,0.00) CanvasRenderer Img(arrow_right) Button
+          BtnNext (0.00,0.00) CanvasRenderer Img(button_v) Button DG.Tweening.DOTweenAnimation
+          -BtnAdsUnlock (0.00,0.00) CanvasRenderer Img(button_ads) Button
+            Image (0.00,0.00) CanvasRenderer Img(ic_ads)
+            Text (TMP) (0.00,0.00) CanvasRenderer Txt('0/1') LocalizeText
+          -BtnCoinUnlock (0.00,0.00) CanvasRenderer Img(button_coin) Button
+            Image (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+            TxtPrice (0.00,0.00) CanvasRenderer Txt('1000')
+          PreviewPosition (0.00,0.00) 
+            1 (0.00,0.00) 
+            2 (0.00,0.00) 
+            3 (0.00,0.00) 
+            4 (0.00,0.00) 
+            5 (0.00,0.00) 
+          -TxtCardName (0.00,0.00) CanvasRenderer Txt('Square Box')
+      -BlockScreen (0.00,0.00) CanvasRenderer Img(None)
+      TopLeftUI (0.00,0.00) VerticalLayoutGroup
+        ButtonHome (0.00,0.00) CanvasRenderer Img(button_home) Button
+        Live (0.00,0.00) CanvasRenderer Img(LIVE)
+        LivePanel (0.00,0.00) CanvasRenderer Img(box_view) Livestream.LivestreamPanel
+          ViewerCountText (0.00,0.00) CanvasRenderer Txt('38989')
+          -LiveImage (0.00,0.00) CanvasRenderer Img(None)
+            Dot (0.00,0.00) CanvasRenderer Img(SlicedCircle)
+            LiveText (0.00,0.00) CanvasRenderer Txt('Live')
+          Image (0.00,0.00) CanvasRenderer Img(ic_view)
+      CommentChat (0.00,0.00) 
+        CommentHandler (0.00,0.00) CanvasRenderer Img(None) RectMask2D CommentHandler
+        ChatInput (0.00,0.00) CanvasRenderer Img(box_chat) Livestream.ChatInput
+          InputField (TMP) (0.00,0.00) CanvasRenderer Img(InputFieldBackground) TMPro.TMP_InputField
+            Text Area (0.00,0.00) RectMask2D
+              Placeholder (0.00,0.00) CanvasRenderer Txt('Send a chat to the subscriber!') LayoutElement LocalizeText
+              Text (0.00,0.00) CanvasRenderer Txt('\u200b')
+        Emoji (488.00,-1175.00) ParticleSystem ParticleSystemRenderer
+  [Popup] (0.00,0.00) 
+    CompletedPopup (0.00,0.00) CanvasGroup ScoopGame.CompletedPopup
+      BG (0.00,0.00) CanvasRenderer Img(BG_complete_repeat)
+      Panel (0.00,0.00) 
+        Body (0.00,0.00) 
+          ImagePanel (0.00,0.00) CanvasRenderer Img(border-endgame) CanvasGroup
+            Mask (0.00,0.00) CanvasRenderer Img(Mask) Mask
+              RawImage (0.00,0.00) CanvasRenderer RawImage
+              Image (0.00,0.00) CanvasRenderer Img(complete_peguin)
+          -Image (0.00,0.00) CanvasRenderer Img(None)
+          -Image (0.00,0.00) CanvasRenderer Img(icon_money)
+        RewardInfo (0.00,0.00) 
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('Earnings:') LocalizeText
+          Text (TMP) (1) (0.00,0.00) CanvasRenderer Txt('Tips:') LocalizeText
+          TxtEarnings (0.00,0.00) CanvasRenderer Txt('+500')
+          ImgCoin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+          TxtTips (0.00,0.00) CanvasRenderer Txt('+500')
+          ImgCoin (1) (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+        Compliment (0.00,0.00) CanvasRenderer Img(comment_completed)
+          Ghim (0.00,0.00) CanvasRenderer Img(pin_comment)
+          Avatar (0.00,0.00) CanvasRenderer Img(viewer_3)
+          Message (0.00,0.00) CanvasRenderer Txt('Wow, this is exactly what I wa') LocalizeText
+        AdButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+          Scaler (0.00,0.00) CanvasRenderer Img(button_green) DG.Tweening.DOTweenAnimation
+            AdsImage (0.00,0.00) CanvasRenderer Img(ic_ads)
+            MoneyAdText (0.00,0.00) CanvasRenderer Txt('x2 Reward') LocalizeText
+        RewardButton (No thanks) (0.00,0.00) CanvasRenderer Img(button_normal) Button
+          -MoneyImage (1) (0.00,0.00) CanvasRenderer Img(icon_money)
+          MoneyAdText (1) (0.00,0.00) CanvasRenderer Txt('No thanks') LocalizeText
+          -MoneyFx (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleImage
+        Title (0.00,0.00) CanvasRenderer Img(title_pink)
+          TxtTitle (0.00,0.00) CanvasRenderer Txt('Completed!') LocalizeText
+    Money (0.00,0.00) CanvasRenderer Img(box_coin) CanvasGroup MoneyManager JobGame.CollectingCoin
+      MoneyIconImage (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+      MoneyText (0.00,0.00) CanvasRenderer Txt('3000')
+      MoneyItem (0.00,0.00) CanvasRenderer Txt('9999') CanvasGroup Home.MoneyItem
+        MoneyText (2) (0.00,0.00) CanvasRenderer Txt('+')
+        Image (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+      SpawnPos (0.00,0.00) 
+    DoneBoxCharmPopup (0.00,0.00) CanvasGroup ScoopGame.DoneBoxCharmPopup
+      BackContent (0.00,0.00) 
+        BG (0.00,0.00) CanvasRenderer Img(BG)
+        Panel (0.00,0.00) 
+          Body (0.00,0.00) 
+            Image (0.00,0.00) CanvasRenderer Img(Title_feature_2)
+            Effect (0.00,0.00) 
+              Scale (0.00,0.00) CanvasRenderer Img(fx_particle_yellow) DG.Tweening.DOTweenAnimation
+              Scale (1) (0.00,0.00) CanvasRenderer Img(fx_particle_yellow) DG.Tweening.DOTweenAnimation
+              Scale (2) (0.00,0.00) CanvasRenderer Img(fx_particle_yellow) DG.Tweening.DOTweenAnimation
+              Rotate (0.00,0.00) CanvasRenderer Img(fx_particle_yellow) DG.Tweening.DOTweenAnimation
+              Rotate (1) (0.00,0.00) CanvasRenderer Img(fx_particle_yellow) DG.Tweening.DOTweenAnimation
+              Rotate (2) (0.00,0.00) CanvasRenderer Img(fx_particle_yellow) DG.Tweening.DOTweenAnimation
+            ImgBox (0.00,0.00) CanvasRenderer Img(icon_box_1) DG.Tweening.DOTweenAnimation
+            Title (0.00,0.00) CanvasRenderer Txt('Completed!') LocalizeText
+          -ConfettiFullscreen (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleImage
+            Left (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleImage
+              Trails (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleTrailRenderer
+            Right (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleImage
+              Trails (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleTrailRenderer
+          DeliveryButton (0.00,0.00) CanvasRenderer Img(button_green) Button DG.Tweening.DOTweenAnimation
+            MoneyAdText (0.00,0.00) CanvasRenderer Txt('Delivery') LocalizeText
+      DeliveryBG (0.00,0.00) CanvasRenderer Img(BG_loading_repeat-x)
+        Star (0.00,0.00) 
+          Image (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+          Image (1) (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+          Image (2) (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+          Image (3) (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+          Image (4) (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+        TxtDelivering (0.00,0.00) CanvasRenderer Txt('Delivering...') LocalizeText
+        SkeletonGraphic (hamster_shipber) (0.00,0.00) CanvasRenderer Spine.Unity.SkeletonGraphic
+    CoinHolder (0.00,0.00) 
+    BackHomePopup (0.00,0.00) CanvasGroup Clicker.BackHomePopup
+      BG (0.00,0.00) CanvasRenderer Img(None)
+      BtnClose (0.00,0.00) CanvasRenderer Img(UISprite) Button
+      Panel (0.00,0.00) CanvasRenderer Img(board_popup)
+        Title (0.00,0.00) CanvasRenderer Txt('Quit game') LocalizeText
+        Message (0.00,0.00) CanvasRenderer Txt('Progress will be lost') LocalizeText
+        BtnConfirm (0.00,0.00) CanvasRenderer Img(button_green) Button
+          TxtConfirm (0.00,0.00) CanvasRenderer Txt('Confirm') LocalizeText
+        BtnCancel (0.00,0.00) CanvasRenderer Img(button_coin) Button
+          TxtCancel (0.00,0.00) CanvasRenderer Txt('Tap to close') LocalizeText
+        Icon (0.00,0.00) CanvasRenderer Img(quit)
+        BtnClose (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+    NotEnoughMoneyPopup (0.00,0.00) CanvasRenderer Img(None) CanvasGroup NotEnoughMoneyPopup
+      BtnClose-Hidden (0.00,0.00) CanvasRenderer Img(UISprite) Button
+      Panel (0.00,0.00) CanvasRenderer Img(board_popup)
+        TxtTitle (0.00,0.00) CanvasRenderer Txt('Not enough coin') LocalizeText
+        Image (0.00,0.00) CanvasRenderer Img(mascot_coin)
+        PurchaseButton (0.00,0.00) CanvasRenderer Img(button_green) Button DG.Tweening.DOTweenAnimation
+          CoinText (0.00,0.00) CanvasRenderer Txt('+1000')
+          Icon (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+          Icon (0.00,0.00) CanvasRenderer Img(ic_ads)
+        CloseButton (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+    PopupNoInternet (0.00,0.00) CanvasRenderer NoInternetPopup CanvasGroup
+      Container (0.00,0.00) CanvasRenderer Img(None)
+        Panel (0.00,0.00) CanvasRenderer Img(None)
+          Title (0.00,0.00) CanvasRenderer Img(None)
+          label (0.00,0.00) CanvasRenderer Txt("Some actions are't available o")
+          OkayButton (0.00,0.00) CanvasRenderer Img(None) Button
+GameHandle (0.00,0.00) 
+  Main Camera (0.00,0.00) Camera AudioListener UnityEngine.Rendering.Universal.UniversalAdditionalCameraData UnityEngine.EventSystems.Physics2DRaycaster
+  CameraUi (19.59,0.00) Camera UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  RenderCam (-2.67,2.50) Camera UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  EventSystem (0.00,0.00) UnityEngine.EventSystems.EventSystem UnityEngine.InputSystem.UI.InputSystemUIInputModule
+  ScoopDataHolding (0.00,0.00) ScoopGame.ScoopDataHolding

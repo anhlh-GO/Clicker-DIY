@@ -1,0 +1,516 @@
+{
+"SceneNames": {
+"Loading": 0,
+"Home": 1,
+"ModeClicker": 2
+},
+"Menu": {
+"Home": 0,
+"Extracting": 1
+},
+"AdsPosition": {
+"Bottom": 0,
+"Centered": 1,
+"Left": 2,
+"Right": 3,
+"Custom": 4
+},
+"AdFormat": {
+"INTER": 0,
+"REWARD": 1,
+"BANNER": 2,
+"MREC": 3,
+"APP_OPEN": 4,
+"APP_OPEN_GAM": 5,
+"NATIVE": 6,
+"INTER_GAM": 7,
+"NATIVE_INTER": 8,
+"DEV_KEY": 9,
+"NATIVE_COLLAP": 10,
+"NATIVE_BANNER": 11
+},
+"IAPRewardType": {
+"None": 0,
+"Coin": 1,
+"SkinChar": 2,
+"Charm": 3,
+"Keychain": 4
+},
+"IAPKey": {
+"dumbling_normal_pack": 0,
+"dumbling_special_pack": 1
+},
+"IAPPurchaseResult": {
+"Success": 0,
+"Pending": 1,
+"Failed": 2,
+"NotInitialized": 3
+},
+"ChannelType": {
+"TEST1_5": 0,
+"TEST2_6": 1,
+"TEST3_7": 2
+},
+"SyncPurposeType": {
+"Normal": 0,
+"ABTest": 1
+},
+"ELuckyWheelReward": {
+"Coins": 0,
+"Item": 1
+},
+"ESaveType": {
+"PlayerPrefs": 0,
+"File": 1
+},
+"Axis": {
+"X": 0,
+"Y": 1,
+"Z": 2
+},
+"HomeUnlockType": {
+"None": 99,
+"ModeDreamHouse": 0,
+"Charm": 1,
+"ModeScoop": 2,
+"ModePartTime": 3,
+"ModeIdleChest": 4,
+"ModeDecor": 5,
+"ModeDailyTask": 6,
+"ModeBlindBag": 7,
+"ModeDumplingBlindBag": 8
+},
+"GameModeEnum": {
+"None": 0,
+"Clicker": 1,
+"BlindBag": 2,
+"Scoop": 3
+},
+"EAnimationSpineType": {
+"eat": 0,
+"happy": 1,
+"happy2": 2,
+"hungry": 3,
+"idle": 4,
+"look_food": 5,
+"ready_to_eat": 6,
+"sour": 7,
+"sour2": 8,
+"spicy": 9,
+"suprise": 10,
+"suprise2": 11,
+"drink": 12,
+"eat2": 13,
+"eat3": 14,
+"eat4": 15,
+"eat5": 16,
+"eat6": 17,
+"eat7": 18,
+"eat8": 19,
+"eat9": 20,
+"eat10": 21,
+"cold": 22,
+"cute": 23,
+"cute2": 24,
+"cute3": 25,
+"cute4": 26,
+"happy3": 27,
+"happy4": 28
+},
+"ECommentType": {
+"None": 0,
+"Donate": 1
+},
+"EventID": {
+"None": 0,
+"RefeshTopping": 1
+},
+"PoolType": {
+"Piece": 0,
+"BubbleTeaItemUI": 1,
+"BurgerItemUI": 2,
+"JellyItemUI": 10,
+"DalgonaItemUI": 11,
+"QuestionItem": 3,
+"AnswerMask": 4,
+"Coin": 5,
+"CategoryItem": 6,
+"OptionItem": 7,
+"ItemGift": 8,
+"LanguageItem": 9,
+"ScoopCategoryItem": 12,
+"ScoopOptionItem": 13,
+"Block": 50,
+"MoneyBlock": 51,
+"GoldCollect": 100,
+"FireWork": 101,
+"CutWoodFx": 102,
+"SortWoodFx": 103,
+"BobaItemUI": 104,
+"Star": 105,
+"ScoopStar": 106,
+"YellowBall": 107,
+"Compliment": 108,
+"GlowSprite": 1000
+},
+"RarityType": {
+"Common": 0,
+"Rare": 1,
+"Epic": 2,
+"Legendary": 3,
+"Special": 99
+},
+"SettingType": {
+"sound": 0,
+"music": 1,
+"vibrate": 2
+},
+"logLevel": {
+"Disabled": 0,
+"Info": 1,
+"Warning": 2
+},
+"Trading.ETradingSelectResult": {
+"Ok": 0,
+"OfferFull": 1,
+"AlreadySelected": 2,
+"Locked": 3,
+"InvalidItem": 4
+},
+"Trading.ETradingValidation": {
+"Ok": 0,
+"Processing": 1,
+"PlayerOfferEmpty": 2,
+"NpcOfferEmpty": 3,
+"InvalidData": 4,
+"OverLimit": 5,
+"NoProfit": 6
+},
+"Trading.ETradingAddMoreResult": {
+"Processing": 0,
+"NoAttemptsLeft": 1,
+"NeedPlayerItem": 2,
+"NpcOfferFull": 3,
+"Refused": 4,
+"CannotAdd": 5,
+"Added": 6,
+"CounterRequest": 7
+},
+"Trading.ETradingCommitResult": {
+"Success": 0,
+"AlreadyCommitted": 1,
+"InvalidTrade": 2,
+"InstanceMissing": 3,
+"CollectionFull": 4
+},
+"Trading.ETradingComponentType": {
+"Case": 0,
+"Switch": 1,
+"Keycap": 2,
+"Keychain": 3,
+"Decor": 4
+},
+"Trading.ETradingCardState": {
+"Available": 0,
+"Selected": 1,
+"Disabled": 2
+},
+"DreamHouse.EDecorType": {
+"Floor": 0,
+"Wall": 1,
+"Sofa": 2,
+"Window": 3,
+"Television": 4,
+"Cabinet": 5,
+"Table": 6,
+"Chair": 7,
+"Lamp": 8,
+"Picture": 9,
+"Carpet": 10,
+"Plant": 11
+},
+"Home.EntityName": {
+"Pet": 0,
+"LuckyWheel": 1,
+"Character": 2
+},
+"Home.PetName": {
+"chip": 0,
+"dog": 1,
+"reindeer": 2,
+"squidgame_girl": 3,
+"squidgame_solider": 4,
+"bat_haloween": 5,
+"turkey": 6,
+"pet_christmas": 7
+},
+"DailyTask.MissionType": {
+"CollectCoin": 1,
+"PlayTime": 2,
+"LevelUp": 3,
+"BuyItem": 4
+},
+"Games.Common.EUnlockType": {
+"Unlocked": 0,
+"Ads": 1,
+"Coin": 2,
+"Day": 3,
+"Level": 4,
+"InAppPurchase": 5
+},
+"BlindBagCollection.CollectionItemType": {
+"FullKeycap": 0,
+"Decor1": 1,
+"Decor2": 2,
+"Decor3": 3,
+"Decor4": 4,
+"Decor5": 5,
+"Decor6": 6,
+"Decor7": 7,
+"Decor8": 8,
+"Decor9": 9,
+"Decor10": 10,
+"Decor11": 11,
+"Decor12": 12
+},
+"BlindBagCollection.CollectionBoxsetType": {
+"MimiMagic": 0,
+"LovelyPink": 1,
+"DophinBubbles": 2,
+"LuckyFrog": 3,
+"Sweetheart": 4,
+"CozyBear": 5,
+"WorldCup": 6,
+"CloudyCandy": 7,
+"DreamMoon": 8,
+"SweetPop": 9,
+"NatureFan": 20,
+"SweetWorld": 21,
+"AnimalFriends": 22,
+"OceanFriends": 23,
+"SpaceTime": 24,
+"AdventureNow": 25,
+"FashionPop": 26,
+"FastFood": 27,
+"FruitParty": 28,
+"GadgetBox": 29,
+"KawaiiLand": 30,
+"CozyKitchen": 31
+},
+"ScoopGame.CharmRarity": {
+"Normal": 1,
+"Rare": 2
+},
+"ScoopGame.CharmDragStatus": {
+"Normal": 0,
+"Wrong": 1,
+"Right": 2
+},
+"Blindbag.State": {
+"Free": 0,
+"Moving": 1,
+"Placed": 2
+},
+"LoginTimeReward.ClaimType": {
+"Free": 0,
+"Ads": 1
+},
+"LoginTimeReward.RewardType": {
+"Coin": 0,
+"RandomKeycapCommon": 1,
+"RandomDecorSkin": 2,
+"RandomKeycapRare": 3
+},
+"Clicker.UnlockMethodType": {
+"Unlocked": 0,
+"Ads": 1,
+"Coin": 2,
+"BlindBag": 3
+},
+"Clicker.DragType": {
+"Switch": 0,
+"Keycap": 1,
+"Keychain": 2
+},
+"Clicker.DecorKeycapType": {
+"None": 0,
+"OnTop": 1,
+"Replace": 2,
+"CustomPaint": 3,
+"ReplaceButOnBase": 4
+},
+"Clicker.CollectionItemState": {
+"Available": 0,
+"Locked": 1,
+"CanInspect": 2
+},
+"DailyMission.DailyItemStatus": {
+"Select": 0,
+"Reward": 1,
+"Unselect": 2
+},
+"E7.NotchSolution.EdgeEvaluationMode": {
+"On": 0,
+"Balanced": 1,
+"Off": 2
+},
+"E7.NotchSolution.SupportedOrientations": {
+"Single": 0,
+"Dual": 1
+},
+"Framework.EMusic": {
+"None": 0,
+"bgm_home_1": 1,
+"bgm_home_2": 2,
+"bgm_home_3": 3,
+"bgm_ingame_1": 4
+},
+"Framework.ESound": {
+"None": 0,
+"click": 1,
+"comment": 2,
+"complete": 3,
+"home_touch_pet": 4,
+"jelly_Coin": 6,
+"loading_pop": 7,
+"Spinning_Wheel": 8,
+"jelly_endgame_sound": 9,
+"sc_scoop": 10,
+"jelly_end_jelly": 11,
+"Signature": 12,
+"sc_ConnectVongTay": 13,
+"CharmItemDrop1": 14,
+"Collect_money": 15,
+"Charmremove": 16,
+"CharmXucCharm1": 17,
+"sc_bag_crack": 18,
+"sc_SprayComplete": 19,
+"sc_DatDay": 20,
+"sc_close_box": 21,
+"SPMK_Open_door_SPMK": 22,
+"sc_happy": 23,
+"sc_Get1More": 24,
+"sc_Delivery": 25,
+"sc_Greatjob": 27,
+"sc_Perfect": 28,
+"sc_Lovely": 29,
+"sc_Awesome": 30,
+"SFX_Place": 31,
+"sfx_3d_printer_complete": 32,
+"sfx_3d_printer_running": 33,
+"sfx_3d_printer_start": 34,
+"sfx_coin_dropping": 44,
+"sfx_finish": 45,
+"sfx_open_giftbox": 46,
+"sfx_purchase_coin": 47,
+"sfx_result_confetti": 48,
+"sfx_wheel_spinning": 49,
+"sfx_win_prize": 50,
+"sfx_assemble_hold": 51,
+"sfx_assemble_put": 52,
+"sfx_assemble_remove": 53,
+"Black_Switch": 35,
+"Blue_Switch": 36,
+"Brown_Switch": 37,
+"Green_Switch": 38,
+"Pink_Switch": 39,
+"Purple_Switch": 40,
+"Red_Switch": 41,
+"White_Switch": 42,
+"Yellow_Switch": 43,
+"Clear_Switch": 54,
+"Fairy_Switch": 55,
+"Peach_Switch": 56,
+"Penguin_Switch": 57,
+"Silver_Switch": 58,
+"sfx_scan_payment": 59
+},
+"EDrawOrder": {
+"BeforeInspector": 0,
+"AfterInspector": 1
+},
+"Framework.EStringMatchType": {
+"Exactly": 0,
+"Exactly_IgnoreCase": 1,
+"Contains": 2,
+"Contains_IgnoreCase": 3
+},
+"Framework.WeightErrorHandlingType": {
+"SetWeightToOne": 0,
+"ThrowExceptionOnAdd": 1
+},
+"ColoringMode": {
+"Tint": 0,
+"Multiply": 1,
+"Replace": 2,
+"ReplaceKeepAlpha": 3,
+"Add": 4
+},
+"BlendMode": {
+"Opaque": 0,
+"Cutout": 1,
+"Fade": 2,
+"Transparent": 3
+},
+"EAxisOptions": {
+"Both": 0,
+"Horizontal": 1,
+"Vertical": 2
+},
+"SimDevice": {
+"None": 0,
+"iPhoneX": 1,
+"iPhoneXsMax": 2,
+"Pixel3XL_LSL": 3,
+"Pixel3XL_LSR": 4
+},
+"ESwipeDirection": {
+"None": 0,
+"Up": 1,
+"Down": 2,
+"Left": 3,
+"Right": 4
+},
+"AutomaticSetModes": {
+"Awake": 0,
+"Start": 1,
+"ScriptOnly": 2
+},
+"Anchor": {
+"LeftTop": 0,
+"LeftBottom": 1,
+"RightTop": 2,
+"RightBottom": 3
+},
+"EHapticType": {
+"Selection": 0,
+"Success": 1,
+"Warning": 2,
+"Failure": 3,
+"LightImpact": 4,
+"MediumImpact": 5,
+"HeavyImpact": 6,
+"RigidImpact": 7,
+"SoftImpact": 8,
+"None": 9
+},
+"AdLogLevel": {
+"None": 0,
+"Notification": 1,
+"Error": 2,
+"Warning": 3,
+"Log": 4,
+"Debug": 5,
+"Verbose": 6
+},
+"AudienceNetwork.AdSize": {
+"BANNER_HEIGHT_50": 0,
+"BANNER_HEIGHT_90": 1,
+"RECTANGLE_HEIGHT_250": 2
+},
+"AudienceNetwork.AdPosition": {
+"CUSTOM": 0,
+"TOP": 1,
+"BOTTOM": 2
+}
+}

@@ -1,5 +1,7 @@
 # Clicker DIY: ASMR Charm Master — HTML5 port
 
+> Continuing this project? Start with [docs/HANDOFF.md](docs/HANDOFF.md).
+
 Web remake of the Android game *Clicker DIY: ASMR Charm Master* (v0.6), rebuilt from the original Unity build's assets
 (sprites, Spine 4.2 animations, audio, scene/prefab layouts and configs). All 7 scenes are playable:
 Loading, Home (+ daily login / tasks / online rewards / lucky wheel / decor / settings), Clicker DIY (case → 3D printer →

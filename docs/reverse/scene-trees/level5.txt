@@ -1,0 +1,137 @@
+-HandTutorial_1 (0.44,-1.64) SR(handtap o5) DG.Tweening.DOTweenAnimation
+-CanvasPattern (0.00,0.00) Canvas CanvasScaler
+  Pattern (0.00,0.00) CanvasRenderer RawImage Scroller
+BG (0.00,0.00) SR(BG_dreamhouse_reppeat-x o-1)
+Effects (0.00,0.00) 
+  DecorItemEffect (0.00,0.00) ParticleSystem ParticleSystemRenderer
+    blink (0.00,0.00) ParticleSystem ParticleSystemRenderer
+      Sparks (0.00,0.00) ParticleSystem ParticleSystemRenderer
+DreamHouseController (0.00,0.00) DreamHouse.DreamHouseController
+  TutorialHandler (0.00,0.00) DreamHouse.TutorialHandler DreamHouseFirstGameTutorial
+    -Highlight (-100.00,17.99) SR(mark_position o10)
+      Square (0.00,0.00) SR(Square o4)
+  TouchEffectTrigger (0.00,0.00) DreamHouse.TouchEffectTrigger
+UIManager (0.00,0.00) Canvas CanvasScaler GraphicRaycaster UIManager
+  BG (0.00,0.00) CanvasRenderer Img(BG_dreamhouse_reppeat-x)
+  [Sceen] (0.00,0.00) 
+    ScreenInGame (0.00,0.00) CanvasGroup DreamHouse.ScreenInGame
+      Header (0.00,0.00) 
+        btnBack (0.00,0.00) CanvasRenderer Img(button_home) Button
+        ProgressBar (0.00,0.00) CanvasRenderer Img(progress_bound) DreamHouse.ProgressBar
+          FillImage (0.00,0.00) CanvasRenderer Img(progress_fill)
+          TextProgress (0.00,0.00) CanvasRenderer Txt('0/12')
+      Body (0.00,0.00) 
+        Button: ListRoom (0.00,0.00) CanvasRenderer Img(btn_room) Button
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('List house') LocalizeText
+        ItemPanel (0.00,0.00) CanvasRenderer Img(None) CanvasGroup DreamHouse.DecorItemPanel
+          Content (0.00,0.00) HorizontalLayoutGroup
+            DecorItemUI (0.00,0.00) CanvasRenderer Img(None) Button CanvasGroup DreamHouse.DecorItemUI
+              Image (0.00,0.00) CanvasRenderer Img(box_item)
+              -Selected (0.00,0.00) CanvasRenderer Img(box_item_pick)
+              Icon (0.00,0.00) CanvasRenderer Img(lr1_sofa_1_0306003)
+              ButtonGroup (0.00,0.00) 
+                ButtonCoin (0.00,0.00) CanvasRenderer Img(button_coin) Button
+                  Text: Price (0.00,0.00) CanvasRenderer Txt('1000')
+                  CoinIcon (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                -ButtonAds (0.00,0.00) CanvasRenderer Img(button_blue) Button
+                  Text (TMP) (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                  AdsIcon (0.00,0.00) CanvasRenderer Img(ic_ads)
+                -ButtonFree (0.00,0.00) CanvasRenderer Img(button_green) Button
+                  Text: Price (0.00,0.00) CanvasRenderer Txt('Free') LocalizeText
+            DecorItemUI (1) (0.00,0.00) CanvasRenderer Img(None) Button CanvasGroup DreamHouse.DecorItemUI
+              Image (0.00,0.00) CanvasRenderer Img(box_item)
+              -Selected (0.00,0.00) CanvasRenderer Img(box_item_pick)
+              Icon (0.00,0.00) CanvasRenderer Img(lr1_sofa_1_0306003)
+              ButtonGroup (0.00,0.00) 
+                ButtonCoin (0.00,0.00) CanvasRenderer Img(button_coin) Button
+                  Text: Price (0.00,0.00) CanvasRenderer Txt('1000')
+                  CoinIcon (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                -ButtonAds (0.00,0.00) CanvasRenderer Img(button_blue) Button
+                  Text (TMP) (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                  AdsIcon (0.00,0.00) CanvasRenderer Img(ic_ads)
+                -ButtonFree (0.00,0.00) CanvasRenderer Img(button_green) Button
+                  Text: Price (0.00,0.00) CanvasRenderer Txt('Free') LocalizeText
+            DecorItemUI (2) (0.00,0.00) CanvasRenderer Img(None) Button CanvasGroup DreamHouse.DecorItemUI
+              Image (0.00,0.00) CanvasRenderer Img(box_item)
+              -Selected (0.00,0.00) CanvasRenderer Img(box_item_pick)
+              Icon (0.00,0.00) CanvasRenderer Img(lr1_sofa_1_0306003)
+              ButtonGroup (0.00,0.00) 
+                ButtonCoin (0.00,0.00) CanvasRenderer Img(button_coin) Button
+                  Text: Price (0.00,0.00) CanvasRenderer Txt('1000')
+                  CoinIcon (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                -ButtonAds (0.00,0.00) CanvasRenderer Img(button_blue) Button
+                  Text (TMP) (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                  AdsIcon (0.00,0.00) CanvasRenderer Img(ic_ads)
+                -ButtonFree (0.00,0.00) CanvasRenderer Img(button_green) Button
+                  Text: Price (0.00,0.00) CanvasRenderer Txt('Free') LocalizeText
+        -Button: Done (0.00,0.00) CanvasRenderer Img(button_green) Button DG.Tweening.DOTweenAnimation
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('Done') LocalizeText
+      -HandTutorial_2 (0.00,0.00) CanvasRenderer Img(handtap) DG.Tweening.DOTweenAnimation
+      Money (0.00,0.00) CanvasRenderer Img(box_coin) CanvasGroup MoneyManager JobGame.CollectingCoin
+        MoneyIconImage (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+        MoneyText (0.00,0.00) CanvasRenderer Txt('3000')
+        MoneyItem (0.00,0.00) CanvasRenderer Txt('9999') CanvasGroup Home.MoneyItem
+          MoneyText (2) (0.00,0.00) CanvasRenderer Txt('+')
+          Image (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+        SpawnPos (0.00,0.00) 
+  [Popup] (0.00,0.00) 
+    PopupListRoom (0.00,0.00) CanvasGroup DreamHouse.PopupListRoom
+      Overlay (0.00,0.00) CanvasRenderer Img(BG_dreamhouse_reppeat-x)
+      Panel (0.00,0.00) CanvasRenderer Img(board_tutorial)
+        Button: Close (0.00,0.00) CanvasRenderer Img(btn_redo) Button
+        Title (0.00,0.00) CanvasRenderer Img(None)
+          Star (0.00,0.00) CanvasRenderer Img(Star)
+          Pingin (0.00,0.00) CanvasRenderer Img(blue)
+          Pingin (1) (0.00,0.00) CanvasRenderer Img(pink)
+          Text: Header (0.00,0.00) CanvasRenderer Txt('Dream House') LocalizeText
+          Star (0.00,0.00) CanvasRenderer Img(Star)
+        Scroll View (0.00,0.00) CanvasRenderer Img(Background) ScrollRect
+          Viewport (0.00,0.00) CanvasRenderer Img(UIMask) Mask
+            Content (0.00,0.00) GridLayoutGroup ContentSizeFitter
+    PopupNewRoom (0.00,0.00) CanvasRenderer Img(None) CanvasGroup DreamHouse.PopupNewRoom
+      Panel (0.00,0.00) CanvasRenderer Img(board_popup_pink)
+        Image (0.00,0.00) CanvasRenderer Img(Title_feature_2)
+        TxtTitle (0.00,0.00) CanvasRenderer Txt('New Room') LocalizeText
+        Glow (0.00,0.00) CanvasRenderer Img(Group 5161)
+        Icon (0.00,0.00) CanvasRenderer Img(kr1_wall_2_131310)
+        DecorateButton (0.00,0.00) CanvasRenderer Img(button_green) Button DG.Tweening.DOTweenAnimation
+          Text (0.00,0.00) CanvasRenderer Txt('Decorate') LocalizeText
+        CloseButton (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+    NotEnoughMoneyPopup (0.00,0.00) CanvasRenderer Img(None) CanvasGroup NotEnoughMoneyPopup
+      BtnClose-Hidden (0.00,0.00) CanvasRenderer Img(UISprite) Button
+      Panel (0.00,0.00) CanvasRenderer Img(board_popup)
+        TxtTitle (0.00,0.00) CanvasRenderer Txt('Not enough coin') LocalizeText
+        Image (0.00,0.00) CanvasRenderer Img(mascot_coin)
+        PurchaseButton (0.00,0.00) CanvasRenderer Img(button_green) Button DG.Tweening.DOTweenAnimation
+          CoinText (0.00,0.00) CanvasRenderer Txt('+1000')
+          Icon (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+          Icon (0.00,0.00) CanvasRenderer Img(ic_ads)
+        CloseButton (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+    PopupNoInternet (0.00,0.00) NoInternetPopup CanvasGroup
+      Container (0.00,0.00) CanvasRenderer Img(None)
+        Panel (0.00,0.00) CanvasRenderer Img(board_popup)
+          Image (0.00,0.00) CanvasRenderer Img(no_internet)
+          TxtTitle (0.00,0.00) CanvasRenderer Txt('OOPS!!!') LocalizeText
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt("Some action aren't available o") LocalizeText
+          OkayButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+            Text (TMP) (0.00,0.00) CanvasRenderer Txt('Okay') LocalizeText
+  BtnIntro (0.00,0.00) CanvasRenderer Img(UISprite) Button
+    Content (0.00,0.00) 
+      Title (0.00,0.00) CanvasRenderer Txt('Welcome Home!') LocalizeText
+        Star (0.00,0.00) CanvasRenderer Img(effectbling_awessome_1) DG.Tweening.DOTweenAnimation
+        Star (3) (0.00,0.00) CanvasRenderer Img(effectbling_awessome_1) DG.Tweening.DOTweenAnimation
+        Star (4) (0.00,0.00) CanvasRenderer Img(effectbling_awessome_1) DG.Tweening.DOTweenAnimation
+        Star (1) (0.00,0.00) CanvasRenderer Img(effectbling_awessome_1) DG.Tweening.DOTweenAnimation
+        Star (2) (0.00,0.00) CanvasRenderer Img(effectbling_awessome_1) DG.Tweening.DOTweenAnimation
+      Title (1) (0.00,0.00) CanvasRenderer Txt('Pick 1 of 3 items to decorate ') LocalizeText
+      -Title (2) (0.00,0.00) CanvasRenderer Txt('Tap anywhere to continue') LocalizeText DG.Tweening.DOTweenAnimation
+  FX_touch_UI (0.00,0.00) ParticleSystem ParticleSystemRenderer
+    balloon blast-shine (0.00,0.00) ParticleSystem ParticleSystemRenderer
+    flash (0.00,0.00) ParticleSystem ParticleSystemRenderer
+    white wave (0.00,0.00) ParticleSystem ParticleSystemRenderer
+    Ring (0.00,0.00) ParticleSystem ParticleSystemRenderer
+    balloon blast-ribbon (0.00,0.00) ParticleSystem ParticleSystemRenderer
+GameHandle (0.00,0.00) 
+  Main Camera (0.00,0.00) Camera AudioListener CameraController UnityEngine.Rendering.Universal.UniversalAdditionalCameraData UnityEngine.EventSystems.Physics2DRaycaster
+  CameraUi (0.00,0.00) Camera UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  EventSystem (0.00,0.00) UnityEngine.EventSystems.EventSystem UnityEngine.InputSystem.UI.InputSystemUIInputModule

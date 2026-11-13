@@ -1,0 +1,516 @@
+DebugUIValuePersistent (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerValue
+  Text (0.00,0.00) CanvasRenderer Text
+  Value (0.00,0.00) CanvasRenderer Text
+DebugUIValueTuple (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerValueTuple
+  Text (0.00,0.00) CanvasRenderer Text
+  Value (0.00,0.00) CanvasRenderer Text
+DebugUIObject (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerObject
+  Text (0.00,0.00) CanvasRenderer Text
+  Value (0.00,0.00) CanvasRenderer Text
+DebugUIIntField (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIntField
+  Text (0.00,0.00) CanvasRenderer Text
+  Panel (0.00,0.00) 
+    <<< (0.00,0.00) CanvasRenderer Button Text
+    < (0.00,0.00) CanvasRenderer Button Text
+    Int (0.00,0.00) CanvasRenderer Text
+    > (0.00,0.00) CanvasRenderer Button Text
+    >>> (0.00,0.00) CanvasRenderer Button Text
+DebugUIProgressBar (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerProgressBar
+  Text (0.00,0.00) CanvasRenderer Text
+  Panel (0.00,0.00) 
+    Progress (0.00,0.00) CanvasRenderer Img(White1px)
+    Value (0.00,0.00) CanvasRenderer Text
+DebugUIFloatField (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerFloatField
+  Text (0.00,0.00) CanvasRenderer Text
+  Panel (0.00,0.00) 
+    <<< (0.00,0.00) CanvasRenderer Button Text
+    < (0.00,0.00) CanvasRenderer Button Text
+    Float (0.00,0.00) CanvasRenderer Text
+    > (0.00,0.00) CanvasRenderer Button Text
+    >>> (0.00,0.00) CanvasRenderer Button Text
+DebugUIValue (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerValue
+  Text (0.00,0.00) CanvasRenderer Text
+  Value (0.00,0.00) CanvasRenderer Text
+DebugUIUIntField (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerUIntField
+  Text (0.00,0.00) CanvasRenderer Text
+  Panel (0.00,0.00) 
+    <<< (0.00,0.00) CanvasRenderer Button Text
+    < (0.00,0.00) CanvasRenderer Button Text
+    UInt (0.00,0.00) CanvasRenderer Text
+    > (0.00,0.00) CanvasRenderer Button Text
+    >>> (0.00,0.00) CanvasRenderer Button Text
+DebugUICanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster UnityEngine.Rendering.UI.DebugUIHandlerCanvas
+DebugUIColor (0.00,0.00) VerticalLayoutGroup ContentSizeFitter UnityEngine.Rendering.UI.DebugUIHandlerColor UnityEngine.Rendering.UI.DebugUIHandlerContainer
+  Header (0.00,0.00) UnityEngine.Rendering.UI.UIFoldout
+    -Arrow Opened (0.00,0.00) CanvasRenderer Img(UIFoldoutOpened)
+    Arrow Closed (0.00,0.00) CanvasRenderer Img(UIFoldoutClosed)
+    Color (0.00,0.00) CanvasRenderer Img(White1px)
+    Text (0.00,0.00) CanvasRenderer Text
+  -Content (0.00,0.00) VerticalLayoutGroup ContentSizeFitter CanvasRenderer Img(White1px)
+    R (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectFloatField
+      Text (0.00,0.00) CanvasRenderer Text
+      Float (0.00,0.00) CanvasRenderer Text
+    G (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectFloatField
+      Text (0.00,0.00) CanvasRenderer Text
+      Float (0.00,0.00) CanvasRenderer Text
+    B (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectFloatField
+      Text (0.00,0.00) CanvasRenderer Text
+      Float (0.00,0.00) CanvasRenderer Text
+    A (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectFloatField
+      Text (0.00,0.00) CanvasRenderer Text
+      Float (0.00,0.00) CanvasRenderer Text
+DebugUIHBox (0.00,0.00) HorizontalLayoutGroup ContentSizeFitter UnityEngine.Rendering.UI.DebugUIHandlerContainer UnityEngine.Rendering.UI.DebugUIHandlerHBox
+DebugUIEnumField (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerEnumField
+  Text (0.00,0.00) CanvasRenderer Text
+  Panel (0.00,0.00) 
+    Decrement (0.00,0.00) CanvasRenderer Button Text
+    Value (0.00,0.00) CanvasRenderer Text
+    Increment (0.00,0.00) CanvasRenderer Button Text
+DebugUIObjectList (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerObjectList
+  Text (0.00,0.00) CanvasRenderer Text
+  Panel (0.00,0.00) 
+    Decrement (0.00,0.00) CanvasRenderer Button Text
+    Value (0.00,0.00) CanvasRenderer Text
+    Increment (0.00,0.00) CanvasRenderer Button Text
+DebugUIButton (0.00,0.00) CanvasRenderer Img(UIElement8px) Button UnityEngine.Rendering.UI.DebugUIHandlerButton
+  Text (0.00,0.00) CanvasRenderer Text
+DebugUIToggle (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerToggle
+  Text (0.00,0.00) CanvasRenderer Text
+  Toggle (0.00,0.00) Toggle
+    Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+      Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+DebugUIVector3 (0.00,0.00) VerticalLayoutGroup ContentSizeFitter UnityEngine.Rendering.UI.DebugUIHandlerContainer UnityEngine.Rendering.UI.DebugUIHandlerVector3
+  Header (0.00,0.00) UnityEngine.Rendering.UI.UIFoldout
+    -Arrow Opened (0.00,0.00) CanvasRenderer Img(UIFoldoutOpened)
+    Arrow Closed (0.00,0.00) CanvasRenderer Img(UIFoldoutClosed)
+    Text (0.00,0.00) CanvasRenderer Text
+  -Content (0.00,0.00) VerticalLayoutGroup ContentSizeFitter CanvasRenderer Img(White1px)
+    X (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectFloatField
+      Text (0.00,0.00) CanvasRenderer Text
+      Float (0.00,0.00) CanvasRenderer Text
+    Y (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectFloatField
+      Text (0.00,0.00) CanvasRenderer Text
+      Float (0.00,0.00) CanvasRenderer Text
+    Z (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectFloatField
+      Text (0.00,0.00) CanvasRenderer Text
+      Float (0.00,0.00) CanvasRenderer Text
+DebugUIPanel (0.00,0.00) CanvasRenderer Img(White1px) VerticalLayoutGroup ContentSizeFitter UnityEngine.Rendering.UI.DebugUIHandlerContainer UnityEngine.Rendering.UI.DebugUIHandlerPanel
+  Header (0.00,0.00) LayoutElement
+    Panel (0.00,0.00) CanvasRenderer Img(None)
+      Previous (0.00,0.00) CanvasRenderer Img(None) Button
+        Text (0.00,0.00) CanvasRenderer Text
+      Title (0.00,0.00) CanvasRenderer Text
+      Next (0.00,0.00) CanvasRenderer Img(None) Button
+        Text (0.00,0.00) CanvasRenderer Text
+  Scroll View (0.00,0.00) CanvasRenderer ScrollRect Img(White1px) LayoutElement
+    Viewport (0.00,0.00) CanvasRenderer Mask Img(UIMask)
+      Content (0.00,0.00) VerticalLayoutGroup ContentSizeFitter
+    -Scrollbar Horizontal (0.00,0.00) CanvasRenderer Img(White1px) Scrollbar UnityEngine.EventSystems.EventTrigger
+      Sliding Area (0.00,0.00) 
+        Handle (0.00,0.00) CanvasRenderer Img(White1px)
+    Scrollbar Vertical (0.00,0.00) CanvasRenderer Img(White1px) Scrollbar UnityEngine.EventSystems.EventTrigger
+      Sliding Area (0.00,0.00) 
+        Handle (0.00,0.00) CanvasRenderer Img(White1px)
+  Footer (0.00,0.00) LayoutElement
+    Panel (0.00,0.00) CanvasRenderer Img(None)
+      Reset Button (0.00,0.00) CanvasRenderer Img(UIElement8px) Button
+        Text (0.00,0.00) CanvasRenderer Text
+DebugUIGroup (0.00,0.00) VerticalLayoutGroup ContentSizeFitter UnityEngine.Rendering.UI.DebugUIHandlerContainer UnityEngine.Rendering.UI.DebugUIHandlerGroup
+  Header (0.00,0.00) 
+    Text (0.00,0.00) CanvasRenderer Text
+  Content (0.00,0.00) VerticalLayoutGroup ContentSizeFitter CanvasRenderer Img(White1px)
+DebugUIVector4 (0.00,0.00) VerticalLayoutGroup ContentSizeFitter UnityEngine.Rendering.UI.DebugUIHandlerContainer UnityEngine.Rendering.UI.DebugUIHandlerVector4
+  Header (0.00,0.00) UnityEngine.Rendering.UI.UIFoldout
+    -Arrow Opened (0.00,0.00) CanvasRenderer Img(UIFoldoutOpened)
+    Arrow Closed (0.00,0.00) CanvasRenderer Img(UIFoldoutClosed)
+    Text (0.00,0.00) CanvasRenderer Text
+  -Content (0.00,0.00) VerticalLayoutGroup ContentSizeFitter CanvasRenderer Img(White1px)
+    X (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectFloatField
+      Text (0.00,0.00) CanvasRenderer Text
+      Float (0.00,0.00) CanvasRenderer Text
+    Y (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectFloatField
+      Text (0.00,0.00) CanvasRenderer Text
+      Float (0.00,0.00) CanvasRenderer Text
+    Z (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectFloatField
+      Text (0.00,0.00) CanvasRenderer Text
+      Float (0.00,0.00) CanvasRenderer Text
+    W (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectFloatField
+      Text (0.00,0.00) CanvasRenderer Text
+      Float (0.00,0.00) CanvasRenderer Text
+DebugUIPersistentCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster UnityEngine.Rendering.UI.DebugUIHandlerPersistentCanvas
+  DebugUI Persistent Panel (0.00,0.00) CanvasRenderer Img(White1px) VerticalLayoutGroup ContentSizeFitter
+DebugUIVector2 (0.00,0.00) VerticalLayoutGroup ContentSizeFitter UnityEngine.Rendering.UI.DebugUIHandlerContainer UnityEngine.Rendering.UI.DebugUIHandlerVector2
+  Header (0.00,0.00) UnityEngine.Rendering.UI.UIFoldout
+    -Arrow Opened (0.00,0.00) CanvasRenderer Img(UIFoldoutOpened)
+    Arrow Closed (0.00,0.00) CanvasRenderer Img(UIFoldoutClosed)
+    Text (0.00,0.00) CanvasRenderer Text
+  -Content (0.00,0.00) VerticalLayoutGroup ContentSizeFitter CanvasRenderer Img(White1px)
+    X (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectFloatField
+      Text (0.00,0.00) CanvasRenderer Text
+      Float (0.00,0.00) CanvasRenderer Text
+    Y (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectFloatField
+      Text (0.00,0.00) CanvasRenderer Text
+      Float (0.00,0.00) CanvasRenderer Text
+DebugUIMessageBox (0.00,0.00) VerticalLayoutGroup ContentSizeFitter UnityEngine.Rendering.UI.DebugUIHandlerMessageBox CanvasRenderer Img(None)
+  Text (0.00,0.00) CanvasRenderer Text
+DebugUIFoldout (0.00,0.00) VerticalLayoutGroup ContentSizeFitter UnityEngine.Rendering.UI.DebugUIHandlerContainer UnityEngine.Rendering.UI.DebugUIHandlerFoldout
+  Header (0.00,0.00) UnityEngine.Rendering.UI.UIFoldout
+    -Arrow Opened (0.00,0.00) CanvasRenderer Img(UIFoldoutOpened)
+    Arrow Closed (0.00,0.00) CanvasRenderer Img(UIFoldoutClosed)
+    Text (0.00,0.00) CanvasRenderer Text
+  -Content (0.00,0.00) VerticalLayoutGroup ContentSizeFitter CanvasRenderer Img(White1px)
+DebugUIRow (0.00,0.00) VerticalLayoutGroup ContentSizeFitter UnityEngine.Rendering.UI.DebugUIHandlerContainer UnityEngine.Rendering.UI.DebugUIHandlerRow
+  Header (0.00,0.00) UnityEngine.Rendering.UI.UIFoldout
+    -Arrow Opened (0.00,0.00) CanvasRenderer Img(UIFoldoutOpened)
+    Arrow Closed (0.00,0.00) CanvasRenderer Img(UIFoldoutClosed)
+    Text (0.00,0.00) CanvasRenderer Text
+  -Content (0.00,0.00) VerticalLayoutGroup ContentSizeFitter CanvasRenderer Img(White1px)
+DebugUIVBox (0.00,0.00) VerticalLayoutGroup ContentSizeFitter UnityEngine.Rendering.UI.DebugUIHandlerContainer UnityEngine.Rendering.UI.DebugUIHandlerVBox
+HomeScreen (0.00,0.00) CanvasGroup HomeScreen
+  Image (0.00,0.00) CanvasRenderer Img(None)
+DebugUIEnumHistory (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerEnumHistory
+  Text (0.00,0.00) CanvasRenderer Text
+  Value (0.00,0.00) CanvasRenderer Text
+DebugUIObjectPopupField (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerObjectPopupField
+  Text (0.00,0.00) CanvasRenderer Text
+  Panel (0.00,0.00) 
+    Decrement (0.00,0.00) CanvasRenderer Button Text
+    Value (0.00,0.00) CanvasRenderer Text
+    Increment (0.00,0.00) CanvasRenderer Button Text
+DebugUIBitField (0.00,0.00) VerticalLayoutGroup ContentSizeFitter UnityEngine.Rendering.UI.DebugUIHandlerContainer UnityEngine.Rendering.UI.DebugUIHandlerBitField
+  Header (0.00,0.00) UnityEngine.Rendering.UI.UIFoldout
+    -Arrow Opened (0.00,0.00) CanvasRenderer Img(UIFoldoutOpened)
+    Arrow Closed (0.00,0.00) CanvasRenderer Img(UIFoldoutClosed)
+    Text (0.00,0.00) CanvasRenderer Text
+  -Content (0.00,0.00) VerticalLayoutGroup ContentSizeFitter CanvasRenderer Img(White1px)
+    DebugUI Toggle 0 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 1 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 2 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 3 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 4 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 5 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 6 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 7 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 8 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 9 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 10 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 11 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 12 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 13 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 14 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 15 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 16 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 17 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 18 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 19 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 20 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 21 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 22 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 23 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 24 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 25 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 26 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 27 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 28 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 29 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 30 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 31 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+DebugUIHandlerRenderingLayerField (0.00,0.00) VerticalLayoutGroup ContentSizeFitter UnityEngine.Rendering.UI.DebugUIHandlerContainer UnityEngine.Rendering.UI.DebugUIHandlerRenderingLayerField
+  Header (0.00,0.00) UnityEngine.Rendering.UI.UIFoldout
+    -Arrow Opened (0.00,0.00) CanvasRenderer Img(UIFoldoutOpened)
+    Arrow Closed (0.00,0.00) CanvasRenderer Img(UIFoldoutClosed)
+    Text (0.00,0.00) CanvasRenderer Text
+  -Content (0.00,0.00) VerticalLayoutGroup ContentSizeFitter CanvasRenderer Img(White1px)
+    DebugUI Toggle 0 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 1 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 2 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 3 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 4 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 5 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 6 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 7 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 8 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 9 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 10 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 11 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 12 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 13 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 14 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 15 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 16 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 17 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 18 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 19 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 20 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 21 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 22 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 23 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 24 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 25 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 26 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 27 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 28 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 29 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 30 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+    DebugUI Toggle 31 (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerIndirectToggle
+      Text (0.00,0.00) CanvasRenderer Text
+      Toggle (0.00,0.00) Toggle
+        Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+          Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)
+DebugUIToggleHistory (0.00,0.00) UnityEngine.Rendering.UI.DebugUIHandlerToggleHistory
+  Text (0.00,0.00) CanvasRenderer Text
+  Toggle (0.00,0.00) Toggle
+    Background (0.00,0.00) CanvasRenderer Img(UIElement8px)
+      Checkmark (0.00,0.00) CanvasRenderer Img(UICheckMark)

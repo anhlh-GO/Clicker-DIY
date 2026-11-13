@@ -1,0 +1,259 @@
+OverlayView (0.00,0.00) Canvas CanvasScaler GraphicRaycaster ? DDOL ?
+  -LoadAOA (0.00,0.00) CanvasRenderer Img(None)
+    Text (1) (0.00,0.00) TextLoadingAnimation CanvasGroup
+      Decor Back (0.00,0.00) 
+        White 1 (0.00,0.00) CanvasRenderer Img(None)
+        White 2 (0.00,0.00) CanvasRenderer Img(None)
+      Line 1 - Bracelet (0.00,0.00) 
+        B (0.00,0.00) CanvasRenderer Img(None)
+        R (0.00,0.00) CanvasRenderer Img(None)
+        A (0.00,0.00) CanvasRenderer Img(None)
+        C (0.00,0.00) CanvasRenderer Img(None)
+        E (0.00,0.00) CanvasRenderer Img(None)
+        L (0.00,0.00) CanvasRenderer Img(None)
+        E (0.00,0.00) CanvasRenderer Img(None)
+        T (0.00,0.00) CanvasRenderer Img(None)
+      Line 2 - DIY (0.00,0.00) 
+        D (0.00,0.00) CanvasRenderer Img(None)
+        I (0.00,0.00) CanvasRenderer Img(None)
+        Y (0.00,0.00) CanvasRenderer Img(None)
+      Line 3 - asmr charm maker (0.00,0.00) 
+        asmr (0.00,0.00) CanvasRenderer Img(None)
+        charm (0.00,0.00) CanvasRenderer Img(None)
+        maker (0.00,0.00) CanvasRenderer Img(None)
+      Decor Front (0.00,0.00) 
+        Cinnamon (0.00,0.00) CanvasRenderer Img(None)
+        Chick (0.00,0.00) CanvasRenderer Img(None)
+        Heart (0.00,0.00) CanvasRenderer Img(None)
+        Ribbon (0.00,0.00) CanvasRenderer Img(None)
+        Hanger (0.00,0.00) CanvasRenderer Img(None)
+        Star (0.00,0.00) CanvasRenderer Img(None)
+        Star (0.00,0.00) CanvasRenderer Img(None)
+        Star (0.00,0.00) CanvasRenderer Img(None)
+        Star (0.00,0.00) CanvasRenderer Img(None)
+      -Blink (0.00,0.00) 
+        Blink (0.00,0.00) CanvasRenderer Img(None)
+        Blink (0.00,0.00) CanvasRenderer Img(None)
+        Blink (0.00,0.00) CanvasRenderer Img(None)
+        Blink (0.00,0.00) CanvasRenderer Img(None)
+        Blink (0.00,0.00) CanvasRenderer Img(None)
+        Blink (0.00,0.00) CanvasRenderer Img(None)
+      Text (TMP) (0.00,0.00) CanvasRenderer Txt('Loading...')
+    -Logo (0.00,0.00) CanvasRenderer Img(None)
+    -LoadBg (0.00,0.00) CanvasRenderer Img(None)
+      LoadFill (0.00,0.00) CanvasRenderer Img(None)
+      TxtLoad (0.00,0.00) CanvasRenderer Txt('100%')
+  -CoverAd (0.00,0.00) CanvasRenderer Img(None)
+  -ForceUpdatePopup (0.00,0.00) CanvasRenderer Img(None)
+    View (0.00,0.00) CanvasRenderer Img(2-popup_editname)
+      Text (TMP) (0.00,0.00) CanvasRenderer Txt('NOTIFY')
+      Text (TMP) (1) (0.00,0.00) CanvasRenderer Txt('You need to update the game to')
+      Btn (0.00,0.00) CanvasRenderer Img(button_green) Button
+        Text (TMP) (0.00,0.00) CanvasRenderer Txt('Update')
+DisableMultipleClick (0.00,0.00) 
+GameHandle (0.00,0.00) 
+  Main Camera (0.00,1.00) Camera AudioListener UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  CameraUi (9.62,2.02) Camera UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  EventSystem (0.00,0.00) UnityEngine.EventSystems.EventSystem UnityEngine.InputSystem.UI.InputSystemUIInputModule
+  Directional Light (0.00,3.00) Light UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+UIManager (0.00,0.00) Canvas CanvasScaler GraphicRaycaster LoadingControl
+  Bg (0.00,0.00) CanvasRenderer Img(BG_loading_repeat-x)
+  -BgTexture (0.00,0.00) CanvasRenderer Img(None)
+  Star (0.00,0.00) 
+    Image (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+    Image (1) (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+    Image (2) (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+    Image (3) (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+    Image (4) (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+  SkeletonGraphic (peguin_loading) (0.00,0.00) CanvasRenderer Spine.Unity.SkeletonGraphic
+  LogoImage (0.00,0.00) CanvasRenderer Img(logo) DG.Tweening.DOTweenAnimation Coffee.UIExtensions.ShinyEffectForUGUI
+  LoadingBar (0.00,0.00) CanvasRenderer Img(progress_bound)
+    LoadingText (0.00,0.00) CanvasRenderer Txt('Loading 0 %')
+    Fill (0.00,0.00) CanvasRenderer Img(progress_fill) Mask
+      -Scroll (0.00,0.00) CanvasRenderer RawImage Scroller
+    HiddenSlider (0.00,0.00) Slider
+      Background (0.00,0.00) CanvasRenderer Img(Background)
+      Fill Area (0.00,0.00) 
+        Fill (0.00,0.00) CanvasRenderer Img(UISprite)
+      Handle Slide Area (0.00,0.00) 
+        Handle (0.00,0.00) CanvasRenderer Img(Knob)
+          -Image (0.00,0.00) CanvasRenderer Img(None) DG.Tweening.DOTweenAnimation
+  -Text (0.00,0.00) TextLoadingAnimation CanvasGroup
+    Decor Back (0.00,0.00) 
+      White 1 (0.00,0.00) CanvasRenderer Img(None)
+      White 2 (0.00,0.00) CanvasRenderer Img(None)
+    Line 1 - Bracelet (0.00,0.00) 
+      B (0.00,0.00) CanvasRenderer Img(None)
+      R (0.00,0.00) CanvasRenderer Img(None)
+      A (0.00,0.00) CanvasRenderer Img(None)
+      C (0.00,0.00) CanvasRenderer Img(None)
+      E (0.00,0.00) CanvasRenderer Img(None)
+      L (0.00,0.00) CanvasRenderer Img(None)
+      E (0.00,0.00) CanvasRenderer Img(None)
+      T (0.00,0.00) CanvasRenderer Img(None)
+    Line 2 - DIY (0.00,0.00) 
+      D (0.00,0.00) CanvasRenderer Img(None)
+      I (0.00,0.00) CanvasRenderer Img(None)
+      Y (0.00,0.00) CanvasRenderer Img(None)
+    Line 3 - asmr charm maker (0.00,0.00) 
+      asmr (0.00,0.00) CanvasRenderer Img(None)
+      charm (0.00,0.00) CanvasRenderer Img(None)
+      maker (0.00,0.00) CanvasRenderer Img(None)
+    Decor Front (0.00,0.00) 
+      Cinnamon (0.00,0.00) CanvasRenderer Img(None)
+      Chick (0.00,0.00) CanvasRenderer Img(None)
+      Heart (0.00,0.00) CanvasRenderer Img(None)
+      Ribbon (0.00,0.00) CanvasRenderer Img(None)
+      Hanger (0.00,0.00) CanvasRenderer Img(None)
+      Star (0.00,0.00) CanvasRenderer Img(None)
+      Star (0.00,0.00) CanvasRenderer Img(None)
+      Star (0.00,0.00) CanvasRenderer Img(None)
+      Star (0.00,0.00) CanvasRenderer Img(None)
+    -Blink (0.00,0.00) 
+      Blink (0.00,0.00) CanvasRenderer Img(None)
+      Blink (0.00,0.00) CanvasRenderer Img(None)
+      Blink (0.00,0.00) CanvasRenderer Img(None)
+      Blink (0.00,0.00) CanvasRenderer Img(None)
+      Blink (0.00,0.00) CanvasRenderer Img(None)
+      Blink (0.00,0.00) CanvasRenderer Img(None)
+    Text (TMP) (0.00,0.00) CanvasRenderer Txt('Loading...')
+  -CharmRandom (0.00,0.00) CharmRandomLoading
+    Charm (0.00,0.00) CanvasRenderer Img(None)
+  FX_touch_UI (0.00,0.00) ParticleSystem ParticleSystemRenderer
+    balloon blast-shine (0.00,0.00) ParticleSystem ParticleSystemRenderer
+    flash (0.00,0.00) ParticleSystem ParticleSystemRenderer
+    white wave (0.00,0.00) ParticleSystem ParticleSystemRenderer
+    Ring (0.00,0.00) ParticleSystem ParticleSystemRenderer
+    balloon blast-ribbon (0.00,0.00) ParticleSystem ParticleSystemRenderer
+SimpleTransitionCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster SimpleSceneTransition ForceUpdate
+  FlashFx (0.00,0.00) CanvasRenderer Img(BG_loading_repeat-x)
+  -SkeletonGraphic (hamster_shipber) (0.00,0.00) CanvasRenderer Spine.Unity.SkeletonGraphic
+  Left (0.00,0.00) 
+  Center (0.00,0.00) 
+  Right (0.00,0.00) 
+  -Text (1) (0.00,0.00) TextLoadingAnimation CanvasGroup
+    Decor Back (0.00,0.00) 
+      White 1 (0.00,0.00) CanvasRenderer Img(None)
+      White 2 (0.00,0.00) CanvasRenderer Img(None)
+    Line 1 - Bracelet (0.00,0.00) 
+      B (0.00,0.00) CanvasRenderer Img(None)
+      R (0.00,0.00) CanvasRenderer Img(None)
+      A (0.00,0.00) CanvasRenderer Img(None)
+      C (0.00,0.00) CanvasRenderer Img(None)
+      E (0.00,0.00) CanvasRenderer Img(None)
+      L (0.00,0.00) CanvasRenderer Img(None)
+      E (0.00,0.00) CanvasRenderer Img(None)
+      T (0.00,0.00) CanvasRenderer Img(None)
+    Line 2 - DIY (0.00,0.00) 
+      D (0.00,0.00) CanvasRenderer Img(None)
+      I (0.00,0.00) CanvasRenderer Img(None)
+      Y (0.00,0.00) CanvasRenderer Img(None)
+    Line 3 - asmr charm maker (0.00,0.00) 
+      asmr (0.00,0.00) CanvasRenderer Img(None)
+      charm (0.00,0.00) CanvasRenderer Img(None)
+      maker (0.00,0.00) CanvasRenderer Img(None)
+    Decor Front (0.00,0.00) 
+      Cinnamon (0.00,0.00) CanvasRenderer Img(None)
+      Chick (0.00,0.00) CanvasRenderer Img(None)
+      Heart (0.00,0.00) CanvasRenderer Img(None)
+      Ribbon (0.00,0.00) CanvasRenderer Img(None)
+      Hanger (0.00,0.00) CanvasRenderer Img(None)
+      Star (0.00,0.00) CanvasRenderer Img(None)
+      Star (0.00,0.00) CanvasRenderer Img(None)
+      Star (0.00,0.00) CanvasRenderer Img(None)
+      Star (0.00,0.00) CanvasRenderer Img(None)
+    -Blink (0.00,0.00) 
+      Blink (0.00,0.00) CanvasRenderer Img(None)
+      Blink (0.00,0.00) CanvasRenderer Img(None)
+      Blink (0.00,0.00) CanvasRenderer Img(None)
+      Blink (0.00,0.00) CanvasRenderer Img(None)
+      Blink (0.00,0.00) CanvasRenderer Img(None)
+      Blink (0.00,0.00) CanvasRenderer Img(None)
+    Text (TMP) (0.00,0.00) CanvasRenderer Txt('Loading...')
+  BreakAdController (0.00,0.00) 
+    -BlockScreen (0.00,0.00) CanvasRenderer Img(bg_loading)
+      Image (0.00,0.00) CanvasRenderer Img(board_popup)
+        -Image (0.00,0.00) CanvasRenderer Img(circle)
+        Image (2) (0.00,0.00) CanvasRenderer Img(mascot_ads_break)
+        Text (TMP) (0.00,0.00) CanvasRenderer Txt('ADS Break')
+        Text (TMP) (1) (0.00,0.00) CanvasRenderer Txt('Time to relax!')
+  -CharmRandom (0.00,0.00) CharmRandomLoading
+    Charm (0.00,0.00) CanvasRenderer Img(None)
+  SkeletonGraphic (peguin_loading) (0.00,0.00) CanvasRenderer Spine.Unity.SkeletonGraphic
+  KeycapEffect (0.00,0.00) CanvasGroup KeycapEffect
+    Base (0.00,0.00) CanvasRenderer Img(Loading_case)
+      Keycap (0.00,0.00) CanvasRenderer Img(L)
+      Keycap (0.00,0.00) CanvasRenderer Img(O)
+      Keycap (0.00,0.00) CanvasRenderer Img(A)
+      Keycap (0.00,0.00) CanvasRenderer Img(D)
+      Keycap (0.00,0.00) CanvasRenderer Img(I)
+      Keycap (0.00,0.00) CanvasRenderer Img(N)
+      Keycap (0.00,0.00) CanvasRenderer Img(G)
+    Star (0.00,0.00) 
+      Image (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+      Image (1) (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+      Image (2) (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+      Image (3) (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+      Image (4) (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+  -ForceUpdatePopup (0.00,0.00) CanvasRenderer Img(None)
+    Panel (0.00,0.00) CanvasRenderer Img(board_popup)
+      Text (TMP) (0.00,0.00) CanvasRenderer Txt('New Feature')
+      Text (TMP) (1) (0.00,0.00) CanvasRenderer Txt('You need update to use this fe')
+      BtnUpdate (0.00,0.00) CanvasRenderer Img(button_coin) Button
+        Text (TMP) (0.00,0.00) CanvasRenderer Txt('Update')
+      ImgMascot (0.00,0.00) CanvasRenderer Img(mascot_newfeature)
+Master (0.00,0.00) DDOL
+  DataManager (0.00,0.00) DataManager LevelData DataUser Decor.DataDecor DailyTask.DataDailyTask LoginTimeReward.DataPlayTime ScoopGame.DataScoopVisual BlindBagCollection.BlindbagCollectionData DreamHouse.DataDreamHouse DataClicker
+  PoolManager (0.00,0.00) PoolManager
+    PoolDdt (0.00,0.00) PathologicalGames.SpawnPool
+    PoolDestroy (0.00,0.00) PathologicalGames.SpawnPool
+  Fps (0.00,0.00) FPSDisplay LitmitFps
+  AudioManager (0.00,0.00) Framework.AudioManager
+  LocalizationManager (0.00,0.00) 
+  GameSession (0.00,0.00) GameSession
+    -BG (0.00,0.00) 
+      BG (0.00,2.51) SR(Wall o0) BackgroundControl Decor.BackgroundChanger
+      table (0.00,-3.63) SR(Table o2) BackgroundControl Decor.TableChanger
+        Pet (3.04,5.38) SR(Chip o4) Decor.PetChanger
+        Decor (0.00,2.28) SR(Chip o3) Decor.DecorChanger
+    CharacterContainer (0.00,-1.50) Decor.CharacterChanger BoxCollider2D Home.BoxTrigger SortingGroup
+  DailyMissionManager (0.00,0.00) DailyMission.DailyMissionManager DailyTask.DailyTaskController
+  VibrationManager (0.00,0.00) Framework.VibrationManager
+  Profile Manager (0.00,0.00) Profile.ProfileManager
+  BonusController (0.00,0.00) Home.BonusController
+  Vibration(Charm) (0.00,0.00) 
+  PlayTimeTracker (0.00,0.00) PlayTimeTracker
+  CachedValue (0.00,0.00) CachedValue
+  ServiceManager (0.78,-2.66) 
+    AdsManager (0.00,0.00) AdsManager
+      Applovin (0.00,0.00) ApplovinManager InterApplovinControl RewardApplovinControl BannerApplovinControl MrecApplovinControl AppOpenAdApplovinControl
+      GoogleMobileAd (0.00,0.00) GoogleMobileAdsManager GoogleMobileAdsConsentController AppOpenAdAdmobManager InterAbmobControl NativeFsnManager NativeBannerControl NativeCollapControl
+    FirebaseManager (0.00,0.00) FirebaseManager RemoteConfigManager AnalyticsManager
+    KeyHolder (0.00,0.00) KeyHolder
+    NotificatonsManager (0.00,0.00) 
+    IAPManager (0.00,0.00) IAPManager
+  AppsFlyerObject (0.78,-2.66) AppsFlyerObjectScript
+TouchEffectTrigger (0.00,0.00) DreamHouse.TouchEffectTrigger
+SceneLoader (0.00,0.00) Canvas CanvasScaler GraphicRaycaster SceneLoader DDOL
+  -Loading (0.00,0.00) CanvasRenderer Img(None)
+  -CircleIN (0.00,0.00) CanvasRenderer
+    Circle (0.00,0.00) CanvasRenderer Img(SlicedCircle) Mask Animator
+      BG (0.00,0.00) CanvasRenderer EasyTransition.CutoutMaskUI
+  -CircleOUT (0.00,0.00) CanvasRenderer
+    Circle (0.00,0.00) CanvasRenderer Img(SlicedCircle) Mask Animator
+      BG (0.00,0.00) CanvasRenderer EasyTransition.CutoutMaskUI
+  -LoadingIN (0.00,0.00) 
+    LoadingAnim (0.00,0.00) Animator
+      Image (0.00,0.00) CanvasRenderer Img(None)
+      -Character (0.00,0.00) CanvasRenderer Spine.Unity.SkeletonGraphic
+      Image (0.00,0.00) CanvasRenderer Img(None)
+      Image (3) (0.00,0.00) CanvasRenderer Img(None)
+      Image (1) (0.00,0.00) CanvasRenderer Img(None)
+      Image (2) (0.00,0.00) CanvasRenderer Img(None)
+  -LoadingOUT (0.00,0.00) 
+    LoadingAnim (0.00,0.00) Animator CanvasRenderer Img(None)
+      Image2 (0.00,0.00) CanvasRenderer Img(None)
+      Image (0.00,0.00) CanvasRenderer Img(None)
+      Image (1) (0.00,0.00) CanvasRenderer Img(None)
+  AudioAnchor (0.00,0.00) 
+    TfAudioAds (0.00,0.00) 

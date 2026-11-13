@@ -1,0 +1,397 @@
+BG_Table (0.00,1.00) SR(BG_Ingame_tile o-5)
+-PrinterMachine (0.00,5.35) Clicker.PrinterMachine SortingGroup
+  PrinterVisual (0.00,0.00) SR(printer o0)
+  PrinterProcess (0.00,-4.24) Clicker.PrinterProcess
+    BG (0.00,0.00) 
+      BG (-0.97,0.00) SR(printer_progress_off o1)
+      BG (-0.75,0.00) SR(printer_progress_off o1)
+      BG (-0.53,0.00) SR(printer_progress_off o1)
+      BG (-0.31,0.00) SR(printer_progress_off o1)
+      BG (-0.09,0.00) SR(printer_progress_off o1)
+      BG (0.14,0.00) SR(printer_progress_off o1)
+      BG (0.36,0.00) SR(printer_progress_off o1)
+      BG (0.57,0.00) SR(printer_progress_off o1)
+      BG (0.80,0.00) SR(printer_progress_off o1)
+      BG (1.03,0.00) SR(printer_progress_off o1)
+    Process (0.00,0.00) 
+      -process (-0.96,0.00) SR(printer_progress_on o2)
+      -process (-0.74,0.00) SR(printer_progress_on o2)
+      -process (-0.52,0.00) SR(printer_progress_on o2)
+      -process (-0.31,0.00) SR(printer_progress_on o2)
+      -process (-0.09,0.00) SR(printer_progress_on o2)
+      -process (0.14,0.00) SR(printer_progress_on o2)
+      -process (0.36,0.00) SR(printer_progress_on o2)
+      -process (0.57,0.00) SR(printer_progress_on o2)
+      -process (0.80,0.00) SR(printer_progress_on o2)
+      -process (1.03,0.00) SR(printer_progress_on o2)
+    status_off (1.74,-0.00) SR(printer_btn_off o1)
+    -status_on (1.74,-0.00) SR(printer_btn_on o2)
+  PrinterRail (0.00,0.00) Clicker.PrinterRail
+    MaskLeft (-15.70,-9.30) 
+      -Mask (2.51,-1.40) SpriteMask
+        Visual (0.00,0.00) SR(mask2 o0)
+      -Mask (1) (2.51,-3.50) SpriteMask
+      Mask (2) (2.51,-2.66) SpriteMask
+        -Visual (0.00,0.00) SR(mask2 o0)
+    MaskRight (13.50,-5.60) 
+      -Mask (-2.50,-1.41) SpriteMask
+        Visual (0.00,0.00) SR(mask2 o0)
+      -Mask (1) (-2.50,-3.29) SpriteMask
+      Mask (2) (-2.50,-2.66) SpriteMask
+        -Visual (0.00,0.00) SR(mask2 o0)
+    VerticalRail (0.00,1.30) SR(printer_rail o11)
+      HorizontalRail (-0.04,0.42) SR(printer_head o12)
+        MaskHolder (0.00,-1.51) 
+      Offset (0.00,-1.28) 
+  BaseKeycapHolder (0.00,-2.00) 
+    -icecream_BasePrinter (0.00,0.00) Clicker.BasePrinterObject
+      Visual (0.00,0.32) SR(print_case_cream o5)
+      Bottom (0.00,-1.57) 
+      Top (0.00,2.35) 
+  Printer2DButton (0.00,0.00) Canvas CanvasScaler GraphicRaycaster Clicker.Printer2DButton
+    BtnMachineOn (0.00,0.00) CanvasRenderer Img(UISprite) Button
+    -BtnSpeedUp (0.00,0.00) CanvasRenderer Img(UISprite) Button
+  hand_tutorial_temp (1.86,-4.33) SR(handtap o15) DG.Tweening.DOTweenAnimation
+  printer_overlay (0.00,3.94) SR(printer_overlay o15)
+GameHandle (0.00,0.00) 
+  MainCamera (0.00,1.00) Camera AudioListener UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  UICamera (1.37,0.64) Camera UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  EventSystem (0.00,0.00) UnityEngine.EventSystems.EventSystem UnityEngine.InputSystem.UI.InputSystemUIInputModule
+-BG_Wall (0.00,1.00) SR(BG_ingame o-5)
+AutoSceneClicker (0.00,0.00) AutoSceneClicker
+BG_Complete (0.00,1.00) SR(BG_Complete o-4)
+BG_Final (0.00,1.00) SR(BG_Complete o-4) SortingGroup
+  Effect (0.00,1.00) 
+    glow_effect_1 (2) (-0.11,-0.07) SR(glow_effect_3 o1) DG.Tweening.DOTweenAnimation
+    glow_effect_1 (0.20,-0.07) SR(glow_effect_1 o2) DG.Tweening.DOTweenAnimation
+    glow_effect_1 (1) (-0.11,-0.07) SR(glow_effect_2 o3) DG.Tweening.DOTweenAnimation
+KeycapMakerController (0.00,0.00) Clicker.KeycapMakerController
+  PrinterPreview-Scale (0.00,4.65) 
+    PreviewBaseKeycap (0.00,0.00) SR(case_4x1 o0)
+    -TutorialBaseKeycap (0.00,0.00) Clicker.TutorialSelectKeycapBase
+      tutorial sprite (0.00,0.59) SR(case3_tut o1)
+      TextCanvas (0.00,0.00) Canvas CanvasScaler
+        Text (TMP) (0.00,0.00) CanvasRenderer Txt('Choose a case to start !') LocalizeText DG.Tweening.DOTweenAnimation
+  TrayDragManager (0.00,0.00) Clicker.DragManager
+    CurrentDragHolding (0.00,0.00) SortingGroup
+    TutorialDrag (0.00,0.00) Clicker.TutorialDrag
+      Start (1.43,-2.45) 
+      Move1 (0.58,-4.66) 
+      End (0.09,4.75) 
+      handtap (0.09,6.10) SR(handtap o60)
+  -Tray-Scale (0.20,-0.50) 
+    Tray visual (-0.17,4.71) SR(tray o5)
+      Base_keycap (0.14,1.44) SR(case_3x3 o6)
+      Switch (0.00,0.00) SortingGroup
+        switch (0.82,-0.71) SR(switch_black o2) Clicker.SwitchObject Clicker.DraggableSwitch BoxCollider2D
+        switch (1.31,-2.28) SR(switch_black o4) Clicker.SwitchObject Clicker.DraggableSwitch BoxCollider2D
+        switch (2.66,-0.81) SR(switch_black o2) Clicker.SwitchObject Clicker.DraggableSwitch BoxCollider2D
+        switch (3.07,-2.09) SR(switch_black o3) Clicker.SwitchObject Clicker.DraggableSwitch BoxCollider2D
+        switch (4.53,-0.54) SR(switch_black o2) Clicker.SwitchObject Clicker.DraggableSwitch BoxCollider2D
+        switch (4.70,-2.40) SR(switch_black o4) Clicker.SwitchObject Clicker.DraggableSwitch BoxCollider2D
+        switch (6.18,-1.22) SR(switch_black o3) Clicker.SwitchObject Clicker.DraggableSwitch BoxCollider2D
+        switch (6.16,0.58) SR(switch_black o1) Clicker.SwitchObject Clicker.DraggableSwitch BoxCollider2D
+        switch (4.87,1.23) SR(switch_black o0) Clicker.SwitchObject Clicker.DraggableSwitch BoxCollider2D
+      Keycap (0.00,0.00) SortingGroup
+        Keycap (-0.81,-2.19) Clicker.KeycapObject BoxCollider2D Clicker.DraggableKeycap
+          keycap (0.00,0.00) SR(keycap_1_white o7)
+          -top-decor (0.00,0.41) SR(_0044_pan---Smart-Object-Group o7)
+          -replace (0.00,0.00) SR(keycap_C_2 o7)
+        Keycap (-1.54,-0.78) Clicker.KeycapObject BoxCollider2D Clicker.DraggableKeycap
+          keycap (0.00,0.00) SR(keycap_1_white o5)
+          -top-decor (0.00,0.41) SR(_0044_pan---Smart-Object-Group o5)
+          -replace (0.00,0.00) SR(keycap_C_2 o5)
+        Keycap (-3.07,-2.07) Clicker.KeycapObject BoxCollider2D Clicker.DraggableKeycap
+          keycap (0.00,0.00) SR(keycap_1_white o6)
+          -top-decor (0.00,0.41) SR(_0044_pan---Smart-Object-Group o6)
+          -replace (0.00,0.00) SR(keycap_C_2 o6)
+        Keycap (-3.85,-0.27) Clicker.KeycapObject BoxCollider2D Clicker.DraggableKeycap
+          keycap (0.00,0.00) SR(keycap_1_white o3)
+          -top-decor (0.00,0.41) SR(_0044_pan---Smart-Object-Group o3)
+          -replace (0.00,0.00) SR(keycap_C_2 o3)
+        Keycap (-5.31,-1.84) Clicker.KeycapObject BoxCollider2D Clicker.DraggableKeycap
+          keycap (0.00,0.00) SR(keycap_1_white o5)
+          -top-decor (0.00,0.41) SR(_0044_pan---Smart-Object-Group o5)
+          -replace (0.00,0.00) SR(keycap_C_2 o5)
+        Keycap (-5.88,-0.63) Clicker.KeycapObject BoxCollider2D Clicker.DraggableKeycap
+          keycap (0.00,0.00) SR(keycap_1_white o4)
+          -top-decor (0.00,0.41) SR(_0044_pan---Smart-Object-Group o4)
+          -replace (0.00,0.00) SR(keycap_C_2 o4)
+        Keycap (-5.72,0.95) Clicker.KeycapObject BoxCollider2D Clicker.DraggableKeycap
+          keycap (0.00,0.00) SR(keycap_1_white o2)
+          -top-decor (0.00,0.41) SR(_0044_pan---Smart-Object-Group o2)
+          -replace (0.00,0.00) SR(keycap_C_2 o2)
+        Keycap (-4.59,1.81) Clicker.KeycapObject BoxCollider2D Clicker.DraggableKeycap
+          keycap (0.00,0.00) SR(keycap_1_white o1)
+          -top-decor (0.00,0.41) SR(_0044_pan---Smart-Object-Group o1)
+          -replace (0.00,0.00) SR(keycap_C_2 o1)
+        Keycap (-5.61,2.89) Clicker.KeycapObject BoxCollider2D Clicker.DraggableKeycap
+          keycap (0.00,0.00) SR(keycap_1_white o0)
+          -top-decor (0.00,0.41) SR(_0044_pan---Smart-Object-Group o0)
+          -replace (0.00,0.00) SR(keycap_C_2 o0)
+      KeychainPreview (-2.15,0.90) SR(ic_keychain_1 o9) Clicker.DraggableKeychain BoxCollider2D
+  BaseKeycapHolder (0.00,4.50) 
+    BaseKeycapFinalPose (0.00,-2.90) 
+    BaseKeycapCompletePose (0.00,-0.64) 
+    BaseKeycapLivestreamPose (0.00,-2.00) 
+    -carton_box-BaseKeycapObject (-0.50,-3.00) Clicker.BaseKeycapObject
+      Base (0.00,0.00) SR(ic_case_carton o1)
+      Switch (0.00,0.00) SortingGroup
+        Position (0.28,0.10) 
+          switch_visual (0.00,0.00) SR(switch_black o0) Clicker.SwitchObject
+          mask-switch (0.00,0.00) SpriteMask
+      Keycap (0.00,0.00) SortingGroup
+        Position (0.32,1.01) 
+          Keycap (0.00,0.00) Clicker.KeycapObject
+            -keycap (0.00,0.00) SR(keycap_1_yellow o0)
+            -top-decor (0.00,0.41) SR(_0044_pan---Smart-Object-Group o1)
+            replace (0.00,0.00) SR(keycap_cat o0)
+            KeycapClick (0.00,0.00) Canvas CanvasScaler GraphicRaycaster Clicker.KeycapClick
+              ButtonFull (0.00,0.00) CanvasRenderer Img(UISprite) Button UnityEngine.EventSystems.EventTrigger
+                -Text (TMP) (0.00,0.00) CanvasRenderer Txt('Button')
+              ButtonSetup (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                -Text (TMP) (0.00,0.00) CanvasRenderer Txt('Button')
+      BaseTopCover (0.29,-1.60) SR(ic_case_carton_F o4)
+      KeychainHolder (-2.26,0.38) 
+        keychain (0.00,0.00) SR(keychain_1 o8)
+      -HandComplete (0.00,-0.58) Clicker.HandFollowClick
+        hand_hold (0.32,-4.53) SR(hand_hold o0)
+        HandHolder (1.99,3.86) 
+          hand_overlay (0.00,0.00) SR(hand_overlay o10)
+        finger_overlay (-0.33,-1.34) SR(finger_overlay o7)
+    HighlightKeycap (3.99,0.25) SortingGroup
+      ScaleAnim (0.00,0.00) DG.Tweening.DOTweenAnimation
+        Border (1.15,-1.35) SR(focus_1 o0)
+        Border (1.15,1.35) SR(focus_2 o0)
+        Border (-1.15,1.35) SR(focus_4 o0)
+        Border (-1.15,-1.35) SR(focus_3 o0)
+    TutorialTap (0.00,0.00) Clicker.TutorialDrag
+      Start (1.18,1.78) 
+      Move1 (-0.34,-0.98) 
+      Move2 (0.46,0.25) 
+      Move3 (-0.34,-0.98) 
+      Move4 (0.46,0.25) 
+      End (-0.17,-0.67) 
+      handtap (0.63,0.56) SR(handtap o60)
+Light 2D (Glow Effect) (Singleton) (0.00,0.00) Clicker.Light2DManager
+  [ NOTE ] Camera main have to enable Post Processing (0.00,0.00) 
+  Global Volume (Setting of Post processing on this scene) (0.20,-0.29) UnityEngine.Rendering.Volume
+  Global White Light (need to make basic light - don't delete) (0.00,0.00) UnityEngine.Rendering.Universal.Light2D
+  Glow Light 2D (0.00,0.00) UnityEngine.Rendering.Universal.Light2D Clicker.GlowSprite2DItem
+    SubLight (spread light) (0.00,0.00) UnityEngine.Rendering.Universal.Light2D
+UIManager (0.00,0.00) Canvas CanvasScaler GraphicRaycaster UIManager
+  Screen (0.00,0.00) Canvas GraphicRaycaster
+    Money (0.00,0.00) CanvasRenderer Img(box_coin) CanvasGroup MoneyManager JobGame.CollectingCoin
+      MoneyIconImage (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+      MoneyText (0.00,0.00) CanvasRenderer Txt('3000')
+      MoneyItem (0.00,0.00) CanvasRenderer Txt('9999') CanvasGroup Home.MoneyItem
+        MoneyText (2) (0.00,0.00) CanvasRenderer Txt('+')
+        Image (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+      SpawnPos (0.00,0.00) 
+    PopCoin (0.00,0.00) Clicker.ClickerPopCoin
+    IngameClickerScreen (0.00,0.00) CanvasGroup Clicker.IngameClickerScreen
+      SelectBaseKeycapPanel (0.00,0.00) Clicker.SelectBaseKeycapPanel
+        ShowPos (0.00,0.00) 
+        HidePos (0.00,0.00) 
+        Panel (0.00,0.00) 
+          BG (0.00,0.00) CanvasRenderer Img(tab)
+          BtnCategory (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            -Image (0.00,0.00) CanvasRenderer Img(tab_off)
+            Selected (0.00,0.00) 
+              Selected (0.00,0.00) CanvasRenderer Img(tab_top)
+              Selected (0.00,0.00) CanvasRenderer Img(tab_on)
+            Icon (0.00,0.00) CanvasRenderer Img(ic_case)
+          Scroll View (0.00,0.00) CanvasRenderer Img(Background) ScrollRect
+            Viewport (0.00,0.00) CanvasRenderer Img(UIMask) Mask
+              Content (0.00,0.00) GridLayoutGroup ContentSizeFitter
+                -BaseKeycapUIItem (0.00,0.00) CanvasRenderer Clicker.BaseKeycapUIItem Img(box_item) Button
+                  NotSelected (0.00,0.00) 
+                  Selected (0.00,0.00) CanvasRenderer Img(box_item_selected)
+                  Icon (0.00,0.00) CanvasRenderer Img(ic_case_4x1)
+                  Check (0.00,0.00) CanvasRenderer Img(check)
+                  -AdLock (0.00,0.00) CanvasRenderer Img(button_ads)
+                    IconAds (0.00,0.00) CanvasRenderer Img(ic_ads)
+                    TextCountAd (0.00,0.00) CanvasRenderer Txt('0/1')
+                  -OtherLock (0.00,0.00) CanvasRenderer Img(ic_lock)
+                  -CoinLock (0.00,0.00) CanvasRenderer Img(button_coin)
+                    IconCoin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                    TextCountAd (0.00,0.00) CanvasRenderer Txt('100\n')
+            -Scrollbar Horizontal (0.00,0.00) CanvasRenderer Img(Background) Scrollbar
+              Sliding Area (0.00,0.00) 
+                Handle (0.00,0.00) CanvasRenderer Img(UISprite)
+            Scrollbar Vertical (0.00,0.00) CanvasRenderer Img(sroll_bound) Scrollbar
+              Sliding Area (0.00,0.00) 
+                Handle (0.00,0.00) CanvasRenderer Img(sroll_bar)
+        BtnNextPos (0.00,0.00) 
+      Printer3D-UIContent (0.00,0.00) Clicker.Printer3DUIContent
+        -Panel (0.00,0.00) 
+          BtnNextPos (0.00,0.00) 
+          BtnSpeedUp (0.00,0.00) CanvasRenderer Img(button_coin) Button VerticalLayoutGroup
+            TextSpeedUp (0.00,0.00) CanvasRenderer Txt('Speed Up') LocalizeText
+            Money (0.00,0.00) 
+              Image (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+              TextSpeedUp (1) (0.00,0.00) CanvasRenderer Txt('100') LocalizeText
+          CommentHandler (0.00,0.00) CanvasRenderer Img(None) RectMask2D CommentHandler
+          Emoji (488.00,-1175.00) ParticleSystem ParticleSystemRenderer
+          ChatInput (0.00,0.00) CanvasRenderer Img(comment_completed) Livestream.ChatInput
+            InputField (TMP) (0.00,0.00) CanvasRenderer Img(InputFieldBackground) TMPro.TMP_InputField
+              Text Area (0.00,0.00) RectMask2D
+                Placeholder (0.00,0.00) CanvasRenderer Txt('Send a chat to the subscriber!') LayoutElement LocalizeText
+                Text (0.00,0.00) CanvasRenderer Txt('\u200b')
+      SelectSwitchPanel (0.00,0.00) Clicker.SelectSwitchPanel
+        BtnNextPos (0.00,0.00) 
+        ShowPos (0.00,0.00) 
+        HidePos (0.00,0.00) 
+        Panel (0.00,0.00) 
+          BG (0.00,0.00) CanvasRenderer Img(tab)
+          BtnCategory (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            -Image (0.00,0.00) CanvasRenderer Img(tab_off)
+            Selected (0.00,0.00) 
+              Selected (0.00,0.00) CanvasRenderer Img(tab_top)
+              Selected (0.00,0.00) CanvasRenderer Img(tab_on)
+            Icon (0.00,0.00) CanvasRenderer Img(ic_switch)
+          Scroll View (0.00,0.00) CanvasRenderer Img(Background) ScrollRect
+            Viewport (0.00,0.00) CanvasRenderer Img(UIMask) Mask
+              Content (0.00,0.00) GridLayoutGroup ContentSizeFitter
+                -SwitchUIItem (0.00,0.00) CanvasRenderer Clicker.SwitchUIItem Img(box_item) Button
+                  NotSelected (0.00,0.00) 
+                  Selected (0.00,0.00) CanvasRenderer Img(box_item_selected)
+                  Icon (0.00,0.00) CanvasRenderer Img(ic_case_4x1)
+                  Check (0.00,0.00) CanvasRenderer Img(check)
+                  -AdLock (0.00,0.00) CanvasRenderer Img(button_ads)
+                    IconAds (0.00,0.00) CanvasRenderer Img(ic_ads)
+                    TextCountAd (0.00,0.00) CanvasRenderer Txt('0/1')
+                  -CoinLock (0.00,0.00) CanvasRenderer Img(button_coin)
+                    IconCoin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                    TextCountAd (0.00,0.00) CanvasRenderer Txt('100\n')
+                  -OtherLock (0.00,0.00) CanvasRenderer Img(ic_lock)
+            -Scrollbar Horizontal (0.00,0.00) CanvasRenderer Img(Background) Scrollbar
+              Sliding Area (0.00,0.00) 
+                Handle (0.00,0.00) CanvasRenderer Img(UISprite)
+            Scrollbar Vertical (0.00,0.00) CanvasRenderer Img(sroll_bound) Scrollbar
+              Sliding Area (0.00,0.00) 
+                Handle (0.00,0.00) CanvasRenderer Img(sroll_bar)
+      SelectKeycapPanel (0.00,0.00) Clicker.SelectKeycapPanel
+        BtnNextPos (0.00,0.00) 
+        ShowPos (0.00,0.00) 
+        HidePos (0.00,0.00) 
+        Panel (0.00,0.00) 
+          BG (0.00,0.00) CanvasRenderer Img(tab)
+          BtnCategory (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            -Image (0.00,0.00) CanvasRenderer Img(tab_off)
+            Selected (0.00,0.00) 
+              Selected (0.00,0.00) CanvasRenderer Img(tab_top)
+              Selected (0.00,0.00) CanvasRenderer Img(tab_on)
+            Icon (0.00,0.00) CanvasRenderer Img(ic_keycap)
+          Scroll View (0.00,0.00) CanvasRenderer Img(Background) ScrollRect
+            Viewport (0.00,0.00) CanvasRenderer Img(UIMask) Mask
+              Content (0.00,0.00) GridLayoutGroup ContentSizeFitter
+                -KeycapUIItem (0.00,0.00) CanvasRenderer Clicker.KeycapUIItem Img(box_item) Button
+                  NotSelected (0.00,0.00) 
+                  Selected (0.00,0.00) CanvasRenderer Img(box_item_selected)
+                  Icon (0.00,0.00) CanvasRenderer Img(ic_case_4x1)
+                  Check (0.00,0.00) CanvasRenderer Img(check)
+                  -AdLock (0.00,0.00) CanvasRenderer Img(button_ads)
+                    IconAds (0.00,0.00) CanvasRenderer Img(ic_ads)
+                    TextCountAd (0.00,0.00) CanvasRenderer Txt('0/1')
+                  -CoinLock (0.00,0.00) CanvasRenderer Img(button_coin)
+                    IconCoin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                    TextCountAd (0.00,0.00) CanvasRenderer Txt('100\n')
+                  -OtherLock (0.00,0.00) CanvasRenderer Img(ic_lock)
+            -Scrollbar Horizontal (0.00,0.00) CanvasRenderer Img(Background) Scrollbar
+              Sliding Area (0.00,0.00) 
+                Handle (0.00,0.00) CanvasRenderer Img(UISprite)
+            Scrollbar Vertical (0.00,0.00) CanvasRenderer Img(sroll_bound) Scrollbar
+              Sliding Area (0.00,0.00) 
+                Handle (0.00,0.00) CanvasRenderer Img(sroll_bar)
+      DecorKeycapPanel (0.00,0.00) Clicker.DecorKeycapPanel
+        BtnNextPos (0.00,0.00) 
+        ShowPos (0.00,0.00) 
+        HidePos (0.00,0.00) 
+        Panel (0.00,0.00) 
+          BG (0.00,0.00) CanvasRenderer Img(tab)
+          BtnOnTopDecor (0.00,0.00) CanvasRenderer Img(UISprite) Button Clicker.CategoryButton
+            Image (0.00,0.00) CanvasRenderer Img(tab_off)
+            Selected (0.00,0.00) 
+              Selected (0.00,0.00) CanvasRenderer Img(tab_top)
+              Selected (0.00,0.00) CanvasRenderer Img(tab_on)
+            Icon (0.00,0.00) CanvasRenderer Img(ic_charm)
+          BtnReplaceDecor (0.00,0.00) CanvasRenderer Img(UISprite) Button Clicker.CategoryButton
+            Image (0.00,0.00) CanvasRenderer Img(tab_off)
+            -Selected (0.00,0.00) 
+              Selected (0.00,0.00) CanvasRenderer Img(tab_top)
+              Selected (0.00,0.00) CanvasRenderer Img(tab_on)
+            Icon (0.00,0.00) CanvasRenderer Img(ic_keycap_S)
+          -BtnPaintDecor (0.00,0.00) CanvasRenderer Img(UISprite) Button Clicker.CategoryButton
+            Image (0.00,0.00) CanvasRenderer Img(tab_off)
+            -Selected (0.00,0.00) 
+              Selected (0.00,0.00) CanvasRenderer Img(tab_top)
+              Selected (0.00,0.00) CanvasRenderer Img(tab_on)
+            Icon (0.00,0.00) CanvasRenderer Img(ic_draw)
+          Scroll View (0.00,0.00) CanvasRenderer Img(Background) ScrollRect
+            Viewport (0.00,0.00) CanvasRenderer Img(UIMask) Mask
+              Content (0.00,0.00) GridLayoutGroup ContentSizeFitter
+                -KeycapUIItem (0.00,0.00) CanvasRenderer Clicker.DecorKeycapUIItem Img(box_item) Button
+                  NotSelected (0.00,0.00) 
+                  Selected (0.00,0.00) CanvasRenderer Img(box_item_selected)
+                  Icon (0.00,0.00) CanvasRenderer Img(_0027_charm_gummy_1)
+                  Check (0.00,0.00) CanvasRenderer Img(check)
+                  -AdLock (0.00,0.00) CanvasRenderer Img(button_ads)
+                    IconAds (0.00,0.00) CanvasRenderer Img(ic_ads)
+                    TextCountAd (0.00,0.00) CanvasRenderer Txt('0/1')
+                  -CoinLock (0.00,0.00) CanvasRenderer Img(button_coin)
+                    IconCoin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                    TextCountAd (0.00,0.00) CanvasRenderer Txt('100\n')
+                  -OtherLock (0.00,0.00) CanvasRenderer Img(ic_lock)
+            -Scrollbar Horizontal (0.00,0.00) CanvasRenderer Img(Background) Scrollbar
+              Sliding Area (0.00,0.00) 
+                Handle (0.00,0.00) CanvasRenderer Img(UISprite)
+            Scrollbar Vertical (0.00,0.00) CanvasRenderer Img(sroll_bound) Scrollbar
+              Sliding Area (0.00,0.00) 
+                Handle (0.00,0.00) CanvasRenderer Img(sroll_bar)
+      SelectKeychainPanel (0.00,0.00) Clicker.SelectKeychainPanel
+        BtnNextPos (0.00,0.00) 
+        ShowPos (0.00,0.00) 
+        HidePos (0.00,0.00) 
+        Panel (0.00,0.00) 
+          BG (0.00,0.00) CanvasRenderer Img(tab)
+          BtnCategory (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            -Image (0.00,0.00) CanvasRenderer Img(tab_off)
+            Selected (0.00,0.00) 
+              Selected (0.00,0.00) CanvasRenderer Img(tab_top)
+              Selected (0.00,0.00) CanvasRenderer Img(tab_on)
+            Icon (0.00,0.00) CanvasRenderer Img(ic_keychain)
+          Scroll View (0.00,0.00) CanvasRenderer Img(Background) ScrollRect
+            Viewport (0.00,0.00) CanvasRenderer Img(UIMask) Mask
+              Content (0.00,0.00) GridLayoutGroup ContentSizeFitter
+                -KeychainUIItem (0.00,0.00) CanvasRenderer Clicker.KeychainUIItem Img(box_item) Button
+                  NotSelected (0.00,0.00) 
+                  Selected (0.00,0.00) CanvasRenderer Img(box_item_selected)
+                  Icon (0.00,0.00) CanvasRenderer Img(ic_case_4x1)
+                  Check (0.00,0.00) CanvasRenderer Img(check)
+                  -AdLock (0.00,0.00) CanvasRenderer Img(button_ads)
+                    IconAds (0.00,0.00) CanvasRenderer Img(ic_ads)
+                    TextCountAd (0.00,0.00) CanvasRenderer Txt('0/1')
+                  -CoinLock (0.00,0.00) CanvasRenderer Img(button_coin)
+                    IconCoin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+                    TextCountAd (0.00,0.00) CanvasRenderer Txt('100\n')
+                  -OtherLock (0.00,0.00) CanvasRenderer Img(ic_lock)
+            -Scrollbar Horizontal (0.00,0.00) CanvasRenderer Img(Background) Scrollbar
+              Sliding Area (0.00,0.00) 
+                Handle (0.00,0.00) CanvasRenderer Img(UISprite)
+            Scrollbar Vertical (0.00,0.00) CanvasRenderer Img(sroll_bound) Scrollbar
+              Sliding Area (0.00,0.00) 
+                Handle (0.00,0.00) CanvasRenderer Img(sroll_bar)
+      -BtnNext (0.00,0.00) CanvasRenderer Img(button_v) Button
+      PopupSelectColor (0.00,0.00) Clicker.PopupSelectColor
+        SelectColor (0.00,0.00) CanvasGroup
+          SubPanel (0.00,0.00) CanvasRenderer Img(box_color)
+            Buttons (0.00,0.00) HorizontalLayoutGroup ContentSizeFitter
+              White (0.00,0.00) CanvasRenderer Img(color_select_white) Button
+                Selected (0.00,0.00) CanvasRenderer Img(color_select_circle)
+              Blue (0.00,0.00) CanvasRenderer Img(color_select_blue) Button
+              Green (0.00,0.00) CanvasRenderer Img(color_select_green) Button
+              Pink (0.00,0.00) CanvasRenderer Img(color_select_pink) Button
+              Purple (0.00,0.00) CanvasRenderer Img(color_select_purple) Button
+              Red (0.00,0.00) CanvasRenderer Img(color_select_red) Button
+              Yellow (0.00,0.00) 

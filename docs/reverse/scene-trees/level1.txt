@@ -1,0 +1,2247 @@
+AutoScreenHome (0.00,0.00) AutoSceneHome
+GameHandle (0.00,0.00) 
+  MainCamera (0.00,0.00) Camera AudioListener UnityEngine.Rendering.Universal.UniversalAdditionalCameraData UnityEngine.EventSystems.Physics2DRaycaster
+  UICamera (1.37,0.64) Camera UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  EventSystem (0.00,0.00) UnityEngine.EventSystems.EventSystem UnityEngine.InputSystem.UI.InputSystemUIInputModule
+  DecorController (0.00,0.00) Decor.DecorController
+  -DeleteCamera (0.00,0.00) Camera AudioListener UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+CollectionClicker (0.00,0.00) SortingGroup
+  Light 2D (Glow Effect) (Singleton) (0.00,0.00) Clicker.Light2DManager
+    [ NOTE ] Camera main have to enable Post Processing (0.00,0.00) 
+    Global Volume (Setting of Post processing on this scene) (0.20,-0.29) UnityEngine.Rendering.Volume
+    Global White Light (need to make basic light - don't delete) (0.00,0.00) UnityEngine.Rendering.Universal.Light2D
+    Glow Light 2D (0.00,0.00) UnityEngine.Rendering.Universal.Light2D Clicker.GlowSprite2DItem
+      SubLight (spread light) (0.00,0.00) UnityEngine.Rendering.Universal.Light2D
+  -Collection (0.00,0.00) 
+    LimitTop (0.00,5.70) 
+    LimitBottom (0.00,-5.70) 
+    BG_collection (0.00,0.00) SR(BG_collection o-1)
+    shelf-top (0.00,4.09) SR(Group 1171277262 o15)
+      Canvas-block 2d click (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+        Image (0.00,0.00) CanvasRenderer Img(star_title_clt)
+        Image (1) (0.00,0.00) CanvasRenderer Img(star_title_clt)
+        Text (TMP) (2) (0.00,0.00) CanvasRenderer Txt('Collection') LocalizeText
+        Text (TMP) (0.00,0.00) CanvasRenderer Txt('Collection') LocalizeText
+        Text (TMP) (1) (0.00,0.00) CanvasRenderer Txt('Collection') LocalizeText
+    shelf-bottom (0.00,-4.80) SR(shelf-bottom o15)
+      shelf-loop (0.00,9.90) SR(shelf-loop o1)
+    AsixDrag2d (0.00,0.40) AxisDrag2D BoxCollider2D
+      Scaler (0.00,0.00) 
+        shelf-loop (0.00,5.25) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+          -HandTutorial (-2.69,-0.35) SR(hand_tap o15) DG.Tweening.DOTweenAnimation
+        shelf-loop (1) (0.00,1.50) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (2) (0.00,-2.25) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (3) (0.00,-6.00) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (4) (0.00,-9.75) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (5) (0.00,-13.50) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (6) (0.00,-17.25) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (7) (0.00,-21.00) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (8) (0.00,-24.75) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (9) (0.00,-28.50) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (9.5) (0.00,-32.25) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (10) (0.00,-36.00) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (11) (0.00,-39.75) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (12) (0.00,-43.50) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (13) (0.00,-47.25) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (14) (0.00,-51.00) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (15) (0.00,-54.75) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (16) (0.00,-58.50) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (17) (0.00,-62.25) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (18) (0.00,-66.00) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (19) (0.00,-69.75) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (20) (0.00,-73.50) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (21) (0.00,-77.25) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (22) (0.00,-81.00) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (23) (0.00,-84.75) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (24) (0.00,-88.50) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (25) (0.00,-92.25) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (26) (0.00,-96.00) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (27) (0.00,-99.75) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (28) (0.00,-103.50) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        shelf-loop (29) (0.00,-107.25) SR(shelf-loop o1) Clicker.CollectionShelf
+          clt_shelf_bar (0.00,-0.93) SR(clt_shelf_bar o3)
+          Bottom (0.00,-3.36) 
+          KeycapSaved (3 items) (0.00,0.00) SortingGroup
+            KeycapItem (-3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (1) (0.00,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+            KeycapItem (2) (3.13,0.00) Clicker.CollectionKeycapItem
+              Locked (0.00,-0.11) SR(clt_icon_lock o0)
+              Empty (0.00,-0.47) SR(clt_slot_bg o0)
+                clt_slot_empty (0.00,0.61) SR(clt_slot_empty o1)
+              SlotBase-KeycapPosition (0.00,0.00) Clicker.KeycapGenerator SortingGroup
+                Base (0.00,-0.53) SR(clt_slot_bg o0)
+              WorldCanvas (0.00,0.00) Canvas CanvasScaler GraphicRaycaster
+                BtnLock (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnAvailable (0.00,0.00) CanvasRenderer Img(UISprite) Button
+                BtnInspect (0.00,0.00) CanvasRenderer Img(UISprite) Button
+  -PreviewSingle (0.00,0.00) 
+    BG_preview_clicker (0.00,0.00) SR(BG_preview_clicker o-1)
+    InspectPos (0.00,0.00) 
+UIManager (0.00,0.00) Canvas CanvasScaler GraphicRaycaster UIManager
+  Screen (0.00,0.00) Canvas GraphicRaycaster
+    Sceen Home Clone (0.00,0.00) CanvasGroup Games.CountdownTimer ScreenHome
+      Header (0.00,0.00) CanvasRenderer Img(None)
+        Panel Profile (0.00,0.00) CanvasRenderer ProfilePanel
+          Panel (0.00,0.00) CanvasRenderer Img(None)
+            Image (0.00,0.00) CanvasRenderer Img(box_info)
+            Name Field (0.00,0.00) CanvasRenderer Img(None) Button
+              Name Text (0.00,0.00) CanvasRenderer Txt('Your Name')
+              Icon (0.00,0.00) CanvasRenderer Img(ic_edit)
+            Experience Bar (0.00,0.00) 
+              Bar (0.00,0.00) CanvasRenderer Img(Progress_exp_fill)
+                BarValue (0.00,0.00) CanvasRenderer Img(Progress_exp_bound)
+                TxtExperience (0.00,0.00) CanvasRenderer Txt('50/70')
+            Frame (0.00,0.00) CanvasRenderer Img(stroke_avt)
+              Mask (0.00,0.00) CanvasRenderer Img(mask_avt) Mask
+                Image (0.00,0.00) CanvasRenderer Img(default_ava)
+            -Avatar Selection (0.00,0.00) ContentSizeFitter GridLayoutGroup CanvasRenderer Img(None)
+            LevelBar (0.00,0.00) CanvasRenderer Img(box_day)
+              Level Text (0.00,0.00) CanvasRenderer Txt('Level 1')
+        Money (0.00,0.00) CanvasRenderer Img(box_coin) CanvasGroup MoneyManager JobGame.CollectingCoin
+          MoneyIconImage (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+          MoneyText (0.00,0.00) CanvasRenderer Txt('3000')
+          MoneyItem (0.00,0.00) CanvasRenderer Txt('9999') CanvasGroup Home.MoneyItem
+            MoneyText (2) (0.00,0.00) CanvasRenderer Txt('+')
+            Image (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+          SpawnPos (0.00,0.00) 
+      Body (0.00,0.00) 
+        DailyButton (0.00,0.00) CanvasRenderer Img(ic_DailyLogfin) HomeButton Button
+          -HandSpine (2) (0.00,0.00) CanvasRenderer Img(handtap) DG.Tweening.DOTweenAnimation
+          -Dot (0.00,0.00) CanvasRenderer Animator
+            Image (1) (0.00,0.00) CanvasRenderer Img(dot_icon)
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('Daily Login') LocalizeText
+        DailyTaskButton (0.00,0.00) CanvasRenderer Img(ic_DailyMission) HomeButton Button
+          -HandSpine (2) (0.00,0.00) CanvasRenderer Img(handtap) DG.Tweening.DOTweenAnimation
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('Daily Task') LocalizeText
+          -DotNoti (0.00,0.00) CanvasRenderer Animator
+            Image (1) (0.00,0.00) CanvasRenderer Img(dot_icon)
+          -Lock (0.00,0.00) CanvasRenderer Img(None)
+            Image (0.00,0.00) CanvasRenderer Img(None)
+              TextDaysLeft (0.00,0.00) CanvasRenderer Txt('9')
+        IdleChest-LoginTime (0.00,0.00) CanvasRenderer Img(ic_online_rewrds) HomeButton Button
+          -TimeBG (0.00,0.00) CanvasRenderer Img(name-tag)
+          -HandSpine (2) (0.00,0.00) CanvasRenderer Img(handtap) DG.Tweening.DOTweenAnimation
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('Online Rewards') LocalizeText
+          -DotNoti (0.00,0.00) CanvasRenderer Animator
+            Image (1) (0.00,0.00) CanvasRenderer Img(dot_icon)
+          -Lock (0.00,0.00) CanvasRenderer Img(None)
+            Image (0.00,0.00) CanvasRenderer Img(None)
+              TextDaysLeft (0.00,0.00) CanvasRenderer Txt('9')
+          Time (1) (0.00,0.00) CanvasRenderer Img(name-tag)
+            Time (2) (0.00,0.00) CanvasRenderer Img(name-tag)
+            TxtTime (0.00,0.00) CanvasRenderer Txt('00:00')
+        DecorButton (0.00,0.00) CanvasRenderer Img(ic_decor) HomeButton Button
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('Decor') LocalizeText
+          -HandSpine (1) (0.00,0.00) CanvasRenderer Img(handtap) DG.Tweening.DOTweenAnimation
+          -Dot (0.00,0.00) CanvasRenderer Animator
+            Image (1) (0.00,0.00) CanvasRenderer Img(dot_icon)
+          -Lock (0.00,0.00) CanvasRenderer Img(None)
+            Image (0.00,0.00) CanvasRenderer Img(None)
+              TextDaysLeft (0.00,0.00) CanvasRenderer Txt('9')
+        DreamhouseButton (0.00,0.00) CanvasRenderer Img(ic_dreamhouse) HomeButton Button
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('Dream House') LocalizeText
+          -HandSpine (1) (0.00,0.00) CanvasRenderer Img(handtap) DG.Tweening.DOTweenAnimation
+          -Dot (0.00,0.00) CanvasRenderer Animator
+            Image (1) (0.00,0.00) CanvasRenderer Img(dot_icon)
+          -Lock (0.00,0.00) CanvasRenderer Img(None)
+            Image (0.00,0.00) CanvasRenderer Img(None)
+              TextDaysLeft (0.00,0.00) CanvasRenderer Txt('9')
+        LuckyWheelButton (0.00,0.00) CanvasRenderer Img(ic_lucky_spin) HomeButton Button
+          -HandSpine (2) (0.00,0.00) CanvasRenderer Img(handtap) DG.Tweening.DOTweenAnimation
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('Lucky Spin') LocalizeText
+          -Lock (0.00,0.00) CanvasRenderer Img(None)
+            Image (0.00,0.00) CanvasRenderer Img(None)
+              TextDaysLeft (0.00,0.00) CanvasRenderer Txt('9')
+        -RemoveAdButton (0.00,0.00) CanvasRenderer Img(None) HomeButton Button
+          -HandSpine (2) (0.00,0.00) CanvasRenderer Img(handtap) DG.Tweening.DOTweenAnimation
+          -Dot (0.00,0.00) CanvasRenderer Animator
+            Image (1) (0.00,0.00) CanvasRenderer Img(dot_icon)
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('No Ads') LocalizeText
+          -Lock (0.00,0.00) CanvasRenderer Img(None)
+            Image (0.00,0.00) CanvasRenderer Img(None)
+              TextDaysLeft (0.00,0.00) CanvasRenderer Txt('9')
+            New (0.00,0.00) 
+        SettingButton (0.00,0.00) CanvasRenderer Img(ic_setting) HomeButton Button
+          GameObject (0.00,0.00) 
+        -Scoop (0.00,0.00) CanvasRenderer Img(UISprite) Button
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('Scoop')
+        Blindbag (0.00,0.00) CanvasRenderer Img(ic_Blind Bag) Button HomeButton
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('Blindbag') LocalizeText
+          -HandSpine (2) (0.00,0.00) CanvasRenderer Img(handtap) DG.Tweening.DOTweenAnimation
+        ScoopButton (0.00,0.00) CanvasRenderer Img(ic_lucky_scoop) Button HomeButton
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('Lucky Scoop') LocalizeText
+          -HandSpine (2) (0.00,0.00) CanvasRenderer Img(handtap) DG.Tweening.DOTweenAnimation
+        -BlockScreen (0.00,0.00) CanvasRenderer Img(None)
+        CollectionClickerButon (0.00,0.00) CanvasRenderer Img(ic_collection) HomeButton Button
+          -HandSpine (2) (0.00,0.00) CanvasRenderer Img(handtap) DG.Tweening.DOTweenAnimation
+          -ScaleTutorial (0.00,0.00) CanvasRenderer Img(ic_collection) DG.Tweening.DOTweenAnimation
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('Collection') LocalizeText
+          -Lock (0.00,0.00) CanvasRenderer Img(None)
+            Image (0.00,0.00) CanvasRenderer Img(None)
+              TextDaysLeft (0.00,0.00) CanvasRenderer Txt('9')
+        Button Live (0.00,0.00) CanvasRenderer Img(None) Button HomeButton
+          Icon (0.00,0.00) CanvasRenderer Img(button_green) DG.Tweening.DOTweenAnimation
+            txtTitle (0.00,0.00) CanvasRenderer Txt('Start Live') LocalizeText
+            Image (0.00,0.00) CanvasRenderer Img(ic_start)
+          -HandSpine (0.00,0.00) CanvasRenderer Img(handtap) DG.Tweening.DOTweenAnimation
+        -PhoneRing (0.00,0.00) DG.Tweening.DOTweenAnimation
+          Phone (0.00,0.00) CanvasRenderer Img(phone_tabble)
+          Image (0.00,0.00) CanvasRenderer Img(ring_1) DG.Tweening.DOTweenAnimation
+          Image (1) (0.00,0.00) CanvasRenderer Img(ring_2) DG.Tweening.DOTweenAnimation
+          Image (2) (0.00,0.00) CanvasRenderer Img(ring_3) DG.Tweening.DOTweenAnimation
+      Panel Decor (0.00,0.00) CanvasGroup Decor.DecorPanel
+        btnClose (0.00,0.00) CanvasRenderer Img(None) Button
+        Panel (0.00,0.00) 
+          -BackPlate (0.00,0.00) CanvasRenderer Img(None)
+          BG (0.00,0.00) CanvasRenderer Img(board)
+          CategoryPanel (0.00,0.00) CanvasRenderer Img(None) ScrollRect Decor.CategoryPanel
+            Viewport (0.00,0.00) 
+              Content (0.00,0.00) HorizontalLayoutGroup ContentSizeFitter
+          OptionPanel (0.00,0.00) CanvasRenderer Img(None) ScrollRect Decor.OptionPanel
+            Viewport (0.00,0.00) CanvasRenderer Img(UIMask) Mask
+              Content (0.00,0.00) HorizontalLayoutGroup ContentSizeFitter
+          CloseButton (0.00,0.00) CanvasRenderer Img(button_v) Button
+      Ad (0.00,0.00) CanvasRenderer Img(None)
+    ScreenClickerCollection (0.00,0.00) CanvasGroup Clicker.ScreenClickerCollection
+      BtnHome (0.00,0.00) CanvasRenderer Img(button_home) Button
+      BtnBack (0.00,0.00) CanvasRenderer Img(button_back) Button
+      BtnRemoveKeycap (0.00,0.00) CanvasRenderer Img(button_delete) Button
+    -Image (0.00,0.00) CanvasRenderer Img(2.1 1)
+  Popup (0.00,0.00) Canvas GraphicRaycaster
+    PopupPrepare (0.00,0.00) Home.PopupPrepare CanvasGroup
+      -Header (0.00,0.00) CanvasRenderer Img(None)
+        Panel Profile (0.00,0.00) CanvasRenderer ProfilePanel
+          Panel (0.00,0.00) CanvasRenderer Img(None)
+            Image (0.00,0.00) CanvasRenderer Img(box_info)
+            Name Field (0.00,0.00) CanvasRenderer Img(None) Button
+              Name Text (0.00,0.00) CanvasRenderer Txt('Your Name')
+              Icon (0.00,0.00) CanvasRenderer Img(icon_pencil)
+            Experience Bar (0.00,0.00) 
+              Bar (0.00,0.00) CanvasRenderer Img(Progress_exp_fill)
+                BarValue (0.00,0.00) CanvasRenderer Img(Progress_exp_bound)
+                TxtExperience (0.00,0.00) CanvasRenderer Txt('50/70')
+            Frame (0.00,0.00) CanvasRenderer Img(stroke_avt)
+              Mask (0.00,0.00) CanvasRenderer Img(mask_avt) Mask
+                Image (0.00,0.00) CanvasRenderer Img(default_ava)
+            -Avatar Selection (0.00,0.00) ContentSizeFitter GridLayoutGroup CanvasRenderer Img(None)
+            LevelBar (0.00,0.00) CanvasRenderer Img(box_day)
+              -Level Text (0.00,0.00) CanvasRenderer Txt('Level 1')
+              Level Text (1) (0.00,0.00) CanvasRenderer Txt('LIVE')
+        LivePanel (0.00,0.00) CanvasRenderer Img(box_view) Livestream.LivestreamPanel
+          ViewerCountText (0.00,0.00) CanvasRenderer Txt('38989')
+          -LiveImage (0.00,0.00) CanvasRenderer Img(None)
+            Dot (0.00,0.00) CanvasRenderer Img(SlicedCircle)
+            LiveText (0.00,0.00) CanvasRenderer Txt('Live')
+          Image (0.00,0.00) CanvasRenderer Img(ic_view)
+      -Header (0.00,0.00) CanvasRenderer Img(None)
+        Image (0.00,0.00) CanvasRenderer Img(None)
+        SettingButton (0.00,0.00) CanvasRenderer Img(None) Button
+        ProfileButton (0.00,0.00) CanvasRenderer Img(None) Button
+        -Money (0.00,0.00) CanvasRenderer Img(None)
+          MoneyIconImage (0.00,0.00) CanvasRenderer Img(None)
+          MoneyText (0.00,0.00) CanvasRenderer Txt('9999')
+      Overlay (0.00,0.00) CanvasRenderer Img(None)
+      TopLeftUI (0.00,0.00) VerticalLayoutGroup
+        ButtonHome (0.00,0.00) CanvasRenderer Img(button_home) Button
+        Live (0.00,0.00) CanvasRenderer Img(LIVE)
+        LivePanel (0.00,0.00) CanvasRenderer Img(box_view) Livestream.LivestreamPanel
+          ViewerCountText (0.00,0.00) CanvasRenderer Txt('38989')
+          -LiveImage (0.00,0.00) CanvasRenderer Img(None)
+            Dot (0.00,0.00) CanvasRenderer Img(SlicedCircle)
+            LiveText (0.00,0.00) CanvasRenderer Txt('Live')
+          Image (0.00,0.00) CanvasRenderer Img(ic_view)
+      CommentHandler (0.00,0.00) CanvasRenderer RectMask2D CommentHandler
+      MakeButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+        txtMake (0.00,0.00) CanvasRenderer Txt('Start DIY') LocalizeText
+        Image (0.00,0.00) CanvasRenderer Img(ic_start)
+      -MakeButton_Off (0.00,0.00) CanvasRenderer Img(button_startlive)
+        txtMake (0.00,0.00) CanvasRenderer Txt('Make Jelly')
+      MissionBoard (0.00,0.00) 
+        Mission (0.00,0.00) CanvasRenderer Img(box_commission)
+          Avatar (0.00,0.00) CanvasRenderer Img(viewer_12)
+          Name (0.00,0.00) CanvasRenderer Txt('Wendy')
+          Message (0.00,0.00) CanvasRenderer Txt("I'd like a couple of Keyboard ") LocalizeText
+          Reward (0.00,0.00) 
+            Image (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+            Text (TMP) (0.00,0.00) CanvasRenderer Txt('+500')
+        Title (0.00,0.00) CanvasRenderer Txt("You've got a commission !!") LocalizeText
+    PopupIntroScoop (0.00,0.00) Home.PopupIntroScoop CanvasGroup
+      -Header (0.00,0.00) CanvasRenderer Img(None)
+        Panel Profile (0.00,0.00) CanvasRenderer ProfilePanel
+          Panel (0.00,0.00) CanvasRenderer Img(None)
+            Image (0.00,0.00) CanvasRenderer Img(box_info)
+            Name Field (0.00,0.00) CanvasRenderer Img(None) Button
+              Name Text (0.00,0.00) CanvasRenderer Txt('Your Name')
+              Icon (0.00,0.00) CanvasRenderer Img(icon_pencil)
+            Experience Bar (0.00,0.00) 
+              Bar (0.00,0.00) CanvasRenderer Img(Progress_exp_fill)
+                BarValue (0.00,0.00) CanvasRenderer Img(Progress_exp_bound)
+                TxtExperience (0.00,0.00) CanvasRenderer Txt('50/70')
+            Frame (0.00,0.00) CanvasRenderer Img(stroke_avt)
+              Mask (0.00,0.00) CanvasRenderer Img(mask_avt) Mask
+                Image (0.00,0.00) CanvasRenderer Img(default_ava)
+            -Avatar Selection (0.00,0.00) ContentSizeFitter GridLayoutGroup CanvasRenderer Img(None)
+            LevelBar (0.00,0.00) CanvasRenderer Img(box_day)
+              -Level Text (0.00,0.00) CanvasRenderer Txt('Level 1')
+              Level Text (1) (0.00,0.00) CanvasRenderer Txt('LIVE')
+        LivePanel (0.00,0.00) CanvasRenderer Img(box_view) Livestream.LivestreamPanel
+          ViewerCountText (0.00,0.00) CanvasRenderer Txt('38989')
+          -LiveImage (0.00,0.00) CanvasRenderer Img(None)
+            Dot (0.00,0.00) CanvasRenderer Img(SlicedCircle)
+            LiveText (0.00,0.00) CanvasRenderer Txt('Live')
+          Image (0.00,0.00) CanvasRenderer Img(ic_view)
+      -Header (0.00,0.00) CanvasRenderer Img(None)
+        Image (0.00,0.00) CanvasRenderer Img(None)
+        SettingButton (0.00,0.00) CanvasRenderer Img(None) Button
+        ProfileButton (0.00,0.00) CanvasRenderer Img(None) Button
+        -Money (0.00,0.00) CanvasRenderer Img(None)
+          MoneyIconImage (0.00,0.00) CanvasRenderer Img(None)
+          MoneyText (0.00,0.00) CanvasRenderer Txt('9999')
+      Overlay (0.00,0.00) CanvasRenderer Img(None)
+      TopLeftUI (0.00,0.00) VerticalLayoutGroup
+        ButtonHome (0.00,0.00) CanvasRenderer Img(button_home) Button
+        Live (0.00,0.00) CanvasRenderer Img(LIVE)
+        LivePanel (0.00,0.00) CanvasRenderer Img(box_view) Livestream.LivestreamPanel
+          ViewerCountText (0.00,0.00) CanvasRenderer Txt('38989')
+          -LiveImage (0.00,0.00) CanvasRenderer Img(None)
+            Dot (0.00,0.00) CanvasRenderer Img(SlicedCircle)
+            LiveText (0.00,0.00) CanvasRenderer Txt('Live')
+          Image (0.00,0.00) CanvasRenderer Img(ic_view)
+      CommentHandler (0.00,0.00) CanvasRenderer RectMask2D CommentHandler
+      MakeButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+        txtMake (0.00,0.00) CanvasRenderer Txt("Let's Scoop") LocalizeText
+      -MakeButton_Off (0.00,0.00) CanvasRenderer Img(button_startlive)
+        txtMake (0.00,0.00) CanvasRenderer Txt('Make Jelly')
+      MissionBoard (0.00,0.00) 
+        Mission (0.00,0.00) CanvasRenderer Img(box_commission)
+          Avatar (0.00,0.00) CanvasRenderer Img(viewer_12)
+          Name (0.00,0.00) CanvasRenderer Txt('Wendy')
+          Message (0.00,0.00) CanvasRenderer Txt("You've got a Lucky Scoop order") LocalizeText
+          Reward (0.00,0.00) 
+            Image (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+            Text (TMP) (0.00,0.00) CanvasRenderer Txt('+500')
+        Title (0.00,0.00) CanvasRenderer Txt("You've got a commission !!") LocalizeText
+    PopupIntroBlindBag (0.00,0.00) Home.PopupIntroBlindbag CanvasGroup
+      -Header (0.00,0.00) CanvasRenderer Img(None)
+        Panel Profile (0.00,0.00) CanvasRenderer ProfilePanel
+          Panel (0.00,0.00) CanvasRenderer Img(None)
+            Image (0.00,0.00) CanvasRenderer Img(box_info)
+            Name Field (0.00,0.00) CanvasRenderer Img(None) Button
+              Name Text (0.00,0.00) CanvasRenderer Txt('Your Name')
+              Icon (0.00,0.00) CanvasRenderer Img(icon_pencil)
+            Experience Bar (0.00,0.00) 
+              Bar (0.00,0.00) CanvasRenderer Img(Progress_exp_fill)
+                BarValue (0.00,0.00) CanvasRenderer Img(Progress_exp_bound)
+                TxtExperience (0.00,0.00) CanvasRenderer Txt('50/70')
+            Frame (0.00,0.00) CanvasRenderer Img(stroke_avt)
+              Mask (0.00,0.00) CanvasRenderer Img(mask_avt) Mask
+                Image (0.00,0.00) CanvasRenderer Img(default_ava)
+            -Avatar Selection (0.00,0.00) ContentSizeFitter GridLayoutGroup CanvasRenderer Img(None)
+            LevelBar (0.00,0.00) CanvasRenderer Img(box_day)
+              -Level Text (0.00,0.00) CanvasRenderer Txt('Level 1')
+              Level Text (1) (0.00,0.00) CanvasRenderer Txt('LIVE')
+        LivePanel (0.00,0.00) CanvasRenderer Img(box_view) Livestream.LivestreamPanel
+          ViewerCountText (0.00,0.00) CanvasRenderer Txt('38989')
+          -LiveImage (0.00,0.00) CanvasRenderer Img(None)
+            Dot (0.00,0.00) CanvasRenderer Img(SlicedCircle)
+            LiveText (0.00,0.00) CanvasRenderer Txt('Live')
+          Image (0.00,0.00) CanvasRenderer Img(ic_view)
+      Overlay (0.00,0.00) CanvasRenderer Img(None)
+      TopLeftUI (0.00,0.00) VerticalLayoutGroup
+        ButtonHome (0.00,0.00) CanvasRenderer Img(button_home) Button
+        Live (0.00,0.00) CanvasRenderer Img(LIVE)
+        LivePanel (0.00,0.00) CanvasRenderer Img(box_view) Livestream.LivestreamPanel
+          ViewerCountText (0.00,0.00) CanvasRenderer Txt('38989')
+          -LiveImage (0.00,0.00) CanvasRenderer Img(None)
+            Dot (0.00,0.00) CanvasRenderer Img(SlicedCircle)
+            LiveText (0.00,0.00) CanvasRenderer Txt('Live')
+          Image (0.00,0.00) CanvasRenderer Img(ic_view)
+      CommentHandler (0.00,0.00) CanvasRenderer RectMask2D CommentHandler
+      MakeButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+        txtMake (0.00,0.00) CanvasRenderer Txt('Go shopping') LocalizeText
+        -Image (0.00,0.00) CanvasRenderer Img(ic_start)
+      -MissionBoard (0.00,0.00) 
+        Mission (0.00,0.00) CanvasRenderer Img(box_commission)
+          Avatar (0.00,0.00) CanvasRenderer Img(viewer_12)
+          Name (0.00,0.00) CanvasRenderer Txt('Wendy')
+          Message (0.00,0.00) CanvasRenderer Txt("I'd like a couple of Keyboard ") LocalizeText
+          Reward (0.00,0.00) 
+            Image (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+            Text (TMP) (0.00,0.00) CanvasRenderer Txt('+500')
+        Title (0.00,0.00) CanvasRenderer Txt("You've got a commission !!") LocalizeText
+      CollectionButton (0.00,0.00) CanvasRenderer Img(ic_my_collection) Button
+        Text (TMP) (0.00,0.00) CanvasRenderer Txt('My Collection') LocalizeText
+    PopupCollectionBlindbag (0.00,0.00) CanvasGroup Home.PopupCollectionBlindbag
+      BG (0.00,0.00) CanvasRenderer Img(BG_Ingame_tile)
+      BtnBack (0.00,0.00) CanvasRenderer Img(button_back) Button
+      BtnPlay (0.00,0.00) CanvasRenderer Img(Rectangle) Button
+        Text (TMP) (0.00,0.00) CanvasRenderer Txt('+')
+        Text (TMP) (1) (0.00,0.00) CanvasRenderer Txt('Get Blind Bag') LocalizeText
+    Popup Lucky Wheel (0.00,0.00) LuckyWheelPopup CanvasGroup
+      BG (0.00,0.00) CanvasRenderer Img(None)
+      -CloudBack (0.00,0.00) CanvasRenderer Img(cloud_back)
+      btnClose (0.00,0.00) CanvasRenderer Img(None) Button
+      SkeletonGraphic (Lucky_Spin) (0.00,0.00) CanvasRenderer Spine.Unity.SkeletonGraphic
+        Part[0] (0.00,0.00) 
+          Renderer0 (0.00,0.00) CanvasRenderer Spine.Unity.SkeletonSubmeshGraphic
+        Part[1] (0.00,0.00) 
+          Renderer1 (0.00,0.00) CanvasRenderer Spine.Unity.SkeletonSubmeshGraphic
+        Part[2] (0.00,0.00) 
+          Renderer2 (0.00,0.00) CanvasRenderer Spine.Unity.SkeletonSubmeshGraphic
+        PinginFollower (0.00,0.00) Spine.Unity.BoneFollowerGraphic
+          WheelImage (0.00,0.00) CanvasRenderer
+            Wheel (0.00,0.00) CanvasRenderer Img(wheel)
+            WheelNode (0.00,0.00) CanvasRenderer Img(None) LuckyWheelNode
+              Icon (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+              txtMoney (0.00,0.00) CanvasRenderer Txt('30')
+            WheelNode (1) (0.00,0.00) CanvasRenderer Img(None) LuckyWheelNode
+              Icon (0.00,0.00) CanvasRenderer Img(ic_box_1)
+              -txtMoney (0.00,0.00) CanvasRenderer Txt('+500')
+            WheelNode (2) (0.00,0.00) CanvasRenderer Img(None) LuckyWheelNode
+              Image (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+              -Icon (0.00,0.00) CanvasRenderer Img(None)
+              txtMoney (0.00,0.00) CanvasRenderer Txt('50')
+            WheelNode (3) (0.00,0.00) CanvasRenderer Img(None) LuckyWheelNode
+              Icon (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+              txtMoney (0.00,0.00) CanvasRenderer Txt('30')
+            WheelNode (4) (0.00,0.00) CanvasRenderer Img(None) LuckyWheelNode
+              -Icon (0.00,0.00) CanvasRenderer Img(None)
+              -txtMoney (0.00,0.00) CanvasRenderer Txt('+200')
+              Image (1) (0.00,0.00) CanvasRenderer Img(ic_box_3)
+            WheelNode (5) (0.00,0.00) CanvasRenderer Img(None) LuckyWheelNode
+              Icon (0.00,0.00) CanvasRenderer Img(ic_coin_2)
+              txtMoney (0.00,0.00) CanvasRenderer Txt('100')
+          Pointer (0.00,0.00) CanvasRenderer Img(point)
+        Part[3]MouthVisual (0.00,0.00) 
+          Renderer3 (0.00,0.00) CanvasRenderer Spine.Unity.SkeletonSubmeshGraphic
+        Part[4] (0.00,0.00) 
+          Renderer4 (0.00,0.00) CanvasRenderer Spine.Unity.SkeletonSubmeshGraphic
+        Part[5] (0.00,0.00) 
+          -Renderer5 (0.00,0.00) CanvasRenderer Spine.Unity.SkeletonSubmeshGraphic
+        Part[6] (0.00,0.00) 
+          -Renderer6 (0.00,0.00) CanvasRenderer Spine.Unity.SkeletonSubmeshGraphic
+        Part[7] (0.00,0.00) 
+          -Renderer7 (0.00,0.00) CanvasRenderer Spine.Unity.SkeletonSubmeshGraphic
+        Part[8] (0.00,0.00) 
+      -Penguin (0.00,0.00) 
+        -Body (0.00,0.00) CanvasRenderer Img(peguin)
+        -Mouth (0.00,0.00) CanvasRenderer Img(peguin_mouth)
+        -MouthOpen (0.00,0.00) CanvasRenderer Img(peguin_mouth_open)
+      -CloudFront (0.00,0.00) CanvasRenderer Img(cloud_front)
+      SpinButton (0.00,0.00) CanvasRenderer Img(btn_Spin_Under) Button
+        Button (0.00,0.00) CanvasRenderer Img(btn_Spin)
+          txtStart (0.00,0.00) CanvasRenderer Txt('Spin') LocalizeText
+          AdsIcon (0.00,0.00) CanvasRenderer Img(ic_ads)
+        ButtonFront (0.00,0.00) CanvasRenderer Img(btn_Spin_Front)
+      Counter (0.00,0.00) CanvasRenderer Img(box_slot)
+        Text (TMP) (0.00,0.00) CanvasRenderer Txt('0/2')
+      txtContent (0.00,0.00) CanvasRenderer Txt('Click on the blank to continue') LocalizeText
+      Title (0.00,0.00) CanvasRenderer Img(Title_feature_2)
+        Title (0.00,0.00) CanvasRenderer Txt('Lucky Spin') LocalizeText
+      MaskForFx (0.00,0.00) CanvasRenderer Img(Square) Mask
+        FxMoney (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleImage
+      -ButtonGetCoin (0.00,0.00) CanvasRenderer Img(UISprite) Button
+        Content (0.00,0.00) 
+          Glow (0.00,0.00) CanvasRenderer Img(fx_glow) DG.Tweening.DOTweenAnimation
+            Image (0.00,0.00) CanvasRenderer Img(fx_glow_rotation) DG.Tweening.DOTweenAnimation
+            Star (0.00,0.00) CanvasRenderer Img(fx_bling_particle) DG.Tweening.DOTweenAnimation
+            Star (1) (0.00,0.00) CanvasRenderer Img(fx_bling_particle) DG.Tweening.DOTweenAnimation
+            Star (2) (0.00,0.00) CanvasRenderer Img(fx_bling_particle) DG.Tweening.DOTweenAnimation
+            Star (3) (0.00,0.00) CanvasRenderer Img(fx_bling_particle) DG.Tweening.DOTweenAnimation
+            Star (4) (0.00,0.00) CanvasRenderer Img(fx_bling_particle) DG.Tweening.DOTweenAnimation
+            Star (5) (0.00,0.00) CanvasRenderer Img(fx_bling_particle) DG.Tweening.DOTweenAnimation
+          Coin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+          TxtCoin (0.00,0.00) CanvasRenderer Txt('30')
+          TxtTapToClose (0.00,0.00) CanvasRenderer Txt('Tap to close') LocalizeText
+      GiftBoxLuckywheel (0.00,0.00) GiftBoxLuckyWheel
+        -FullContent (0.00,0.00) 
+          BG (0.00,0.00) CanvasRenderer Img(None)
+            Content (0.00,0.00) 
+              Glow (0.00,0.00) CanvasRenderer Img(fx_glow) DG.Tweening.DOTweenAnimation
+                Image (0.00,0.00) CanvasRenderer Img(fx_glow_rotation) DG.Tweening.DOTweenAnimation
+              TxtTapToClose (0.00,0.00) CanvasRenderer Txt('Tap to close') LocalizeText
+          MaskForFx (0.00,0.00) CanvasRenderer Img(Square) Mask
+            GiftBox (0.00,0.00) CanvasRenderer Img(box_gift1)
+              Reward (0.00,0.00) CanvasRenderer Img(card_common)
+                Keycap (0.00,0.00) CanvasRenderer Img(keycap_R_12)
+                Star (0.00,0.00) 
+                  Star (0.00,0.00) CanvasRenderer Img(fx_bling_particle) DG.Tweening.DOTweenAnimation
+                  Star (1) (0.00,0.00) CanvasRenderer Img(fx_bling_particle) DG.Tweening.DOTweenAnimation
+                  Star (2) (0.00,0.00) CanvasRenderer Img(fx_bling_particle) DG.Tweening.DOTweenAnimation
+                  Star (3) (0.00,0.00) CanvasRenderer Img(fx_bling_particle) DG.Tweening.DOTweenAnimation
+                  Star (4) (0.00,0.00) CanvasRenderer Img(fx_bling_particle) DG.Tweening.DOTweenAnimation
+                  Star (5) (0.00,0.00) CanvasRenderer Img(fx_bling_particle) DG.Tweening.DOTweenAnimation
+              Flash (0.00,0.00) CanvasRenderer Img(box_gift1_glow)
+              Front (0.00,0.00) CanvasRenderer Img(box_gift1_front)
+              LidClosePos (0.00,0.00) 
+              LidOpenPos (0.00,0.00) 
+              Lid (0.00,0.00) CanvasRenderer Img(box_gift1_lid)
+          -BtnCloseGiftBox (0.00,0.00) CanvasRenderer Img(UISprite) Button
+      BtnClose (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+    PopupDailyTask (0.00,0.00) DailyTask.PopupDailyTask CanvasGroup
+      Overlay (0.00,0.00) CanvasRenderer Img(None) Button
+        -TapToClose (0.00,0.00) CanvasRenderer Txt('Tap to close') LocalizeText
+      Contains (0.00,0.00) CanvasRenderer Img(board_feature)
+        Scroll View (0.00,0.00) CanvasRenderer Img(None) ScrollRect
+          Viewport (0.00,0.00) CanvasRenderer Img(UIMask) Mask
+            Content (0.00,0.00) GridLayoutGroup ContentSizeFitter
+              -DailyTaskItemUI (0.00,0.00) CanvasRenderer Img(box_do) DailyTask.DailyTaskItemUI
+                -BGDone (0.00,0.00) CanvasRenderer Img(box_done)
+                Text: Description (0.00,0.00) CanvasRenderer Txt('Up 2 Level\nUp 2 Level') LocalizeText
+                Reward (0.00,0.00) 
+                  Text: Reward (0.00,0.00) CanvasRenderer Txt('Award') LocalizeText
+                  Reward Icon (0.00,0.00) CanvasRenderer Img(star_exp)
+                  Text: Reward Amount (0.00,0.00) CanvasRenderer Txt('x30')
+                Buttons (0.00,0.00) 
+                  GoButton (0.00,0.00) CanvasRenderer Img(button_do) Button
+                    Text (TMP) (0.00,0.00) CanvasRenderer Txt('Do') LocalizeText
+                  SkipButton (0.00,0.00) CanvasRenderer Img(button_skip) Button
+                    Text (TMP) (0.00,0.00) CanvasRenderer Txt('Skip') LocalizeText
+                    Image (0.00,0.00) CanvasRenderer Img(ic_ads)
+                  -ClaimButton (0.00,0.00) CanvasRenderer Img(button_do) Button
+                    Text (TMP) (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                GameObject (0.00,0.00) 
+                Image (0.00,0.00) CanvasRenderer Img(box_ic_Mission)
+                Image: Icon (0.00,0.00) CanvasRenderer Img(ic_lvl_up)
+                Bar: Progress (0.00,0.00) CanvasRenderer Img(progress_bound)
+                  BarValue (0.00,0.00) CanvasRenderer Img(progress_fill)
+                  ProgressText (0.00,0.00) CanvasRenderer Txt('0/1')
+                -DoneIcon (0.00,0.00) CanvasRenderer Img(tick)
+        Header (0.00,0.00) 
+          Image (0.00,0.00) CanvasRenderer Img(title_feature)
+          HeaderText (0.00,0.00) CanvasRenderer Txt('Daily Task') LocalizeText
+        BigReward (0.00,0.00) CanvasRenderer Img(artwork_DailyMission)
+          Icon (0.00,0.00) CanvasRenderer Img(gift) DG.Tweening.DOTweenAnimation DG.Tweening.DOTweenAnimation
+          ProgressBar (0.00,0.00) CanvasRenderer Img(Progress_exp_fill) DreamHouse.ProgressBar
+            ProgressValue (0.00,0.00) CanvasRenderer Img(Progress_exp_bound - Smart Object Group)
+            Star Icon (0.00,0.00) CanvasRenderer Img(star_exp)
+            ProgressText (0.00,0.00) CanvasRenderer Txt('0/100')
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('Be hard and get big rewards') LocalizeText
+        ButtonClose (0.00,0.00) CanvasRenderer Img(button_x) Button
+        CollectingStar (0.00,0.00) JobGame.CollectingCoin
+          EndPos (0.00,0.00) 
+          SpawnPos (0.00,0.00) 
+        BtnClose (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+      -Block (0.00,0.00) CanvasRenderer Img(None)
+    PopupDailyTaskReward (0.00,0.00) CanvasGroup DailyTask.PopupDailyTaskReward
+      Overlay (0.00,0.00) CanvasRenderer Img(None) Button
+      Panel (0.00,0.00) 
+        Header (0.00,0.00) CanvasRenderer Img(None)
+          Text: Header (0.00,0.00) CanvasRenderer Txt('Reward') LocalizeText
+        Box (0.00,0.00) 
+          GlowEffect (0.00,0.00) CanvasRenderer Img(fx_glow_rotation) DG.Tweening.DOTweenAnimation
+          -GiftBox (0.00,0.00) CanvasRenderer Img(icon_rewards)
+          -StarEffect (0.00,0.00) CanvasRenderer Img(Star_effect)
+          BoxSpine (0.00,0.00) CanvasRenderer Spine.Unity.SkeletonGraphic SkeletonGraphicHandler
+        Text: TapToOpen (0.00,0.00) CanvasRenderer Txt('TAP TO OPEN') LocalizeText DG.Tweening.DOTweenAnimation
+        SpawnPos (0.00,0.00) 
+    DailyLoginPopup (0.00,0.00) CanvasGroup DailyLoginPopup DailyReward.DailyLoginController
+      BG-button close (0.00,0.00) CanvasRenderer Img(None) Button
+      Panel (0.00,0.00) CanvasRenderer Img(board_feature)
+        Image (0.00,0.00) CanvasRenderer Img(artwork_DailyLogin)
+          SeeYaTomrow (0.00,0.00) CanvasRenderer Txt('Return tomorrow for the next r') LocalizeText
+        6DayItems (0.00,0.00) CanvasRenderer Img(None) GridLayoutGroup
+          DailyItem (0.00,0.00) CanvasRenderer Img(None) DailyMission.NormalDayItem
+            Rect (0.00,0.00) CanvasRenderer Img(box_day_DailyLogin)
+              -ItemIcon (0.00,0.00) CanvasRenderer Img(ic_box_1)
+              MoneyIcon (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+              CountText (0.00,0.00) CanvasRenderer Txt('500')
+            DayTextClaimed (0.00,0.00) CanvasRenderer Txt('Day 1') LocalizeText
+            DayTextSelected (0.00,0.00) CanvasRenderer Txt('Day 1') LocalizeText
+            DayTextNormal (0.00,0.00) CanvasRenderer Txt('Day 1') LocalizeText
+            -Checked (0.00,0.00) CanvasRenderer Img(box_day_DailyLogin)
+              Checked (1) (0.00,0.00) CanvasRenderer Img(tick)
+          DailyItem (1) (0.00,0.00) CanvasRenderer Img(None) DailyMission.NormalDayItem
+            Rect (0.00,0.00) CanvasRenderer Img(box_day_DailyLogin)
+              -ItemIcon (0.00,0.00) CanvasRenderer Img(ic_box_1)
+              MoneyIcon (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+              CountText (0.00,0.00) CanvasRenderer Txt('500')
+            DayTextClaimed (0.00,0.00) CanvasRenderer Txt('Day 1') LocalizeText
+            DayTextSelected (0.00,0.00) CanvasRenderer Txt('Day 1') LocalizeText
+            DayTextNormal (0.00,0.00) CanvasRenderer Txt('Day 1') LocalizeText
+            -Checked (0.00,0.00) CanvasRenderer Img(box_day_DailyLogin)
+              Checked (1) (0.00,0.00) CanvasRenderer Img(tick)
+          DailyItem (2) (0.00,0.00) CanvasRenderer Img(None) DailyMission.NormalDayItem
+            Rect (0.00,0.00) CanvasRenderer Img(box_day_DailyLogin)
+              -ItemIcon (0.00,0.00) CanvasRenderer Img(ic_box_1)
+              MoneyIcon (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+              CountText (0.00,0.00) CanvasRenderer Txt('500')
+            DayTextClaimed (0.00,0.00) CanvasRenderer Txt('Day 1') LocalizeText
+            DayTextSelected (0.00,0.00) CanvasRenderer Txt('Day 1') LocalizeText
+            DayTextNormal (0.00,0.00) CanvasRenderer Txt('Day 1') LocalizeText
+            -Checked (0.00,0.00) CanvasRenderer Img(box_day_DailyLogin)
+              Checked (1) (0.00,0.00) CanvasRenderer Img(tick)
+          DailyItem (3) (0.00,0.00) CanvasRenderer Img(None) DailyMission.NormalDayItem
+            Rect (0.00,0.00) CanvasRenderer Img(box_day_DailyLogin)
+              -ItemIcon (0.00,0.00) CanvasRenderer Img(ic_box_1)
+              MoneyIcon (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+              CountText (0.00,0.00) CanvasRenderer Txt('500')
+            DayTextClaimed (0.00,0.00) CanvasRenderer Txt('Day 1') LocalizeText
+            DayTextSelected (0.00,0.00) CanvasRenderer Txt('Day 1') LocalizeText
+            DayTextNormal (0.00,0.00) CanvasRenderer Txt('Day 1') LocalizeText
+            -Checked (0.00,0.00) CanvasRenderer Img(box_day_DailyLogin)
+              Checked (1) (0.00,0.00) CanvasRenderer Img(tick)
+          DailyItem (4) (0.00,0.00) CanvasRenderer Img(None) DailyMission.NormalDayItem
+            Rect (0.00,0.00) CanvasRenderer Img(box_day_DailyLogin)
+              -ItemIcon (0.00,0.00) CanvasRenderer Img(ic_box_1)
+              MoneyIcon (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+              CountText (0.00,0.00) CanvasRenderer Txt('500')
+            DayTextClaimed (0.00,0.00) CanvasRenderer Txt('Day 1') LocalizeText
+            DayTextSelected (0.00,0.00) CanvasRenderer Txt('Day 1') LocalizeText
+            DayTextNormal (0.00,0.00) CanvasRenderer Txt('Day 1') LocalizeText
+            -Checked (0.00,0.00) CanvasRenderer Img(box_day_DailyLogin)
+              Checked (1) (0.00,0.00) CanvasRenderer Img(tick)
+          DailyItem (5) (0.00,0.00) CanvasRenderer Img(None) DailyMission.NormalDayItem
+            Rect (0.00,0.00) CanvasRenderer Img(box_day_DailyLogin)
+              -ItemIcon (0.00,0.00) CanvasRenderer Img(ic_box_1)
+              MoneyIcon (0.00,0.00) CanvasRenderer Img(ic_coin_2)
+              CountText (0.00,0.00) CanvasRenderer Txt('500')
+            DayTextClaimed (0.00,0.00) CanvasRenderer Txt('Day 1') LocalizeText
+            DayTextSelected (0.00,0.00) CanvasRenderer Txt('Day 1') LocalizeText
+            DayTextNormal (0.00,0.00) CanvasRenderer Txt('Day 1') LocalizeText
+            -Checked (0.00,0.00) CanvasRenderer Img(box_day_DailyLogin)
+              Checked (1) (0.00,0.00) CanvasRenderer Img(tick)
+        Day7Item (0.00,0.00) CanvasRenderer Img(box_day7_DailyLogin 1) DailyReward.SpecialDayItem
+          Contents (0.00,0.00) 
+            CharacterSkin (0.00,0.00) CanvasRenderer Img(box_item_day7_blue)
+              Mask (0.00,0.00) CanvasRenderer Img(box_item_day7_blue) Mask
+                Character (0.00,0.00) CanvasRenderer Img(clicker_02)
+            Plus (0.00,0.00) CanvasRenderer Img(plus)
+            PetSkin (0.00,0.00) CanvasRenderer Img(box_item_day7_blue)
+              Mask (0.00,0.00) CanvasRenderer Img(box_item_day7_blue) Mask
+                Pet (0.00,0.00) CanvasRenderer Img(bear)
+            Plus (0.00,0.00) CanvasRenderer Img(plus)
+            Keycap (0.00,0.00) CanvasRenderer Img(box_item_day7_pink)
+              Image (0.00,0.00) CanvasRenderer Img(keycap_L_1)
+              Image (1) (0.00,0.00) CanvasRenderer Img(keycap_C_3)
+              Image (2) (0.00,0.00) CanvasRenderer Img(keycap_C_2)
+          DayText (0.00,0.00) CanvasRenderer Txt('Day 7') LocalizeText
+          DayText (1) (0.00,0.00) CanvasRenderer Txt('Day 7') LocalizeText
+          DayText (2) (0.00,0.00) CanvasRenderer Txt('Day 7') LocalizeText
+          -Checked (0.00,0.00) CanvasRenderer Img(box_day7_DailyLogin 1)
+            IconCheck (0.00,0.00) CanvasRenderer Img(tick)
+        GetButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+          TitleText (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+          -HandSpine (0.00,0.00) CanvasRenderer Img(handtap) DG.Tweening.DOTweenAnimation
+        -UnClaim (0.00,0.00) CanvasRenderer Img(button_green)
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+        TitleBG (0.00,0.00) CanvasRenderer Img(title_feature)
+        TxtTitle (0.00,0.00) CanvasRenderer Txt('Daily Login') LocalizeText
+        CloseButton (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+    LoginTimeRewardPopup (0.00,0.00) CanvasGroup LoginTimeReward.LoginTimeRewardPopup
+      BG (0.00,0.00) CanvasRenderer Img(None) Button
+        -TapToClose (0.00,0.00) CanvasRenderer Txt('Tap to close') LocalizeText
+      Header (0.00,0.00) 
+      Panel (0.00,0.00) CanvasRenderer Img(board_feature)
+        TitleBG (0.00,0.00) CanvasRenderer Img(title_feature)
+          Title (0.00,0.00) CanvasRenderer Txt('Online Rewards') LocalizeText
+        BtnClose (0.00,0.00) CanvasRenderer Img(button_x) Button
+        Scroll View (0.00,0.00) CanvasRenderer Img(Background) ScrollRect
+          Viewport (0.00,0.00) CanvasRenderer Img(UIMask) Mask
+            -DailyLoginRewardUIItem (0.00,0.00) CanvasRenderer Img(None) DailyLoginRewardUIItem CanvasGroup
+              RewardBoard (0.00,0.00) CanvasRenderer Img(box_reward_do)
+              RewardContent (0.00,0.00) 
+                -CoinContent (0.00,0.00) 
+                  Icon (0.00,0.00) CanvasRenderer Img(ic_4coin)
+                  TxtCoin (0.00,0.00) CanvasRenderer Txt('10000')
+                CharmContent (0.00,0.00) 
+                  Icon (0.00,0.00) CanvasRenderer Img(ic_reward_pink)
+                  TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Keycap') LocalizeText
+                  TxtRandom (0.00,0.00) CanvasRenderer Txt('Random') LocalizeText
+                -SkinContent (0.00,0.00) 
+                  Icon (0.00,0.00) CanvasRenderer Img(ic_reward_skin) DG.Tweening.DOTweenAnimation
+                  TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Skin') LocalizeText
+                  TxtRandom (0.00,0.00) CanvasRenderer Txt('Random') LocalizeText
+              RewardButton (0.00,0.00) 
+                BtnClaimFree (0.00,0.00) CanvasRenderer Img(button_green) Button
+                  TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                BtnClaimAds (0.00,0.00) CanvasRenderer Img(button_blue) Button
+                  TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                  Icon (0.00,0.00) CanvasRenderer Img(ic_ads)
+                DoneButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+                  TxtClaim (0.00,0.00) CanvasRenderer Txt('Claimed') LocalizeText
+                NotDoneButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+                  TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+              RewardStatus (0.00,0.00) 
+                Image (0.00,0.00) CanvasRenderer Img(mark_reward)
+                -Lock (0.00,0.00) CanvasRenderer Img(Layer 105 copy 3)
+                CanClaim (0.00,0.00) CanvasRenderer Img(ic_reward_done)
+                Image (1) (0.00,0.00) CanvasRenderer Img(square32)
+                -CheckDone (0.00,0.00) CanvasRenderer Img(tick)
+                TxtMinute (0.00,0.00) CanvasRenderer Txt('1 min')
+            Content (0.00,0.00) VerticalLayoutGroup ContentSizeFitter
+              DailyLoginRewardUIItem (1) (0.00,0.00) CanvasRenderer Img(None) DailyLoginRewardUIItem CanvasGroup
+                RewardBoard (0.00,0.00) CanvasRenderer Img(box_reward_do)
+                RewardContent (0.00,0.00) 
+                  CoinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_4coin)
+                    TxtCoin (0.00,0.00) CanvasRenderer Txt('10000')
+                  -CharmContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_reward_pink)
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Keycap') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('Random') LocalizeText
+                  -SkinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_reward_skin) DG.Tweening.DOTweenAnimation
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Skin') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('Random') LocalizeText
+                RewardButton (0.00,0.00) 
+                  BtnClaimFree (0.00,0.00) CanvasRenderer Img(button_green) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                  BtnClaimAds (0.00,0.00) CanvasRenderer Img(button_blue) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_ads)
+                  DoneButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claimed') LocalizeText
+                  NotDoneButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                RewardStatus (0.00,0.00) 
+                  Image (0.00,0.00) CanvasRenderer Img(mark_reward)
+                  -Lock (0.00,0.00) CanvasRenderer Img(Layer 105 copy 3)
+                  CanClaim (0.00,0.00) CanvasRenderer Img(ic_reward_done)
+                  Image (1) (0.00,0.00) CanvasRenderer Img(square32)
+                  -CheckDone (0.00,0.00) CanvasRenderer Img(tick)
+                  TxtMinute (0.00,0.00) CanvasRenderer Txt('1 min')
+              DailyLoginRewardUIItem (6) (0.00,0.00) CanvasRenderer Img(None) DailyLoginRewardUIItem CanvasGroup
+                RewardBoard (0.00,0.00) CanvasRenderer Img(box_reward_do)
+                RewardContent (0.00,0.00) 
+                  -CoinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_4coin)
+                    TxtCoin (0.00,0.00) CanvasRenderer Txt('10000')
+                  CharmContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_reward_blue)
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Keycap') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('Random') LocalizeText
+                  -SkinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_reward_skin) DG.Tweening.DOTweenAnimation
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Skin') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('Random') LocalizeText
+                RewardButton (0.00,0.00) 
+                  BtnClaimFree (0.00,0.00) CanvasRenderer Img(button_green) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                  BtnClaimAds (0.00,0.00) CanvasRenderer Img(button_blue) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_ads)
+                  DoneButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claimed') LocalizeText
+                  NotDoneButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                RewardStatus (0.00,0.00) 
+                  Image (0.00,0.00) CanvasRenderer Img(mark_reward)
+                  -Lock (0.00,0.00) CanvasRenderer Img(Layer 105 copy 3)
+                  CanClaim (0.00,0.00) CanvasRenderer Img(ic_reward_done)
+                  Image (1) (0.00,0.00) CanvasRenderer Img(square32)
+                  -CheckDone (0.00,0.00) CanvasRenderer Img(tick)
+                  TxtMinute (0.00,0.00) CanvasRenderer Txt('1 min')
+              DailyLoginRewardUIItem (7) (0.00,0.00) CanvasRenderer Img(None) DailyLoginRewardUIItem CanvasGroup
+                RewardBoard (0.00,0.00) CanvasRenderer Img(box_reward_do)
+                RewardContent (0.00,0.00) 
+                  CoinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_4coin)
+                    TxtCoin (0.00,0.00) CanvasRenderer Txt('10000')
+                  -CharmContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_reward_pink)
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Keycap') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('Random') LocalizeText
+                  -SkinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_reward_skin) DG.Tweening.DOTweenAnimation
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Skin') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('Random') LocalizeText
+                RewardButton (0.00,0.00) 
+                  BtnClaimFree (0.00,0.00) CanvasRenderer Img(button_green) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                  BtnClaimAds (0.00,0.00) CanvasRenderer Img(button_blue) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_ads)
+                  DoneButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claimed') LocalizeText
+                  NotDoneButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                RewardStatus (0.00,0.00) 
+                  Image (0.00,0.00) CanvasRenderer Img(mark_reward)
+                  -Lock (0.00,0.00) CanvasRenderer Img(Layer 105 copy 3)
+                  CanClaim (0.00,0.00) CanvasRenderer Img(ic_reward_done)
+                  Image (1) (0.00,0.00) CanvasRenderer Img(square32)
+                  -CheckDone (0.00,0.00) CanvasRenderer Img(tick)
+                  TxtMinute (0.00,0.00) CanvasRenderer Txt('1 min')
+              DailyLoginRewardUIItem (8) (0.00,0.00) CanvasRenderer Img(None) DailyLoginRewardUIItem CanvasGroup
+                RewardBoard (0.00,0.00) CanvasRenderer Img(box_reward_do)
+                RewardContent (0.00,0.00) 
+                  -CoinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_4coin)
+                    TxtCoin (0.00,0.00) CanvasRenderer Txt('10000')
+                  CharmContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_reward_pink)
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Keycap') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('Random') LocalizeText
+                  -SkinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_reward_skin) DG.Tweening.DOTweenAnimation
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Skin') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('Random') LocalizeText
+                RewardButton (0.00,0.00) 
+                  BtnClaimFree (0.00,0.00) CanvasRenderer Img(button_green) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                  BtnClaimAds (0.00,0.00) CanvasRenderer Img(button_blue) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_ads)
+                  DoneButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claimed') LocalizeText
+                  NotDoneButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                RewardStatus (0.00,0.00) 
+                  Image (0.00,0.00) CanvasRenderer Img(mark_reward)
+                  -Lock (0.00,0.00) CanvasRenderer Img(Layer 105 copy 3)
+                  CanClaim (0.00,0.00) CanvasRenderer Img(ic_reward_done)
+                  Image (1) (0.00,0.00) CanvasRenderer Img(square32)
+                  -CheckDone (0.00,0.00) CanvasRenderer Img(tick)
+                  TxtMinute (0.00,0.00) CanvasRenderer Txt('1 min')
+              DailyLoginRewardUIItem (9) (0.00,0.00) CanvasRenderer Img(None) DailyLoginRewardUIItem CanvasGroup
+                RewardBoard (0.00,0.00) CanvasRenderer Img(box_reward_do)
+                RewardContent (0.00,0.00) 
+                  CoinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_4coin)
+                    TxtCoin (0.00,0.00) CanvasRenderer Txt('10000')
+                  -CharmContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_reward_pink)
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Keycap') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('Random') LocalizeText
+                  -SkinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_reward_skin) DG.Tweening.DOTweenAnimation
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Skin') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('Random') LocalizeText
+                RewardButton (0.00,0.00) 
+                  BtnClaimFree (0.00,0.00) CanvasRenderer Img(button_green) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                  BtnClaimAds (0.00,0.00) CanvasRenderer Img(button_blue) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_ads)
+                  DoneButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claimed') LocalizeText
+                  NotDoneButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                RewardStatus (0.00,0.00) 
+                  Image (0.00,0.00) CanvasRenderer Img(mark_reward)
+                  -Lock (0.00,0.00) CanvasRenderer Img(Layer 105 copy 3)
+                  CanClaim (0.00,0.00) CanvasRenderer Img(ic_reward_done)
+                  Image (1) (0.00,0.00) CanvasRenderer Img(square32)
+                  -CheckDone (0.00,0.00) CanvasRenderer Img(tick)
+                  TxtMinute (0.00,0.00) CanvasRenderer Txt('1 min')
+              DailyLoginRewardUIItem (10) (0.00,0.00) CanvasRenderer Img(None) DailyLoginRewardUIItem CanvasGroup
+                RewardBoard (0.00,0.00) CanvasRenderer Img(box_reward_do)
+                RewardContent (0.00,0.00) 
+                  -CoinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_4coin)
+                    TxtCoin (0.00,0.00) CanvasRenderer Txt('10000')
+                  -CharmContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_reward_pink)
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Keycap') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('Random') LocalizeText
+                  SkinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_reward_skin) DG.Tweening.DOTweenAnimation
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Skin') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('Random') LocalizeText
+                RewardButton (0.00,0.00) 
+                  BtnClaimFree (0.00,0.00) CanvasRenderer Img(button_green) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                  BtnClaimAds (0.00,0.00) CanvasRenderer Img(button_blue) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                    Icon (0.00,0.00) CanvasRenderer Img(ic_ads)
+                  DoneButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claimed') LocalizeText
+                  NotDoneButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                RewardStatus (0.00,0.00) 
+                  Image (0.00,0.00) CanvasRenderer Img(mark_reward)
+                  -Lock (0.00,0.00) CanvasRenderer Img(Layer 105 copy 3)
+                  CanClaim (0.00,0.00) CanvasRenderer Img(ic_reward_done)
+                  -Image (1) (0.00,0.00) CanvasRenderer Img(square32)
+                  -CheckDone (0.00,0.00) CanvasRenderer Img(tick)
+                  TxtMinute (0.00,0.00) CanvasRenderer Txt('1 min')
+              -DailyLoginRewardUIItem (0.00,0.00) CanvasRenderer Img(None) DailyLoginRewardUIItem CanvasGroup
+                RewardBoard (0.00,0.00) CanvasRenderer Img(frame_reward_1)
+                RewardContent (0.00,0.00) 
+                  CoinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(None)
+                    TxtCoin (0.00,0.00) CanvasRenderer Txt('10000')
+                  -CharmContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(icon_gift_charm)
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 charm') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('random') LocalizeText
+                  -SkinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(icon_gift_skin) DG.Tweening.DOTweenAnimation
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Skin') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('random') LocalizeText
+                RewardButton (0.00,0.00) 
+                  -BtnClaimFree (0.00,0.00) CanvasRenderer Img(button_claim) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                  -BtnClaimAds (0.00,0.00) CanvasRenderer Img(button_purple) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                    Icon (0.00,0.00) CanvasRenderer Img(icon_ad)
+                  -DoneButton (0.00,0.00) CanvasRenderer Img(button_claim_off) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claimed') LocalizeText
+                  NotDoneButton (0.00,0.00) CanvasRenderer Img(button_claim_off) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                RewardStatus (0.00,0.00) 
+                  Image (0.00,0.00) CanvasRenderer Img(frame_progress_1)
+                  Lock (0.00,0.00) CanvasRenderer Img(icon_lock)
+                  Image (1) (0.00,0.00) CanvasRenderer Img(frame_progress_2)
+                  -CheckDone (0.00,0.00) CanvasRenderer Img(button_done)
+                  TxtMinute (0.00,0.00) CanvasRenderer Txt('1 min')
+              -DailyLoginRewardUIItem (1) (0.00,0.00) CanvasRenderer Img(None) DailyLoginRewardUIItem CanvasGroup
+                RewardBoard (0.00,0.00) CanvasRenderer Img(frame_reward_1)
+                RewardContent (0.00,0.00) 
+                  CoinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(None)
+                    TxtCoin (0.00,0.00) CanvasRenderer Txt('10000')
+                  -CharmContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(icon_gift_charm)
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 charm') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('random') LocalizeText
+                  -SkinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(icon_gift_skin) DG.Tweening.DOTweenAnimation
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Skin') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('random') LocalizeText
+                RewardButton (0.00,0.00) 
+                  -BtnClaimFree (0.00,0.00) CanvasRenderer Img(button_claim) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                  -BtnClaimAds (0.00,0.00) CanvasRenderer Img(button_purple) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                    Icon (0.00,0.00) CanvasRenderer Img(icon_ad)
+                  -DoneButton (0.00,0.00) CanvasRenderer Img(button_claim_off) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claimed') LocalizeText
+                  NotDoneButton (0.00,0.00) CanvasRenderer Img(button_claim_off) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                RewardStatus (0.00,0.00) 
+                  Image (0.00,0.00) CanvasRenderer Img(frame_progress_1)
+                  Lock (0.00,0.00) CanvasRenderer Img(icon_lock)
+                  Image (1) (0.00,0.00) CanvasRenderer Img(frame_progress_2)
+                  -CheckDone (0.00,0.00) CanvasRenderer Img(button_done)
+                  TxtMinute (0.00,0.00) CanvasRenderer Txt('1 min')
+              -DailyLoginRewardUIItem (2) (0.00,0.00) CanvasRenderer Img(None) DailyLoginRewardUIItem CanvasGroup
+                RewardBoard (0.00,0.00) CanvasRenderer Img(frame_reward_1)
+                RewardContent (0.00,0.00) 
+                  -CoinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(None)
+                    TxtCoin (0.00,0.00) CanvasRenderer Txt('10000')
+                  CharmContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(icon_gift_charm)
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 charm') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('random') LocalizeText
+                  -SkinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(icon_gift_skin) DG.Tweening.DOTweenAnimation
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Skin') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('random') LocalizeText
+                RewardButton (0.00,0.00) 
+                  -BtnClaimFree (0.00,0.00) CanvasRenderer Img(button_claim) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                  -BtnClaimAds (0.00,0.00) CanvasRenderer Img(button_purple) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                    Icon (0.00,0.00) CanvasRenderer Img(icon_ad)
+                  -DoneButton (0.00,0.00) CanvasRenderer Img(button_claim_off) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claimed') LocalizeText
+                  NotDoneButton (0.00,0.00) CanvasRenderer Img(button_claim_off) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                RewardStatus (0.00,0.00) 
+                  Image (0.00,0.00) CanvasRenderer Img(frame_progress_1)
+                  Lock (0.00,0.00) CanvasRenderer Img(icon_lock)
+                  Image (1) (0.00,0.00) CanvasRenderer Img(frame_progress_2)
+                  -CheckDone (0.00,0.00) CanvasRenderer Img(button_done)
+                  TxtMinute (0.00,0.00) CanvasRenderer Txt('1 min')
+              -DailyLoginRewardUIItem (3) (0.00,0.00) CanvasRenderer Img(None) DailyLoginRewardUIItem CanvasGroup
+                RewardBoard (0.00,0.00) CanvasRenderer Img(frame_reward_1)
+                RewardContent (0.00,0.00) 
+                  CoinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(None)
+                    TxtCoin (0.00,0.00) CanvasRenderer Txt('10000')
+                  -CharmContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(icon_gift_charm)
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 charm') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('random') LocalizeText
+                  -SkinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(icon_gift_skin) DG.Tweening.DOTweenAnimation
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Skin') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('random') LocalizeText
+                RewardButton (0.00,0.00) 
+                  -BtnClaimFree (0.00,0.00) CanvasRenderer Img(button_claim) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                  -BtnClaimAds (0.00,0.00) CanvasRenderer Img(button_purple) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                    Icon (0.00,0.00) CanvasRenderer Img(icon_ad)
+                  -DoneButton (0.00,0.00) CanvasRenderer Img(button_claim_off) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claimed') LocalizeText
+                  NotDoneButton (0.00,0.00) CanvasRenderer Img(button_claim_off) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                RewardStatus (0.00,0.00) 
+                  Image (0.00,0.00) CanvasRenderer Img(frame_progress_1)
+                  Lock (0.00,0.00) CanvasRenderer Img(icon_lock)
+                  Image (1) (0.00,0.00) CanvasRenderer Img(frame_progress_2)
+                  -CheckDone (0.00,0.00) CanvasRenderer Img(button_done)
+                  TxtMinute (0.00,0.00) CanvasRenderer Txt('1 min')
+              -DailyLoginRewardUIItem (4) (0.00,0.00) CanvasRenderer Img(None) DailyLoginRewardUIItem CanvasGroup
+                RewardBoard (0.00,0.00) CanvasRenderer Img(frame_reward_1)
+                RewardContent (0.00,0.00) 
+                  CoinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(None)
+                    TxtCoin (0.00,0.00) CanvasRenderer Txt('10000')
+                  -CharmContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(icon_gift_charm)
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 charm') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('random') LocalizeText
+                  -SkinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(icon_gift_skin) DG.Tweening.DOTweenAnimation
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Skin') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('random') LocalizeText
+                RewardButton (0.00,0.00) 
+                  -BtnClaimFree (0.00,0.00) CanvasRenderer Img(button_claim) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                  -BtnClaimAds (0.00,0.00) CanvasRenderer Img(button_purple) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                    Icon (0.00,0.00) CanvasRenderer Img(icon_ad)
+                  -DoneButton (0.00,0.00) CanvasRenderer Img(button_claim_off) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claimed') LocalizeText
+                  NotDoneButton (0.00,0.00) CanvasRenderer Img(button_claim_off) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                RewardStatus (0.00,0.00) 
+                  Image (0.00,0.00) CanvasRenderer Img(frame_progress_1)
+                  Lock (0.00,0.00) CanvasRenderer Img(icon_lock)
+                  Image (1) (0.00,0.00) CanvasRenderer Img(frame_progress_2)
+                  -CheckDone (0.00,0.00) CanvasRenderer Img(button_done)
+                  TxtMinute (0.00,0.00) CanvasRenderer Txt('1 min')
+              -DailyLoginRewardUIItem (5) (0.00,0.00) CanvasRenderer Img(None) DailyLoginRewardUIItem CanvasGroup
+                RewardBoard (0.00,0.00) CanvasRenderer Img(frame_reward_1)
+                RewardContent (0.00,0.00) 
+                  -CoinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(None)
+                    TxtCoin (0.00,0.00) CanvasRenderer Txt('10000')
+                  -CharmContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(icon_gift_charm)
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 charm') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('random') LocalizeText
+                  SkinContent (0.00,0.00) 
+                    Icon (0.00,0.00) CanvasRenderer Img(icon_gift_skin) DG.Tweening.DOTweenAnimation
+                    TxtCharm (0.00,0.00) CanvasRenderer Txt('1 Skin') LocalizeText
+                    TxtRandom (0.00,0.00) CanvasRenderer Txt('random') LocalizeText
+                RewardButton (0.00,0.00) 
+                  -BtnClaimFree (0.00,0.00) CanvasRenderer Img(button_claim) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+                  -BtnClaimAds (0.00,0.00) CanvasRenderer Img(button_purple) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                    Icon (0.00,0.00) CanvasRenderer Img(icon_ad)
+                  -DoneButton (0.00,0.00) CanvasRenderer Img(button_claim_off) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Claimed') LocalizeText
+                  NotDoneButton (0.00,0.00) CanvasRenderer Img(button_claim_off) Button
+                    TxtClaim (0.00,0.00) CanvasRenderer Txt('Get') LocalizeText
+                RewardStatus (0.00,0.00) 
+                  Image (0.00,0.00) CanvasRenderer Img(frame_progress_1)
+                  Lock (0.00,0.00) CanvasRenderer Img(icon_lock)
+                  -Image (1) (0.00,0.00) CanvasRenderer Img(frame_progress_2)
+                  -CheckDone (0.00,0.00) CanvasRenderer Img(button_done)
+                  TxtMinute (0.00,0.00) CanvasRenderer Txt('1 min')
+          -Scrollbar Horizontal (0.00,0.00) CanvasRenderer Img(Background) Scrollbar
+            Sliding Area (0.00,0.00) 
+              Handle (0.00,0.00) CanvasRenderer Img(UISprite)
+          -Scrollbar Vertical (0.00,0.00) CanvasRenderer Img(Background) Scrollbar
+            Sliding Area (0.00,0.00) 
+              Handle (0.00,0.00) CanvasRenderer Img(UISprite)
+        BtnClose (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+    ClaimLoginRewardPopup (0.00,0.00) CanvasRenderer CanvasGroup LoginTimeReward.ClaimLoginRewardPopup
+      BG (0.00,0.00) CanvasRenderer Img(None)
+      -AnimationContent (0.00,0.00) 
+        DecorButton (0.00,0.00) CanvasRenderer Img(ic_decor)
+          -Text (TMP) (0.00,0.00) CanvasRenderer Txt('Decor') LocalizeText
+        SkinDecorPos (0.00,0.00) 
+        SkinCharacter (0.00,0.00) CanvasRenderer Img(charm_char_default)
+          Mask (0.00,0.00) CanvasRenderer Img(None) Mask
+            CharacterSkin (0.00,0.00) CanvasRenderer Img(charm_char_default)
+      Panel (0.00,0.00) CanvasRenderer Img(board_popup)
+        Image (0.00,0.00) CanvasRenderer Img(title_popup_back)
+        Image (1) (0.00,0.00) CanvasRenderer Img(board_popup)
+        Image (2) (0.00,0.00) CanvasRenderer Img(title_popup)
+        TxtTitle (0.00,0.00) CanvasRenderer Txt('Reward') LocalizeText
+        Contens (0.00,0.00) 
+          Content (0.00,0.00) 
+            SkinCharacter (0.00,0.00) CanvasRenderer Img(charm_char_default)
+              Mask (0.00,0.00) CanvasRenderer Img(None) Mask
+                CharacterSkin (0.00,0.00) CanvasRenderer Img(charm_char_default)
+              Text (TMP) (0.00,0.00) CanvasRenderer Txt('New Skin Unlocked') LocalizeText
+            -Charm (0.00,0.00) CanvasRenderer Img(box charm)
+              Glow (0.00,0.00) CanvasRenderer Img(effect) DG.Tweening.DOTweenAnimation
+              -Box (0.00,0.00) CanvasRenderer Img(box charm)
+              Icon (0.00,0.00) CanvasRenderer Img(keycap_C_1)
+              -Text (TMP) (0.00,0.00) CanvasRenderer Txt('New Charm Unlocked!') LocalizeText
+              Image (0.00,0.00) CanvasRenderer Img(effect_star_2) DG.Tweening.DOTweenAnimation
+              Image (1) (0.00,0.00) CanvasRenderer Img(effect_star_2) DG.Tweening.DOTweenAnimation
+              Image (2) (0.00,0.00) CanvasRenderer Img(effect_star_1) DG.Tweening.DOTweenAnimation
+              Image (3) (0.00,0.00) CanvasRenderer Img(effect_star_1) DG.Tweening.DOTweenAnimation
+          BtnCollect (0.00,0.00) CanvasRenderer Img(button_green) Button
+            txtAction (0.00,0.00) CanvasRenderer Txt('Collect') LocalizeText
+          BtnClaim (0.00,0.00) CanvasRenderer Img(button_green) Button
+            txtAction (0.00,0.00) CanvasRenderer Txt('Claim') LocalizeText
+          BtnClose (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+    ProfilePopup (0.00,0.00) CanvasGroup ProfilePopup
+      BG (0.00,0.00) CanvasRenderer Img(None)
+      CloseButton (0.00,0.00) CanvasRenderer Img(None) Button
+      Panel (0.00,0.00) CanvasRenderer Img(board_popup)
+        Pingin (0.00,0.00) CanvasRenderer Img(title_popup_back)
+        BG (0.00,0.00) CanvasRenderer Img(board_popup)
+        -CloseButton (0.00,0.00) CanvasRenderer Img(None) Button
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('Tap to close') LocalizeText
+        Title (0.00,0.00) CanvasRenderer Img(title_popup)
+          TxtTitle (0.00,0.00) CanvasRenderer Txt('Settings') LocalizeText
+        Content (0.00,0.00) VerticalLayoutGroup
+          Setting (0.00,0.00) CanvasRenderer HorizontalLayoutGroup SettingPanel
+            MusicButton (0.00,0.00) CanvasRenderer Img(None) SettingButton Button
+              Title (0.00,0.00) CanvasRenderer Txt('Music') LocalizeText
+              Image (0.00,0.00) CanvasRenderer Img(toggle_off)
+              Icon (0.00,0.00) CanvasRenderer Img(ic_music)
+            SoundButton (0.00,0.00) CanvasRenderer Img(None) SettingButton Button
+              Title (0.00,0.00) CanvasRenderer Txt('Sound') LocalizeText
+              Image (0.00,0.00) CanvasRenderer Img(toggle_off)
+              Icon (0.00,0.00) CanvasRenderer Img(ic_sound)
+            VibrateButton (0.00,0.00) CanvasRenderer Img(None) SettingButton Button
+              Title (0.00,0.00) CanvasRenderer Txt('Vibrates') LocalizeText
+              Image (0.00,0.00) CanvasRenderer Img(toggle_off)
+              Icon (0.00,0.00) CanvasRenderer Img(ic_haptics)
+          Language (0.00,0.00) CanvasRenderer Img(None)
+            Image (0.00,0.00) CanvasRenderer Img(name-tag)
+            Image (1) (0.00,0.00) CanvasRenderer Img(name-tag)
+            Image (2) (0.00,0.00) CanvasRenderer Img(name-tag)
+            -Title (0.00,0.00) CanvasRenderer Txt('Language1') LocalizeText
+            -Flag (0.00,0.00) CanvasRenderer Img(vietnam)
+            TxtLanguage (0.00,0.00) CanvasRenderer Txt('English')
+            BtnNextLanguage (0.00,0.00) CanvasRenderer Img(None) Button
+              Image (0.00,0.00) CanvasRenderer Img(ic_right)
+            BtnPrevLanguage (0.00,0.00) CanvasRenderer Img(None) Button
+              Image (0.00,0.00) CanvasRenderer Img(ic_left)
+          -RestoreButton (0.00,0.00) CanvasRenderer Img(button_kpgd) Button
+            Text (TMP) (0.00,0.00) CanvasRenderer Txt('Restore Purchases') LocalizeText
+        BtnClose (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+    PopupRename (0.00,0.00) CanvasGroup PopupRename
+      Overlay (0.00,0.00) CanvasRenderer Img(BG_loading_repeat-x) Button
+      Contains (0.00,0.00) CanvasRenderer Img(board_popup_pink)
+        Pingin (0.00,0.00) CanvasRenderer Img(title_popup_back_pink)
+        Image (0.00,0.00) CanvasRenderer Img(board_popup_pink)
+        Image (0.00,0.00) CanvasRenderer Img(title_popup)
+        -TxtTitle (0.00,0.00) CanvasRenderer Txt('Nickname') LocalizeText
+        Input Field (0.00,0.00) CanvasRenderer Img(box_entertext) TMPro.TMP_InputField
+          Text Area (0.00,0.00) RectMask2D
+            Placeholder (0.00,0.00) CanvasRenderer Txt('Enter Text...') LocalizeText
+            Text (0.00,0.00) CanvasRenderer Txt('\u200b')
+          Image (0.00,0.00) CanvasRenderer Img(ic_edit)
+        Contents (0.00,0.00) VerticalLayoutGroup
+          btnConfirm (0.00,0.00) CanvasRenderer Img(button_green) Button
+            Text (TMP) (0.00,0.00) CanvasRenderer Txt('Confirm') LocalizeText
+          -btnClose (0.00,0.00) CanvasRenderer Img(None) Button
+            -Text (TMP) (0.00,0.00) CanvasRenderer Txt('Close') LocalizeText
+        Text (TMP) (0.00,0.00) CanvasRenderer Txt('Please type your name') LocalizeText
+    DailyTaskTutorialPopup (0.00,0.00) CanvasRenderer Img(None) CanvasGroup DailyTask.PopupDailyTaskTutorial
+      Button: Close (0.00,0.00) CanvasRenderer Img(UISprite) Button
+      Panel (0.00,0.00) 
+        TxtDesc (0.00,0.00) CanvasRenderer Txt('Click on the blank to continue') LocalizeText
+        TaskIcon (0.00,0.00) CanvasRenderer Img(ic_DailyMission) CanvasGroup
+          Text (0.00,0.00) CanvasRenderer Txt('Complete Tasks') LocalizeText
+        StarIcon (0.00,0.00) CanvasRenderer Img(rate_star) CanvasGroup
+          Text (0.00,0.00) CanvasRenderer Txt('Earn Stars') LocalizeText
+        RewardIcon (0.00,0.00) CanvasRenderer Img(ic_box_1) CanvasGroup
+          Text (0.00,0.00) CanvasRenderer Txt('Claim Rewards') LocalizeText
+        Arrow (0.00,0.00) CanvasRenderer Img(arrow_tutorial) CanvasGroup
+        Arrow (1) (0.00,0.00) CanvasRenderer Img(arrow_tutorial) CanvasGroup
+    CreateMorePopup (0.00,0.00) CanvasGroup Clicker.CreateMorePopup
+      BG (0.00,0.00) CanvasRenderer Img(None)
+      BtnClose (0.00,0.00) CanvasRenderer Img(UISprite) Button
+      Panel (0.00,0.00) CanvasRenderer Img(board_popup)
+        Icon (0.00,0.00) CanvasRenderer Img(mascot_creative more)
+        Title (0.00,0.00) CanvasRenderer Txt('Create More!') LocalizeText
+        -Message (0.00,0.00) CanvasRenderer Txt('Progress will be lost') LocalizeText
+        BtnStartCreating (0.00,0.00) CanvasRenderer Img(button_green) Button
+          Txt (0.00,0.00) CanvasRenderer Txt('Start Creating') LocalizeText
+        -BtnCancel (0.00,0.00) CanvasRenderer Img(button_coin) Button
+          TxtCancel (0.00,0.00) CanvasRenderer Txt('No thanks') LocalizeText
+        BtnClose (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+    CollectionFullPopup (0.00,0.00) CanvasGroup Clicker.CollectionFullPopup
+      BG (0.00,0.00) CanvasRenderer Img(None)
+      BtnClose (0.00,0.00) CanvasRenderer Img(UISprite) Button
+      Panel (0.00,0.00) CanvasRenderer Img(board_popup)
+        Pingin (0.00,0.00) CanvasRenderer Img(title_popup_back)
+        Board (0.00,0.00) CanvasRenderer Img(board_popup)
+        Pingin (1) (0.00,0.00) CanvasRenderer Img(title_popup)
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('OOPS!!!') LocalizeText
+        Icon (0.00,0.00) CanvasRenderer Img(mascot_clt full)
+          Image (0.00,0.00) CanvasRenderer Img(unlock slot)
+        Title (0.00,0.00) CanvasRenderer Txt('Collection Full!') LocalizeText
+        -Message (0.00,0.00) CanvasRenderer Txt('Progress will be lost') LocalizeText
+        BtnWatchAd (0.00,0.00) CanvasRenderer Img(button_ads) Button
+          Txt (0.00,0.00) CanvasRenderer Txt('Watch Ads') LocalizeText
+          Image (0.00,0.00) CanvasRenderer Img(ic_ads)
+        BtnCoin (0.00,0.00) CanvasRenderer Img(button_coin) Button
+          TxtCoin (0.00,0.00) CanvasRenderer Txt('500')
+          Image (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+        -BtnCancel (0.00,0.00) CanvasRenderer Img(button_coin) Button
+          TxtCancel (0.00,0.00) CanvasRenderer Txt('No thanks') LocalizeText
+        BtnClose (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+    DeleteKeycapPopup (0.00,0.00) CanvasGroup Clicker.DeleteKeycapPopup
+      BG (0.00,0.00) CanvasRenderer Img(None)
+      BtnClose (0.00,0.00) CanvasRenderer Img(UISprite) Button
+      Panel (0.00,0.00) CanvasRenderer Img(board_popup)
+        Pingin (0.00,0.00) CanvasRenderer Img(title_popup_back)
+        Board (0.00,0.00) CanvasRenderer Img(board_popup)
+        Pingin (1) (0.00,0.00) CanvasRenderer Img(title_popup)
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('Delete') LocalizeText
+        Title (0.00,0.00) CanvasRenderer Txt('Delete this item?') LocalizeText
+        -Message (0.00,0.00) CanvasRenderer Txt('Progress will be lost') LocalizeText
+        RawImage (0.00,0.00) CanvasRenderer RawImage
+        BtnDelete (0.00,0.00) CanvasRenderer Img(button_red) Button
+          TxtCoin (0.00,0.00) CanvasRenderer Txt('Delete') LocalizeText
+        -BtnCancel (0.00,0.00) CanvasRenderer Img(button_coin) Button
+          TxtCancel (0.00,0.00) CanvasRenderer Txt('Cancel') LocalizeText
+        BtnClose (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+    UnlockSlotPopup (0.00,0.00) CanvasGroup Clicker.UnlockSlotPopup
+      BG (0.00,0.00) CanvasRenderer Img(None)
+      BtnClose (0.00,0.00) CanvasRenderer Img(UISprite) Button
+      Panel (0.00,0.00) CanvasRenderer Img(board_popup)
+        Pingin (0.00,0.00) CanvasRenderer Img(mascot_board_pop up)
+        Board (0.00,0.00) CanvasRenderer Img(board_popup)
+        Pingin (1) (0.00,0.00) CanvasRenderer Img(mascot_board_HL)
+        Pingin (2) (0.00,0.00) CanvasRenderer Img(mascot_board_HR)
+        Icon (0.00,0.00) CanvasRenderer Img(unlock slot)
+        Title (0.00,0.00) CanvasRenderer Txt('Unlock Slot?') LocalizeText
+        -Message (0.00,0.00) CanvasRenderer Txt('Progress will be lost') LocalizeText
+        BtnWatchAd (0.00,0.00) CanvasRenderer Img(button_ads) Button
+          Txt (0.00,0.00) CanvasRenderer Txt('Watch Ads') LocalizeText
+          Image (0.00,0.00) CanvasRenderer Img(ic_ads)
+        BtnCoin (0.00,0.00) CanvasRenderer Img(button_coin) Button
+          TxtCoin (0.00,0.00) CanvasRenderer Txt('500')
+          Image (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+        -BtnCancel (0.00,0.00) CanvasRenderer Img(button_coin) Button
+          TxtCancel (0.00,0.00) CanvasRenderer Txt('No thanks') LocalizeText
+        BtnClose (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+    NotEnoughMoneyPopup (0.00,0.00) CanvasRenderer Img(None) CanvasGroup NotEnoughMoneyPopup
+      BtnClose-Hidden (0.00,0.00) CanvasRenderer Img(UISprite) Button
+      Panel (0.00,0.00) CanvasRenderer Img(board_popup)
+        TxtTitle (0.00,0.00) CanvasRenderer Txt('Not enough coin') LocalizeText
+        Image (0.00,0.00) CanvasRenderer Img(mascot_coin)
+        PurchaseButton (0.00,0.00) CanvasRenderer Img(button_green) Button DG.Tweening.DOTweenAnimation
+          CoinText (0.00,0.00) CanvasRenderer Txt('+1000')
+          Icon (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+          Icon (0.00,0.00) CanvasRenderer Img(ic_ads)
+        CloseButton (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+    PopupLanguage (0.00,0.00) CanvasGroup Home.PopupLanguage
+      BG (0.00,0.00) CanvasRenderer Img(bg_language)
+      ScrollView (0.00,0.00) CanvasRenderer Img(Background) ScrollRect
+        Image (0.00,0.00) CanvasRenderer Img(while_border)
+        TxtTitle (0.00,0.00) CanvasRenderer Txt('Select Language') LocalizeText
+        -BtnConfirm (0.00,0.00) CanvasRenderer Img(button_v) Button DG.Tweening.DOTweenAnimation
+        Viewport (0.00,0.00) CanvasRenderer Img(UIMask) RectMask2D Mask
+          Content (0.00,0.00) ContentSizeFitter GridLayoutGroup
+            Item (0.00,0.00) CanvasRenderer Img(language_gray) LanguageUIItem Button
+              Selected (0.00,0.00) CanvasRenderer Img(languge_pick)
+                Image (1) (0.00,0.00) CanvasRenderer Img(icon_pick)
+              Flag (0.00,0.00) CanvasRenderer Img(vn)
+              TxtRegion (0.00,0.00) 

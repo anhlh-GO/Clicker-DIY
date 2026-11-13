@@ -1,0 +1,464 @@
+Tutorial (0.00,0.00) Blindbag.TutorialBlindBag
+Gameplay (0.00,0.00) BlindBagCollection.BlindbagCollectionController BlindBagCollection.BlindbagDragController
+  OpenBag (0.00,0.00) SR(BG_Ingame_tile o-100) SortingGroup
+    BlindBoxTray (0.00,0.00) BoxCollider2D BlindBagCollection.BlindBoxPlate
+      HighlightEffect (0.00,0.00) SortingGroup
+        BG (0.00,0.00) SR(Square o-1)
+        Effect (0.00,3.00) 
+          GameObject (-0.11,-0.07) DG.Tweening.DOTweenAnimation
+            glow_effect_1 (2) (0.00,0.00) SR(fx_rotation o1) DG.Tweening.DOTweenAnimation
+          glow_effect_1 (0.20,-0.07) SR(fx_glow_blue o2) DG.Tweening.DOTweenAnimation
+      Plate (0.00,7.50) SR(tray_topview o2)
+      PlateHoldResult (0.00,7.50) SR(tray_topview o2)
+      BoxHolder (0.00,7.50) 
+        BlindBox (2.75,-26.12) SortingGroup BoxCollider2D BlindBagCollection.BlindbagCollectionBox
+          Spine GameObject (blind_bag) (0.11,-2.25) MeshFilter MeshRenderer Spine.Unity.SkeletonAnimation
+          SkeletonFollower (0.31,-2.20) Spine.Unity.BoneFollower
+            Stable (2.20,0.20) 
+              PaperCard (0.00,0.00) SR(card_lengendary o2)
+                Lucky (0.00,0.00) SR(Bonus_card o1)
+                Keycap (-0.02,0.10) SR(bracelet_11 o3)
+        TopRight (3.27,-19.29) 
+        BottomLeft (-3.57,-22.41) 
+      UnboxZone (0.00,-1.00) 
+        TopRight (4.07,3.78) 
+        BottomLeft (-4.15,-3.28) 
+      FinalHoldZone (0.00,7.71) 
+        TopRight (3.58,1.27) 
+        BottomLeft (-3.60,-1.20) 
+      -TutorialUnbox (0.00,0.00) 
+        TutorialUnbox (0.00,0.00) SR(handtap o15) DG.Tweening.DOTweenAnimation
+  -Collection (0.00,0.00) SR(BG_Ingame_tile o-99) BlindBagCollection.CollectionSelector
+    BG_Ingame_tile (0.00,2.00) SR(BG_Ingame_tile o0)
+    Plate (0.00,-4.17) SortingGroup
+      Back (0.00,-0.61) SR(tray_topview o0)
+      ItemHolder (0.00,0.00) 
+        -CollectionItem (2.94,0.88) CircleCollider2D BlindBagCollection.ItemDraggable
+          Visual (0.00,0.00) SR(None o0)
+      PointPool (0.00,0.00) 
+        Point (1) (-4.38,-1.01) 
+        Point (2) (-4.56,0.39) 
+        Point (3) (-2.61,-0.44) 
+        Point (4) (-1.10,-0.90) 
+        Point (5) (-1.60,0.82) 
+        Point (6) (-0.38,0.17) 
+        Point (7) (0.22,0.91) 
+        Point (8) (1.38,0.78) 
+        Point (9) (0.73,-0.25) 
+        Point (10) (2.03,-0.59) 
+        Point (11) (2.76,0.57) 
+        Point (12) (4.38,-0.51) 
+    CollectionLayer (0.00,6.50) SortingGroup
+      Pivot (0.00,0.00) 
+        Collection_NatureFan (0.00,0.00) SR(collection_nature o0) BlindBagCollection.CollectionBox
+          Items (0.00,0.00) SortingGroup
+            -CaseBig (-0.02,-4.18) SR(case_solid o1)
+              -CaseBigFront (0.05,-1.08) SR(case_solid_F o3)
+            -Keycap_1 (-1.85,-3.57) SR(keycap_E_6 o2)
+            -Keycap_2 (0.09,-3.56) SR(keycap_E_12 o2)
+            -Keycap_3 (2.03,-3.56) SR(keycap_E_3 o2)
+            -Keycap_4 (-2.33,-1.08) SR(keycap_C_4 o2)
+            -Keycap_5 (0.14,-1.41) SR(charm_wreath o2)
+            -Keycap_6 (2.36,-1.13) SR(keycap_R_15 o2)
+            -Keycap_7 (-2.35,1.22) SR(keycap_E_8 o2)
+            -Keycap_8 (0.10,1.13) SR(_0031_charm_sun o2)
+            -Keycap_9 (2.37,1.08) SR(_0040_charm_clover o2)
+            Cover (0.00,-5.58) SR(cover_nature o3)
+          Plastics (0.00,0.00) SortingGroup
+        Collection_SweetWorld (17.00,0.00) SR(collection_sweet o0) BlindBagCollection.CollectionBox
+          Items (0.00,0.00) SortingGroup
+            -CaseBig (-1.22,-0.49) SR(case_boxcake o1)
+              -CaseBigFront (0.14,-3.09) SR(case_boxcake_F o3)
+            -Keycap_1 (-2.06,-0.14) SR(keycap_C_7 o2)
+            -Keycap_2 (-0.13,-0.16) SR(keycap_R_3 o2)
+            -Keycap_3 (-2.07,-1.73) SR(keycap_C_8 o2)
+            -Keycap_4 (-0.14,-1.76) SR(keycap_R_4 o2)
+            -Keycap_5 (2.55,0.63) SR(_0027_charm_gummy_1 o2)
+            -Keycap_6 (2.55,-1.27) SR(_0033_charm_candy_1 o2)
+            -Keycap_7 (2.46,-3.95) SR(keycap_R_8 o4)
+            -Keycap_8 (-0.33,-4.58) SR(_0041_candy1_pink o4)
+            -Keycap_9 (-2.60,-4.47) SR(charm_donut o4)
+            Cover (0.00,-4.47) SR(cover_sweet o3)
+          Plastics (0.00,0.00) SortingGroup
+        Collection_AnimalFriends (34.00,0.00) SR(collection_animal o0) BlindBagCollection.CollectionBox
+          Items (0.00,0.00) SortingGroup
+            -CaseBig (-2.06,-3.27) SR(ic_case_carton o1)
+              -CaseBigFront (0.29,-1.60) SR(ic_case_carton_F o3)
+            -Keycap_1 (-1.75,-2.46) SR(keycap_cat o2)
+            -Keycap_2 (-2.44,0.86) SR(keycap_E_10 o2)
+            -Keycap_3 (0.02,0.60) SR(keycap_E_4 o2)
+            -Keycap_4 (2.44,0.85) SR(keycap_R_5 o2)
+            -Keycap_5 (2.82,-1.53) SR(charm_dragon o2)
+            -Keycap_6 (1.11,-2.61) SR(None o2)
+            -Keycap_7 (2.80,-3.72) SR(_0029_charm_capy o2)
+            -Keycap_8 (1.05,-4.57) SR(_0039_charm_cat o4)
+            -Keycap_9 (5.15,-4.34) SR(_0036_charm_coca o2)
+            Cover (0.01,-5.41) SR(covoer_animal o3)
+          Plastics (0.00,0.00) SortingGroup
+        Collection_OceanFriends (51.00,0.00) SR(collection_ocean o0) BlindBagCollection.CollectionBox
+          Items (0.00,0.00) SortingGroup
+            -CaseBig (1.24,-3.14) SR(case_turtle o1)
+            -Keycap_1 (1.23,-3.00) SR(keycap_turtle o2)
+            -Keycap_2 (-2.33,0.75) SR(keycap_R_12 o2)
+            -Keycap_3 (-2.34,-1.63) SR(keycap_E_14 o2)
+            -Keycap_4 (-2.33,-4.05) SR(keycap_L_2 o2)
+            -Keycap_5 (1.77,-0.62) SR(_0046_charm_snaill o2)
+            -Keycap_6 (0.12,0.74) SR(charm_jellyfish o2)
+            -Keycap_7 (2.81,0.89) SR(charm_pearl o2)
+            -Keycap_8 (1.05,-4.57) SR(_0039_charm_cat o4)
+            -Keycap_9 (5.15,-4.34) SR(_0036_charm_coca o2)
+            -Cover (0.01,-5.41) SR(covoer_animal o3)
+          Plastics (0.00,0.00) SortingGroup
+        Collection_SpaceTime (68.00,0.00) SR(collection_space o0) BlindBagCollection.CollectionBox
+          Items (0.00,0.00) SortingGroup
+            -CaseBig (-1.32,-3.50) SR(case_ufo o1)
+            -Keycap_1 (-1.30,-2.72) SR(keycap_ufo o2)
+            -Keycap_2 (2.48,-4.07) SR(keycap_E_7 o2)
+            -Keycap_3 (2.48,-1.64) SR(keycap_L_23 o2)
+            -Keycap_4 (2.46,0.74) SR(keycap_R_11 o2)
+            -Keycap_5 (0.37,-0.69) SR(keycap_ufo o2)
+            -Keycap_6 (-0.78,0.81) SR(charm_alien o2)
+            -Keycap_7 (-2.87,0.81) SR(None o2)
+            -Keycap_8 (-2.55,-0.73) SR(charm_wing o4)
+            -Keycap_9 (5.15,-4.34) SR(_0036_charm_coca o2)
+            -Cover (0.01,-5.41) SR(covoer_animal o3)
+          Plastics (0.00,0.00) SortingGroup
+        Collection_AdventureNow (85.00,0.00) SR(collection_adventure o0) BlindBagCollection.CollectionBox
+          Items (0.00,0.00) SortingGroup
+            -CaseBig (-1.23,-2.77) SR(case_chest o1)
+              -CaseBigFront (0.12,-2.38) SR(case_chest_front o3)
+            -Keycap_1 (-2.11,-3.09) SR(keycap_E_1 o2)
+            -Keycap_2 (-0.16,-3.07) SR(keycap_R_13 o2)
+            -Keycap_3 (2.62,-4.03) SR(keycap_R_14 o4)
+            -Keycap_4 (2.62,-1.54) SR(keycap_E_2 o2)
+            -Keycap_5 (2.45,0.81) SR(charm_wheel o2)
+            -Keycap_6 (0.19,0.80) SR(charm_key o2)
+            -Keycap_7 (-2.31,0.66) SR(charm_hat o2)
+            -Keycap_8 (0.10,1.13) SR(_0031_charm_sun o2)
+            -Keycap_9 (2.37,1.08) SR(_0040_charm_clover o2)
+            Cover (0.01,-5.28) SR(cover_adventure o3)
+          Plastics (0.00,0.00) SortingGroup
+        Collection_FashionPop (102.00,0.00) SR(collection_fashion o0) BlindBagCollection.CollectionBox
+          Items (0.00,0.00) SortingGroup
+            -CaseBig (-1.38,-2.99) SR(case_shoebox o1)
+              -CaseBigFront (0.11,-1.89) SR(case_shoebox_F o3)
+            -Keycap_1 (-2.26,-2.99) SR(keycap_R_19 o2)
+            -Keycap_2 (-0.27,-3.16) SR(keycap_R_29 o2)
+            -Keycap_3 (2.62,-4.08) SR(charm_cap o4)
+            -Keycap_4 (2.58,-1.88) SR(charm_glasses o2)
+            -Keycap_5 (2.58,0.32) SR(charm_socks o2)
+            -Keycap_6 (-0.01,0.69) SR(keycap_R_20 o2)
+            -Keycap_7 (-2.58,0.74) SR(keycap_L_6 o2)
+            -Keycap_8 (0.10,1.13) SR(_0031_charm_sun o2)
+            -Keycap_9 (2.37,1.08) SR(_0040_charm_clover o2)
+            Cover (0.01,-5.41) SR(front_fashion o3)
+          Plastics (0.00,0.00) SortingGroup
+        Collection_FastFood (119.00,0.00) SR(collection_fastfood o0) BlindBagCollection.CollectionBox
+          Items (0.00,0.00) SortingGroup
+            -CaseBig (-1.07,-0.10) SR(case_fishbox o1)
+              -CaseBigFront (-0.01,-1.43) SR(case_fishbox_F o3)
+            -Keycap_1 (-2.08,0.03) SR(keycap_meatball o2)
+            -Keycap_2 (-0.18,0.00) SR(keycap_fish o2)
+            -Keycap_3 (2.65,0.49) SR(keycap_C_12 o4)
+            -Keycap_4 (2.51,-2.20) SR(keycap_C_11 o4)
+            -Keycap_5 (2.42,-4.49) SR(charm_sauce o4)
+            -Keycap_6 (0.04,-4.31) SR(charm_pizza o4)
+            -Keycap_7 (-1.28,-2.79) SR(charm_potato o4)
+            -Keycap_8 (-2.87,-4.54) SR(_0036_charm_coca o4)
+            -Keycap_9 (2.37,1.08) SR(_0040_charm_clover o2)
+            Cover (-0.00,-3.71) SR(front_fastfood o3)
+          Plastics (0.00,0.00) SortingGroup
+        Collection_FruitParty (136.00,0.00) SR(collection_fruit o0) BlindBagCollection.CollectionBox
+          Items (0.00,0.00) SortingGroup
+            -CaseBig (-1.47,-3.33) SR(case_durian o1)
+              -CaseBigFront (-0.01,-1.28) SR(case_durian_F o3)
+            -Keycap_1 (-1.59,-3.00) SR(keycap_durian o2)
+            -Keycap_2 (2.61,-4.13) SR(keycap_E_18 o4)
+            -Keycap_3 (2.62,-1.67) SR(keycap_E_16 o2)
+            -Keycap_4 (2.61,0.79) SR(keycap_E_17 o2)
+            -Keycap_5 (0.60,1.08) SR(charm_cherry o2)
+            -Keycap_6 (0.47,-0.92) SR(_0030_charm_apple o2)
+            -Keycap_7 (-1.26,1.03) SR(_0034_charm_kiwi o2)
+            -Keycap_8 (-2.93,-0.11) SR(_0032_charm_lemon o2)
+            -Keycap_9 (2.37,1.08) SR(_0040_charm_clover o2)
+            Cover (0.01,-4.93) SR(front_fruit o3)
+          Plastics (0.00,0.00) SortingGroup
+        Collection_GadgetBox (153.00,0.00) SR(collection_gadget o0) BlindBagCollection.CollectionBox
+          Items (0.00,0.00) SortingGroup
+            -CaseBig (-1.22,-2.74) SR(case_laptop o1)
+              -CaseBigFront (0.15,-2.25) SR(case_laptop_F o3)
+            -Keycap_1 (-2.05,-2.85) SR(keycap_C_18 o2)
+            -Keycap_2 (-0.14,-2.85) SR(keycap_C_19 o4)
+            -Keycap_3 (2.61,-4.06) SR(keycap_R_22 o4)
+            -Keycap_4 (2.62,-1.68) SR(keycap_R_21 o2)
+            -Keycap_5 (2.55,0.57) SR(charm_headset o2)
+            -Keycap_6 (0.00,0.80) SR(charm_mouse o2)
+            -Keycap_7 (-2.41,0.86) SR(charm_console o2)
+            -Keycap_8 (-2.93,-0.11) SR(_0032_charm_lemon o2)
+            -Keycap_9 (2.37,1.08) SR(_0040_charm_clover o2)
+            Cover (0.01,-5.38) SR(front_gadget o3)
+          Plastics (0.00,0.00) SortingGroup
+        Collection_KawaiiLand (170.00,0.00) SR(collection_kawaii o0) BlindBagCollection.CollectionBox
+          Items (0.00,0.00) SortingGroup
+            -CaseBig (-0.97,-0.96) SR(case_bento o1)
+              -CaseBigFront (-0.00,-1.72) SR(case_bento_F o4)
+            -Keycap_1 (-1.94,0.23) SR(keycap_R_17 o2)
+            -Keycap_2 (-1.94,-1.24) SR(keycap_R_16 o2)
+            -Keycap_3 (0.09,0.22) SR(keycap_C_15 o2)
+            -Keycap_4 (0.09,-1.30) SR(keycap_R_18 o3)
+            -Keycap_5 (2.77,0.80) SR(charm_lucky_cat o2)
+            -Keycap_6 (2.85,-1.73) SR(charm_umbrella o2)
+            -Keycap_7 (2.47,-3.98) SR(keycap_L_5 o6)
+            -Keycap_8 (-0.31,-4.54) SR(charm_geta o6)
+            -Keycap_9 (-2.62,-4.59) SR(charm_sakura o6)
+            Cover (0.00,-1.95) SR(front_kawaii o5)
+          Plastics (0.00,0.00) SortingGroup
+        Collection_CozyKitchen (187.00,0.00) SR(collection_kichen o0) BlindBagCollection.CollectionBox
+          Items (0.00,0.00) SortingGroup
+            -CaseBig (-1.77,-3.34) SR(case_cooker o1)
+              -CaseBigFront (0.00,-0.98) SR(case_cooker_F o4)
+            -Keycap_1 (-1.77,-2.52) SR(keycap_rice o2)
+            -Keycap_2 (-2.44,0.32) SR(keycap_R_25 o2)
+            -Keycap_3 (0.01,0.73) SR(keycap_R_24 o2)
+            -Keycap_4 (2.44,0.22) SR(keycap_R_23 o3)
+            -Keycap_5 (0.87,-1.72) SR(charm_sponge o2)
+            -Keycap_6 (2.58,-2.84) SR(_0044_pan---Smart-Object-Group o2)
+            -Keycap_7 (1.21,-4.28) SR(charm_lid o6)
+            -Keycap_8 (-0.31,-4.54) SR(charm_geta o6)
+            -Keycap_9 (-2.62,-4.59) SR(charm_sakura o6)
+            Cover (0.01,-4.84) SR(front_kitchen o5)
+          Plastics (0.00,0.00) SortingGroup
+      Next (6.50,0.00) SR(arrow o0) BoxCollider2D BlindBagCollection.CollectionNaviagationButton
+      -Previous (-6.50,0.00) SR(arrow o0) BoxCollider2D BlindBagCollection.CollectionNaviagationButton
+    FocusLayer (0.00,0.00) SortingGroup
+    Pages (0.00,0.00) PagesScrollVisual
+      Canvas (0.00,0.00) Canvas CanvasScaler
+        HorizontalLayoutGroup (0.00,0.00) HorizontalLayoutGroup
+          Item (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (0.00,0.00) CanvasRenderer Img(circle)
+          Item (1) (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (1) (0.00,0.00) CanvasRenderer Img(circle)
+          Item (2) (0.00,0.00) CanvasRenderer Img(circle)
+            Item (2) (0.00,0.00) CanvasRenderer Img(circle)
+          Item (3) (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (3) (0.00,0.00) CanvasRenderer Img(circle)
+          Item (4) (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (4) (0.00,0.00) CanvasRenderer Img(circle)
+          -Item (5) (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (5) (0.00,0.00) CanvasRenderer Img(circle)
+          -Item (6) (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (6) (0.00,0.00) CanvasRenderer Img(circle)
+          -Item (7) (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (7) (0.00,0.00) CanvasRenderer Img(circle)
+          -Item (8) (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (8) (0.00,0.00) CanvasRenderer Img(circle)
+          -Item (9) (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (9) (0.00,0.00) CanvasRenderer Img(circle)
+          -Item (10) (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (10) (0.00,0.00) CanvasRenderer Img(circle)
+          -Item (11) (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (11) (0.00,0.00) CanvasRenderer Img(circle)
+          -Item (12) (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (12) (0.00,0.00) CanvasRenderer Img(circle)
+          -Item (13) (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (13) (0.00,0.00) CanvasRenderer Img(circle)
+          -Item (14) (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (14) (0.00,0.00) CanvasRenderer Img(circle)
+          -Item (15) (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (15) (0.00,0.00) CanvasRenderer Img(circle)
+          -Item (16) (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (16) (0.00,0.00) CanvasRenderer Img(circle)
+          -Item (17) (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (17) (0.00,0.00) CanvasRenderer Img(circle)
+          -Item (18) (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (18) (0.00,0.00) CanvasRenderer Img(circle)
+          -Item (19) (0.00,0.00) CanvasRenderer Img(circle)
+            -Item (19) (0.00,0.00) CanvasRenderer Img(circle)
+  ShowCompleteBoxset (0.00,0.00) SortingGroup BlindBagCollection.ShowCompleteBoxset
+    -Root (0.00,0.00) 
+      Overlay (0.00,0.00) SR(rectangle o0)
+      Header (0.00,9.50) SR(Title_feature_2 o1) SortingGroup DG.Tweening.DOTweenAnimation
+        Title (0.00,0.00) MeshRenderer Txt('Awesome!') LocalizeText
+UIManager (0.00,0.00) Canvas CanvasScaler GraphicRaycaster UIManager
+  [Sceen] (0.00,0.00) 
+    ScreenInGame (0.00,0.00) CanvasGroup BlindBagCollection.BlindbagGameScreen
+      TopLeftUI (0.00,0.00) VerticalLayoutGroup
+        ButtonHome (0.00,0.00) CanvasRenderer Img(button_home) Button
+        Live (0.00,0.00) CanvasRenderer Img(LIVE)
+        LivePanel (0.00,0.00) CanvasRenderer Img(box_view) Livestream.LivestreamPanel
+          ViewerCountText (0.00,0.00) CanvasRenderer Txt('38989')
+          -LiveImage (0.00,0.00) CanvasRenderer Img(None)
+            Dot (0.00,0.00) CanvasRenderer Img(SlicedCircle)
+            LiveText (0.00,0.00) CanvasRenderer Txt('Live')
+          Image (0.00,0.00) CanvasRenderer Img(ic_view)
+      ContentBlindBox (0.00,0.00) BlindBagCollection.CharmFlyToBasketBB
+        -BasketBehind (0.00,0.00) CanvasRenderer Img(basket)
+        -Basket (0.00,0.00) CanvasRenderer Img(basket)
+          TopRight (0.00,0.00) 
+          BottomLeft (0.00,0.00) 
+          Image (0.00,0.00) CanvasRenderer Img(basket_F)
+        BG (0.00,0.00) CanvasRenderer Img(None)
+        Content (0.00,0.00) 
+          Image (1) (0.00,0.00) CanvasRenderer Img(effect) DG.Tweening.DOTweenAnimation
+          -Message (0.00,0.00) CanvasRenderer Txt('Get one more!') LocalizeText
+          Image (0.00,0.00) CanvasRenderer Img(CONGRATULATION copy)
+        CharmHolder (0.00,0.00) 
+          -CharmImage (0.00,0.00) CanvasRenderer Img(None)
+        -Star (0.00,0.00) CanvasRenderer Img(charm_starrainbow) DG.Tweening.DOTweenAnimation
+      -BlockScreen (0.00,0.00) CanvasRenderer Img(None)
+      CommentChat (0.00,0.00) 
+        CommentHandler (0.00,0.00) CanvasRenderer Img(None) RectMask2D CommentHandler
+        ChatInput (0.00,0.00) CanvasRenderer Img(comment_completed) Livestream.ChatInput
+          InputField (TMP) (0.00,0.00) CanvasRenderer Img(InputFieldBackground) TMPro.TMP_InputField
+            Text Area (0.00,0.00) RectMask2D
+              Placeholder (0.00,0.00) CanvasRenderer Txt('Send a chat to the subscriber!') LayoutElement LocalizeText
+              Text (0.00,0.00) CanvasRenderer Txt('\u200b')
+        Emoji (488.00,-1175.00) ParticleSystem ParticleSystemRenderer
+    -ConfettiFullscreen (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleImage
+      Left (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleImage
+        Trails (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleTrailRenderer
+      Right (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleImage
+        Trails (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleTrailRenderer
+  [Popup] (0.00,0.00) 
+    CollectionCompletePopup (0.00,0.00) CanvasGroup BlindBagCollection.CollectionCompletePopup
+      BG (0.00,0.00) CanvasRenderer Img(BG_complete_repeat)
+      Image (0.00,0.00) CanvasRenderer Img(photo_complete)
+      Title (0.00,0.00) CanvasRenderer Img(title_pink)
+        TxtTitle (0.00,0.00) CanvasRenderer Txt('Completed!') LocalizeText
+      Compliment (0.00,0.00) CanvasRenderer Img(comment_completed)
+        Ghim (0.00,0.00) CanvasRenderer Img(pin_comment)
+        Avatar (0.00,0.00) CanvasRenderer Img(viewer_3)
+        Message (0.00,0.00) CanvasRenderer Txt('Wow, this is exactly what I wa') LocalizeText
+      RewardInfo (0.00,0.00) 
+        Text (TMP) (0.00,0.00) CanvasRenderer Txt('Earnings:') LocalizeText
+        Text (TMP) (1) (0.00,0.00) CanvasRenderer Txt('Tips:') LocalizeText
+        TxtEarnings (0.00,0.00) CanvasRenderer Txt('+500')
+        ImgCoin (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+        TxtTips (0.00,0.00) CanvasRenderer Txt('+500')
+        ImgCoin (1) (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+      BtnAdReward (0.00,0.00) CanvasRenderer Img(button_green) Button
+        Holder (0.00,0.00) CanvasRenderer Img(button_green) DG.Tweening.DOTweenAnimation
+          Txt x2 (0.00,0.00) CanvasRenderer Txt('x2 Reward') LocalizeText
+          IconAd (0.00,0.00) CanvasRenderer Img(ic_ads)
+      BtnNoThanls (0.00,0.00) CanvasRenderer Img(button_green) Button
+        Txt x2 (0.00,0.00) CanvasRenderer Txt('No thanks') LocalizeText
+      -ConfettiFullscreen (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleImage
+        Left (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleImage
+          Trails (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleTrailRenderer
+        Right (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleImage
+          Trails (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleTrailRenderer
+      Money (0.00,0.00) CanvasRenderer Img(box_coin) CanvasGroup MoneyManager JobGame.CollectingCoin
+        MoneyIconImage (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+        MoneyText (0.00,0.00) CanvasRenderer Txt('3000')
+        MoneyItem (0.00,0.00) CanvasRenderer Txt('9999') CanvasGroup Home.MoneyItem
+          MoneyText (2) (0.00,0.00) CanvasRenderer Txt('+')
+          Image (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+        SpawnPos (0.00,0.00) 
+    -DoneBoxCharmPopup (0.00,0.00) CanvasGroup ScoopGame.DoneBoxCharmPopup
+      BackContent (0.00,0.00) 
+        BG (0.00,0.00) CanvasRenderer Img(BG)
+        Panel (0.00,0.00) 
+          Body (0.00,0.00) 
+            Image (0.00,0.00) CanvasRenderer Img(Title_feature_2)
+            Effect (0.00,0.00) 
+              Scale (0.00,0.00) CanvasRenderer Img(effectbling_awessome_2) DG.Tweening.DOTweenAnimation
+              Scale (1) (0.00,0.00) CanvasRenderer Img(fx_particle_yellow) DG.Tweening.DOTweenAnimation
+              Scale (2) (0.00,0.00) CanvasRenderer Img(fx_particle_yellow) DG.Tweening.DOTweenAnimation
+              Rotate (0.00,0.00) CanvasRenderer Img(fx_particle_yellow) DG.Tweening.DOTweenAnimation
+              Rotate (1) (0.00,0.00) CanvasRenderer Img(fx_particle_yellow) DG.Tweening.DOTweenAnimation
+              Rotate (2) (0.00,0.00) CanvasRenderer Img(fx_particle_yellow) DG.Tweening.DOTweenAnimation
+            ImgBox (0.00,0.00) CanvasRenderer Img(icon_box_1) DG.Tweening.DOTweenAnimation DG.Tweening.DOTweenAnimation
+            Title (0.00,0.00) CanvasRenderer Txt('Completed!') LocalizeText
+          -ConfettiFullscreen (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleImage
+            Left (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleImage
+              Trails (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleTrailRenderer
+            Right (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleImage
+              Trails (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleTrailRenderer
+          DeliveryButton (0.00,0.00) CanvasRenderer Img(button_green) Button DG.Tweening.DOTweenAnimation
+            MoneyAdText (0.00,0.00) CanvasRenderer Txt('Delivery') LocalizeText
+      DeliveryBG (0.00,0.00) CanvasRenderer Img(bg_loading)
+        Star (0.00,0.00) 
+          Image (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+          Image (1) (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+          Image (2) (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+          Image (3) (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+          Image (4) (0.00,0.00) CanvasRenderer Img(BG_loading_element) DG.Tweening.DOTweenAnimation
+        TxtDelivering (0.00,0.00) CanvasRenderer Txt('Delivering...') LocalizeText
+        SkeletonGraphic (hamster_shipber) (0.00,0.00) CanvasRenderer Spine.Unity.SkeletonGraphic
+    PopupWowBlindbag (0.00,0.00) CanvasGroup Blindbag.PopupWowBlindbag
+      -ConfettiFullscreen (1) (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleImage
+        Left (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleImage
+          Trails (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleTrailRenderer
+        Right (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleImage
+          Trails (0.00,0.00) CanvasRenderer AssetKits.ParticleImage.ParticleTrailRenderer
+      Normal (0.00,0.00) 
+        TxtReaction (0.00,0.00) CanvasRenderer Txt('Unbelievable')
+      GetOneMore (0.00,0.00) 
+        Image (0.00,0.00) CanvasRenderer Img(Title_blue)
+        Text (TMP) (0.00,0.00) CanvasRenderer Txt('Get 1 more !') LocalizeText
+    CoinHolder (0.00,0.00) 
+    NotEnoughMoneyPopup (0.00,0.00) CanvasRenderer Img(None) CanvasGroup NotEnoughMoneyPopup
+      BtnClose-Hidden (0.00,0.00) CanvasRenderer Img(UISprite) Button
+      Panel (0.00,0.00) CanvasRenderer Img(board_popup)
+        TxtTitle (0.00,0.00) CanvasRenderer Txt('Not enough coin') LocalizeText
+        Image (0.00,0.00) CanvasRenderer Img(mascot_coin)
+        PurchaseButton (0.00,0.00) CanvasRenderer Img(button_green) Button DG.Tweening.DOTweenAnimation
+          CoinText (0.00,0.00) CanvasRenderer Txt('+1000')
+          Icon (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+          Icon (0.00,0.00) CanvasRenderer Img(ic_ads)
+        CloseButton (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+    BackHomePopup (0.00,0.00) CanvasGroup Clicker.BackHomePopup
+      BG (0.00,0.00) CanvasRenderer Img(None)
+      BtnClose (0.00,0.00) CanvasRenderer Img(UISprite) Button
+      Panel (0.00,0.00) CanvasRenderer Img(board_popup)
+        Title (0.00,0.00) CanvasRenderer Txt('Quit game') LocalizeText
+        Message (0.00,0.00) CanvasRenderer Txt('Progress will be lost') LocalizeText
+        BtnConfirm (0.00,0.00) CanvasRenderer Img(button_green) Button
+          TxtConfirm (0.00,0.00) CanvasRenderer Txt('Confirm') LocalizeText
+        BtnCancel (0.00,0.00) CanvasRenderer Img(button_coin) Button
+          TxtCancel (0.00,0.00) CanvasRenderer Txt('Tap to close') LocalizeText
+        Icon (0.00,0.00) CanvasRenderer Img(quit)
+        BtnClose (0.00,0.00) CanvasRenderer Img(button_x copy 2) Button
+    AutoSellPopup (0.00,0.00) CanvasRenderer Img(None) CanvasGroup BlindBagCollection.AutoSellPopup
+      Overlay (0.00,0.00) CanvasRenderer Img(UISprite) Button
+      Panel (0.00,0.00) CanvasRenderer Img(board_popup_pink)
+        Header (0.00,0.00) CanvasRenderer Img(title_popup_back_pink)
+        Board (0.00,0.00) CanvasRenderer Img(board_popup_pink)
+        Image (0.00,0.00) CanvasRenderer Img(title_popup)
+        TxtTitle (0.00,0.00) CanvasRenderer Txt('You already own this item') LocalizeText
+        TradeNormalButton (0.00,0.00) CanvasRenderer Img(button_green) Button
+          Text (TMP) (0.00,0.00) CanvasRenderer Txt('Trade') LocalizeText
+        -TradeAdButton (0.00,0.00) CanvasRenderer Img(button_startlive) Button DG.Tweening.DOTweenAnimation
+          Image (0.00,0.00) CanvasRenderer Img(icon_ad)
+          Image (1) (0.00,0.00) CanvasRenderer Img(icon_money)
+          CoinText (0.00,0.00) CanvasRenderer Txt('563') LocalizeText
+          -Text (TMP) (0.00,0.00) CanvasRenderer Txt('Free') LocalizeText
+        Image (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+        CoinText (0.00,0.00) CanvasRenderer Txt('0') LocalizeText
+        Arrow (0.00,0.00) CanvasRenderer Img(Triangle 2)
+        Arrow (0.00,0.00) CanvasRenderer Img(Triangle 2)
+        ScrollView (0.00,0.00) CanvasRenderer Img(Background) ScrollRect
+          Viewport (0.00,0.00) CanvasRenderer Img(UIMask) Mask
+            Content (0.00,0.00) GridLayoutGroup
+              -SellIItem (0.00,0.00) CanvasRenderer Img(None) BlindBagCollection.SellItem
+                Icon (0.00,0.00) CanvasRenderer Img(None)
+                Count (0.00,0.00) CanvasRenderer Txt('x1')
+                -=> (0.00,0.00) CanvasRenderer Img(arrow_trade)
+                -Price (0.00,0.00) CanvasRenderer Txt('300') ContentSizeFitter
+                  Money (0.00,0.00) CanvasRenderer Img(ic_coin_full)
+          -ScrollbarVertical (0.00,0.00) CanvasRenderer Img(circle) Scrollbar
+            SlidingArea (0.00,0.00) 
+              Handle (0.00,0.00) CanvasRenderer Img(circle)
+        -CloseButton (0.00,0.00) CanvasRenderer Img(button_x) Button
+    PopupNoInternet (0.00,0.00) CanvasRenderer NoInternetPopup CanvasGroup
+      Container (0.00,0.00) CanvasRenderer Img(None)
+        Panel (0.00,0.00) CanvasRenderer Img(None)
+          Title (0.00,0.00) CanvasRenderer Img(None)
+          label (0.00,0.00) CanvasRenderer Txt("Some actions are't available o")
+          OkayButton (0.00,0.00) CanvasRenderer Img(None) Button
+  BtnHide (0.00,0.00) CanvasRenderer Img(None) Button
+GameHandle (0.00,0.00) 
+  CameraMain (0.00,0.00) Camera AudioListener UnityEngine.EventSystems.Physics2DRaycaster UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  CameraUI (0.00,0.00) Camera UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  CameraScreenshot (0.00,-1.40) Camera UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  EventSystem (0.00,0.00) UnityEngine.EventSystems.EventSystem UnityEngine.InputSystem.UI.InputSystemUIInputModule
