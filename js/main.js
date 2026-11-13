@@ -10,6 +10,10 @@
     E.fetchJSON('data/mats.json'), E.fetchJSON('assets/spine/spine.json'), E.fetchJSON('assets/audio/audio.json'), E.fetchJSON('data/ps.json'),
   ]);
   E.D.ps = ps;
+  try { const loc = await E.fetchJSON('data/localize.json'); E.langs = loc.langs; E._loc = loc.map; } catch (e) {}
+  { const u = (E.save.user || {}); const nav = (navigator.language || 'en').toLowerCase();
+    const guess = nav.startsWith('vi') ? 'Vietnamese' : nav.startsWith('fr') ? 'French' : nav.startsWith('de') ? 'German' : nav.startsWith('es') ? 'Spanish' : nav.startsWith('pt') ? 'Portuguese' : nav.startsWith('ru') ? 'Russian' : nav.startsWith('ja') ? 'Japanese' : nav.startsWith('ko') ? 'Korean' : 'English';
+    E.setLanguage(u.CurrentLanguage && String(u.CurrentLanguage).trim() ? u.CurrentLanguage : guess); }
   E.D.spr = sp.spr; E.D.tex = sp.tex; E.D.so = so; E.D.names = names; E.D.enums = enums; E.D.mats = mats; E.D.spineMeta = spine; E.D.audio = audio;
   for (const [k, v] of Object.entries(enums['Framework.ESound'] || {})) E.ESound[v] = k;
   await Promise.all(['sharedassets0.assets', 'resources.assets', 'sharedassets1.assets', 'sharedassets3.assets', 'sharedassets4.assets', 'sharedassets5.assets', 'sharedassets6.assets'].map((f) => E.loadFile(f).catch(() => null)));

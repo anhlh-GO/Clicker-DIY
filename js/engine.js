@@ -67,6 +67,15 @@ E.collectRefs = (v, out) => {
   if (v && typeof v === 'object') for (const k in v) E.collectRefs(v[k], out);
 };
 
+// ------------------------------------------------------------------ localisation (Key,English,Vietnamese,... table from the game)
+E.langs = ['English']; E.lang = 'English'; E._loc = null; E._li = 0;
+E.setLanguage = (l) => { const i = E.langs.indexOf(l); E.lang = i >= 0 ? l : 'English'; E._li = Math.max(0, i); };
+E.tr = (s) => {
+  if (!E._li || !s || !E._loc) return s;
+  const v = E._loc[s] || E._loc[s.trim()];
+  return v && v[E._li] ? v[E._li] : s;
+};
+
 // ------------------------------------------------------------------ tint cache
 E._tint = new Map();
 E.tinted = (s, col) => {

@@ -358,10 +358,10 @@ const layoutText = (t, maxW, fs) => {
   const [fam, wt] = fontOf(t);
   const italic = t.st & 2 ? 'italic ' : '';
   const bold = t.st & 1 ? Math.max(wt, 800) : wt;
-  ctx.font = `${italic}${bold} ${fs}px "${fam}"`;
+  ctx.font = `${italic}${bold} ${fs}px "${fam}", "Baloo Bhai 2", "Nunito", sans-serif`;
   const cs = (t.cs || 0) * fs / 100;
   if ('letterSpacing' in ctx) ctx.letterSpacing = cs + 'px';
-  let txt = t.text == null ? '' : String(t.text);
+  let txt = t.text == null ? '' : E.tr(String(t.text));
   if (t.st & 16) txt = txt.toUpperCase(); else if (t.st & 8) txt = txt.toLowerCase();
   const runs = parseRich(txt);
   // flatten into words with style
@@ -369,7 +369,7 @@ const layoutText = (t, maxW, fs) => {
   const wrap = t.wrap === 1 || t.wrap === true;
   const pushTok = (tok, run) => {
     const f = run.size ? (run.size < 0 ? -run.size : fs * run.size) : fs;
-    ctx.font = `${italic}${bold} ${f}px "${fam}"`;
+    ctx.font = `${italic}${bold} ${f}px "${fam}", "Baloo Bhai 2", "Nunito", sans-serif`;
     const w = ctx.measureText(tok).width;
     if (wrap && lw + w > maxW + 0.5 && lw > 0 && tok.trim()) {
       // trim trailing space
@@ -441,7 +441,7 @@ const drawTxt = (t, g, alpha, world) => {
     for (const pass of [0, 1, 2]) {
       let xx = x;
       for (const tk of line) {
-        ctx.font = `${L.italic}${L.wt} ${tk.f}px "${L.fam}"`;
+        ctx.font = `${L.italic}${L.wt} ${tk.f}px "${L.fam}", "Baloo Bhai 2", "Nunito", sans-serif`;
         if ('letterSpacing' in ctx) ctx.letterSpacing = ((t.cs || 0) * tk.f / 100) + 'px';
         if (pass === 0 && und && und.c) { ctx.fillStyle = colorStr(und.c); const ox = und.x * tk.f * 0.08, oy = -und.y * tk.f * 0.08; ctx.lineWidth = tk.f * (ow * 0.42 + und.d * 0.1 + dil * 0.08); ctx.strokeStyle = colorStr(und.c); ctx.strokeText(tk.tok, xx + ox, y + oy); ctx.fillText(tk.tok, xx + ox, y + oy); }
         else if (pass === 1 && ow > 0 && oc) { ctx.strokeStyle = colorStr(oc, 1); ctx.lineWidth = tk.f * (ow * 0.42 + dil * 0.08); ctx.strokeText(tk.tok, xx, y); }

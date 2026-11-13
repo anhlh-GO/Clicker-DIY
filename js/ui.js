@@ -889,11 +889,31 @@ S.LanguageUIItem = LanguageUIItem;
 class PopupLanguage extends E.PopupBase {
   onInit() {
     this.noPanelAnim = true;
-    const la = E.so(LOCALIZE_ASSET); const en = la && la.DataList.find((x) => x.Language === 'English');
+    const la = E.so(LOCALIZE_ASSET);
+    const list = ((la && la.DataList) || []).filter((x) => E.langs.includes(x.Language));
     this.item = this.ref('_cellItem');
-    if (this.item && en) { this.item.setup(en, (it) => { G.click(); it.setSelected(true); const cb = G.goOf(this.ref('_btnConfirm')); if (cb) cb.setActive(true); }); this.item.setSelected(true); }
-    { const cb = G.goOf(this.ref('_btnConfirm')); if (cb) cb.setActive(true); }
-    G.onClick(this.ref('_btnConfirm'), () => { G.click(); const u = user(); u.CurrentLanguage = 'English'; u.IsSelectedLanguage = true; G.save(); this.hide(); });
+    this.items = [];
+    const pick = (it) => {
+      for (const o of this.items) o.setSelected(o === it);
+      this.sel = it.data.Language; E.setLanguage(this.sel);
+      const cb = G.goOf(this.ref('_btnConfirm')); if (cb) cb.setActive(true);
+    };
+    if (this.item) {
+      const tpl = this.item.go;
+      list.forEach((data, i) => {
+        let it = this.item;
+        if (i > 0) { const g = E.instantiate(tpl.file + ':' + tpl.pid, tpl.parent); it = g.comp('LanguageUIItem'); }
+        it.setup(data, (x) => { G.click(); pick(x); });
+        this.items.push(it);
+      });
+    }
+    G.onClick(this.ref('_btnConfirm'), () => { G.click(); const u = user(); u.CurrentLanguage = this.sel || E.lang; u.IsSelectedLanguage = true; G.save(); this.hide(); });
+  }
+  onShow() {
+    const cur = E.lang;
+    const it = (this.items || []).find((o) => o.data.Language === cur) || (this.items || [])[0];
+    if (it) { for (const o of this.items) o.setSelected(o === it); this.sel = it.data.Language; }
+    const cb = G.goOf(this.ref('_btnConfirm')); if (cb) cb.setActive(true);
   }
 }
 S['Home.PopupLanguage'] = PopupLanguage;

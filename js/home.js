@@ -421,15 +421,9 @@ class ScreenHome extends E.ScreenBase {
     if (G.moneyMgr && G.moneyMgr.refresh) G.moneyMgr.refresh();
     const dl = E.ui.getPopup('DailyLoginPopup'); if (dl && dl.checkNotification) dl.checkNotification();
     G.music(E.pick(HOME_BGM)); // PlayMusicIfNotPlaying: random home track
-    const u = user();
-    if (u.IsFirstGame) { // very first session: only "Start Live"
-      if (this.b.live) this.b.live.onChangeAnchorPositionY(0, 0.5, 425, E.ease.outBack);
-      if (this.block) this.block.setActive(true);
-    } else if (u.IsDoneTutorialCollection) this.onShowButtons(0.5);
-    else { // collection tutorial pending
-      if (this.b.collection) this.b.collection.onChangeAnchorPositionX(0.35, 0.5, -120, E.ease.outBack);
-      if (this.block) this.block.setActive(true); if (this.scaleTut) this.scaleTut.setActive(true);
-    }
+    // The original gates Home behind two tutorial steps (first session: only "Start Live"; then only "Collection").
+    // Requested: every mode reachable from the start, so all buttons always slide in.
+    this.onShowButtons(0.5);
   }
   onShowPopupPart2() {
     this.checkLocalize();
@@ -438,7 +432,7 @@ class ScreenHome extends E.ScreenBase {
   }
   checkLocalize() {
     const u = user();
-    if (!u.CurrentLanguage || !String(u.CurrentLanguage).trim()) { u.CurrentLanguage = 'English'; G.save(); E.ui.showPopup('Home.PopupLanguage'); }
+    if (!u.CurrentLanguage || !String(u.CurrentLanguage).trim()) { u.CurrentLanguage = E.lang; G.save(); E.ui.showPopup('Home.PopupLanguage'); }
   }
   checkShowIntroModeInstead() {
     const s = sess(); const m = s.BackFromGameMode | 0; s.BackFromGameMode = 0;
