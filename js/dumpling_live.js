@@ -351,8 +351,9 @@ Object.assign(D.DumplingGame.prototype, {
     setText(find(this.hud, 'Coins'), 0); setText(find(this.hud, 'Viewers'), 0);
     this.streamerGo = find(v, 'Streamer'); this.streamer = this.streamerGo.compInChildren('Spine');
     this.donate = new Donate(v, this.art); this.donate.root.setSiblingIndex(v.children.indexOf(find(v, 'UnboxStage')));
-    this.roomList = D.playableRooms(); const sel = D.save().room; this.room = this.roomList.includes(sel) ? sel : D.currentRoom();
-    if (!this.roomList.includes(this.room)) this.room = this.roomList[0];
+    // the room was picked on the Dumpling home (background selector); the switcher here only keeps "Start Live"
+    if (this.room == null || !D.roomDumplings(this.room).length) this.room = D.currentRoom();
+    this.roomList = [this.room];
     this.buildShelf(); this.buildTray();
     this.chat = new D.LiveChatFeed(find(v, 'Live Chat'));
     this.chooseRoom();

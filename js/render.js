@@ -440,7 +440,10 @@ const drawTxt = (t, g, alpha, world) => {
   const bw = R.w - mgArr[0] - mgArr[2], bh = R.h - mgArr[1] - mgArr[3];
   let fs = t.fs || 36;
   let L;
-  if (t.auto) {
+  // layout (measureText + the auto-size search) only changes with the text, its style or its box: cache it
+  const lk = t.text + '|' + E.lang + '|' + Math.round(bw * 10) + '|' + Math.round(bh * 10) + '|' + fs + '|' + t.auto + '|' + t.fmax + '|' + t.fmin + '|' + t.font + '|' + t.st + '|' + t.cs + '|' + t.wrap + '|' + t.ls;
+  if (t._lk === lk) { L = t._L; fs = t._lfs; }
+  else if (t.auto) {
     let hi = t.fmax || fs, lo = t.fmin || 8; fs = hi;
     L = layoutText(t, bw, fs);
     if (L.w > bw + 0.5 || L.h > bh + 0.5) {
@@ -448,6 +451,7 @@ const drawTxt = (t, g, alpha, world) => {
       fs = lo; L = layoutText(t, bw, fs);
     }
   } else L = layoutText(t, bw, fs);
+  if (t._lk !== lk) { t._lk = lk; t._L = L; t._lfs = fs; }
   if (t._fsOut !== fs) t._fsOut = fs;
   setT(g.wm);
   ctx.save(); ctx.transform(1, 0, 0, -1, 0, 0); // y-down local, origin at pivot
@@ -718,8 +722,13 @@ E.spineUpdate = (dt) => {
 const GLS = (E.spineGL = { cv: null, ctx: null, r: null, W: 0, H: 0, off: new spine.Vector2(), size: new spine.Vector2(), tmp: [] });
 const glInit = () => {
   if (GLS.r) return GLS;
-  GLS.cv = document.createElement('canvas'); GLS.cv.width = GLS.W = 512; GLS.cv.height = GLS.H = 512;
-  GLS.ctx = new spine.ManagedWebGLRenderingContext(GLS.cv, { alpha: true, premultipliedAlpha: true, preserveDrawingBuffer: true, antialias: false });
+  // An OffscreenCanvas hands each frame over as an ImageBitmap (transferToImageBitmap): drawing that into the 2D canvas
+  // stays on the GPU, while drawImage(<webgl canvas>) stalls ~5-10 ms per skeleton waiting for a readback.
+  GLS.bmp = typeof OffscreenCanvas !== 'undefined' && !/[?&]spinecv=1/.test(location.search);
+  if (GLS.bmp) { try { GLS.cv = new OffscreenCanvas(512, 512); if (!GLS.cv.getContext('webgl2', { alpha: true, premultipliedAlpha: true, antialias: false }) && !GLS.cv.getContext('webgl', { alpha: true, premultipliedAlpha: true, antialias: false })) GLS.bmp = false; } catch (e) { GLS.bmp = false; } }
+  if (!GLS.bmp) GLS.cv = document.createElement('canvas');
+  GLS.cv.width = GLS.W = 512; GLS.cv.height = GLS.H = 512;
+  GLS.ctx = new spine.ManagedWebGLRenderingContext(GLS.cv, { alpha: true, premultipliedAlpha: true, preserveDrawingBuffer: !GLS.bmp, antialias: false });
   GLS.r = new spine.SceneRenderer(GLS.cv, GLS.ctx, false);
   return GLS;
 };
@@ -763,13 +772,15 @@ E.spineBlit = (ctx2d, dm, c, alpha) => {
   GLS.r.drawSkeleton(sk, false);
   GLS.r.end();
   // blit: GL canvas region (0, H-ph, pw, ph) shows skeleton rect [bx, bx+pw/k] x [by, by+ph/k] (top row = max y)
-  let src = GLS.cv, sx = 0, sy = GLS.H - ph;
+  let src = GLS.bmp ? GLS.cv.transferToImageBitmap() : GLS.cv, sx = 0, sy = GLS.H - ph;
   if (c._wantCache) { // keep a bitmap of a skeleton that is not animating
+    // copied once into a plain 2D canvas: drawing a GL-made ImageBitmap every frame costs a cross-context sync per skeleton
     const cc = c._cache || (c._cache = { cv: document.createElement('canvas') });
     cc.cv.width = pw; cc.cv.height = ph;
-    cc.cv.getContext('2d').drawImage(GLS.cv, 0, GLS.H - ph, pw, ph, 0, 0, pw, ph);
+    cc.cv.getContext('2d').drawImage(src, 0, GLS.H - ph, pw, ph, 0, 0, pw, ph);
+    if (src.close) src.close();
+    src = cc.cv; sy = 0;
     cc.k = k; cc.bx = bx; cc.by = by; cc.pw = pw; cc.ph = ph; cc.skin = sk.skin ? sk.skin.name : ''; cc.ok = true;
-    src = cc.cv; sx = 0; sy = 0;
   }
   ctx2d.save();
   ctx2d.setTransform(dm[0], dm[1], dm[2], dm[3], dm[4], dm[5]);
@@ -777,6 +788,7 @@ E.spineBlit = (ctx2d, dm, c, alpha) => {
   ctx2d.globalAlpha = alpha;
   ctx2d.drawImage(src, sx, sy, pw, ph, bx, -(by + ph / k), pw / k, ph / k);
   ctx2d.restore();
+  if (src.close) src.close();
 };
 const spineStatic = (c) => { const t = c.state.tracks; for (let i = 0; i < t.length; i++) if (t[i]) return false; return true; };
 const drawCached = (ctx2d, dm, c, alpha) => {

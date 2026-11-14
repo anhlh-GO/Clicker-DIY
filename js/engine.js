@@ -32,7 +32,8 @@ E.texImg = (file) => {
   let im = E.imgs[file];
   if (!im) {
     im = new Image();
-    im._p = new Promise((res) => { im.onload = () => { im._ok = 1; res(im); }; im.onerror = () => { im._bad = 1; res(im); }; });
+    // warm the decode off the main thread (a lazy decode of a big texture on its first draw stalls that frame)
+    im._p = new Promise((res) => { im.onload = () => { im._ok = 1; if (im.decode) im.decode().catch(() => {}); res(im); }; im.onerror = () => { im._bad = 1; res(im); }; });
     im.src = 'assets/tex/' + file;
     E.imgs[file] = im;
   }

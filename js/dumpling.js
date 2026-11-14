@@ -114,14 +114,56 @@ const col = (c) => (c ? [c.r, c.g, c.b, c.a == null ? 1 : c.a] : [1, 1, 1, 1]);
 class DumplingGame extends E.Behaviour {
   awake() { ctrl = this; P = E.D.bf; this.cart = []; }
   onDestroy() { if (ctrl === this) ctrl = null; }
-  start() { G.music('bgm_home_1'); this.showGoShop(); }
+  start() { G.music('bgm_home_1'); this.showHome(); }
   open(name, parent) { const pid = P._roots ? P._roots[name] : null; const key = 'bf:' + (pid || rootPid(name)); return E.instantiate(key, parent === undefined ? this.go : parent); }
   money() { return G.money(); }
   cartCost() { return this.cart.reduce((s, c) => s + c.price, 0); }
-  home() { G.goto('Home'); }
+  exitGame() { G.goto('Home'); } // back to Clicker DIY's Home
+  home() { this.showHome(); }    // shop / end of live / level up all come back to the Dumpling home
+  // ------------------------------------------------------------ 0. Dumpling home (Views.MainHome.MainHomeView without its side features)
+  // Streamer behind the counter, profile (name + level of this mode), background selector = the livestream room, "Let's Shop".
+  showHome() {
+    E.killOwner(this); if (this.idleL) E.input.off(this.idleL); if (this.payL) E.input.off(this.payL);
+    for (const c of this.go.children.slice()) E.destroy(c);
+    if (this.live) E.destroy(this.live);
+    this.live = this.shopView = this.payView = null; this.cart = []; this.paid = false;
+    const v = (this.homeView = this.open('MainHomeView'));
+    for (const n of ['ButtonDailyLogin', 'ButtonDailyRewards', 'TopRight', 'ButtonGacha', 'Pet']) { const g = find(v, n); if (g) g.setActive(false); }
+    // profile: Clicker's player name, this mode's level and exp bar
+    const sv = save(); const lv = playerLevel(); const T = P.db.PlayerLevelTable; const cur = (T.find((r) => r[0] === lv) || [0, 0])[1], nxt = (T.find((r) => r[0] === lv + 1) || [0, cur])[1];
+    setText(find(v, '[Text] Play name'), (G.profile && G.profile.d().Name) || 'You'); setText(find(v, '[Text] Current Level'), lv);
+    const bar = img(find(v, '[Image] Progress')); if (bar) { bar.it = 3; bar.fm = 0; bar.fo = 0; bar.fa = nxt > cur ? Math.min(1, (sv.exp - cur) / (nxt - cur)) : 1; }
+    // close: back to Clicker DIY
+    const content = find(v, 'Content'); const x = newImg('ButtonClose', content, bfSprite('X 2'), 106, 111); x.rt = [1, 1, 1, 1, -60, -90, 106, 111, 0.5, 0.5]; img(x).nr = 0;
+    x.comps.push({ t: 'Btn', go: x, onClick: [() => { sfx('button_click'); this.exitGame(); }], interactable: true, enabled: true, tr: 1 });
+    // background selector (HomeBackgroundView) over the livestream rooms; locked rooms show the lock panel and block "Let's Shop"
+    this.homeRooms = rooms(); if (!this.homeRooms.includes(this.room)) this.room = this.homeRooms.includes(sv.room) ? sv.room : currentRoom();
+    const bg = img(find(v, 'BG')), fade0 = find(v, 'BGFade'); const lock = find(v, 'LockPanel'); const go = find(v, 'ButtonGoShop');
+    setText(go, P.strings['home.lets_shop'] || "Let's Shop");
+    const paint = (animate) => {
+      const r = so('NK.LivestreamArtLibrary')._rooms.find((a) => a.Room === this.room);
+      if (animate && fade0) { fade0.setActive(true); img(fade0).sp = bg.sp; img(fade0).color[3] = 1; tw(fade0, { a: 0 }, 0.35, 'outQuad'); }
+      bg.sp = r.Background;
+      const need = roomUnlockLevel(this.room), locked = need > playerLevel();
+      lock.setActive(locked); if (locked) { setText(find(lock, 'Label'), 'Level ' + need); lock.sx = lock.sy = 0.8; tw(lock, { s: 1 }, 0.25, 'outBack'); }
+      let cg = go.comp('CG'); if (!cg) go.comps.push((cg = { t: 'CG', alpha: 1, ia: true, br: true, go, enabled: true })); cg.alpha = locked ? 0.5 : 1; go.comp('Btn').interactable = !locked;
+    };
+    const step = (d, btn) => { sfx('button_click'); punchS(btn, 0.2, 0.2, 0.25, 6); const i = this.homeRooms.indexOf(this.room); this.room = this.homeRooms[(i + d + this.homeRooms.length) % this.homeRooms.length]; sv.room = this.room; G.save(); paint(true); };
+    const prev = find(v, 'ButtonPrev'), next = find(v, 'ButtonNext');
+    G.onClick(prev, () => step(-1, prev)); G.onClick(next, () => step(1, next));
+    G.onClick(lock, () => { punchS(lock, 0.15, 0.15, 0.3, 6); vib(30); });
+    G.onClick(go, () => { if (!go.comp('Btn').interactable) return; sfx('button_click'); sv.room = this.room; G.save(); this.showGoShop(); });
+    E.tween({ dur: 0.75, loops: -1, yoyo: true, owner: go, ease: E.ease.inOutSine, update: (k) => { go.sx = go.sy = 0.95 + 0.05 * k; } }); // ScaleUILitMotion
+    // tapping the streamer: CharacterTapCurious ("curious" on track 2)
+    const sk = find(v, 'Skeleton'); const sp = sk && sk.comp('Spine'); const tap = find(v, 'TapArea');
+    if (tap && sp) { tap.comps.push({ t: 'Btn', go: tap, onClick: [() => { E.spinePlay(sp, 'curious', false, 2, () => { try { sp.state.setEmptyAnimation(2, 0.2); } catch (e) {} }); }], interactable: true, enabled: true, tr: 0 }); }
+    paint(false);
+  }
   // ------------------------------------------------------------ 1. supermarket doors
   showGoShop() {
+    const home = this.homeView; this.homeView = null;
     this.showShop();
+    if (home) E.after(0.05, () => E.destroy(home), this); // the doors cover the switch
     const v = this.open('LoadingGoShopView');
     const L = find(v, 'DoorLeft'), R = find(v, 'DoorRight'), prompt = find(v, 'TapToOpenPrompt'), dim = img(find(v, 'DimOverlay'));
     let opened = false;
@@ -347,7 +389,7 @@ G.addDumplingHomeButton = (screen) => {
 // sprites used by code (art library, chest icons) are not referenced by the prefabs: preload them with the scene
 E.scenePreload.level7 = () => {
   const out = new Set(); P = E.D.bf;
-  const F = E.D.files.bf; for (const name of ['LoadingGoShopView', 'MainShopView', 'PayView', 'LivestreamView']) E.collectSprites('bf', rootPid(name), out);
+  const F = E.D.files.bf; for (const name of ['MainHomeView', 'LoadingGoShopView', 'MainShopView', 'PayView', 'LivestreamView']) E.collectSprites('bf', rootPid(name), out);
   E.collectRefs(so('NK.LivestreamArtLibrary'), out);
   for (const k in P.spine) if (P.spine[k].name === 'bf_Level_up') E.collectSprites('bf', rootPid('LevelUpView'), out);
   return out;

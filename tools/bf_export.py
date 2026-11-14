@@ -281,7 +281,7 @@ def clean(v):  # JSON has no Infinity/NaN (TMP/particle fields use them)
 nodes, so = clean(nodes), clean(so)
 
 # ---- keep only what the ported gameplay uses (Dumpling mode = these views + art/config SOs); home features of that game are dropped
-KEEP_VIEWS = ['LoadingGoShopView', 'MainShopView', 'PayView', 'LivestreamView', 'LevelUpView', 'UIStunExplosion2']
+KEEP_VIEWS = ['MainHomeView', 'LoadingGoShopView', 'MainShopView', 'PayView', 'LivestreamView', 'LevelUpView', 'UIStunExplosion2']
 KEEP_SO = ('NK.LivestreamArtLibrary', 'NK.LivestreamConfig', 'TMPro.TMP_FontAsset', 'UnityEngine.Localization.Tables.SharedTableData')
 KEEP_SPRITES = {'glow1', 'Common', 'Silver', 'Gold', 'Platinum', 'Diamond', 'Epic', 'Legendary', 'Mythic'}
 KEEP_SPINE = {'bf_Dumpling', 'bf_Dumpling_Box', 'bf_Character_main', 'bf_Hand_Ctrl', 'bf_Level_up'}

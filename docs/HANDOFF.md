@@ -108,16 +108,30 @@ Image 36 byte `<IIHIHIiIII`; Field 10 byte. MonoBehaviour không có typetree �
 - Graphic scale 0 không được nhận raycast; ref từ object scene bị nhân bản phải tra tiếp `E.sceneMap` qua `c2g`.
 - Image Tiled vẽ lặp pattern (nền màn chuyển cảnh); 9-slice có viền phủ hết ảnh kéo giãn dải 1 px (không còn khe tối).
 - Spine vẽ bằng WebGL (Home 12.6 → 0.9 ms/khung; siêu thị 33 → 2 ms) — đừng quay lại spine-canvas triangle rendering.
+- (15/11/2026) Hiệu năng:
+  - Spine vẽ vào OffscreenCanvas WebGL rồi `transferToImageBitmap` → vẽ ImageBitmap vào canvas 2D.
+    Trước đó `drawImage(<canvas webgl>)` chờ GPU đọc ngược ~7 ms mỗi skeleton (Home 17 → 2 ms/khung).
+    Trình duyệt không có OffscreenCanvas WebGL thì tự quay về canvas thường; ép bằng `?spinecv=1`.
+  - Skeleton đứng yên được cache thành **canvas 2D** (chép một lần). Không giữ ImageBitmap từ GL để vẽ mỗi khung:
+    72 túi mù tốn ~75 ms/khung vì đồng bộ chéo context; nay ~1 ms.
+  - Bố cục chữ (measureText + dò cỡ chữ auto-size) được cache trên component theo text, style và khung (`t._lk`).
+  - Ảnh tải xong gọi `decode()` nền để lần vẽ đầu không khựng.
 
 ## 7b. Mode thêm: Dumpling (level7, `js/dumpling.js` + `js/dumpling_live.js`)
 - Lấy **gameplay chính** của game NOC *Dumpling Idol Livestream ASMR* (`com.noc.dumpling.idol.livestream.ASMR`, file `BF_v3_*.apk`, Unity 6000.0,
   IL2CPP metadata v31, Addressables có TypeTree). Không lấy tính năng ngoài home của game đó (điểm danh, quà, shop trang phục, xoá QC, trang trí, gacha).
 - Vào từ nút **Dumpling** ở Home (cột trái, dưới Dream House; `G.addDumplingHomeButton`). Xu dùng chung ví Clicker DIY; cấp/EXP riêng của mode.
+- **Home của mode** (`showHome`, MainHomeView gốc, đã ẩn điểm danh, quà, gacha, pet, góc phải trên):
+  - Profile hiện tên, cấp và thanh EXP của mode.
+  - Mũi tên chọn nền = phòng livestream, có crossfade. Phòng khoá hiện "Cấp N" và nút "Mua sắm thôi" bị khoá.
+  - Nút X về Home Clicker DIY.
+  - Luồng: Mua sắm → cửa siêu thị → shop → pay → live, dùng đúng phòng đã chọn (không còn mũi tên trong live).
+  - Nút Back ở shop, Nhận thưởng kết thúc live và Next ở LevelUp đều quay về **home Dumpling**.
 - **Logic theo spec dịch ngược `docs/specs/spec_dumpling.md`** (disasm rút gọn: `docs/reverse/bf/disasm_livestream.txt`):
   - Shop: mua tối đa 6 túi, chỉ được thanh toán khi có ít nhất 4.
   - Pay: kéo hộp vào máy quét.
   - Livestream:
-    - Chọn phòng, có hiệu ứng trượt khi đổi phòng.
+    - Phòng lấy từ home Dumpling (chỉ còn nút "Bắt đầu live").
     - Đếm ngược, người xem tăng dần, chat theo bộ câu CommentBot, câu hỏi "curious" sau 5 s không chạm.
     - Donate: tối đa 2 lần mỗi live, 500/700/1000 xu.
   - Mở hộp: hộp bay vào → **vuốt xé tem** → **chạm 3 nhịp** (nhảy, nghiêng, rung) → lộ dumpling (tia sáng, light, flash, confetti, banner Mythic)
