@@ -449,7 +449,11 @@ class PopupDailyTaskReward extends E.PopupBase {
 S['DailyTask.PopupDailyTaskReward'] = PopupDailyTaskReward;
 
 class PopupDailyTaskTutorial extends E.PopupBase {
-  onInit() { this.noPanelAnim = true; G.onClick(this.ref('_closeButton'), () => { G.click(); this.hide(); const p = E.ui.getPopup('DailyTask.PopupDailyTask'); if (p && !p.isShowing) E.ui.showPopup('DailyTask.PopupDailyTask'); }); }
+  onInit() {
+    this.noPanelAnim = true;
+    // the "Click on the blank to continue" label sits over the full-screen close button; let taps on it through
+    const tx = goOf(this.ref('_textObject')); if (tx) for (const t of tx.compsInChildren('Txt')) t.nr = 1;
+    G.onClick(this.ref('_closeButton'), () => { G.click(); this.hide(); const p = E.ui.getPopup('DailyTask.PopupDailyTask'); if (p && !p.isShowing) E.ui.showPopup('DailyTask.PopupDailyTask'); }); }
   async onShow() {
     const steps = this.refs('_tutorialSteps').filter(Boolean);
     for (const s of steps) s.alpha = 0;
@@ -477,11 +481,13 @@ class DailyLoginRewardUIItem extends E.Behaviour {
       G.onClick(this.ref('_claimFreeButton'), () => { G.click(); this.popup.claimReward(this.idx); });
       G.onClick(this.ref('_watchAdButton'), () => { G.click(); this.popup.claimReward(this.idx); }); // rewarded "online_rewards" = free
     }
-    setTxt(this.ref('_txtMinutes'), cfg.Minute === 1 ? '1 min' : cfg.Minute + ' mins');
+    this.localize();
     const t = cfg.RewardType;
     act(this.ref('_coinContent'), t === 0); act(this.ref('_charmContent'), t === 1 || t === 3); act(this.ref('_skinContent'), t === 2);
     if (t === 0) setTxt(this.ref('_txtCoinAmount'), cfg.RewardAmount);
   }
+  // AlsoLocalize: Localize("1 min") / Localize("$ mins").Replace("$", minute) — re-run on show so a language change applies
+  localize() { const m = this.cfg.Minute; setTxt(this.ref('_txtMinutes'), m === 1 ? E.tr('1 min') : E.tr('$ mins').replace('$', m)); }
   status(name) { const st = this.go.findDeep('RewardStatus'); return st ? st.findDeep(name) : null; }
   updateProcess() {
     const i = this.idx, c = this.cfg;
@@ -498,10 +504,16 @@ class DailyLoginRewardUIItem extends E.Behaviour {
     const lock = this.status('Lock'), can = this.status('CanClaim'), done = this.status('CheckDone');
     if (lock) lock.setActive(!claimed && !reached); if (can) can.setActive(!claimed && reached); if (done) done.setActive(claimed);
   }
+  // AnimShow: the row's CanvasGroup stays non-interactable / non-blocking until the scale-in completes (OnComplete turns them on)
   animShow(delay) {
     const g = this.go; E.killOwner(g); g.sx = g.sy = 0.5;
-    E.scaleTo(g, 1, 0.5, { delay, ease: E.ease.outBack, owner: g });
-    const cg = this.ref('_canvasGroup'); if (cg) { cg.alpha = 0; E.tween({ dur: 0.3, delay, owner: g, update: (v) => { cg.alpha = v; } }); }
+    const cg = this.ref('_canvasGroup'), line = imgOf(this.ref('_imgHorizontalLine'));
+    if (cg) { cg.alpha = 0; cg.ia = false; cg.br = false; E.tween({ dur: 0.3, delay, owner: g, update: (v) => { cg.alpha = v; } }); }
+    if (line) line.color[3] = 0;
+    E.scaleTo(g, 1, 0.5, { delay, ease: E.ease.outBack, owner: g, done: () => {
+      if (cg) { cg.ia = true; cg.br = true; }
+      if (line) E.fadeTo(line, 1, 0.3, { owner: g });
+    } });
   }
 }
 S.DailyLoginRewardUIItem = DailyLoginRewardUIItem;
@@ -516,7 +528,7 @@ class LoginTimeRewardPopup extends E.PopupBase {
     const close = () => { G.click(); vibrate(100); this.hide(); };
     G.onClick(this.ref('_closeButton'), close); G.onClick(this.ref('_closeButton2'), close);
   }
-  onShow() { if (G.moneyMgr) G.moneyMgr.showUp(); this.loadRewardData(); this.rows.forEach((r, i) => r.animShow(0.15 + i * 0.05)); }
+  onShow() { if (G.moneyMgr) G.moneyMgr.showUp(); this.loadRewardData(); this.rows.forEach((r, i) => { if (r.cfg) r.localize(); r.animShow(0.15 + i * 0.05); }); }
   onHide() { if (G.moneyMgr) G.moneyMgr.backToParent(); }
   loadRewardData() { for (const r of this.rows) if (r.cfg) r.updateProcess(); }
   update() { this._t = (this._t || 0) + E.dt; if (this._t >= 1) { this._t = 0; this.loadRewardData(); } }
@@ -616,41 +628,56 @@ class GiftBoxLuckyWheel extends E.Behaviour {
   }
   setReward(sprite, rarity) { this.isCoin = false; setSp(this.ref('_imgReward'), sprite); this.applyRarity(rarity >= 0 && rarity <= 3 ? rarity : 0); }
   setRewardCoin(v) { this.isCoin = true; this.coinValue = v; setSp(this.ref('_imgReward'), this.d._coinSprite); this.applyRarity(0); }
+  // AnimUnbox (from disasm): SetGiftBox state = box y 880 scale 0.4, lid y 204, flash 0, bg 0; then
+  // box drops to y -130 (0.5 InQuad) → scale 1 (0.5 InOutBack) + bg 0.92 → squash Y 0.9 (0.2) + sfx 46 →
+  // Y 1 (0.2 OutBack) + flash 1 + lid y 550 + reward y 150 → box parts fade 0.3 → reward y 415 + scale 1 (0.5, delay 0.5) →
+  // sfx 50 → glow + stars scale 1 (0.5 OutBack) → close button.
   animUnbox(onClose) {
     const full = goOf(this.ref('_tfFullContent')), box = goOf(this.ref('_rtGiftBox')), lid = goOf(this.ref('_imgLid'));
-    const reward = this.go.findDeep('Reward'), stars = goOf(this.ref('_tfStarHolder')), glow = goOf(this.ref('_tfGlow'));
+    const reward = goOf(this.ref('_imgRarityPanel')) || this.go.findDeep('Reward'), stars = goOf(this.ref('_tfStarHolder')), glow = goOf(this.ref('_tfGlow'));
     const bg = imgOf(this.ref('_bgBlack')), close = goOf(this.ref('_btnCloseGiftBox'));
+    const flash = imgOf(this.ref('_imgFlash')), parts = [imgOf(this.ref('_imgBody')), imgOf(this.ref('_imgFront')), imgOf(this.ref('_imgLid'))].filter(Boolean);
     if (!full || !box) { if (onClose) onClose(); return; }
-    if (!this._init) {
-      this._init = true;
-      this.lid0 = lid ? [lid.rt[4], lid.rt[5]] : null; this.rew0 = reward ? reward.rt[5] : 0; this.bgA = bg ? bg.color[3] : 1;
-      G.onClick(close, () => { G.click(); this.closeBox(); });
-    }
+    if (!this._init) { this._init = true; G.onClick(close, () => { G.click(); this.closeBox(); }); }
     this.onClose = onClose;
     full.setActive(true); if (close) close.setActive(false);
     const fcg = full.comp('CG'); if (fcg) fcg.alpha = 1;
-    if (bg) { bg.color[3] = 0; E.fadeTo(bg, this.bgA, 0.3, { owner: this }); }
-    if (lid && this.lid0) { E.killOwner(lid); lid.rt[4] = this.lid0[0]; lid.rt[5] = this.lid0[1]; lid.sx = lid.sy = 1; const li = lid.comp('Img'); if (li) li.color[3] = 1; }
-    if (reward) { E.killOwner(reward); reward.rt[5] = this.rew0; reward.sx = reward.sy = 1; }
+    for (const g of [box, lid, reward, stars, glow]) if (g) E.killOwner(g);
+    E.killOwner(this);
+    box.rt[5] = 880; box.sx = box.sy = 0.4;
+    if (lid) lid.rt[5] = 204;
+    if (reward) { reward.rt[5] = 20; reward.sx = reward.sy = 1; }
     if (stars) stars.sx = stars.sy = 0; if (glow) glow.sx = glow.sy = 0;
-    E.killOwner(box); box.sx = box.sy = 0;
-    E.scaleTo(box, 1, 0.5, { ease: E.ease.inOutBack, owner: box, done: () => {
-      if (!lid) return this.revealReward(reward, stars, glow, close);
-      E.scaleTo(lid, [1, 0.9], 0.2, { owner: lid, done: () => {
-        G.sound(46); lid.sy = 1;
-        const li = lid.comp('Img'); const op = box.find('LidOpenPos');
-        E.moveTo(lid, op ? op.rt[4] : lid.rt[4] + 476, op ? op.rt[5] : lid.rt[5] - 50, 0.4, { owner: lid, ease: E.ease.outQuad });
-        if (li) E.fadeTo(li, 0, 0.4, { owner: lid });
-        this.revealReward(reward, stars, glow, close);
-      } });
-    } });
+    if (bg) bg.color[3] = 0; if (flash) flash.color[3] = 0;
+    for (const p of parts) p.color[3] = 1;
+    const o = (g, ease, done) => ({ owner: g, ease, done });
+    E.moveTo(box, box.rt[4], -130, 0.5, o(box, E.ease.inQuad, () => {
+      if (bg) E.fadeTo(bg, 0.92, 0.5, { owner: this });
+      if (reward) reward.sx = reward.sy = 0.65;
+      E.scaleTo(box, 1, 0.5, o(box, E.ease.inOutBack, () => {
+        E.scaleTo(box, [1, 0.9], 0.2, o(box, E.ease.outQuad, () => {
+          G.sound(46);
+          if (flash) E.fadeTo(flash, 1, 0.2, { owner: this });
+          if (lid) E.moveTo(lid, lid.rt[4], 550, 0.2, o(lid, E.ease.outQuad));
+          if (reward) E.moveTo(reward, reward.rt[4], 150, 0.2, o(reward, E.ease.outQuad));
+          E.scaleTo(box, [1, 1], 0.2, o(box, E.ease.outBack, () => {
+            for (const p of parts.concat(flash ? [flash] : [])) E.fadeTo(p, 0, 0.3, { owner: this });
+            E.after(0.5, () => this.revealReward(reward, stars, glow, close), this);
+          }));
+        }));
+      }));
+    }));
   }
   revealReward(reward, stars, glow, close) {
-    if (reward) E.moveTo(reward, reward.rt[4], 415, 0.5, { owner: reward, ease: E.ease.outBack });
-    if (stars) E.scaleTo(stars, 1, 0.5, { ease: E.ease.outBack, owner: stars });
-    if (glow) E.scaleTo(glow, 1, 0.5, { ease: E.ease.outBack, owner: glow });
-    G.sound(50);
-    E.after(0.5, () => { if (close) close.setActive(true); }, this);
+    const done = () => {
+      G.sound(50);
+      if (glow) E.scaleTo(glow, 1, 0.5, { ease: E.ease.outBack, owner: glow });
+      if (stars) E.scaleTo(stars, 1, 0.5, { ease: E.ease.outBack, owner: stars });
+      E.after(0.5, () => { if (close) close.setActive(true); }, this);
+    };
+    if (!reward) return done();
+    E.scaleTo(reward, 1, 0.5, { owner: this, ease: E.ease.outQuad });
+    E.moveTo(reward, reward.rt[4], 415, 0.5, { owner: reward, ease: E.ease.outQuad, done });
   }
   closeBox() {
     const full = goOf(this.ref('_tfFullContent')); const close = goOf(this.ref('_btnCloseGiftBox'));
@@ -824,11 +851,21 @@ class ProfilePopup extends E.PopupBase {
     G.onClick(this.ref('_closeButton'), () => { G.click(); this.hide(); });
     G.onClick(this.ref('_closeFullscreenButton'), () => { G.click(); this.hide(); });
     G.onClick(this.ref('_restoreButton'), () => G.click()); // IAP restore: skipped
-    G.onClick(this.ref('_prevlanguageButton'), () => { G.click(); this.updateLanguage(); }); // English only
-    G.onClick(this.ref('_nextlanguageButton'), () => { G.click(); this.updateLanguage(); });
+    G.onClick(this.ref('_prevlanguageButton'), () => { G.click(); this.stepLanguage(-1); });
+    G.onClick(this.ref('_nextlanguageButton'), () => { G.click(); this.stepLanguage(1); });
   }
   onShow() { const sp = this.ref('_settingPanel'); if (sp && sp.refresh) sp.refresh(); this.updateLanguage(); }
-  updateLanguage() { setTxt(this.ref('_txtLanguage'), 'English'); }
+  // LocalizeAsset.GetNextData / GetPreviousData: cycle through the asset's DataList, then LocalizationManager.Language = it
+  langList() { const la = E.so(LOCALIZE_ASSET); return ((la && la.DataList) || []).filter((x) => E.langs.includes(x.Language)); }
+  stepLanguage(dir) {
+    const l = this.langList(); if (!l.length) return;
+    const i = l.findIndex((x) => x.Language === E.lang);
+    const next = l[(((i < 0 ? 0 : i) + dir) % l.length + l.length) % l.length];
+    E.setLanguage(next.Language); const u = user(); u.CurrentLanguage = next.Language; u.IsSelectedLanguage = true; G.save();
+    this.updateLanguage();
+  }
+  // UpdateLanguage: _txtLanguage = Localize(data.Language) (the language name in the current language)
+  updateLanguage() { setTxt(this.ref('_txtLanguage'), E.lang); }
 }
 S.ProfilePopup = ProfilePopup;
 

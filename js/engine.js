@@ -70,10 +70,19 @@ E.collectRefs = (v, out) => {
 // ------------------------------------------------------------------ localisation (Key,English,Vietnamese,... table from the game)
 E.langs = ['English']; E.lang = 'English'; E._loc = null; E._li = 0;
 E.setLanguage = (l) => { const i = E.langs.indexOf(l); E.lang = i >= 0 ? l : 'English'; E._li = Math.max(0, i); };
+E._trNum = new Map(); // "Level 3" → key "Level $" (the table's numbered keys), cached per language
 E.tr = (s) => {
   if (!E._li || !s || !E._loc) return s;
   const v = E._loc[s] || E._loc[s.trim()];
-  return v && v[E._li] ? v[E._li] : s;
+  if (v) return v[E._li] || s;
+  const ck = E._li + '|' + s; let r = E._trNum.get(ck);
+  if (r === undefined) {
+    r = s; const m = /\d+/.exec(s);
+    if (m) { const w = E._loc[s.replace(m[0], '$')]; if (w && w[E._li] && w[E._li].includes('$')) r = w[E._li].replace('$', m[0]); }
+    if (E._trNum.size > 5000) E._trNum.clear();
+    E._trNum.set(ck, r);
+  }
+  return r;
 };
 
 // ------------------------------------------------------------------ tint cache

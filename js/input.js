@@ -151,7 +151,7 @@ const onUp = (cx, cy, id) => {
 };
 const isAncestor = (a, g) => { while (g) { if (g === a) return true; g = g.parent; } return false; };
 E.bindInput = (el) => {
-  el.addEventListener('pointerdown', (e) => { el.setPointerCapture && el.setPointerCapture(e.pointerId); onDown(e.clientX, e.clientY, e.pointerId); e.preventDefault(); });
+  el.addEventListener('pointerdown', (e) => { try { el.setPointerCapture && el.setPointerCapture(e.pointerId); } catch (_) { /* capture is optional; never drop the tap */ } onDown(e.clientX, e.clientY, e.pointerId); e.preventDefault(); });
   el.addEventListener('pointermove', (e) => { if (I.cur && I.cur.id !== e.pointerId) return; onMove(e.clientX, e.clientY, e.pointerId); });
   el.addEventListener('pointerup', (e) => { if (I.cur && I.cur.id !== e.pointerId) return; onUp(e.clientX, e.clientY, e.pointerId); });
   el.addEventListener('pointercancel', (e) => onUp(null, null, e.pointerId));

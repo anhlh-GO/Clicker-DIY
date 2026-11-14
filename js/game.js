@@ -217,7 +217,8 @@ class CollectingCoin extends E.Behaviour {
         const fx = g.rt[4], fy = g.rt[5];
         E.tween({ dur, owner: g, ease: E.ease.inBack, update: (v) => { g.rt[4] = fx + (ex - fx) * v; g.rt[5] = fy + (ey - fy) * v; }, done: () => {
           G.sound(6); E.destroy(g);
-          if (label) E.punchScale(label, 0.5, 0.1);
+          // restart the punch from the rest scale, or overlapping punches compound and leave the icon oversized
+          if (label) { if (label._restS == null) label._restS = label.sx; E.killOwner(label); label.sx = label.sy = label._restS; E.punchScale(label, 0.5, 0.1); }
           if (!first) { first = true; onFirst(); }
         } });
       }, this);

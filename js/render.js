@@ -676,7 +676,10 @@ E.spineInit = (c) => {
   c.ready = false; c.queue = [];
   c.timeScale = c.ts == null ? 1 : c.ts;
   c.color = c.col ? c.col.slice() : [1, 1, 1, 1];
+  // re-init (e.g. pet swapped to its saved skeleton on scene start) must win over a slower, older load
+  const tok = (c._initTok = (c._initTok || 0) + 1);
   E.spineLoad(meta.name).then((data) => {
+    if (c._initTok !== tok) return;
     c.data_ = data;
     c.skeleton = new spine.Skeleton(data);
     if (c.skin) { try { c.skeleton.setSkinByName(c.skin); } catch (e) {} }

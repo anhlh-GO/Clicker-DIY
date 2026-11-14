@@ -111,7 +111,14 @@ Image 36 byte `<IIHIHIiIII`; Field 10 byte. MonoBehaviour không có typetree �
 
 ## 8. Việc còn dở / chưa kiểm
 - Chưa test trên iPhone/Android thật. Chủ dự án test trên iPhone Safari + "Thêm vào MH chính".
-- Đã tự chơi trên trình duyệt: Loading, Home, Clicker trọn vòng, siêu thị trọn vòng, mở túi + kéo charm, DreamHouse bước đầu, Scoop bước múc, popup điểm danh, ngôn ngữ, nút Home các mode.
-- Chỉ chạy bằng harness tự động (chưa bấm tay): Scoop các bước sau (hộp, thiệp, xếp charm, giao quà), vòng quay, nhiệm vụ ngày,
-  quà online, trang trí Home, cài đặt, bán trùng + popup hoàn thành ở màn mở túi, DreamHouse phòng 2.
-- Nhỏ: một số nhãn dài xuống 2 dòng so với bản gốc; "Level" chưa dịch thành "Cấp".
+- Đã chơi trên trình duyệt (khung 375×812): Loading, Home, Clicker trọn vòng, siêu thị trọn vòng, mở túi + kéo charm, popup điểm danh,
+  ngôn ngữ, nút Home các mode; (14/11/2026) vòng quay (cả hộp quà), nhiệm vụ ngày + hộp thưởng, quà online, trang trí Home,
+  cài đặt, Scoop trọn vòng (múc → mở túi → hộp → xếp → thiệp → giao → nhận), bán trùng + popup hoàn thành, DreamHouse hết phòng 1 → phòng 2.
+- Lỗi đã sửa đợt 14/11/2026: hộp quà vòng quay thiếu bước rơi xuống (bị mask cắt); dòng quà online không bấm được (CanvasGroup
+  chưa bật lại sau AnimShow); nhãn "$ mins" / "You've got $ charms" / "Level $" / "Day $" không dịch (E.tr thêm tra khoá có số);
+  ô ngôn ngữ trong Cài đặt cứng "English" + mũi tên không đổi ngôn ngữ; icon xu phình to sau khi coin bay về; thú cưng đã chọn
+  bị đổi lại thành mặc định khi khởi động (spineInit cũ ghi đè); chữ "Nhấn vào chỗ trống" chặn chạm ở hướng dẫn nhiệm vụ.
+- Còn ngờ: chữ khen "PERFECT!" ở màn mở túi vẽ dưới thẻ bộ sưu tập (theo sorting gốc của prefab, chưa đối chiếu được).
+  Bản trích không có cờ raycastTarget của chữ TMP → mọi chữ đều chặn chạm (khác gốc nếu gốc tắt cờ này).
+- Nhỏ: một số nhãn dài xuống 2 dòng so với bản gốc ("Bỏ Qua", "1 Trang phục" đè "Ngẫu nhiên").
+- Máy Mac có ổ SSD ngoài: macOS chặn Python đọc ổ này (`http.server` trả 404) → dùng `npx serve .` hoặc server Node.

@@ -600,7 +600,7 @@ class PreviewListStar extends E.Behaviour {
     E.killOwner(this.key);
     G.sound(13);
     const n = srs.filter((s) => s.go.activeSelf).length;
-    if (this.txt) this.txt.text = "You've got $ charms".replace('$', String(n));
+    if (this.txt) this.txt.text = E.tr("You've got $ charms").replace('$', String(n)); // localize the key first, then fill $
     srs.forEach((sr, i) => {
       const img = this.imgs[i], pg = this.pos[i]; if (!img || !pg) return;
       const ig = img.go, act = sr.go.activeSelf;
