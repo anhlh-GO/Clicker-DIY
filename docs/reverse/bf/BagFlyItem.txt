@@ -1,0 +1,2 @@
+BagFlyItem rt=[0.5, 0.5, 0.5, 0.5, 0.0, 0.0, 231, 300, 0.5, 0.5]  GameObjectInjector {} | BagFlyItem {"_itemImage": "@Content#2532"}
+  Content rt=[0.5, 0.5, 0.5, 0.5, 0.0, 0.0, 351, 332, 0.5, 0.5]  Img(Common)

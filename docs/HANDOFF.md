@@ -109,6 +109,33 @@ Image 36 byte `<IIHIHIiIII`; Field 10 byte. MonoBehaviour không có typetree �
 - Image Tiled vẽ lặp pattern (nền màn chuyển cảnh); 9-slice có viền phủ hết ảnh kéo giãn dải 1 px (không còn khe tối).
 - Spine vẽ bằng WebGL (Home 12.6 → 0.9 ms/khung; siêu thị 33 → 2 ms) — đừng quay lại spine-canvas triangle rendering.
 
+## 7b. Mode thêm: Dumpling (level7, `js/dumpling.js` + `js/dumpling_live.js`)
+- Lấy **gameplay chính** của game NOC *Dumpling Idol Livestream ASMR* (`com.noc.dumpling.idol.livestream.ASMR`, file `BF_v3_*.apk`, Unity 6000.0,
+  IL2CPP metadata v31, Addressables có TypeTree). Không lấy tính năng ngoài home của game đó (điểm danh, quà, shop trang phục, xoá QC, trang trí, gacha).
+- Vào từ nút **Dumpling** ở Home (cột trái, dưới Dream House; `G.addDumplingHomeButton`). Xu dùng chung ví Clicker DIY; cấp/EXP riêng của mode.
+- **Logic theo spec dịch ngược `docs/specs/spec_dumpling.md`** (disasm rút gọn: `docs/reverse/bf/disasm_livestream.txt`):
+  - Shop: mua tối đa 6 túi, chỉ được thanh toán khi có ít nhất 4.
+  - Pay: kéo hộp vào máy quét.
+  - Livestream:
+    - Chọn phòng, có hiệu ứng trượt khi đổi phòng.
+    - Đếm ngược, người xem tăng dần, chat theo bộ câu CommentBot, câu hỏi "curious" sau 5 s không chạm.
+    - Donate: tối đa 2 lần mỗi live, 500/700/1000 xu.
+  - Mở hộp: hộp bay vào → **vuốt xé tem** → **chạm 3 nhịp** (nhảy, nghiêng, rung) → lộ dumpling (tia sáng, light, flash, confetti, banner Mythic)
+    → chạm để tiếp → bay theo đường cong vào kệ phòng.
+  - Biểu cảm streamer theo EmotionTable gốc (mới / trùng × độ hiếm). Âm thanh đúng clip gốc.
+  - Kết thúc: popup thưởng 200 × x2..x5, +3000 EXP mỗi live, LevelUp.
+- **Tiến trình phòng:** 4 phòng chơi được 0, 1, 4, 6. Phòng 4 và 6 mở ở cấp 3. Phòng đã sưu tập đủ thì rời danh sách ở lần live sau.
+  Tỉ lệ ra con chưa có = `_missingRates[loại túi]`.
+- Engine: `E.loadPack` / `E.scenePacks` (gói `bf` chỉ tải khi vào mode). SkeletonGraphic `layoutScaleMode` (FitInParent…) đã hỗ trợ trong `render.js`.
+- Trích lại: `python -I tools/bf_export.py <apk giải nén> <repo>` (cần UnityPy, numpy, Pillow, ffmpeg). Ra `data/bf.json`, `data/bf_pack.json`,
+  `data/bf_roots.json`, `assets/tex/bf/`, `assets/spine/bf_*`, `assets/audio/bf_*` (chỉ giữ asset các màn gameplay). `tools/bf_tree.py <View>` in cây prefab.
+- Còn ước lượng (spec đánh dấu ≈):
+  - một số thời lượng trong RevealAsync;
+  - cách hạt hiệu ứng của UnboxFx bay và xoay;
+  - lưới tray (theo ảnh máy thật);
+  - vị trí các thành phần của banner donate;
+  - gradient nền popup kết thúc (thay bằng màu trung bình).
+
 ## 8. Việc còn dở / chưa kiểm
 - Chưa test trên iPhone/Android thật. Chủ dự án test trên iPhone Safari + "Thêm vào MH chính".
 - Đã chơi trên trình duyệt (khung 375×812): Loading, Home, Clicker trọn vòng, siêu thị trọn vòng, mở túi + kéo charm, popup điểm danh,

@@ -13,6 +13,20 @@ E.loadFile = async (fn) => {
   if (!E.D.files[fn]) E.D.files[fn] = await E.fetchJSON('data/' + fn + '.json');
   return E.D.files[fn];
 };
+// extra content packs (data/<name>_pack.json + data/<name>.json), merged into E.D on first use; E.scenePacks[level] = name
+E.packs = {}; E.scenePacks = {};
+E.loadPack = (name) => {
+  if (!E.packs[name]) E.packs[name] = (async () => {
+    const [p] = await Promise.all([E.fetchJSON('data/' + name + '_pack.json'), E.loadFile(name)]);
+    Object.assign(E.D.spr, p.spr); Object.assign(E.D.tex, p.tex); Object.assign(E.D.so, p.so); Object.assign(E.D.names, p.names);
+    Object.assign(E.D.mats, p.mats); Object.assign(E.D.spineMeta, p.spine); Object.assign(E.D.audio, p.audio);
+    if (E._loc && p.loc) for (const k in p.loc) if (!E._loc[k]) E._loc[k] = p.loc[k];
+    E._sprByName = null; if (E._trNum) E._trNum.clear();
+    E.D[name] = p;
+    return p;
+  })();
+  return E.packs[name];
+};
 E.imgs = {};
 E.texImg = (file) => {
   let im = E.imgs[file];
@@ -344,6 +358,7 @@ E.prefabSprites = (refs, out) => {
   return out;
 };
 E.loadScene = async (level, onProg) => {
+  if (E.scenePacks[level]) await E.loadPack(E.scenePacks[level]);
   const F = await E.loadFile(level);
   E.killAll();
   for (const r of E.roots.slice()) if (!r._ddol) E.destroy(r);

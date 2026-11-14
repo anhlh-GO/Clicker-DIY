@@ -369,6 +369,7 @@ const drawRaw = (c, g, alpha) => {
 const FONT = {
   'DVN-Fredoka-Bold SDF': ['Fredoka', 700], 'SignikaNegative-Brazil-Bold SDF': ['Signika Negative', 700], 'Nunito-Black SDF': ['Nunito', 900],
   'LilitaOne-Regular SDF': ['Lilita One', 400], 'BalooBhai2-ExtraBold SDF': ['Baloo Bhai 2', 800], 'LiberationSans SDF': ['Arial', 400],
+  'Fredoka-SemiBold SDF': ['Fredoka', 600], // Dumpling mode (bf pack)
 };
 const fontOf = (t) => { const n = t.font ? E.D.names[t.font] : null; return FONT[n] || ['Baloo Bhai 2', 800]; };
 const parseRich = (s, baseCol) => {
@@ -794,8 +795,15 @@ E.spineInvalidate = (c) => { if (c && c._cache) c._cache.ok = false; };
 E.drawSpine = (c, alpha) => {
   if (!c.ready) return;
   if (!(c._cache && c._cache.ok && !c._dirty && spineStatic(c))) E.spineTick(c);
-  const sc = c.ui ? 100 * (c.meta.scale || 0.01) : (c.meta.scale || 0.01);
-  const m = M.mul(base, M.mul(c.go.wm, [sc * (c.fx ? -1 : 1), 0, 0, sc * (c.fy ? -1 : 1), 0, 0]));
+  let sc = c.ui ? 100 * (c.meta.scale || 0.01) : (c.meta.scale || 0.01);
+  let ox = 0, oy = 0;
+  const R = c.go.rect;
+  if (c.ui && c.lsm && R && c.ref) { // SkeletonGraphic layoutScaleMode: 1 width, 2 height, 3 fit in parent, 4 envelope; origin = rect centre + pivotOffset
+    const kw = R.w / c.ref[0], kh = R.h / c.ref[1];
+    const k = (c.lsm === 1 ? kw : c.lsm === 2 ? kh : c.lsm === 3 ? Math.min(kw, kh) : Math.max(kw, kh)) * (c.rsc || 1);
+    sc *= k; ox = (0.5 - R.pvx) * R.w + c.po[0] * k; oy = (0.5 - R.pvy) * R.h + c.po[1] * k;
+  }
+  const m = M.mul(base, M.mul(c.go.wm, [sc * (c.fx ? -1 : 1), 0, 0, sc * (c.fy ? -1 : 1), ox, oy]));
   const a = (c.color ? c.color[3] : 1) * alpha;
   if (a <= 0.003) return;
   const st = spineStatic(c);

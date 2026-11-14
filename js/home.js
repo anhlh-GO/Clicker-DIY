@@ -390,6 +390,7 @@ class ScreenHome extends E.ScreenBase {
     this.block = this.body && this.body.find('BlockScreen');
     this.scaleTut = goOf(this.b.collection) && goOf(this.b.collection).find('ScaleTutorial');
     for (const k in this.b) { const hb = this.b[k]; if (hb && hb.onInit) hb.onInit(); }
+    if (G.addDumplingHomeButton) this.b.dumpling = G.addDumplingHomeButton(this); // added mode (js/dumpling.js)
     if (this.decorPanel && this.decorPanel.onInit) this.decorPanel.onInit(this);
     if (this.block) this.block.setActive(false);
     this.onHideButtons(0);
@@ -445,7 +446,7 @@ class ScreenHome extends E.ScreenBase {
     if (this.profile && this.profile.onChangeAnchorPositionY) this.profile.onChangeAnchorPositionY(0, d, -60, e);
     if (b.decor) b.decor.onChangeAnchorPositionX(0, d, -120, e);
     const X = (hb, x) => { if (hb) hb.onChangeAnchorPositionX(0.35, d, x, e); };
-    X(b.daily, 120); X(b.setting, -88); X(b.dailyTask, 120); X(b.loginTime, 120); X(b.removeAd, -36); X(b.lucky, -120); X(b.dream, 120); X(b.collection, -120);
+    X(b.daily, 120); X(b.setting, -88); X(b.dailyTask, 120); X(b.loginTime, 120); X(b.removeAd, -36); X(b.lucky, -120); X(b.dream, 120); X(b.collection, -120); X(b.dumpling, 120);
     moveAxis(this.blindRect, 'x', -120, d, 0.35, e); moveAxis(this.scoopRect, 'x', -120, d, 0.35, e);
     if (b.live) b.live.onChangeAnchorPositionY(0.35, d, 425, e);
   }
@@ -453,7 +454,7 @@ class ScreenHome extends E.ScreenBase {
     const e = E.ease.inBack, dl = d > 0 ? 0.35 : 0, b = this.b;
     if (this.profile && this.profile.onChangeAnchorPositionY) this.profile.onChangeAnchorPositionY(dl, d, 400, e);
     const X = (hb, x) => { if (hb) hb.onChangeAnchorPositionX(dl, d, x, e); };
-    X(b.decor, 250); X(b.daily, -250); X(b.setting, 250); X(b.removeAd, 250); X(b.dailyTask, -250); X(b.loginTime, -250); X(b.lucky, 250); X(b.dream, -250); X(b.collection, 250);
+    X(b.decor, 250); X(b.daily, -250); X(b.setting, 250); X(b.removeAd, 250); X(b.dailyTask, -250); X(b.loginTime, -250); X(b.lucky, 250); X(b.dream, -250); X(b.collection, 250); X(b.dumpling, -250);
     if (b.live) b.live.onChangeAnchorPositionY(dl, d, -400, e);
     moveAxis(this.blindRect, 'x', 250, d, dl, e); moveAxis(this.scoopRect, 'x', 250, d, dl, e);
   }
